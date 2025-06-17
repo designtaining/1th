@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float써보기</title>
+
+    <style>
+        .section1 {
+            display:flex;
+            justify-content: center;
+        }
+        .container {
+            width: 1280px;
+        }
+
+        .PC_header {
+            width: 100%;
+            height: 80px;
+            background-color: #ffffff;
+            box-shadow: 4px 4px 12px 0 rgba(17, 17, 17, 0.2);
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .left_menu {
+            width: 70%;
+            height: 600px;
+            background-color: #2e50e2;
+            float: left;
+        }
+
+        .right_menu {
+            width: 30%;
+            height: 600px;
+            background-color: #a50000;
+            float: left;
+        }
+
+        .first_footer {
+            width: 100%;
+            height:320px;
+            background-color: #a5ff99;
+            clear: both;
+        }
+
+        .nav_menubox {
+            display:flex;
+            gap:80px;
+            list-style: none;
+        }
+
+        .nav_menu {
+            font-size: 16px;
+            font-weight: 400;
+            color: #111111;
+        }
+
+        .nav_menu:hover {
+            color: #a5a5a5;
+        }
+    </style>
+</head>
+
+<body>
+<div class="section1">
+    <div class="container">
+
+        <header class="PC_header">
+<ul class="nav_menubox">
+
+<li class="nav_menu">회사소개</li>
+<li class="nav_menu">제작과정</li>
+<li class="nav_menu">고객후기</li>
+<li class="nav_menu">문의하기</li>
+
+</ul>
+
+        </header>
+
+        <div class="left_menu"></div>
+
+        <div class="right_menu"></div>
+
+        <div class="first_footer"></div>
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
