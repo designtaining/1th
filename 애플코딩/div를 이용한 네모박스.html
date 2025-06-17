@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네모네모박스</title>
+    <style>
+        .profile_box {
+            width: 400px;
+            height: 600px;
+            background-color: #ffffb0;
+            border-radius: 32px;
+            box-shadow: 4px 4px 12px 0 rgba(17, 17, 17, 0.2);
+            padding: 20px;
+        }
+
+        .profile_title {
+            font-family: 'Playfair Display';
+            font-size: 32px;
+            font-weight: 600;
+            text-align: center;
+            color: #111111;
+        }
+
+        .profile_photo {
+            width: 240px;
+            height: 240px;
+            border-radius: 999px;
+            box-shadow: 4px 4px 12px 0 rgba(17, 17, 17, 0.2);
+            display: block;
+            margin: 0 auto;
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+
+        .profile_photo:hover {
+            transform: translateY(-24px);
+        }
+
+
+        .profile_subtitle {
+            font-size: 24px;
+            font-weight: 500;
+            text-align: center;
+            color: #505050;
+            letter-spacing: -1.5px;
+        }
+
+        .profile_desc {
+            font-size: 20px;
+            font-weight: 300;
+            text-align: center;
+            color: #767676;
+            letter-spacing: -1.5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="profile_box">
+
+        <h1 class="profile_title">
+            My profile
+        </h1>
+        <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="호랑이사진1" class="profile_photo">
+        <h2 class="profile_subtitle">
+            제 이름은 호랑이 입니다.
+        </h2>
+        <p class="profile_desc">
+            안녕하세요, 저의 분류종은 호랑이입니다.
+            <br>
+            저는 고양이과에 속하며 맹수입니다.
+            <br>
+            저는 요즘 살이 많이쪄서 270kg정도 나갑니다.
+            <br>
+            다이어트는 별로 하고싶지 않습니다.
+            <br>
+            그냥 누워있는게 가장 행복합니다.
+            <br>
+            "아 소고기 먹고싶다."
+        </p>
+
+
+
+    </div>
+</body>
+
+</html>

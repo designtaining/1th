@@ -4,20 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹페이지 스타일링 연습습</title>
+    <title>웹페이지 스타일링</title>
     <style>
-.video_first {
-    width: 100%;
-    height: 100%;
-}
+        .box1 {
+            width: 580px;
+            height: 800px;
+            background-color: #f2f5f7;
+        }
 
+        .base {
+            width: 300px;
+            height: 300px;
+            display: block;
+            border-radius: 999px;
+            margin: 0 auto;
+        }
+
+        .title {
+            font-family: 'Playfair Display';
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            text-align: center;
+            color: #a50000;
+        }
+
+        .desc {
+            font-family: 'Playfair Display';
+            font-size: 20px;
+            font-weight: 400;
+            letter-spacing: -1px;
+            text-align: center;
+            color: #2e50e2;
+        }
+
+        #link1 {
+            font-size: 60px;
+            color: #767676;
+            text-decoration: underline;
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
+    <div class="box1">
+        <h1 class="title">
+            lovely tiger
+        </h1>
 
-    <video src="https://ncryk7.mycafe24.com/Drum.mp4" autoplay muted playsinline
-        class="video_first"></video>
+        <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="호랑이사진1" class="base">
+
+        <p class="desc">
+            hello, i'm tiger
+            <br>
+            i'm kind of tigers
+            <br>
+            do you like tiger?
+            <br>
+            i like tiger
+            <br>
+            cuz i'm a tiger
+            <br>
+            <p id="link1">
+                <a href="https://www.naver.com/">
+                네이버 링크 바로가기
+            </a>
+            </p>
+        </p>
+    </div>
 </body>
 
 </html>
