@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>설문지폼 연습</title>
+
+    <style>
+        .cover1 {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .form_cover {
+            max-width: 1280px;
+        }
+
+        .form_title {
+            font-size: 32px;
+            font-weight: 700;
+            padding:0 20px;
+        }
+
+        .form_grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px 40px;
+
+        }
+
+        .form_grid input {
+            width: 540px;
+            padding: 32px 32px;
+            font-size: 32px;
+            font-weight: 600;
+            background-color: #e5e5ec;
+            color: #111111;
+            border: none;
+            border-radius: 16px;
+        }
+
+        .form_optionbox {
+            width:1220px;
+            display: inline-flex;
+            gap: 32px;
+            padding: 20px;
+            border: none;
+            border-radius: 16px;
+            background-color: #e5e5ec;
+        }
+
+        .form_optionbox label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 32px;
+            font-weight: 600;
+            color: #111111;
+            cursor: pointer;
+            flex-wrap: wrap;
+        }
+
+        .form_optionbox input[type="checkbox"] {
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cover1">
+        <section class="form_cover">
+
+            <h1 class="form_title">
+                고객님을 소개해주세요.
+            </h1>
+
+            <form class="form_grid">
+
+                <input type="text" placeholder="회사명">
+                <input type="text" placeholder="직급">
+                <input type="text" placeholder="담당자">
+                <input type="text" placeholder="연락처">
+                <input type="text" placeholder="이메일">
+                <input type="text" placeholder="홈페이지주소">
+
+            </form>
+
+        </section>
+    </div>
+
+    <div class="cover1">
+        <section class="form_cover">
+            <h1 class="form_title">
+                상담형태를 선택해 주세요.
+            </h1>
+
+            <div class="form_optionbox">
+                <label><input type="checkbox" name="consult" value="전화" /> 전화</label>
+                <label><input type="checkbox" name="consult" value="이메일" /> 이메일</label>
+                <label><input type="checkbox" name="consult" value="방문" /> 방문</label>
+            </div>
+        </section>
+    </div>
+
+    <div class="cover1">
+        <section class="form_cover">
+            <h1 class="form_title">
+                어떤 서비스를 원하세요?
+            </h1>
+
+            <div class="form_optionbox">
+                <label><input type="checkbox" name="consult" value="홈페이지제작" /> 홈페이지제작</label>
+                <label><input type="checkbox" name="consult" value="페이지추가" /> 페이지추가</label>
+                <label><input type="checkbox" name="consult" value="브랜드스토리" /> 브랜드스토리</label>
+                <label><input type="checkbox" name="consult" value="홈페이지마케팅" /> 홈페이지마케팅</label>
+                <label><input type="checkbox" name="consult" value="SEO최적화" /> SEO최적화</label>
+                <label><input type="checkbox" name="consult" value="기타컨설팅" /> 기타컨설팅</label>
+            </div>
+        </section>
+    </div>
+
+
+
+</body>
+
+</html>
