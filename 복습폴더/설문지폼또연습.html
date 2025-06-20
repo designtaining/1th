@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .master_cover {
+            display: flex;
+            justify-content: center;
+        }
+
+        .maxwidth_cover {
+            max-width: 1280px;
+        }
+
+        .form_title {
+            font-size: 32px;
+            font-weight: 700;
+            padding: 12px;
+        }
+
+        .form_grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .form_grid input {
+            width: 520px;
+            background-color: #e5e5ec;
+            border: none;
+            border-radius: 24px;
+            padding: 40px 40px;
+            gap: 40px;
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .form_optionbox {
+            display: flex;
+            width: 1160px;
+            background-color: #e5e5ec;
+            border: none;
+            border-radius: 24px;
+            padding: 40px 40px;
+            font-size: 32px;
+            font-weight: 700;
+            color: #767676;
+            gap: 40px;
+        }
+
+        .form_optionbox input[type="radio"] {
+            width: 24px;
+            height: 24px;
+        }
+
+        .form_optionbox label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="master_cover">
+        <section class="maxwidth_cover">
+            <h2 class="form_title">고객님을 소개해주세요.</h2>
+            <form class="form_grid">
+                <input type="text" placeholder="회사명">
+                <input type="text" placeholder="직급">
+                <input type="text" placeholder="담당자">
+                <input type="text" placeholder="연락처">
+                <input type="text" placeholder="이메일">
+                <input type="text" placeholder="홈페이지주소">
+
+            </form>
+        </section>
+    </div>
+
+    <div class="master_cover">
+
+        <section class="maxwidth_cover">
+
+            <h2 class="form_title">상담유형을 선택해주세요.</h2>
+
+            <div class="form_optionbox">
+                <label><input type="radio" value="전화" /> 전화</label>
+                <label><input type="radio" value="이메일" /> 이메일</label>
+                <label><input type="radio" value="방문" /> 방문</label>
+
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>
