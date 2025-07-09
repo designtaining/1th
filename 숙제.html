@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: #6868ff;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            width: 60%;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: 300;
+            padding: 20px;
+            position: relative;
+        }
+
+        .menu_hover_effect a::before {
+            content: "";
+            width: 1px;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #ffffff;
+        }
+
+        .menu_hover_effect a::after {
+            content: "";
+            width: 1px;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #ffffff;
+            transition: 0.3s;
+        }
+
+        .menu_hover_effect a:hover::before {
+
+            
+
+        }
+
+        .menu_hover_effect a:hover::after {
+
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="menu_hover_effect">
+        <ul>
+            <li>
+                <a href="#">
+                    NONE
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    NOTHING
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    NOBODY
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    BLANK
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    NONEED
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+</body>
+
+</html>
