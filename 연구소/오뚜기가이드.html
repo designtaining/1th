@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        section {
+            width: 1280px;
+            display: flex;
+            gap: 24px;
+            margin: 0 auto;
+            padding: 24px;
+            box-sizing: border-box;
+        }
+
+        article {
+            width: 40%;
+            height: 500px;
+            border-radius: 24px;
+            transition: all 0.3s;
+            color: #ffffff;
+            
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            gap: 24px;
+            background: rgba(17, 17, 17, 0.7);
+            padding: 24px;
+            box-sizing: border-box;
+            border-radius: 24px;
+        }
+
+        article:nth-child(1) {
+            background-image: url('https://www.otoki.com/images/common/main_esg1.jpg');
+        }
+
+        article:nth-child(2) {
+            background-image: url('https://www.otoki.com/images/common/main_esg1.jpg');
+        }
+
+        article:nth-child(3) {
+            background-image: url('https://www.otoki.com/images/common/main_esg1.jpg');
+        }
+
+        article:hover {
+            flex-shrink: 0;
+            background: cover;
+        }
+
+        article:hover .box {
+            background: rgba(17, 17, 17, 0.1);
+        }
+
+        h2 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        p {
+            font-size: 24px;
+            word-break: keep-all;
+        }
+
+        .hidden_text {
+            /* opacity: 0; */
+            display: none;
+            transition: 0.3s;
+        }
+        
+        article:hover .hidden_text {
+            /* opacity: 1; */
+            display: block;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <section>
+
+        <article>
+            <div class="box">
+                <p>Environmental</p>
+                <h2>환경</h2>
+                <div class="hidden_text">
+                    <p>
+                        저는 지금 멘탈이 나갈것 같습니다. 그 무엇도 제대로 집중하지못하고 머리가 깨질것 같습니다
+                    </p>
+                    <img src="https://www.otoki.com/images/common/btn_more_wh_pc.svg" alt="" class="arrow">
+                </div>
+            </div>
+        </article>
+        <article>
+            <div class="box">
+                <p>Social</p>
+                <h2>사회</h2>
+                <div class="hidden_text">
+                    <p>
+                        저는 지금 멘탈이 나갈것 같습니다. 그 무엇도 제대로 집중하지못하고 머리가 깨질것 같습니다
+                    </p>
+                    <img src="https://www.otoki.com/images/common/btn_more_wh_pc.svg" alt="" class="arrow">
+                </div>
+            </div>
+        </article>
+        <article>
+            <div class="box">
+                <p>Governance</p>
+                <h2>지배구조</h2>
+                <div class="hidden_text">
+                    <p>
+                        저는 지금 멘탈이 나갈것 같습니다. 그 무엇도 제대로 집중하지못하고 머리가 깨질것 같습니다
+                    </p>
+                    <img src="https://www.otoki.com/images/common/btn_more_wh_pc.svg" alt="" class="arrow">
+                </div>
+            </div>
+
+        </article>
+
+    </section>
+
+</body>
+
+</html>
