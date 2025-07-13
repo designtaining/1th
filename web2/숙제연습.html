@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #e5e5ec;
+        }
+
+        .container {
+            width: 1280px;
+            margin: 0 auto;
+        }
+
+        .bar_box {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 80px;
+            border: 1px solid #505050;
+            border-radius: 12px;
+            margin: 12px 0;
+        }
+
+        .bar_fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            border-radius: 12px;
+            background-color: #a5ff99;
+            transition: all 0.4s ease;
+        }
+
+        .bar_box p,
+        .bar_box > figure {
+            position: relative;
+            padding: 8px;
+        }
+
+        .a1:hover .bar_fill {
+            width: 20%;
+        }
+
+        .a2:hover .bar_fill {
+            width: 40%;
+        }
+
+        .a3:hover .bar_fill {
+            width: 60%;
+        }
+
+        .a4:hover .bar_fill {
+            width: 80%;
+        }
+
+        .a5:hover .bar_fill {
+            width: 100%;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <section class="container">
+
+        <h2>웹부터 포트폴리오까지</h2>
+
+        <article class="bar_box a1">
+            <div class="bar_fill"></div>
+            <p>20%</p>
+            <figure>
+                <i class="fa-regular fa-file"></i>
+            </figure>
+        </article>
+        <article class="bar_box a2">
+            <div class="bar_fill"></div>
+            <p>40%</p>
+            <figure>
+                <i class="fa-regular fa-file"></i>
+            </figure>
+        </article>
+        <article class="bar_box a3">
+            <div class="bar_fill"></div>
+            <p>60%</p>
+            <figure>
+                <i class="fa-regular fa-file"></i>
+            </figure>
+        </article>
+        <article class="bar_box a4">
+            <div class="bar_fill"></div>
+            <p>80%</p>
+            <figure>
+                <i class="fa-regular fa-file"></i>
+            </figure>
+        </article>
+        <article class="bar_box a5">
+            <div class="bar_fill"></div>
+            <p>100%</p>
+            <figure>
+                <i class="fa-regular fa-file"></i>
+            </figure>
+        </article>
+
+    </section>
+
+</body>
+
+</html>
