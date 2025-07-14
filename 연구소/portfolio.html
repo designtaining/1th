@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .portfolio_container1 {
+            display: flex;
+            justify-content: center;
+            width: 1280px;
+            gap: 40px;
+            margin: 20px auto;
+        }
+
+        .left_portfolio1 {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            width: 400px;
+        }
+
+        .middle_portfolio1 {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            width: 400px;
+        }
+
+        .right_portfolio1 {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            width: 400px;
+        }
+
+        .box_portfolio {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background-color: #111111;
+            perspective: 1000px;
+        }
+
+        .name_box {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            left: 0;
+            bottom: 0;
+            margin: 16px;
+        }
+
+        .category_portfolio {
+            left: 0;
+            bottom: 0;
+            font-family: 'Pretendard';
+            font-size: 16px;
+            font-weight: 200;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .name_portfolio {
+            left: 0;
+            bottom: 0;
+            font-family: 'Pretendard';
+            font-size: 32px;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 8px 0 0;
+        }
+
+        .p1 {
+            background-image: url(https://ncryk7.mycafe24.com/tiger1.jpg);
+            background-size: cover;
+        }
+
+        .p2 {
+            background-image: url(https://ncryk7.mycafe24.com/tiger2.jpg);
+            background-size: cover;
+        }
+
+        .p3 {
+            background-image: url(https://ncryk7.mycafe24.com/tiger3.jpg);
+            background-size: cover;
+        }
+
+        .p4 {
+            background-image: url(https://ncryk7.mycafe24.com/eagle1.jpg);
+            background-size: cover;
+        }
+
+        .p5 {
+            background-image: url(https://ncryk7.mycafe24.com/eagle2.jpg);
+            background-size: cover;
+        }
+
+        .p6 {
+            background-image: url(https://ncryk7.mycafe24.com/eagle3.jpg);
+            background-size: cover;
+        }
+
+        .hover_overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 400px;
+            height: 400px;
+            background-color: rgba(17, 17, 17, 0.95);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: rotateY(90deg);
+            transform-origin: left;
+            backface-visibility: hidden;
+            transition: all 0.5s ease;
+            z-index: 2;
+        }
+
+        .box_portfolio:hover .hover_overlay {
+            opacity: 1;
+            transform: rotateY(0deg);
+        }
+
+        .hover_title {
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0;
+            text-align: center;
+        }
+
+        .hover_desc {
+            font-family: 'Pretendard';
+            font-size: 16px;
+            font-weight: 300;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 0 20px;
+            line-height: 1.6;
+        }
+
+        .hover_button {
+            padding: 12px 48px;
+            color: #ffffff !important;
+            font-family: 'Pretendard';
+            font-size: 16px;
+            font-weight: 500;
+            border: 1px solid #ffffff;
+            border-radius: 999px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .hover_button:hover {
+            background-color: #333333;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="portfolio_container1">
+
+        <article class="left_portfolio1">
+            <div class="box_portfolio p1">
+                <div class="name_box">
+                    <p class="category_portfolio">
+                        HOMEPAGE
+                    </p>
+                    <p class="name_portfolio">
+                        양쉐프양구이
+                    </p>
+                </div>
+                <div class="hover_overlay">
+                        <p class="hover_title">반응형 웹제작</p>
+                        <p class="hover_desc">연매출 120억에 달하는<br>프렌차이즈 고급 양고기 식당</p>
+                        <a href="https://your-link.com" class="hover_button">MORE VIEW+</a>
+                    </div>
+            </div>
+            <div class="box_portfolio p2">
+                <div class="name_box">
+                    <p class="category_portfolio">
+                        HOMEPAGE
+                    </p>
+                    <p class="name_portfolio">
+                        양쉐프양구이
+                    </p>
+                </div>
+                <div class="hover_overlay">
+                        <p class="hover_title">반응형 웹제작</p>
+                        <p class="hover_desc">연매출 120억에 달하는<br>프렌차이즈 고급 양고기 식당</p>
+                        <a href="https://your-link.com" class="hover_button">MORE VIEW+</a>
+                    </div>
+            </div>
+        </article>
+
+        <article class="middle_portfolio1">
+            <div class="box_portfolio p3">
+                <div class="name_box">
+                    <p class="category_portfolio">
+                        HOMEPAGE
+                    </p>
+                    <p class="name_portfolio">
+                        양쉐프양구이
+                    </p>
+                </div>
+                <div class="hover_overlay">
+                        <p class="hover_title">반응형 웹제작</p>
+                        <p class="hover_desc">연매출 120억에 달하는<br>프렌차이즈 고급 양고기 식당</p>
+                        <a href="https://your-link.com" class="hover_button">MORE VIEW+</a>
+                    </div>
+            </div>
+            <div class="box_portfolio p4">
+                <div class="name_box">
+                    <p class="category_portfolio">
+                        HOMEPAGE
+                    </p>
+                    <p class="name_portfolio">
+                        양쉐프양구이
+                    </p>
+                </div>
+                <div class="hover_overlay">
+                        <p class="hover_title">반응형 웹제작</p>
+                        <p class="hover_desc">연매출 120억에 달하는<br>프렌차이즈 고급 양고기 식당</p>
+                        <a href="https://your-link.com" class="hover_button">MORE VIEW+</a>
+                    </div>
+            </div>
+        </article>
+
+        <article class="right_portfolio1">
+            <div class="box_portfolio p5">
+                <div class="name_box">
+                    <p class="category_portfolio">
+                        HOMEPAGE
+                    </p>
+                    <p class="name_portfolio">
+                        양쉐프양구이
+                    </p>
+                </div>
+                <div class="hover_overlay">
+                        <p class="hover_title">반응형 웹제작</p>
+                        <p class="hover_desc">연매출 120억에 달하는<br>프렌차이즈 고급 양고기 식당</p>
+                        <a href="https://your-link.com" class="hover_button">MORE VIEW+</a>
+                    </div>
+            </div>
+
+            <div class="box_portfolio p6">
+                <div class="name_box">
+                    <p class="category_portfolio">
+                        HOMEPAGE
+                    </p>
+                    <p class="name_portfolio">
+                        양쉐프양구이
+                    </p>
+                </div>
+                <div class="hover_overlay">
+                        <p class="hover_title">반응형 웹제작</p>
+                        <p class="hover_desc">연매출 120억에 달하는<br>프렌차이즈 고급 양고기 식당</p>
+                        <a href="https://your-link.com" class="hover_button">MORE VIEW+</a>
+                    </div>
+            </div>
+        </article>
+
+    </section>
+
+</body>
+
+</html>
