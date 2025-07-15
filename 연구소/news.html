@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+        .news_container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 1280px;
+            height: 560px;
+            margin: 0 auto;
+        }
+
+        .news_topbox {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .news_title {
+            font-family: 'Playfair Display';
+            font-size: 80px;
+            font-weight: 900;
+            color: #111111;
+            line-height: 1;
+            margin: 0;
+        }
+
+        .news_clover {
+            width: 80px;
+            height: 80px;
+            background-image: url(https://ncryk7.mycafe24.com/4leafs2.png);
+            background-size: cover;
+            margin-left: 20px;
+            animation: turn_icon 2s infinite;
+        }
+
+        .news_main {
+            width: 100%;
+            height: 80%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .news_leftbox {
+            width: 30%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .news_item1 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            background-image: url(https://ncryk7.mycafe24.com/newsp1.png);
+            background-size: cover;
+            left: 0px;
+            bottom: 40px;
+            transform: rotateZ(-30deg);
+        }
+
+        .news_item2 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            background-image: url(https://ncryk7.mycafe24.com/newsp2.png);
+            background-size: cover;
+            right: 0;
+            bottom: 0;
+            transform: rotateZ(20deg);
+        }
+
+        .news_item3 {
+            width: 80px;
+            height: 80px;
+            border-radius: 999px;
+            position: absolute;
+            background-image: url(https://ncryk7.mycafe24.com/newheart.png);
+            background-size: cover;
+            left: 20px;
+            top: 20px;
+        }
+
+        .news_item4 {
+            width: 80px;
+            height: 80px;
+            border-radius: 999px;
+            position: absolute;
+            background-image: url(https://ncryk7.mycafe24.com/newheart.png);
+            background-size: cover;
+            left: 120px;
+            top: 30px;
+        }
+
+        .news_rightbox {
+            width: 70%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .news_partbox {
+            width: 100%;
+            height: 40px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .news_partbox_left {
+            width: 20%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .news_icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 32px;
+            height: 32px;
+        }
+
+        .news_article_title {
+            width: 70%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 600;
+            color: #111111;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .news_timerecord {
+            margin: 0;
+        }
+
+        .news_arrow {
+            width: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: rotateZ(135deg);
+            transition: all 0.3s ease;
+        }
+
+        .news_partbox:hover .news_article_title {
+            color: #4768C9;
+        }
+
+        .news_partbox:hover .news_arrow {
+            animation: turn 1.2s forwards;
+        }
+
+        .news_line {
+            width: 100%;
+            height: 1px;
+            background-color: #a5a5a5;
+            margin: 0 0 20px;
+        }
+
+        .news_a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        @keyframes turn {
+            70% {
+                transform: rotate(-1080deg);
+            }
+
+            90% {
+                transform: translateX(-180px);
+            }
+        }
+
+        @keyframes turn_icon {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* ✅ 1512px 이하 */
+        @media screen and (max-width: 1512px) {
+            .news_container {
+                width: 1080px;
+            }
+
+            .news_item1 {
+                width: 260px;
+                height: 260px;
+            }
+
+            .news_item2 {
+                width: 260px;
+                height: 260px;
+            }
+
+            .news_item3 {
+                width: 60px;
+                height: 60px;
+            }
+
+            .news_item4 {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .news_container {
+                width: 980px;
+                height: 400px;
+            }
+
+            .news_item1 {
+                width: 220px;
+                height: 220px;
+            }
+
+            .news_item2 {
+                width: 220px;
+                height: 220px;
+            }
+
+            .news_item3 {
+                width: 40px;
+                height: 40px;
+            }
+
+            .news_item4 {
+                width: 40px;
+                height: 40px;
+            }
+
+            .news_article_title {
+                font-size: 16px;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .news_container {
+                width: 768px;
+                height: 760px;
+            }
+
+            .news_main {
+                display: flex;
+                flex-direction: column-reverse;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .news_rightbox {
+                width: 100%;
+            }
+
+            .news_leftbox {
+                width: 100%;
+            }
+
+            .news_item1 {
+                left: 160px;
+                bottom: 40px;
+            }
+
+            .news_item2 {
+                right: 200px;
+                bottom: 0;
+            }
+
+            .news_item3 {
+                left: 220px;
+                top: 20px;
+            }
+
+            .news_item4 {
+                left: 420px;
+                top: 30px;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .news_container {
+                width: calc(100% - 32px);
+            }
+
+            .news_main {
+                width: 100%;
+                flex-direction: column-reverse;
+            }
+
+            .news_leftbox,
+            .news_rightbox {
+                width: 100%;
+            }
+
+            .news_item1 {
+                left: 10%;
+                bottom: 40px;
+            }
+
+            .news_item2 {
+                right: 10%;
+                bottom: 0;
+            }
+
+            .news_item3 {
+                left: 12%;
+                top: 20px;
+            }
+
+            .news_item4 {
+                left: 60%;
+                top: 30px;
+            }
+
+            .news_icon {
+                display: none;
+            }
+
+            .news_partbox {
+                justify-content: space-between;
+            }
+
+            .news_article_title {
+                width: 70%;
+                font-weight: 500;
+                padding: 0 12px;
+            }
+
+            .news_timerecord {
+                margin: 0;
+                font-size: 12px;
+            }
+
+            .news_arrow {
+                display: none;
+            }
+        }
+
+        /* ✅ 540px 이하 */
+        @media screen and (max-width: 540px) {
+            .news_title {
+                font-size: 48px;
+            }
+
+            .news_clover {
+                width: 48px;
+                height: 48px;
+                margin-left: 12px;
+            }
+
+            .news_article_title {
+                font-size: 12px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .news_title {
+                font-size: 36px;
+            }
+
+            .news_clover {
+                width: 36px;
+                height: 36px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <section class="news_container">
+
+        <div class="news_topbox">
+            <p class="news_title">NEWS</p>
+            <div class="news_clover"></div>
+        </div>
+
+        <div class="news_main">
+
+            <div class="news_leftbox">
+                <div class="news_item1"></div>
+                <div class="news_item2"></div>
+                <div class="news_item3"></div>
+                <div class="news_item4"></div>
+            </div>
+
+            <div class="news_rightbox">
+
+                <div class="news_partbox">
+                    <div class="news_partbox_left">
+                        <div class="news_icon">
+                            <i class="fa-regular fa-newspaper"></i>
+                        </div>
+                        <p class="news_timerecord">2025. 04. 30</p>
+                    </div>
+                    <a class="news_article_title" href="https://designtaining.co.kr">디자인테이닝, 소상공인을 위한 홈페이지 제작 서비스 오픈</a>
+                    <div class="news_arrow">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                </div>
+                <div class="news_line"></div>
+
+                <div class="news_partbox">
+                    <div class="news_partbox_left">
+                        <div class="news_icon">
+                            <i class="fa-regular fa-newspaper"></i>
+                        </div>
+                        <p class="news_timerecord">2025. 05. 01</p>
+                    </div>
+                    <a class="news_article_title" href="https://designtaining.co.kr">디자인테이닝, 소비자 안심매뉴얼 시행</a>
+                    <div class="news_arrow">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                </div>
+                <div class="news_line"></div>
+
+                <div class="news_partbox">
+                    <div class="news_partbox_left">
+                        <div class="news_icon">
+                            <i class="fa-regular fa-newspaper"></i>
+                        </div>
+                        <p class="news_timerecord">2025. 05. 13</p>
+                    </div>
+                    <a class="news_article_title" href="https://designtaining.co.kr">DESIGNTAINING, 소상공인 위한 마케팅가이드
+                        무료지원</a>
+                    <div class="news_arrow">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                </div>
+                <div class="news_line"></div>
+
+                <div class="news_partbox">
+                    <div class="news_partbox_left">
+                        <div class="news_icon">
+                            <i class="fa-regular fa-newspaper"></i>
+                        </div>
+                        <p class="news_timerecord">2025. 05. 15</p>
+                    </div>
+                    <a class="news_article_title" href="https://designtaining.co.kr">DESIGNTAINING, 오픈 기념 홈페이지 제작 서비스
+                        오픈</a>
+                    <div class="news_arrow">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                </div>
+                <div class="news_line"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>
