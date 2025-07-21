@@ -1,0 +1,550 @@
+.nav_container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 72px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e5ec;
+    position: sticky;
+    top: 0;
+}
+
+.nav_wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.nav_left {
+    display: flex;
+    justify-content: flex-start;
+    gap: 4px;
+    align-items: center;
+    width: 15%;
+}
+
+.logo {
+    text-decoration: none;
+}
+
+.logo_text {
+    color: #111111;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.nav_search_box {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    width: 85%;
+}
+
+.nav_input_box {
+    display: flex;
+    justify-content: space-between;
+    width: 340px;
+    height: 40px;
+    border: 1px solid #d7d7d7;
+    border-radius: 999px;
+    padding: 0 16px;
+}
+
+.nav_input_design {
+    border: none;
+}
+
+.nav_button {
+    border: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 999px;
+    background-color: #d7d7d7;
+}
+
+.nav_arrow {
+    position: relative;
+}
+
+.nav_arrow::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    transform: translateY(-50%);
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 3px solid #767676;
+}
+
+.nav_search_btn {
+    border: none;
+    background: none;
+}
+
+.fa-magnifying-glass {
+    color: #2e50e2;
+}
+
+.nav_login_box {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav_login {
+    text-decoration: none;
+    color: #111111;
+    font-size: 12px;
+    border: 1px solid #505050;
+    border-radius: 2px;
+    padding: 4px 8px;
+}
+
+.fa-table-cells {
+    color: 111111;
+}
+
+.main_contaier {
+    display: flex;
+    flex-direction: row;
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.gnb_box {
+    width: 210px;
+    height: 872px;
+    border-right: 1px solid #e5e5ec;
+    position: sticky;
+    top: 72px;
+}
+
+.gnb_menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 322px;
+    gap: 12px;
+}
+
+.gnb_list {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    padding: 8px 0;
+}
+
+.gnb_atag {
+    text-decoration: none;
+}
+
+.gnb_span {
+    color: #222222;
+    font-size: 18px;
+}
+
+.snb_menu {
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+    border-top: 1px solid #e5e5ec;
+}
+
+.snb_atag {
+    text-decoration: none;
+    color: #444444;
+    font-size: 14px;
+}
+
+.home_container {
+    width: 734px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+}
+
+.home_title {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0 30px;
+}
+
+.home_service {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 60px 30px;
+}
+
+.home_service_board {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.home_service_leftbox {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+}
+
+.home_service_title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #222222;
+}
+
+.home_service_timerecord {
+    font-weight: 400;
+    color: #a5a5a5;
+}
+
+.home_service_more {
+    text-decoration: none;
+}
+
+.home_service_itembox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.home_service_itemlist {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+}
+
+.home_service_img {
+    width: 204px;
+    height: 115px;
+    border: 1px solid #a5a5a5;
+    border-radius: 12px;
+    background-size: cover;
+}
+
+.home_service_img:nth-child(1) {
+    background-image: url(https://ncryk7.mycafe24.com/tiger1.jpg);
+}
+
+.home_service_img:nth-child(2) {
+    background-image: url(https://ncryk7.mycafe24.com/tiger2.jpg);
+}
+
+.home_service_img:nth-child(3) {
+    background-image: url(https://ncryk7.mycafe24.com/tiger3.jpg);
+}
+
+.home_service_descbox {
+    display: flex;
+    flex-direction: column;
+    width: 206px;
+    gap: 12px;
+}
+
+.home_service_desc1 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #222222;
+}
+
+.home_service_desc2 {
+    font-size: 14px;
+    font-weight: 300;
+    color: #767676;
+}
+
+.home_review_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12px 0;
+}
+
+.home_review_wrapper {
+    padding: 10px 0;
+}
+
+.home_review_atag {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.home_review_leftbox {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.home_review_title {
+    font-weight: 400;
+    color: #111111;
+}
+
+.home_review_desc {
+    font-size: 14px;
+    font-weight: 300;
+    color: #767676;
+}
+
+.home_review_img {
+    width: 70px;
+    height: 48px;
+    background-size: cover;
+    border-radius: 8px;
+}
+
+.home_review_img:nth-child(1) {
+    background-image: url(https://ncryk7.mycafe24.com/eagle2.jpg);
+}
+
+.home_review_img:nth-child(2) {
+    background-image: url(https://ncryk7.mycafe24.com/eagle1.jpg);
+}
+
+.home_review_img:nth-child(3) {
+    background-image: url(https://ncryk7.mycafe24.com/eagle3.jpg);
+}
+
+.home_review_img:nth-child(4) {
+    background-image: url(https://ncryk7.mycafe24.com/eagle2.jpg);
+}
+
+.home_review_img:nth-child(5) {
+    background-image: url(https://ncryk7.mycafe24.com/eagle1.jpg);
+}
+
+.home_review_line {
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid #e5e5ec;
+}
+
+.home_neighbor_container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 30px;
+}
+
+.home_neighbor_title_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.home_neighbor_more {
+    text-decoration: none;
+    color: #222222;
+}
+
+.home_neighbor_board {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    gap: 8px;
+}
+
+.home_neighbor_top {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+.home_neighbor_leftdesc {
+    font-size: 16px;
+    font-weight: 400;
+    color: #21cf55;
+}
+
+.home_neighbor_maindesc {
+    font-size: 16px;
+    font-weight: 400;
+    color: #222222;
+}
+
+.home_neighbor_name {
+    font-size: 14px;
+    color: #a5a5a5;
+}
+
+
+
+
+
+
+
+
+
+
+/* aside 밑으로!!!! */
+
+.aside_container {
+    width: 336px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 0;
+    gap: 20px;
+    border-left: 1px solid #e5e5ec;
+}
+
+.aside_login_box {
+    width: 300px;
+    height: 121px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.aside_login {
+    color: #ffffff;
+    background-color: #03C75A;
+    padding: 24px 100px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.aside_sign_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.aside_sign {
+    text-decoration: none;
+    color: #a5a5a5;
+    font-size: 14px;
+}
+
+.aside_news_box {
+    width: 300px;
+    height: 202px;
+    background-color: #f1f1f1;
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.aside_news_title {
+    text-decoration: none;
+    color: #111111;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.aside_news_desc {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 300;
+    color: #505050;
+}
+
+.aside_btn_link {
+    width: 300px;
+    height: 56px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    background-color: #f1f1f1;
+    border-radius: 24px;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.aside_btn_img {
+    width: 24px;
+    height: 24px;
+    background-image: url(https://ncryk7.mycafe24.com/inno1.jpg);
+    background-size: cover;
+}
+
+.aside_btn_desc {
+    color: #222222;
+}
+
+.aside_advertise_box {
+    width: 300px;
+    height: 300px;
+    background-image: url(https://ncryk7.mycafe24.com/inno2.jpg);
+    background-size: cover;
+    border-radius: 32px;
+}
+
+.aside_btn_link2 {
+    width: 300px;
+    height: 56px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    background-color: #f1f1f1;
+    border-radius: 24px;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.aside_btn_img2 {
+    width: 24px;
+    height: 24px;
+    background-image: url(https://ncryk7.mycafe24.com/inno1.jpg);
+    background-size: cover;
+}
+
+.aside_btn_desc2 {
+    color: #222222;
+}
+
+.aside_119 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.fa-siren {
+    color: #222222;
+}
+
+.aside_119_title {
+    color: #222222;
+}
+
+.aside_footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px 20px;
+}
+
+.aside_footer_atag {
+    text-decoration: none;
+    color: #767676;
+    font-size: 12px;
+}
