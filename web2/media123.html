@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -26,9 +26,11 @@
         .second {
             display: none;
         }
+
         .third {
             display: none;
         }
+
         .fourth {
             display: none;
         }
@@ -45,8 +47,8 @@
             }
 
             .second {
-            display: block;
-        }
+                display: block;
+            }
         }
 
         @media(max-width: 760px) {
@@ -56,7 +58,7 @@
             }
 
             .second {
-            display: none;
+                display: none;
             }
 
             .third {
@@ -80,9 +82,20 @@
             }
         }
 
+        h2 {
+            font-size: 80px;
+            margin: 140px auto 40px;
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
     </style>
 
 </head>
+
 <body>
 
     <div class="box">
@@ -92,5 +105,12 @@
         <p class="fourth">360밑으로 </p>
     </div>
 
+    <h2>반응형을 움직이는 모습</h2>
+
+    <div class="video-wrapper">
+        <video src="https://ncryk7.mycafe24.com/ddd001.mp4" autoplay muted playsinline loop></video>
+    </div>
+
 </body>
+
 </html>
