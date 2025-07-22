@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 100%;
+            height: 400px;
+            background-color: #6868ff;
+        }
+
+        .box p {
+            color: #ffffff;
+            font-size: 36px;
+        }
+
+        .second {
+            display: none;
+        }
+        .third {
+            display: none;
+        }
+        .fourth {
+            display: none;
+        }
+
+        @media(max-width:1280px) {
+            .box {
+                width: 400px;
+                background-color: #9292ff;
+                font-weight: 600;
+            }
+
+            .first {
+                display: none;
+            }
+
+            .second {
+            display: block;
+        }
+        }
+
+        @media(max-width: 760px) {
+            .box {
+                width: 400px;
+                background-color: #282852;
+            }
+
+            .second {
+            display: none;
+            }
+
+            .third {
+                display: block;
+            }
+        }
+
+        @media(max-width: 360px) {
+            .box {
+                width: 360px;
+                height: 360px;
+                background-color: #010125;
+            }
+
+            .third {
+                display: none;
+            }
+
+            .fourth {
+                display: block;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="box">
+        <p class="first">1281 ~ 1920의 모습</p>
+        <p class="second">760 ~ 1280의 모습</p>
+        <p class="third">360 ~ 760의 모습</p>
+        <p class="fourth">360밑으로 </p>
+    </div>
+
+</body>
+</html>
