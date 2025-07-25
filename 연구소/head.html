@@ -98,15 +98,24 @@
         }
 
         .overlay_contaier {
-            display: flex;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
             flex-direction: column;
             justify-content: space-between;
             position: fixed;
             top: 0;
-            right: 0;    
+            right: 0;
             width: 620px;
             height: 100%;
-            background-color: #333333;       
+            background-color: rgba(21, 21, 21, 0.5);
+            backdrop-filter: saturate(180%) blur(80px);
+            border-radius: 100px 0 0 100px;
+        }
+
+        .overlay_contaier.show {
+            display: flex;
+            opacity: 1;
         }
 
         .overlay_close {
@@ -116,13 +125,128 @@
 
         .fa-xmark-large {
             color: #ffffff;
-            padding: 40px;
+            padding: 8px;
+            margin: 48px;
+            cursor: pointer;
         }
 
         .overlay_menu_box {
             display: flex;
             flex-direction: column;
-            gap: 40px;
+            align-items: flex-end;
+            gap: 24px;
+            margin-right: 60px;
+        }
+
+        .overlay_menu {
+            font-family: 'Pretendard';
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px;
+        }
+
+        .overlay_bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-right: 60px;
+        }
+
+        .overlay_sns {
+            display: flex;
+            flex-direction: row;
+            gap: 32px;
+            justify-content: flex-end;
+        }
+
+        .fa-instagram {
+            color: #ffffff;
+        }
+
+        .fa-kakao-talk {
+            color: #ffffff;
+        }
+
+        .overlay_info {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .overlay_info_text {
+            color: #ffffff;
+        }
+
+        .sns_icon_wrap {
+            position: relative;
+            width: 48px;
+            height: 48px;
+        }
+
+        .overlay_blog_circle,
+        .overlay_insta_circle,
+        .overlay_kakao_circle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate(-17%, -17%);
+            z-index: 0;
+        }
+
+        .overlay_blog,
+        .overlay_insta,
+        .overlay_kakao {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        .overlay_blog {
+            width: 28px;
+            height: 26px;
+            background-image: url(https://ncryk7.mycafe24.com/blog001.png);
+            background-size: cover;
+            padding: 8px;
+        }
+
+        .overlay_blog_circle {
+            width: 72px;
+            height: 72px;
+            border-radius: 999px;
+            background-color: #03C75A;
+        }
+
+        .overlay_insta {
+            width: 26px;
+            height: 26px;
+            background-image: url(https://ncryk7.mycafe24.com/insta001.png);
+            background-size: cover;
+            padding: 8px;
+        }
+
+        .overlay_insta_circle {
+            width: 72px;
+            height: 72px;
+            border-radius: 999px;
+            background: linear-gradient(to bottom right, #7817ED, #fb2bb2, #f7c610);
+        }
+
+        .overlay_kakao {
+            width: 28px;
+            height: 26px;
+            background-image: url(https://ncryk7.mycafe24.com/kakao001.png);
+            background-size: cover;
+            padding: 8px;
+        }
+
+        .overlay_kakao_circle {
+            width: 72px;
+            height: 72px;
+            border-radius: 999px;
+            background-color: #FAE100;
         }
     </style>
 </head>
@@ -158,7 +282,7 @@
             </nav>
 
             <div class="gnb_right_hamburger">
-                <a class="gnb_hamburger_a" href="">
+                <a class="gnb_hamburger_a" href="javascript:void(0)" id="openOverlay">
                     <svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="28" height="2" rx="1" fill="#ffffff" />
                         <rect y="9" width="28" height="2" rx="1" fill="#ffffff" />
@@ -171,10 +295,10 @@
 
     </div>
 
-    <div class="overlay_contaier">
+    <div class="overlay_contaier" id="overlayMenu">
 
         <div class="overlay_close">
-            <i class="fa-solid fa-xmark-large"></i>
+            <i class="fa-solid fa-xmark-large" id="closeOverlay"></i>
         </div>
 
         <div class="overlay_menu_box">
@@ -187,11 +311,52 @@
         </div>
 
         <div class="overlay_bottom">
-            <div class="overlay_sns"></div>
-            <div class="overlay_info"></div>
+            <div class="overlay_sns">
+
+                <div class="sns_icon_wrap">
+                    <div class="overlay_blog_circle"></div>
+                    <a href="" class="overlay_blog"></a>
+                </div>
+
+                <div class="sns_icon_wrap">
+                    <div class="overlay_insta_circle"></div>
+                    <a href="" class="overlay_insta"></a>
+                </div>
+
+                <div class="sns_icon_wrap">
+                    <div class="overlay_kakao_circle"></div>
+                    <a href="" class="overlay_kakao"></a>
+                </div>
+
+            </div>
+            <div class="overlay_info">
+                <p class="overlay_info_text">
+                    2025. DESIGNTAINING.
+                </p>
+            </div>
         </div>
 
     </div>
+
+    <script>
+        const openBtn = document.getElementById("openOverlay");
+        const closeBtn = document.getElementById("closeOverlay");
+        const overlay = document.getElementById("overlayMenu");
+
+        openBtn.addEventListener("click", () => {
+            overlay.style.display = "flex";
+            void overlay.offsetWidth;
+            overlay.classList.add("show");
+        });
+
+        closeBtn.addEventListener("click", () => {
+            overlay.classList.remove("show");
+            setTimeout(() => {
+                overlay.style.display = "none";
+            }, 900);
+        });
+    </script>
+
 
 </body>
 

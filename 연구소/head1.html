@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hamburger Overlay</title>
+  <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+  <style>
+    /* 기본 레이아웃 */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Pretendard', sans-serif;
+      background-color: #000;
+    }
+
+    .gnb_container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #111;
+      height: 80px;
+      padding: 0 60px;
+      border-bottom: 1px solid #111;
+    }
+
+    .gnb_left_logo {
+      width: 145px;
+      height: 22px;
+      background-image: url(https://ncryk7.mycafe24.com/logo_white.png);
+      background-size: cover;
+    }
+
+    .gnb_middle_menu {
+      display: flex;
+      gap: 60px;
+    }
+
+    .gnb_menu,
+    .gnb_menu_qn {
+      font-size: 16px;
+      font-weight: 500;
+      color: #fff;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .gnb_menu:hover {
+      color: #a5a5a5;
+    }
+
+    .gnb_menu_qn {
+      padding: 14px 36px;
+      border: 1px solid #fff;
+      border-radius: 999px;
+    }
+
+    .gnb_menu_qn:hover {
+      background-color: #444;
+    }
+
+    .gnb_right_hamburger {
+      cursor: pointer;
+    }
+
+    /* overlay */
+    .overlay_contaier {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 620px;
+      height: 100%;
+      background-color: rgba(21, 21, 21, 0.5);
+      backdrop-filter: saturate(180%) blur(80px);
+      border-radius: 100px 0 0 100px;
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1000;
+    }
+
+    .overlay_contaier.show {
+      display: flex;
+      opacity: 1;
+    }
+
+    .overlay_close {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .fa-xmark-large {
+      color: #fff;
+      padding: 40px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .overlay_menu_box {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 24px;
+      margin-right: 60px;
+    }
+
+    .overlay_menu {
+      font-size: 32px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      padding: 8px;
+    }
+
+    .overlay_bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-right: 60px;
+    }
+
+    .overlay_info_text {
+      color: #fff;
+      text-align: right;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="gnb_container">
+    <a href="https://designtaining.co.kr">
+      <div class="gnb_left_logo"></div>
+    </a>
+
+    <nav class="gnb_middle_menu">
+      <a class="gnb_menu" href="#">회사소개</a>
+      <a class="gnb_menu" href="#">포트폴리오</a>
+      <a class="gnb_menu" href="#">가격안내</a>
+      <a class="gnb_menu" href="#">제작과정</a>
+      <a class="gnb_menu" href="#">고객후기</a>
+      <a class="gnb_menu_qn" href="#">설문지작성</a>
+    </nav>
+
+    <div class="gnb_right_hamburger" id="openOverlay">
+      <svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="28" height="2" rx="1" fill="#ffffff" />
+        <rect y="9" width="28" height="2" rx="1" fill="#ffffff" />
+        <rect y="18" width="28" height="2" rx="1" fill="#ffffff" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- ✅ Overlay Menu -->
+  <div class="overlay_contaier" id="overlayMenu">
+    <div class="overlay_close">
+      <i class="fa-solid fa-xmark-large" id="closeOverlay"></i>
+    </div>
+
+    <div class="overlay_menu_box">
+      <a href="#" class="overlay_menu">회사소개</a>
+      <a href="#" class="overlay_menu">포트폴리오</a>
+      <a href="#" class="overlay_menu">가격안내</a>
+      <a href="#" class="overlay_menu">제작과정</a>
+      <a href="#" class="overlay_menu">고객후기</a>
+      <a href="#" class="overlay_menu">설문지작성</a>
+    </div>
+
+    <div class="overlay_bottom">
+      <p class="overlay_info_text">2025. DESIGNTAINING.</p>
+    </div>
+  </div>
+
+  <script>
+    const openBtn = document.getElementById("openOverlay");
+    const closeBtn = document.getElementById("closeOverlay");
+    const overlay = document.getElementById("overlayMenu");
+
+    openBtn.addEventListener("click", () => {
+      overlay.classList.add("show");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      overlay.classList.remove("show");
+    });
+  </script>
+</body>
+
+</html>
