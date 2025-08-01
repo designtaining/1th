@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./웹툰연습.css">
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header class="header_container">
+
+        <div class="header_wrapper_top">
+            <div class="header_topbox">
+                <div class="header_top_left">
+                    <a href="#" class="header_left_item1">
+                        NAVER
+                    </a>
+                    <a href="#" class="header_left_item2">
+                        웹툰
+                    </a>
+                    <span class="header_left_line1"></span>
+                    <a href="#" class="header_left_item3">웹소설</a>
+                    <span class="header_left_line2"></span>
+                    <a href="#" class="header_left_item3">시리즈</a>
+                </div>
+                <div class="header_top_right">
+                    <div class="header_right_searchbox">
+                        <div class="header_searchbox">
+                            <input type="text" class="search_engine" placeholder="제목/작가로 검색할 수 있습니다.">
+                            <button class="search_magnify">
+                                <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    class="icon_search" aria-hidden="true">
+                                    <g clip-path="url(#icon_search_svg__a)" stroke="#666" stroke-width="1.2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M7.65 14.3a6.65 6.65 0 1 0 0-13.3 6.65 6.65 0 0 0 0 13.3ZM12.456 12.456l4.314 4.314">
+                                        </path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="icon_search_svg__a">
+                                            <path fill="#fff" d="M0 0h18v18H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="header_right_my">
+                        <a href="#" class="header_right_profile">
+                            <figure class="right_profile_photo">
+                                <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+                            </figure>
+                            <div class="right_profile_name">asdfg...</div>
+                            <i class="fa-light fa-angle-down"></i>
+                        </a>
+                        <div class="header_right_functionbox">
+                            <a href="#" class="header_right_function">
+                                <i class="fa-solid fa-comment-dots"></i>
+                            </a>
+                            <a href="#" class="header_right_function">
+                                <i class="fa-solid fa-bell"></i>
+                            </a>
+                            <a href="#" class="header_right_function">
+                                <i class="fa-solid fa-envelope"></i>
+                            </a>
+                            <a href="#" class="header_right_function">
+                                <i class="fa-light fa-bars"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header_wrapper_bottom">
+            <div class="header_bottombox">
+                <div class="header_bottom_left">
+                    <a href="#" class="header_bottom_left_menu">홈</a>
+                    <a href="#" class="header_bottom_left_menu">웹툰</a>
+                    <a href="#" class="header_bottom_left_menu">베스트도전</a>
+                    <a href="#" class="header_bottom_left_menu">도전만화</a>
+                    <a href="#" class="header_bottom_left_menu">마이페이지</a>
+                </div>
+                <div class="header_bottom_right">
+                    <a href="#" class="creator">
+                        CREATOR'S
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+
+        <section class="banner">
+
+            <div class="banner_title_box">
+                <div class="banner_title_left">
+                    <h2 class="banner_title">금요웹툰</h2>
+                    <div class="banner_sequence_box">
+                        <button class="banner_sequence">인기순</button>
+                        <button class="banner_sequence">업데이트순</button>
+                        <button class="banner_sequence">조회순</button>
+                        <button class="banner_sequence">별점순</button>
+                    </div>
+                </div>
+                <div class="banner_title_right">
+                    <p class="banner_more">금요웹툰 전체보기</p>
+                    <svg width="7" height="12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path
+                            d="M.898.143a.555.555 0 0 0-.744 0 .462.462 0 0 0 0 .689L5.731 6 .154 11.168a.462.462 0 0 0 0 .69c.206.19.538.19.744 0l5.948-5.513a.466.466 0 0 0 0-.69L.898.143Z"
+                            fill="#666"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="banner_poster_box">
+
+                <div class="banner_poster_wrapper">
+                    <figure>
+                        <a href="#">
+                            <img src="./포스터1번.png" alt="">
+                        </a>
+                    </figure>
+                    <a href="#" class="poster_title_box">
+                        <svg width="17" height="13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect x="0.5" y="0.5" width="16" height="12" rx="1.5" stroke="#FF4747"></rect>
+                            <path
+                                d="M3.449 6.899c0 1.518.957 2.53 2.401 2.53 1.454 0 2.42-1.012 2.42-2.53V3.403H7.12V6.89c0 .837-.497 1.389-1.251 1.389-.764 0-1.27-.561-1.27-1.399V3.403h-1.15v3.496Zm6.174 2.4h1.15V7.314h.929c1.435 0 2.383-.773 2.383-1.96 0-1.177-.939-1.95-2.365-1.95H9.623V9.3Zm2.19-4.884c.634 0 1.057.377 1.057.938 0 .57-.423.948-1.058.948h-1.04V4.415h1.04Z"
+                                fill="#FF4747"></path>
+                        </svg>
+                        <h3>그렇게 물거품이 되어도</h3>
+                    </a>
+                    <a href="#" class="poster_writer">다홍</a>
+                </div>
+
+                <div class="banner_poster_wrapper">
+                    <figure>
+                        <a href="#">
+                            <img src="./포스터2번.png" alt="">
+                        </a>
+                    </figure>
+                    <a href="#" class="poster_title_box">
+                        <svg width="17" height="13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect x="0.5" y="0.5" width="16" height="12" rx="1.5" stroke="#FF4747"></rect>
+                            <path
+                                d="M3.449 6.899c0 1.518.957 2.53 2.401 2.53 1.454 0 2.42-1.012 2.42-2.53V3.403H7.12V6.89c0 .837-.497 1.389-1.251 1.389-.764 0-1.27-.561-1.27-1.399V3.403h-1.15v3.496Zm6.174 2.4h1.15V7.314h.929c1.435 0 2.383-.773 2.383-1.96 0-1.177-.939-1.95-2.365-1.95H9.623V9.3Zm2.19-4.884c.634 0 1.057.377 1.057.938 0 .57-.423.948-1.058.948h-1.04V4.415h1.04Z"
+                                fill="#FF4747"></path>
+                        </svg>
+                        <h3>역대급 영지 설계사</h3>
+                    </a>
+                    <a href="#" class="poster_writer">이현민 / 김현수 / 문백경</a>
+                </div>
+
+                <div class="banner_poster_wrapper">
+                    <figure>
+                        <a href="#">
+                            <img src="./포스터3번.png" alt="">
+                        </a>
+                    </figure>
+                    <a href="#" class="poster_title_box">
+                        <svg width="17" height="13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect x="0.5" y="0.5" width="16" height="12" rx="1.5" stroke="#FF4747"></rect>
+                            <path
+                                d="M3.449 6.899c0 1.518.957 2.53 2.401 2.53 1.454 0 2.42-1.012 2.42-2.53V3.403H7.12V6.89c0 .837-.497 1.389-1.251 1.389-.764 0-1.27-.561-1.27-1.399V3.403h-1.15v3.496Zm6.174 2.4h1.15V7.314h.929c1.435 0 2.383-.773 2.383-1.96 0-1.177-.939-1.95-2.365-1.95H9.623V9.3Zm2.19-4.884c.634 0 1.057.377 1.057.938 0 .57-.423.948-1.058.948h-1.04V4.415h1.04Z"
+                                fill="#FF4747"></path>
+                        </svg>
+                        <h3>1초</h3>
+                    </a>
+                    <a href="#" class="poster_writer">시니 / 광운</a>
+                </div>
+
+                <div class="banner_poster_wrapper">
+                    <figure>
+                        <a href="#">
+                            <img src="./포스터4번.png" alt="">
+                        </a>
+                    </figure>
+                    <a href="#" class="poster_title_box">
+                        <svg width="17" height="13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect x="0.5" y="0.5" width="16" height="12" rx="1.5" stroke="#FF4747"></rect>
+                            <path
+                                d="M3.449 6.899c0 1.518.957 2.53 2.401 2.53 1.454 0 2.42-1.012 2.42-2.53V3.403H7.12V6.89c0 .837-.497 1.389-1.251 1.389-.764 0-1.27-.561-1.27-1.399V3.403h-1.15v3.496Zm6.174 2.4h1.15V7.314h.929c1.435 0 2.383-.773 2.383-1.96 0-1.177-.939-1.95-2.365-1.95H9.623V9.3Zm2.19-4.884c.634 0 1.057.377 1.057.938 0 .57-.423.948-1.058.948h-1.04V4.415h1.04Z"
+                                fill="#FF4747"></path>
+                        </svg>
+                        <h3>A.I. 닥터</h3>
+                    </a>
+                    <a href="#" class="poster_writer">ZAINO / 쿠큐 / 한산이가</a>
+                </div>
+
+
+                <div class="banner_poster_wrapper">
+                    <figure>
+                        <a href="#">
+                            <img src="./포스터5번.png" alt="">
+                        </a>
+                    </figure>
+                    <a href="#" class="poster_title_box">
+                        <svg width="17" height="13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect x="0.5" y="0.5" width="16" height="12" rx="1.5" stroke="#FF4747"></rect>
+                            <path
+                                d="M3.449 6.899c0 1.518.957 2.53 2.401 2.53 1.454 0 2.42-1.012 2.42-2.53V3.403H7.12V6.89c0 .837-.497 1.389-1.251 1.389-.764 0-1.27-.561-1.27-1.399V3.403h-1.15v3.496Zm6.174 2.4h1.15V7.314h.929c1.435 0 2.383-.773 2.383-1.96 0-1.177-.939-1.95-2.365-1.95H9.623V9.3Zm2.19-4.884c.634 0 1.057.377 1.057.938 0 .57-.423.948-1.058.948h-1.04V4.415h1.04Z"
+                                fill="#FF4747"></path>
+                        </svg>
+                        <h3>도무지 그애는</h3>
+                    </a>
+                    <a href="#" class="poster_writer">게코</a>
+                </div>
+
+            </div>
+
+            <figure class="advertisement1">
+                <a href="#" class="advertisement1_imgbox">
+                    <img src="./포스터광고.png" alt="">
+                </a>
+                <a href="#" class="advertisement1_more">
+                    <i class="fa-light fa-angle-up faadv"></i>
+                    자세히
+                </a>
+            </figure>
+
+        </section>
+
+        <section class="content_container">
+
+            <div class="content_left">
+
+                <div class="content_left_foryou1">
+                    <h2 class="foryou_title">
+                        Kyeongwan Kim님, 이 웹툰들 최신 이야기를 놓치고 계신 것 같아요!
+                    </h2>
+                    <div class="foryou1_wrapper">
+                        <div class="foryou1_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./foryou1번.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="foryou1_desc_box">
+                                <svg width="17" height="13" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true">
+                                    <rect x="0.5" y="0.5" width="16" height="12" rx="1.5" stroke="#FF4747"></rect>
+                                    <path
+                                        d="M3.449 6.899c0 1.518.957 2.53 2.401 2.53 1.454 0 2.42-1.012 2.42-2.53V3.403H7.12V6.89c0 .837-.497 1.389-1.251 1.389-.764 0-1.27-.561-1.27-1.399V3.403h-1.15v3.496Zm6.174 2.4h1.15V7.314h.929c1.435 0 2.383-.773 2.383-1.96 0-1.177-.939-1.95-2.365-1.95H9.623V9.3Zm2.19-4.884c.634 0 1.057.377 1.057.938 0 .57-.423.948-1.058.948h-1.04V4.415h1.04Z"
+                                        fill="#FF4747"></path>
+                                </svg>
+                                <a href="#" class="foryou_desc">호랑이형님</a>
+                            </div>
+                            <p class="foryou_desc2">
+                                새 미리보기 2개
+                            </p>
+                        </div>
+                        <div class="foryou1_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./foryou2번.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="foryou1_desc_box">
+                                <svg width="17" height="13" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true">
+                                    <rect x="0.5" y="0.5" width="16" height="12" rx="1.5" stroke="#FF4747"></rect>
+                                    <path
+                                        d="M3.449 6.899c0 1.518.957 2.53 2.401 2.53 1.454 0 2.42-1.012 2.42-2.53V3.403H7.12V6.89c0 .837-.497 1.389-1.251 1.389-.764 0-1.27-.561-1.27-1.399V3.403h-1.15v3.496Zm6.174 2.4h1.15V7.314h.929c1.435 0 2.383-.773 2.383-1.96 0-1.177-.939-1.95-2.365-1.95H9.623V9.3Zm2.19-4.884c.634 0 1.057.377 1.057.938 0 .57-.423.948-1.058.948h-1.04V4.415h1.04Z"
+                                        fill="#FF4747"></path>
+                                </svg>
+                                <a href="#" class="foryou_desc">99강화나무몽둥이</a>
+                            </div>
+                            <p class="foryou_desc2">
+                                새 미리보기 1개
+                            </p>
+                        </div>
+                        <div class="foryou1_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./foryou3번.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="foryou1_desc_box">
+                                <svg width="17" height="13" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true">
+                                    <rect x="0.5" y="0.5" width="16" height="12" rx="1.5" stroke="#FF4747"></rect>
+                                    <path
+                                        d="M3.449 6.899c0 1.518.957 2.53 2.401 2.53 1.454 0 2.42-1.012 2.42-2.53V3.403H7.12V6.89c0 .837-.497 1.389-1.251 1.389-.764 0-1.27-.561-1.27-1.399V3.403h-1.15v3.496Zm6.174 2.4h1.15V7.314h.929c1.435 0 2.383-.773 2.383-1.96 0-1.177-.939-1.95-2.365-1.95H9.623V9.3Zm2.19-4.884c.634 0 1.057.377 1.057.938 0 .57-.423.948-1.058.948h-1.04V4.415h1.04Z"
+                                        fill="#FF4747"></path>
+                                </svg>
+                                <a href="#" class="foryou_desc">열렙전사 3부</a>
+                            </div>
+                            <p class="foryou_desc2">
+                                새 미리보기 1개
+                            </p>
+                        </div>
+                        <div class="foryou1_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./foryou4번.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="foryou1_desc_box">
+                                <svg width="17" height="13" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true">
+                                    <rect x="0.5" y="0.5" width="16" height="12" rx="1.5" stroke="#FF4747"></rect>
+                                    <path
+                                        d="M3.449 6.899c0 1.518.957 2.53 2.401 2.53 1.454 0 2.42-1.012 2.42-2.53V3.403H7.12V6.89c0 .837-.497 1.389-1.251 1.389-.764 0-1.27-.561-1.27-1.399V3.403h-1.15v3.496Zm6.174 2.4h1.15V7.314h.929c1.435 0 2.383-.773 2.383-1.96 0-1.177-.939-1.95-2.365-1.95H9.623V9.3Zm2.19-4.884c.634 0 1.057.377 1.057.938 0 .57-.423.948-1.058.948h-1.04V4.415h1.04Z"
+                                        fill="#FF4747"></path>
+                                </svg>
+                                <a href="#" class="foryou_desc">외모지상주의</a>
+                            </div>
+                            <p class="foryou_desc2">
+                                새 미리보기 1개
+                            </p>
+                        </div>
+                        <div class="foryou1_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./foryou5번.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="foryou1_desc_box">
+                                <a href="#" class="foryou_desc">샤MONEY즘</a>
+                            </div>
+                            <p class="foryou_desc2">
+                                새 미리보기 3개
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content_left_fantasy">
+                    <div class="fantasy_title_box">
+                        <h2 class="foryou_title">가장 핫한 판타지 웹툰만 모아봤어요!</h2>
+                        <div class="fantasy_title_category">
+                            <button class="fantasy_category">로맨스</button>
+                            <button class="fantasy_category">판타지</button>
+                            <button class="fantasy_category">액션</button>
+                            <button class="fantasy_category">일상</button>
+                            <button class="fantasy_category">스릴러</button>
+                            <button class="fantasy_category">개그</button>
+                            <button class="fantasy_category">무협/사극</button>
+                            <button class="fantasy_category">드라마</button>
+                            <button class="fantasy_category">감성</button>
+                            <button class="fantasy_category">스포츠</button>
+                        </div>
+                    </div>
+
+                    <div class="fantasy_wrapper">
+                        <div class="fantasy_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./판타지1번.png" alt="">
+                                </a>
+                                <div class="fantasy_number">1</div>
+                            </figure>
+                            <a href="#" class="foryou_desc">
+                                전지적 독자 시점
+                            </a>
+                        </div>
+                        <div class="fantasy_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./foryou1번.png" alt="">
+                                </a>
+                                <div class="fantasy_number">2</div>
+                            </figure>
+                            <div class="tonkey_wrapper">
+                                <svg width="17" height="13" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true">
+                                    <rect x="0.5" y="0.5" width="16" height="12" rx="1.5" stroke="#FF4747"></rect>
+                                    <path
+                                        d="M3.449 6.899c0 1.518.957 2.53 2.401 2.53 1.454 0 2.42-1.012 2.42-2.53V3.403H7.12V6.89c0 .837-.497 1.389-1.251 1.389-.764 0-1.27-.561-1.27-1.399V3.403h-1.15v3.496Zm6.174 2.4h1.15V7.314h.929c1.435 0 2.383-.773 2.383-1.96 0-1.177-.939-1.95-2.365-1.95H9.623V9.3Zm2.19-4.884c.634 0 1.057.377 1.057.938 0 .57-.423.948-1.058.948h-1.04V4.415h1.04Z"
+                                        fill="#FF4747"></path>
+                                </svg>
+                                <a href="#" class="foryou_desc">
+                                    호랑이형님
+                                </a>
+                            </div>
+                        </div>
+                        <div class="fantasy_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./판타지3번.png" alt="">
+                                </a>
+                                <div class="fantasy_number">3</div>
+                            </figure>
+                            <a href="#" class="foryou_desc">
+                                종말이 찾아왔다
+                            </a>
+                        </div>
+                        <div class="fantasy_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./판타지4번.png" alt="">
+                                </a>
+                                <div class="fantasy_number">4</div>
+                            </figure>
+                            <a href="#" class="foryou_desc">
+                                역대급 영지 설계사
+                            </a>
+                        </div>
+                        <div class="fantasy_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./판타5지번.png" alt="">
+                                </a>
+                                <div class="fantasy_number">5</div>
+                            </figure>
+                            <a href="#" class="foryou_desc">
+                                우렉 마지노
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="content_left_new">
+                    <h2 class="foryou_title">이달의 시작</h2>
+                    <div class="new_wrapper">
+
+                        <div class="new_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./뉴1번.png" alt="">
+                                </a>
+                            </figure>
+                            <a href="#" class="foryou_desc">설탕에 곁들인 로맨스</a>
+                            <a href="#" class="foryou_desc3">을승</a>
+                            <p class="all_desc">
+                                인생이 무(無)맛인 고등학생 찬희, 소꿉친구 소유의 도발(?)에 처음 잡아보는 도마와 식칼, 팬
+                            </p>
+                            <div class="new_tagbox">
+                                <a href="#" class="tagbox">&#35;드라마</a>
+                                <a href="#" class="tagbox">&#35;청춘</a>
+                                <a href="#" class="tagbox">&#35;짝사랑남</a>
+                            </div>
+                        </div>
+                        <div class="new_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./뉴2번.png" alt="">
+                                </a>
+                            </figure>
+                            <a href="#" class="foryou_desc">저궤도인간</a>
+                            <a href="#" class="foryou_desc3">조은영</a>
+                            <p class="all_desc">
+                                대학교 시간강사이자 무명작가인 서른 아홉의 주재열. 궤도에 오르지 못한 삶에 불안이 커져
+                            </p>
+                            <div class="new_tagbox">
+                                <a href="#" class="tagbox">&#35;드라마</a>
+                                <a href="#" class="tagbox">&#35;예술</a>
+                                <a href="#" class="tagbox">&#35;현대</a>
+                            </div>
+                        </div>
+                        <div class="new_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./뉴3번.png" alt="">
+                                </a>
+                            </figure>
+                            <a href="#" class="foryou_desc">위탁가족!</a>
+                            <a href="#" class="foryou_desc3">조똘복</a>
+                            <p class="all_desc">
+                                “오늘부터 우리가 네 가족이야.” 15년 차 위탁가정 똘복이네 가족과 새로 온 아기 빵실이의
+                            </p>
+                            <div class="new_tagbox">
+                                <a href="#" class="tagbox">&#35;감성</a>
+                                <a href="#" class="tagbox">&#35;감성적인</a>
+                                <a href="#" class="tagbox">&#35;눈물샘자극</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="content_challenge">
+                    <div class="challenge_left">
+                        <h2 class="foryou_title">
+                            새로운 베스트 도전
+                        </h2>
+                        <figure>
+                            <a href="#">
+                                <img src="./도전메인.png" alt="">
+                            </a>
+                        </figure>
+                        <a href="#" class="foryou_desc">백 킥!</a>
+                        <a href="#" class="foryou_desc3">최 강</a>
+                        <p class="all_desc">
+                            양아치 남 건, 청각장애 에이스에게 참교육(?) 당한 후 태권도에 복귀하다!
+                        </p>
+                    </div>
+                    <div class="challenge_right">
+                        <h2 class="foryou_title">추천 베스트 도전, 도전만화</h2>
+                        <div class="challenge_wrapper">
+                            <div class="challenge_box">
+                                <figure>
+                                    <a href="#">
+                                        <img src="./도전1번.png" alt="">
+                                    </a>
+                                </figure>
+                                <div class="challenge_info_box">
+                                    <h3 class="info_title">
+                                        <svg width="17" height="13" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                            aria-hidden="true">
+                                            <rect x="0.5" y="0.5" width="16" height="12" rx="1.5" stroke="#FF4747">
+                                            </rect>
+                                            <path
+                                                d="M3.449 6.899c0 1.518.957 2.53 2.401 2.53 1.454 0 2.42-1.012 2.42-2.53V3.403H7.12V6.89c0 .837-.497 1.389-1.251 1.389-.764 0-1.27-.561-1.27-1.399V3.403h-1.15v3.496Zm6.174 2.4h1.15V7.314h.929c1.435 0 2.383-.773 2.383-1.96 0-1.177-.939-1.95-2.365-1.95H9.623V9.3Zm2.19-4.884c.634 0 1.057.377 1.057.938 0 .57-.423.948-1.058.948h-1.04V4.415h1.04Z"
+                                                fill="#FF4747"></path>
+                                        </svg>
+                                        동생 죽이기
+                                    </h3>
+                                    <h4 class="info_writer">소뽀</h4>
+                                    <p class="info_desc">
+                                        <svg width="12" height="19" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                            aria-hidden="true">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M6.25 12.991a.529.529 0 0 0-.5 0l-2.578 1.384a.529.529 0 0 1-.753-.632l.882-2.682a.529.529 0 0 0-.17-.576L.596 8.438a.529.529 0 0 1 .299-.94l3.049-.191a.529.529 0 0 0 .457-.33L5.51 4.22a.529.529 0 0 1 .982 0l1.107 2.756c.077.19.255.318.458.33l3.049.192c.481.03.674.637.299.94l-2.535 2.047a.529.529 0 0 0-.17.576l.881 2.682a.529.529 0 0 1-.752.632L6.25 12.99Z"
+                                                fill="#999"></path>
+                                        </svg>9.13&nbsp;&nbsp;
+                                        <svg width="14" height="19" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                            aria-hidden="true">
+                                            <path
+                                                d="M13.575 8.948a.866.866 0 0 1 0 1.104C12.594 11.253 10.02 14 7 14S1.406 11.253.425 10.052a.866.866 0 0 1 0-1.104C1.406 7.746 3.98 5 7 5s5.594 2.746 6.575 3.948Z"
+                                                fill="#999"></path>
+                                            <circle cx="7" cy="9.5" r="3" fill="#fff"></circle>
+                                            <circle cx="7" cy="9.5" r="2" fill="#999"></circle>
+                                        </svg>5.1만
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="challenge_box">
+                                <figure>
+                                    <a href="#">
+                                        <img src="./도전2번.png" alt="">
+                                    </a>
+                                </figure>
+                                <div class="challenge_info_box">
+                                    <h3 class="info_title">
+                                        <svg width="17" height="13" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                            aria-hidden="true">
+                                            <rect x="0.5" y="0.5" width="16" height="12" rx="1.5" stroke="#FF4747">
+                                            </rect>
+                                            <path
+                                                d="M3.449 6.899c0 1.518.957 2.53 2.401 2.53 1.454 0 2.42-1.012 2.42-2.53V3.403H7.12V6.89c0 .837-.497 1.389-1.251 1.389-.764 0-1.27-.561-1.27-1.399V3.403h-1.15v3.496Zm6.174 2.4h1.15V7.314h.929c1.435 0 2.383-.773 2.383-1.96 0-1.177-.939-1.95-2.365-1.95H9.623V9.3Zm2.19-4.884c.634 0 1.057.377 1.057.938 0 .57-.423.948-1.058.948h-1.04V4.415h1.04Z"
+                                                fill="#FF4747"></path>
+                                        </svg>
+                                        [BL]네가 먼저...
+                                    </h3>
+                                    <h4 class="info_writer">박희열</h4>
+                                    <p class="info_desc">
+                                        <svg width="12" height="19" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                            aria-hidden="true">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M6.25 12.991a.529.529 0 0 0-.5 0l-2.578 1.384a.529.529 0 0 1-.753-.632l.882-2.682a.529.529 0 0 0-.17-.576L.596 8.438a.529.529 0 0 1 .299-.94l3.049-.191a.529.529 0 0 0 .457-.33L5.51 4.22a.529.529 0 0 1 .982 0l1.107 2.756c.077.19.255.318.458.33l3.049.192c.481.03.674.637.299.94l-2.535 2.047a.529.529 0 0 0-.17.576l.881 2.682a.529.529 0 0 1-.752.632L6.25 12.99Z"
+                                                fill="#999"></path>
+                                        </svg>9.13&nbsp;&nbsp;
+                                        <svg width="14" height="19" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                            aria-hidden="true">
+                                            <path
+                                                d="M13.575 8.948a.866.866 0 0 1 0 1.104C12.594 11.253 10.02 14 7 14S1.406 11.253.425 10.052a.866.866 0 0 1 0-1.104C1.406 7.746 3.98 5 7 5s5.594 2.746 6.575 3.948Z"
+                                                fill="#999"></path>
+                                            <circle cx="7" cy="9.5" r="3" fill="#fff"></circle>
+                                            <circle cx="7" cy="9.5" r="2" fill="#999"></circle>
+                                        </svg>5.1만
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="challenge_box">
+                                <figure>
+                                    <a href="#">
+                                        <img src="./도전3번.png" alt="">
+                                    </a>
+                                </figure>
+                                <div class="challenge_info_box">
+                                    <h3 class="info_title">
+                                        <svg width="17" height="13" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                            aria-hidden="true">
+                                            <rect x="0.5" y="0.5" width="16" height="12" rx="1.5" stroke="#FF4747">
+                                            </rect>
+                                            <path
+                                                d="M3.449 6.899c0 1.518.957 2.53 2.401 2.53 1.454 0 2.42-1.012 2.42-2.53V3.403H7.12V6.89c0 .837-.497 1.389-1.251 1.389-.764 0-1.27-.561-1.27-1.399V3.403h-1.15v3.496Zm6.174 2.4h1.15V7.314h.929c1.435 0 2.383-.773 2.383-1.96 0-1.177-.939-1.95-2.365-1.95H9.623V9.3Zm2.19-4.884c.634 0 1.057.377 1.057.938 0 .57-.423.948-1.058.948h-1.04V4.415h1.04Z"
+                                                fill="#FF4747"></path>
+                                        </svg>
+                                        로맨스 신드롬
+                                    </h3>
+                                    <h4 class="info_writer">수안</h4>
+                                    <p class="info_desc">
+                                        <svg width="12" height="19" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                            aria-hidden="true">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M6.25 12.991a.529.529 0 0 0-.5 0l-2.578 1.384a.529.529 0 0 1-.753-.632l.882-2.682a.529.529 0 0 0-.17-.576L.596 8.438a.529.529 0 0 1 .299-.94l3.049-.191a.529.529 0 0 0 .457-.33L5.51 4.22a.529.529 0 0 1 .982 0l1.107 2.756c.077.19.255.318.458.33l3.049.192c.481.03.674.637.299.94l-2.535 2.047a.529.529 0 0 0-.17.576l.881 2.682a.529.529 0 0 1-.752.632L6.25 12.99Z"
+                                                fill="#999"></path>
+                                        </svg>8.64&nbsp;&nbsp;
+                                        <svg width="14" height="19" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                            aria-hidden="true">
+                                            <path
+                                                d="M13.575 8.948a.866.866 0 0 1 0 1.104C12.594 11.253 10.02 14 7 14S1.406 11.253.425 10.052a.866.866 0 0 1 0-1.104C1.406 7.746 3.98 5 7 5s5.594 2.746 6.575 3.948Z"
+                                                fill="#999"></path>
+                                            <circle cx="7" cy="9.5" r="3" fill="#fff"></circle>
+                                            <circle cx="7" cy="9.5" r="2" fill="#999"></circle>
+                                        </svg>1.4만
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="challenge_box">
+                                <figure>
+                                    <a href="#">
+                                        <img src="./도전4번.png" alt="">
+                                    </a>
+                                </figure>
+                                <div class="challenge_info_box">
+                                    <h3 class="info_title">여기는 미드스트로크!</h3>
+                                    <h4 class="info_writer">깡통맨</h4>
+                                    <p class="info_desc">
+                                        <svg width="12" height="19" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                            aria-hidden="true">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M6.25 12.991a.529.529 0 0 0-.5 0l-2.578 1.384a.529.529 0 0 1-.753-.632l.882-2.682a.529.529 0 0 0-.17-.576L.596 8.438a.529.529 0 0 1 .299-.94l3.049-.191a.529.529 0 0 0 .457-.33L5.51 4.22a.529.529 0 0 1 .982 0l1.107 2.756c.077.19.255.318.458.33l3.049.192c.481.03.674.637.299.94l-2.535 2.047a.529.529 0 0 0-.17.576l.881 2.682a.529.529 0 0 1-.752.632L6.25 12.99Z"
+                                                fill="#999"></path>
+                                        </svg>9.91&nbsp;&nbsp;
+                                        <svg width="14" height="19" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                            aria-hidden="true">
+                                            <path
+                                                d="M13.575 8.948a.866.866 0 0 1 0 1.104C12.594 11.253 10.02 14 7 14S1.406 11.253.425 10.052a.866.866 0 0 1 0-1.104C1.406 7.746 3.98 5 7 5s5.594 2.746 6.575 3.948Z"
+                                                fill="#999"></path>
+                                            <circle cx="7" cy="9.5" r="3" fill="#fff"></circle>
+                                            <circle cx="7" cy="9.5" r="2" fill="#999"></circle>
+                                        </svg>104만
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="challenge_box">
+                                <figure>
+                                    <a href="#">
+                                        <img src="./도전5번.png" alt="">
+                                    </a>
+                                </figure>
+                                <div class="challenge_info_box">
+                                    <h3 class="info_title">향기가 나는 집</h3>
+                                    <h4 class="info_writer">mama****</h4>
+                                    <p class="info_desc">
+                                        <svg width="12" height="19" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                            aria-hidden="true">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M6.25 12.991a.529.529 0 0 0-.5 0l-2.578 1.384a.529.529 0 0 1-.753-.632l.882-2.682a.529.529 0 0 0-.17-.576L.596 8.438a.529.529 0 0 1 .299-.94l3.049-.191a.529.529 0 0 0 .457-.33L5.51 4.22a.529.529 0 0 1 .982 0l1.107 2.756c.077.19.255.318.458.33l3.049.192c.481.03.674.637.299.94l-2.535 2.047a.529.529 0 0 0-.17.576l.881 2.682a.529.529 0 0 1-.752.632L6.25 12.99Z"
+                                                fill="#999"></path>
+                                        </svg>9.26&nbsp;&nbsp;
+                                        <svg width="14" height="19" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                            aria-hidden="true">
+                                            <path
+                                                d="M13.575 8.948a.866.866 0 0 1 0 1.104C12.594 11.253 10.02 14 7 14S1.406 11.253.425 10.052a.866.866 0 0 1 0-1.104C1.406 7.746 3.98 5 7 5s5.594 2.746 6.575 3.948Z"
+                                                fill="#999"></path>
+                                            <circle cx="7" cy="9.5" r="3" fill="#fff"></circle>
+                                            <circle cx="7" cy="9.5" r="2" fill="#999"></circle>
+                                        </svg>58만
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="challenge_box">
+                                <figure>
+                                    <a href="#">
+                                        <img src="./도전6번.png" alt="">
+                                    </a>
+                                </figure>
+                                <div class="challenge_info_box">
+                                    <h3 class="info_title">연애 간섭 금지</h3>
+                                    <h4 class="info_writer">새해</h4>
+                                    <p class="info_desc">
+                                        <svg width="12" height="19" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                            aria-hidden="true">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M6.25 12.991a.529.529 0 0 0-.5 0l-2.578 1.384a.529.529 0 0 1-.753-.632l.882-2.682a.529.529 0 0 0-.17-.576L.596 8.438a.529.529 0 0 1 .299-.94l3.049-.191a.529.529 0 0 0 .457-.33L5.51 4.22a.529.529 0 0 1 .982 0l1.107 2.756c.077.19.255.318.458.33l3.049.192c.481.03.674.637.299.94l-2.535 2.047a.529.529 0 0 0-.17.576l.881 2.682a.529.529 0 0 1-.752.632L6.25 12.99Z"
+                                                fill="#999"></path>
+                                        </svg>8.15&nbsp;&nbsp;
+                                        <svg width="14" height="19" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                            aria-hidden="true">
+                                            <path
+                                                d="M13.575 8.948a.866.866 0 0 1 0 1.104C12.594 11.253 10.02 14 7 14S1.406 11.253.425 10.052a.866.866 0 0 1 0-1.104C1.406 7.746 3.98 5 7 5s5.594 2.746 6.575 3.948Z"
+                                                fill="#999"></path>
+                                            <circle cx="7" cy="9.5" r="3" fill="#fff"></circle>
+                                            <circle cx="7" cy="9.5" r="2" fill="#999"></circle>
+                                        </svg>5,784
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content_left_foryou2">
+                    <h2 class="foryou_title">
+                        Kyeongwan Kim님의 취향 저격 웹툰 추천!
+                    </h2>
+                    <div class="foryou1_wrapper">
+                        <div class="foryou1_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./프리퍼1번.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="foryou1_desc_box">
+                                <a href="#" class="foryou_desc">남제</a>
+                            </div>
+                            <p class="foryou_desc2">
+                                정의구현 작가 작품
+                            </p>
+                        </div>
+                        <div class="foryou1_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./프리퍼2번.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="foryou1_desc_box">
+
+                                <a href="#" class="foryou_desc">김부장</a>
+                            </div>
+                            <p class="foryou_desc2">
+                                배달왕 작가 작품
+                            </p>
+                        </div>
+                        <div class="foryou1_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./프리퍼3번.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="foryou1_desc_box">
+
+                                <a href="#" class="foryou_desc">전지적 독자 시점</a>
+                            </div>
+                            <p class="foryou_desc2">
+                                멸망 이후의 세계 작가 작품
+                            </p>
+                        </div>
+                        <div class="foryou1_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./프리퍼4번.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="foryou1_desc_box">
+
+                                <a href="#" class="foryou_desc">캐슬2:만인지상</a>
+                            </div>
+                            <p class="foryou_desc2">
+                                배달왕 작가 작품
+                            </p>
+                        </div>
+                        <div class="foryou1_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./프리퍼5번.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="foryou1_desc_box">
+                                <a href="#" class="foryou_desc">참교육</a>
+                            </div>
+                            <p class="foryou_desc2">
+                                하우스키퍼 작가 작품
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content_left_preference">
+                    <h2 class="foryou_title">
+                        99강화나무몽둥이 독자님이 좋아하는 웹툰 추천
+                    </h2>
+                    <div class="foryou1_wrapper">
+                        <div class="foryou1_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./릴레1번.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="foryou1_desc_box">
+                                <a href="#" class="foryou_desc">삽가능</a>
+                            </div>
+                            <p class="foryou_desc2">
+                                선호도 98%
+                            </p>
+                        </div>
+                        <div class="foryou1_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./릴레2번.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="foryou1_desc_box">
+
+                                <a href="#" class="foryou_desc">열렙전사</a>
+                            </div>
+                            <p class="foryou_desc2">
+                                선호도 90%
+                            </p>
+                        </div>
+                        <div class="foryou1_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./릴레3번.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="foryou1_desc_box">
+
+                                <a href="#" class="foryou_desc">스퍼맨5 : 잘린 남자</a>
+                            </div>
+                            <p class="foryou_desc2">
+                                선호도 85%
+                            </p>
+                        </div>
+                        <div class="foryou1_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./릴레4번.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="foryou1_desc_box">
+
+                                <a href="#" class="foryou_desc">1등급 싸움과외</a>
+                            </div>
+                            <p class="foryou_desc2">
+                                선호도 90%
+                            </p>
+                        </div>
+                        <div class="foryou1_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./릴레5번.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="foryou1_desc_box">
+                                <a href="#" class="foryou_desc">나 혼자 탑에서 농사</a>
+                            </div>
+                            <p class="foryou_desc2">
+                                선호도 83%
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content_left_update">
+                    <h2 class="foryou_title">
+                        따끈따끈 업데이트 매일+
+                    </h2>
+                    <div class="foryou1_wrapper">
+                        <div class="foryou1_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./업데1번.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="foryou1_desc_box">
+                                <a href="#" class="foryou_desc">밤의 속삭임</a>
+                            </div>
+                            <a class="foryou_desc3">
+                                각구리 / 뇸뇸잉 / 교현
+                            </a>
+                        </div>
+                        <div class="foryou1_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./업데2번.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="foryou1_desc_box">
+
+                                <a href="#" class="foryou_desc">귀환마교관</a>
+                            </div>
+                            <a class="foryou_desc3">
+                                MIDNIGHT STUDIO / ..
+                            </a>
+                        </div>
+                        <div class="foryou1_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./업3데번.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="foryou1_desc_box">
+
+                                <a href="#" class="foryou_desc">금빛 장미가 꺾인 그..</a>
+                            </div>
+                            <a class="foryou_desc3">
+                                상록수 / 공공 / 한설온
+                            </a>
+                        </div>
+                        <div class="foryou1_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./업4데번.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="foryou1_desc_box">
+
+                                <a href="#" class="foryou_desc">달콤한 귓속말</a>
+                            </div>
+                            <a class="foryou_desc3">
+                                미미키
+                            </a>
+                        </div>
+                        <div class="foryou1_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./업데5번.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="foryou1_desc_box">
+                                <a href="#" class="foryou_desc">스퍼맨5 : 잘린 남자</a>
+                            </div>
+                            <a class="foryou_desc3">
+                                하일권
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content_left_discount">
+                    <h2 class="foryou_title">
+                        웹툰 세트 할인
+                    </h2>
+                    <div class="foryou1_wrapper">
+                        <div class="foryou1_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./디1카번.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="foryou1_desc_box">
+                                <a href="#" class="foryou_desc5">이츠마인[158화 합본]</a>
+                            </div>
+                            <a class="foryou_desc3">
+                                럭스
+                            </a>
+                            <p class="foryou_desc2">세트 소장 33% 할인</p>
+                        </div>
+                        <div class="foryou1_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./디카2번.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="foryou1_desc_box">
+
+                                <a href="#" class="foryou_desc5">나이트런_프레이편 [76..</a>
+                            </div>
+                            <a class="foryou_desc3">
+                                김성민
+                            </a>
+                            <p class="foryou_desc2">세트 소장 40% 할인</p>
+                        </div>
+                        <div class="foryou1_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./디카3번.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="foryou1_desc_box">
+
+                                <a href="#" class="foryou_desc5">포스트 팬데믹 [61화 합본]</a>
+                            </div>
+                            <a class="foryou_desc3">
+                                영명 / 좡좡, 한산이가
+                            </a>
+                            <p class="foryou_desc2">세트 소장 25% 할인</p>
+                        </div>
+                        <div class="foryou1_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./디카4번.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="foryou1_desc_box">
+
+                                <a href="#" class="foryou_desc5">산타 스카우트 [30화 합본]</a>
+                            </div>
+                            <a class="foryou_desc3">
+                                조현아
+                            </a>
+                            <p class="foryou_desc2">세트 소장 33% 할인</p>
+                        </div>
+                        <div class="foryou1_box">
+                            <figure>
+                                <a href="#">
+                                    <img src="./디카5번.png" alt="">
+                                </a>
+                            </figure>
+                            <div class="foryou1_desc_box">
+                                <a href="#" class="foryou_desc5">세레나 [90화 합본]</a>
+                            </div>
+                            <a class="foryou_desc3">
+                                정이나
+                            </a>
+                            <p class="foryou_desc2">세트 소장 20% 할인</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content_left_tag">
+                    <h2 class="foryou_title">웹툰 바로가기</h2>
+                    <div class="gotolike">
+                        <a href="#" class="tagbox1">&#35;로맨스</a>
+                        <a href="#" class="tagbox1">&#35;판타지</a>
+                        <a href="#" class="tagbox1">&#35;액션</a>
+                        <a href="#" class="tagbox1">&#35;일상</a>
+                        <a href="#" class="tagbox1">&#35;스릴러</a>
+                        <a href="#" class="tagbox1">&#35;개그</a>
+                        <a href="#" class="tagbox1">&#35;무협/사극</a>
+                        <a href="#" class="tagbox1">&#35;드라마</a>
+                        <a href="#" class="tagbox1">&#35;감성</a>
+                        <a href="#" class="tagbox1">&#35;스포츠</a>
+                        <a href="#" class="tagbox1">&#35;드라마&영화 원작웹툰</a>
+                        <a href="#" class="tagbox1">&#35;먼치킨</a>
+                        <a href="#" class="tagbox1">&#35;#학원로맨스</a>
+                        <a href="#" class="tagbox1">&#35;로판</a>
+                        <a href="#" class="tagbox1">&#35;게임판타지</a>
+                        <a href="#" class="tagbox1">&#35;이세계요리</a>
+                        <a href="#" class="tagbox1">&#35;역사판타지</a>
+                        <a href="#" class="tagbox1">&#35;공감</a>
+                        <a href="#" class="tagbox1">&#35;신화</a>
+                        <a href="#" class="tagbox1">&#35;지금추천작</a>
+                        <a href="#" class="tagbox1">&#35;능력남</a>
+                        <a href="#" class="tagbox1">&#35;스포츠성장</a>
+                        <a href="#" class="tagbox1">&#35;혐관</a>
+                        <a href="#" class="tagbox1">&#35;일상</a>
+                        <a href="#" class="tagbox1">&#35;농사</a>
+                        <a href="#" class="tagbox1">&#35;다정녀</a>
+                        <a href="#" class="tagbox1">&#35;명작</a>
+                        <a href="#" class="tagbox1">&#35;짝사랑남</a>
+                        <a href="#" class="tagbox1">&#35;정치</a>
+                        <a href="#" class="tagbox1">&#35;프리퀄</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content_right"></div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
