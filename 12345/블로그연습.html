@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./블로그연습reset.css">
+    <link rel="stylesheet" href="./블로그연습.css">
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header class="header_container">
+
+        <div class="header_wrapper">
+
+            <div class="header_left">
+                <h1 class="header_logo">
+                    <a href="" class="header_logo_href1">
+                        <svg xmlns='http://www.w3.org/2000/svg' width='26' height='26'>
+                            <path
+                                d='M26 0v26H0V0h26zM11 7.049H6.54V18.95h4.4v-6.16l4.22 6.161h4.459V7.05H15.22v6.16L11 7.05z'
+                                fill='#FFF' fill-rule='evenodd' />
+                        </svg>
+                    </a>
+                    <a href="" class="header_logo_href2">
+                        <svg xmlns='http://www.w3.org/2000/svg' width='48' height='26' fill='none'>
+                            <path fill='#fff' fill-rule='evenodd'
+                                d='M13.1 7.158V4c2.842.277 5.42 1.997 5.42 5.625v10.376h-3.503V9.625c0-1.407-.713-2.234-1.918-2.467Zm-9.386 2.26c.77-.887 1.915-1.425 3.48-1.425v.001c3.061 0 5.584 2.687 5.584 6.167s-2.524 6.167-5.584 6.167c-1.564 0-2.71-.537-3.48-1.425v1.098H.21V4.427h3.504v4.991Zm-.229 4.743c0 1.897 1.265 3.085 3.009 3.085s3.008-1.188 3.008-3.085c0-1.896-1.264-3.084-3.008-3.084s-3.009 1.188-3.009 3.084Zm17.111 0c0-3.481 2.756-6.168 6.19-6.168 3.433 0 6.19 2.687 6.19 6.167s-2.756 6.167-6.19 6.167c-3.433 0-6.19-2.686-6.19-6.167Zm3.283 0c0 1.795 1.264 2.983 2.907 2.983s2.907-1.19 2.907-2.984-1.264-2.982-2.907-2.982-2.907 1.187-2.907 2.982Zm23.314-5.84h-3.41v1.19c-.77-.957-1.893-1.518-3.41-1.518-3.318 0-5.747 2.71-5.747 5.934s2.43 5.933 5.746 5.933c1.518 0 2.64-.56 3.411-1.519v1.075c0 1.659-1.005 2.5-2.64 2.5h-.116v3.083c3.108 0 6.167-1.659 6.167-5.583V8.321Zm-6.236 8.539c-1.795 0-3.058-1.188-3.058-2.932s1.264-2.932 3.058-2.932c1.795 0 3.059 1.188 3.059 2.932s-1.264 2.932-3.059 2.932Z'
+                                clip-rule='evenodd' />
+                        </svg>
+                    </a>
+                </h1>
+                <div class="header_search">
+                    <input type="select" class="header_search_select" value="글">
+                    <input type="text" class="header_search_search">
+                    <button class="header_search_magnify">
+                        <i class="fa-light fa-magnifying-glass"></i>
+                    </button>
+                </div>
+                <a href="#" class="header_search_button">
+                    <button>통합검색</button>
+                </a>
+            </div>
+
+            <ul class="header_right">
+                <div class="header_profile">
+                    <figure>
+                        <img src="./myInfo.gif" alt="">
+                    </figure>
+                    <p>asfdkadsf</p>
+                </div>
+                <li class="header_more">
+                    <a href="#">
+                        <i class="fa-solid fa-comment"></i>
+                    </a>
+                </li>
+                <li class="header_more">
+                    <a href="#">
+                        <i class="fa-solid fa-bell"></i>
+                    </a>
+                </li>
+                <li class="header_more">
+                    <a href="#">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </li>
+                <li class="header_more">
+                    <a href="#">
+                        <i class="fa-solid fa-grip-dots-vertical"></i>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+        <div class="header_lnb_container">
+            <div class="header_lnb_wrapper">
+
+                <div class="header_lnb_left">
+                    <div class="lnb_category">
+                        <p class="lnb_category_style">블로그 홈</p>
+                        <p class="lnb_category_style">주제별 보기</p>
+                    </div>
+                    <div class="lnb_promotion">
+                        <a href="#" class="lnb_promotion_sub">이달의 블로그</a>
+                        <a href="#" class="lnb_promotion_sub">공식 블로그</a>
+                        <a href="#" class="lnb_promotion_sub">챌린지 프로그램</a>
+                    </div>
+                </div>
+
+                <div class="header_lnb_right">
+                    <button class="lnb_join">블로그 마켓 가입</button>
+                    <button class="lnb_official">블로그팀 공식블로그</button>
+                </div>
+
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+
+        <section class="first_container">
+
+            <div class="first_wrapper">
+
+                <div class="first_left">
+                    <div class="first_left_top">
+                        <div class="first_left_top_titlebox">
+                            <a href="#" class="first_left_top_title">핫토픽</a>
+                            <i class="fa-light fa-arrow-right"></i>
+                            <a href="#" class="first_left_top_title">중복</a>
+                        </div>
+                        <div class="first_left_top_numberbox">
+                            <a href="#" class="first_left_top_number">1</a>
+                            <a href="#" class="first_left_top_number">2</a>
+                            <a href="#" class="first_left_top_number">3</a>
+                            <a href="#" class="first_left_top_number">4</a>
+                            <a href="#" class="first_left_top_number">5</a>
+                        </div>
+                    </div>
+                    <div class="first_left_bottom">
+                        <a href="#" class="first_left_bottom_imgbox">
+                            <figure>
+                                <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+                                <div>
+                                    <p class="open_title">제주도에서 먹은 맛있는 문어</p>
+                                    <div class="hidden_title">
+                                        <figure>
+                                            <img src="https://ncryk7.mycafe24.com/eagle1.jpg" alt="">
+                                        </figure>
+                                        <h3>방금</h3>
+                                        <p>중복을 맞아 막내 직원의 강력 어필로 회사분들과 함께 점심에 삼계탕을 먹고 왔어요. 회돈회산 최고 회사근처에 이렇게..!</p>
+                                    </div>
+                                </div>
+                            </figure>
+                        </a>
+                        <a href="#" class="first_left_bottom_imgbox">
+                            <figure>
+                                <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+                                <div>
+                                    <p class="open_title">제주도에서 먹은 맛있는 문어</p>
+                                    <div class="hidden_title">
+                                        <figure>
+                                            <img src="https://ncryk7.mycafe24.com/eagle1.jpg" alt="">
+                                        </figure>
+                                        <h3>방금</h3>
+                                        <p>중복을 맞아 막내 직원의 강력 어필로 회사분들과 함께 점심에 삼계탕을 먹고 왔어요. 회돈회산 최고 회사근처에 이렇게..!</p>
+                                    </div>
+                                </div>
+                            </figure>
+                        </a>
+                        <a href="#" class="first_left_bottom_imgbox">
+                            <figure>
+                                <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+                                <div>
+                                    <p class="open_title">제주도에서 먹은 맛있는 문어</p>
+                                    <div class="hidden_title">
+                                        <figure>
+                                            <img src="https://ncryk7.mycafe24.com/eagle1.jpg" alt="">
+                                        </figure>
+                                        <h3>방금</h3>
+                                        <p>중복을 맞아 막내 직원의 강력 어필로 회사분들과 함께 점심에 삼계탕을 먹고 왔어요. 회돈회산 최고 회사근처에 이렇게..!</p>
+                                    </div>
+                                </div>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="first_right">
+                    <div class="first_right_numberbox">
+                        <a href="#" class="first_right_number">1</a>
+                        <a href="#" class="first_right_number">2</a>
+                    </div>
+                    <a href="#" class="first_right_imgbox">
+                        <figure>
+                            <img src="https://ncryk7.mycafe24.com/inno1.jpg" alt="">
+                        </figure>
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="content_container">
+
+            <div class="content_left">
+
+                <div class="content_left_top">
+                    <p class="content_lt_title">
+                        아직 이웃이 없습니다.
+                        <br>
+                        아래 주제별 블로거 추천을 통해 관심 주제의 블로그 이웃을 만들어보세요.
+                    </p>
+                    <ul class="content_lt_ul">
+                        <li>전체</li>
+                        <li>건강의학</li>
+                        <li>드라마</li>
+                        <li>문학책</li>
+                        <li>반려동물</li>
+                        <li>비즈니스경제</li>
+                        <li>육아결혼</li>
+                        <li>스타연예인</li>
+                    </ul>
+                </div>
+
+                <div class="content_left_bottom_wrapper">
+
+                    <div class="content_left_bottom">
+                        <div class="content_box">
+                            <div class="content_box_left">
+                                <div class="content_title_box">
+                                    <div class="content_title_profile">
+                                        <figure>
+                                            <img src="https://ncryk7.mycafe24.com/inno2.jpg" alt="">
+                                        </figure>
+                                        <div class="content_profile_name">
+                                            <p class="name1">백현지</p>
+                                            <p class="record">11시간 전</p>
+                                        </div>
+                                    </div>
+                                    <div class="content_title_addnb">
+                                        <button>
+                                            <i class="fa-light fa-plus"></i>
+                                            이웃추가
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="content_info_box">
+                                    <p class="content_info_title">영화 좀비딸 정보 출연진 관람평 평점 쿠키 웹툰 원작 차이점</p>
+                                    <p class="content_info_desc">어제 낮에 CGV에서 '좀비딸'을 보고 왔어요. 여기 나오는 출연진에 관한 정보와 제 관람평, 현재
+                                        대중적인 평점은 어떻게 나오고 있는지 웹툰 원작과 영화의 차이점도 포함해서 정리해봤습니다. 좀비딸 쿠키는 없었어요! 대신에 엔딩크레딧이 올라가는
+                                        동안
+                                        왼쪽에 작은화면으로 추가장면을 보여줬습니다. 하지만 다...</p>
+                                </div>
+                                <div class="content_info_bottom">
+                                    <p class="like1">공감 162</p>
+                                    <p class="like1">댓글 4</p>
+                                </div>
+                            </div>
+
+                            <div class="content_box_right">
+                                <figure>
+                                    <img src="https://ncryk7.mycafe24.com/eagle2.jpg" alt="">
+                                </figure>
+                                <figure class="add1">
+                                    <img src="https://ncryk7.mycafe24.com/eagle1.jpg" alt="">
+                                </figure>
+                                <figure class="add2">
+                                    <img src="https://ncryk7.mycafe24.com/eagle3.jpg" alt="">
+                                </figure>
+                                <figure class="add3">
+                                    <img src="https://ncryk7.mycafe24.com/tiger2.jpg" alt="">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content_left_bottom">
+                        <div class="content_box">
+                            <div class="content_box_left">
+                                <div class="content_title_box">
+                                    <div class="content_title_profile">
+                                        <figure>
+                                            <img src="https://ncryk7.mycafe24.com/inno2.jpg" alt="">
+                                        </figure>
+                                        <div class="content_profile_name">
+                                            <p class="name1">백현지</p>
+                                            <p class="record">11시간 전</p>
+                                        </div>
+                                    </div>
+                                    <div class="content_title_addnb">
+                                        <button>
+                                            <i class="fa-light fa-plus"></i>
+                                            이웃추가
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="content_info_box">
+                                    <p class="content_info_title">영화 좀비딸 정보 출연진 관람평 평점 쿠키 웹툰 원작 차이점</p>
+                                    <p class="content_info_desc">어제 낮에 CGV에서 '좀비딸'을 보고 왔어요. 여기 나오는 출연진에 관한 정보와 제 관람평, 현재
+                                        대중적인 평점은 어떻게 나오고 있는지 웹툰 원작과 영화의 차이점도 포함해서 정리해봤습니다. 좀비딸 쿠키는 없었어요! 대신에 엔딩크레딧이 올라가는
+                                        동안
+                                        왼쪽에 작은화면으로 추가장면을 보여줬습니다. 하지만 다...</p>
+                                </div>
+                                <div class="content_info_bottom">
+                                    <p class="like1">공감 162</p>
+                                    <p class="like1">댓글 4</p>
+                                </div>
+                            </div>
+
+                            <div class="content_box_right">
+                                <figure>
+                                    <img src="https://ncryk7.mycafe24.com/eagle2.jpg" alt="">
+                                </figure>
+                                <figure class="add1">
+                                    <img src="https://ncryk7.mycafe24.com/eagle1.jpg" alt="">
+                                </figure>
+                                <figure class="add2">
+                                    <img src="https://ncryk7.mycafe24.com/eagle3.jpg" alt="">
+                                </figure>
+                                <figure class="add3">
+                                    <img src="https://ncryk7.mycafe24.com/tiger2.jpg" alt="">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content_left_bottom">
+                        <div class="content_box">
+                            <div class="content_box_left">
+                                <div class="content_title_box">
+                                    <div class="content_title_profile">
+                                        <figure>
+                                            <img src="https://ncryk7.mycafe24.com/inno2.jpg" alt="">
+                                        </figure>
+                                        <div class="content_profile_name">
+                                            <p class="name1">백현지</p>
+                                            <p class="record">11시간 전</p>
+                                        </div>
+                                    </div>
+                                    <div class="content_title_addnb">
+                                        <button>
+                                            <i class="fa-light fa-plus"></i>
+                                            이웃추가
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="content_info_box">
+                                    <p class="content_info_title">영화 좀비딸 정보 출연진 관람평 평점 쿠키 웹툰 원작 차이점</p>
+                                    <p class="content_info_desc">어제 낮에 CGV에서 '좀비딸'을 보고 왔어요. 여기 나오는 출연진에 관한 정보와 제 관람평, 현재
+                                        대중적인 평점은 어떻게 나오고 있는지 웹툰 원작과 영화의 차이점도 포함해서 정리해봤습니다. 좀비딸 쿠키는 없었어요! 대신에 엔딩크레딧이 올라가는
+                                        동안
+                                        왼쪽에 작은화면으로 추가장면을 보여줬습니다. 하지만 다...</p>
+                                </div>
+                                <div class="content_info_bottom">
+                                    <p class="like1">공감 162</p>
+                                    <p class="like1">댓글 4</p>
+                                </div>
+                            </div>
+
+                            <div class="content_box_right">
+                                <figure>
+                                    <img src="https://ncryk7.mycafe24.com/eagle2.jpg" alt="">
+                                </figure>
+                                <figure class="add1">
+                                    <img src="https://ncryk7.mycafe24.com/eagle1.jpg" alt="">
+                                </figure>
+                                <figure class="add2">
+                                    <img src="https://ncryk7.mycafe24.com/eagle3.jpg" alt="">
+                                </figure>
+                                <figure class="add3">
+                                    <img src="https://ncryk7.mycafe24.com/tiger2.jpg" alt="">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content_left_bottom">
+                        <div class="content_box">
+                            <div class="content_box_left">
+                                <div class="content_title_box">
+                                    <div class="content_title_profile">
+                                        <figure>
+                                            <img src="https://ncryk7.mycafe24.com/inno2.jpg" alt="">
+                                        </figure>
+                                        <div class="content_profile_name">
+                                            <p class="name1">백현지</p>
+                                            <p class="record">11시간 전</p>
+                                        </div>
+                                    </div>
+                                    <div class="content_title_addnb">
+                                        <button>
+                                            <i class="fa-light fa-plus"></i>
+                                            이웃추가
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="content_info_box">
+                                    <p class="content_info_title">영화 좀비딸 정보 출연진 관람평 평점 쿠키 웹툰 원작 차이점</p>
+                                    <p class="content_info_desc">어제 낮에 CGV에서 '좀비딸'을 보고 왔어요. 여기 나오는 출연진에 관한 정보와 제 관람평, 현재
+                                        대중적인 평점은 어떻게 나오고 있는지 웹툰 원작과 영화의 차이점도 포함해서 정리해봤습니다. 좀비딸 쿠키는 없었어요! 대신에 엔딩크레딧이 올라가는
+                                        동안
+                                        왼쪽에 작은화면으로 추가장면을 보여줬습니다. 하지만 다...</p>
+                                </div>
+                                <div class="content_info_bottom">
+                                    <p class="like1">공감 162</p>
+                                    <p class="like1">댓글 4</p>
+                                </div>
+                            </div>
+
+                            <div class="content_box_right">
+                                <figure>
+                                    <img src="https://ncryk7.mycafe24.com/eagle2.jpg" alt="">
+                                </figure>
+                                <figure class="add1">
+                                    <img src="https://ncryk7.mycafe24.com/eagle1.jpg" alt="">
+                                </figure>
+                                <figure class="add2">
+                                    <img src="https://ncryk7.mycafe24.com/eagle3.jpg" alt="">
+                                </figure>
+                                <figure class="add3">
+                                    <img src="https://ncryk7.mycafe24.com/tiger2.jpg" alt="">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    s
+                    <div class="content_left_bottom">
+                        <div class="content_box">
+                            <div class="content_box_left">
+                                <div class="content_title_box">
+                                    <div class="content_title_profile">
+                                        <figure>
+                                            <img src="https://ncryk7.mycafe24.com/inno2.jpg" alt="">
+                                        </figure>
+                                        <div class="content_profile_name">
+                                            <p class="name1">백현지</p>
+                                            <p class="record">11시간 전</p>
+                                        </div>
+                                    </div>
+                                    <div class="content_title_addnb">
+                                        <button>
+                                            <i class="fa-light fa-plus"></i>
+                                            이웃추가
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="content_info_box">
+                                    <p class="content_info_title">영화 좀비딸 정보 출연진 관람평 평점 쿠키 웹툰 원작 차이점</p>
+                                    <p class="content_info_desc">어제 낮에 CGV에서 '좀비딸'을 보고 왔어요. 여기 나오는 출연진에 관한 정보와 제 관람평, 현재
+                                        대중적인 평점은 어떻게 나오고 있는지 웹툰 원작과 영화의 차이점도 포함해서 정리해봤습니다. 좀비딸 쿠키는 없었어요! 대신에 엔딩크레딧이 올라가는
+                                        동안
+                                        왼쪽에 작은화면으로 추가장면을 보여줬습니다. 하지만 다...</p>
+                                </div>
+                                <div class="content_info_bottom">
+                                    <p class="like1">공감 162</p>
+                                    <p class="like1">댓글 4</p>
+                                </div>
+                            </div>
+
+                            <div class="content_box_right">
+                                <figure>
+                                    <img src="https://ncryk7.mycafe24.com/eagle2.jpg" alt="">
+                                </figure>
+                                <figure class="add1">
+                                    <img src="https://ncryk7.mycafe24.com/eagle1.jpg" alt="">
+                                </figure>
+                                <figure class="add2">
+                                    <img src="https://ncryk7.mycafe24.com/eagle3.jpg" alt="">
+                                </figure>
+                                <figure class="add3">
+                                    <img src="https://ncryk7.mycafe24.com/tiger2.jpg" alt="">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content_left_bottom">
+                        <div class="content_box">
+                            <div class="content_box_left">
+                                <div class="content_title_box">
+                                    <div class="content_title_profile">
+                                        <figure>
+                                            <img src="https://ncryk7.mycafe24.com/inno2.jpg" alt="">
+                                        </figure>
+                                        <div class="content_profile_name">
+                                            <p class="name1">백현지</p>
+                                            <p class="record">11시간 전</p>
+                                        </div>
+                                    </div>
+                                    <div class="content_title_addnb">
+                                        <button>
+                                            <i class="fa-light fa-plus"></i>
+                                            이웃추가
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="content_info_box">
+                                    <p class="content_info_title">영화 좀비딸 정보 출연진 관람평 평점 쿠키 웹툰 원작 차이점</p>
+                                    <p class="content_info_desc">어제 낮에 CGV에서 '좀비딸'을 보고 왔어요. 여기 나오는 출연진에 관한 정보와 제 관람평, 현재
+                                        대중적인 평점은 어떻게 나오고 있는지 웹툰 원작과 영화의 차이점도 포함해서 정리해봤습니다. 좀비딸 쿠키는 없었어요! 대신에 엔딩크레딧이 올라가는
+                                        동안
+                                        왼쪽에 작은화면으로 추가장면을 보여줬습니다. 하지만 다...</p>
+                                </div>
+                                <div class="content_info_bottom">
+                                    <p class="like1">공감 162</p>
+                                    <p class="like1">댓글 4</p>
+                                </div>
+                            </div>
+
+                            <div class="content_box_right">
+                                <figure>
+                                    <img src="https://ncryk7.mycafe24.com/eagle2.jpg" alt="">
+                                </figure>
+                                <figure class="add1">
+                                    <img src="https://ncryk7.mycafe24.com/eagle1.jpg" alt="">
+                                </figure>
+                                <figure class="add2">
+                                    <img src="https://ncryk7.mycafe24.com/eagle3.jpg" alt="">
+                                </figure>
+                                <figure class="add3">
+                                    <img src="https://ncryk7.mycafe24.com/tiger2.jpg" alt="">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content_left_bottom">
+                        <div class="content_box">
+                            <div class="content_box_left">
+                                <div class="content_title_box">
+                                    <div class="content_title_profile">
+                                        <figure>
+                                            <img src="https://ncryk7.mycafe24.com/inno2.jpg" alt="">
+                                        </figure>
+                                        <div class="content_profile_name">
+                                            <p class="name1">백현지</p>
+                                            <p class="record">11시간 전</p>
+                                        </div>
+                                    </div>
+                                    <div class="content_title_addnb">
+                                        <button>
+                                            <i class="fa-light fa-plus"></i>
+                                            이웃추가
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="content_info_box">
+                                    <p class="content_info_title">영화 좀비딸 정보 출연진 관람평 평점 쿠키 웹툰 원작 차이점</p>
+                                    <p class="content_info_desc">어제 낮에 CGV에서 '좀비딸'을 보고 왔어요. 여기 나오는 출연진에 관한 정보와 제 관람평, 현재
+                                        대중적인 평점은 어떻게 나오고 있는지 웹툰 원작과 영화의 차이점도 포함해서 정리해봤습니다. 좀비딸 쿠키는 없었어요! 대신에 엔딩크레딧이 올라가는
+                                        동안
+                                        왼쪽에 작은화면으로 추가장면을 보여줬습니다. 하지만 다...</p>
+                                </div>
+                                <div class="content_info_bottom">
+                                    <p class="like1">공감 162</p>
+                                    <p class="like1">댓글 4</p>
+                                </div>
+                            </div>
+
+                            <div class="content_box_right">
+                                <figure>
+                                    <img src="https://ncryk7.mycafe24.com/eagle2.jpg" alt="">
+                                </figure>
+                                <figure class="add1">
+                                    <img src="https://ncryk7.mycafe24.com/eagle1.jpg" alt="">
+                                </figure>
+                                <figure class="add2">
+                                    <img src="https://ncryk7.mycafe24.com/eagle3.jpg" alt="">
+                                </figure>
+                                <figure class="add3">
+                                    <img src="https://ncryk7.mycafe24.com/tiger2.jpg" alt="">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content_left_bottom">
+                        <div class="content_box">
+                            <div class="content_box_left">
+                                <div class="content_title_box">
+                                    <div class="content_title_profile">
+                                        <figure>
+                                            <img src="https://ncryk7.mycafe24.com/inno2.jpg" alt="">
+                                        </figure>
+                                        <div class="content_profile_name">
+                                            <p class="name1">백현지</p>
+                                            <p class="record">11시간 전</p>
+                                        </div>
+                                    </div>
+                                    <div class="content_title_addnb">
+                                        <button>
+                                            <i class="fa-light fa-plus"></i>
+                                            이웃추가
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="content_info_box">
+                                    <p class="content_info_title">영화 좀비딸 정보 출연진 관람평 평점 쿠키 웹툰 원작 차이점</p>
+                                    <p class="content_info_desc">어제 낮에 CGV에서 '좀비딸'을 보고 왔어요. 여기 나오는 출연진에 관한 정보와 제 관람평, 현재
+                                        대중적인 평점은 어떻게 나오고 있는지 웹툰 원작과 영화의 차이점도 포함해서 정리해봤습니다. 좀비딸 쿠키는 없었어요! 대신에 엔딩크레딧이 올라가는
+                                        동안
+                                        왼쪽에 작은화면으로 추가장면을 보여줬습니다. 하지만 다...</p>
+                                </div>
+                                <div class="content_info_bottom">
+                                    <p class="like1">공감 162</p>
+                                    <p class="like1">댓글 4</p>
+                                </div>
+                            </div>
+
+                            <div class="content_box_right">
+                                <figure>
+                                    <img src="https://ncryk7.mycafe24.com/eagle2.jpg" alt="">
+                                </figure>
+                                <figure class="add1">
+                                    <img src="https://ncryk7.mycafe24.com/eagle1.jpg" alt="">
+                                </figure>
+                                <figure class="add2">
+                                    <img src="https://ncryk7.mycafe24.com/eagle3.jpg" alt="">
+                                </figure>
+                                <figure class="add3">
+                                    <img src="https://ncryk7.mycafe24.com/tiger2.jpg" alt="">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <aside class="content_right">
+
+                <div class="content_right1">
+                    <div class="right_profile1">
+                        <div class="right_profile1_left">
+                            <figure>
+                                <img src="https://ncryk7.mycafe24.com/tiger3.jpg" alt="">
+                            </figure>
+                            <div class="right_profile1_name">
+                                <p>asdfasfd</p>
+                                <p>오늘 0명 방문</p>
+                            </div>
+                        </div>
+                        <a class="right_profile1_right">
+                            로그아웃
+                            <i class="fa-thin fa-caret-right"></i>
+                        </a>
+                    </div>
+                    <div class="right_profile2">
+                        <a href="#" class="right_profile2_my">내 블로그</a>
+                        <a href="#" class="right_profile2_my">
+                            글쓰기
+                            <i class="fa-light fa-pencil"></i>
+                        </a>
+                    </div>
+                    <div class="right_profile3">
+                        <p class="right_profile3_item">내 소식</p>
+                        <p class="right_profile3_item">내 활동</p>
+                        <p class="right_profile3_item">이웃목록</p>
+                    </div>
+                    <div class="right_profile4">
+                        <p class="right_profile4_text">새로운 소식이 없습니다.</p>
+                    </div>
+                    <div class="right_profile5">
+                        <div class="right_profile5_top">
+                            <h3>From. 블로그씨</h3>
+                            <p>소소한 여름 목표, 휴가 계획, 도전하고 싶은 일까지! 나의 8월 계획 다짐에 대해 이야기해 주세요.</p>
+                        </div>
+                        <div class="right_profile5_bottom">
+                            <a href="" class="right_profile5_answer">
+                                질문에 답하기
+                            </a>
+                            <a href="" class="right_profile5_setting">
+                                <i class="fa-light fa-gear"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="right_profile6">
+                        <div class="right_profile6_box">
+                            <i class="fa-light fa-angle-up fffa1"></i>
+                        </div>
+                        <div class="right_profile6_box">
+                            <i class="fa-light fa-angle-up fffa2"></i>
+                        </div>
+                    </div>
+                </div>
+                <figure class="content_right2">
+                    <img src="https://ncryk7.mycafe24.com/coll1.png" alt="">
+                </figure>
+                <div class="content_right3">
+                    <div class="content_right3_box">
+                        <div class="content_right3_left">
+                            <h3>온라인 셀러를 위한</h3>
+                            <p>블로그 마켓 가입</p>
+                        </div>
+                        <div class="content_right3_right">
+                            <i class="fa-light fa-bag-shopping fa-xl"></i>
+                        </div>
+                    </div>
+                    <div class="content_right3_box">
+                        <div class="content_right3_left">
+                            <h3>정직한 리뷰를 위한</h3>
+                            <p>협찬 광고 가이드글</p>
+                        </div>
+                        <div class="content_right3_right">
+                            <i class="fa-light fa-print fa-xl"></i>
+                        </div>
+                    </div>
+                    <div class="content_right3_box">
+                        <div class="content_right3_left">
+                            <h3>누구보다 발빠르게</h3>
+                            <p>블로그 새소식</p>
+                        </div>
+                        <div class="content_right3_right">
+                            <i class="fa-light fa-envelope fa-xl"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="content_right4">
+                    <div class="right4_title_box">
+                        <a href="#" class="content_right4_title">공지사항</a>
+                        <i class="fa-light fa-angle-up fffa2"></i>
+                    </div>
+                    <div class="right4_desc_box">
+                        <a href="#" class="content_right4_desc">
+                            [안내] 블로그 클립 통계 집계 기준 및 제공...
+                        </a>
+                        <a href="#" class="content_right4_desc">
+                            [복구완료] 블로그 서비스 일부 검색 기능 오..
+                        </a>
+                        <a href="#" class="content_right4_desc">
+                            [복구완료] 블로그 알림 기능 오류 안내 [05...
+                        </a>
+                    </div>
+                </div>
+                <div class="content_right5">
+                    <a href="#" class="content_right_service">
+                        <i class="fa-light fa-circle-down"></i>
+                        블로그 앱 간편설치
+                    </a>
+                    <a href="#" class="content_right_service">
+                        <i class="fa-light fa-circle-down"></i>
+                        개발 가이드
+                    </a>
+                    <a href="#" class="content_right_service">
+                        <i class="fa-light fa-circle-down"></i>
+                        블로그 글 권리보호
+                    </a>
+                    <a href="#" class="content_right_service">
+                        <i class="fa-light fa-circle-down"></i>
+                        블로그 스마트봇
+                    </a>
+                    <a href="#" class="content_right_service">
+                        <i class="fa-light fa-circle-down"></i>
+                        블로그 고객센터
+                    </a>
+                    <a href="#" class="content_right_service">
+                        <i class="fa-light fa-circle-down"></i>
+                        신고센터
+                    </a>
+                    <a href="#" class="content_right_service">
+                        <i class="fa-light fa-circle-down"></i>
+                        해피빈 콩받기 안내
+                    </a>
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
