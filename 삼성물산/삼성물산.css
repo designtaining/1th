@@ -199,6 +199,61 @@
 .banner_left {
     width: 75%;
     height: 100%;
+    position: relative;
+    top: 4px;
+}
+
+.banner_left_shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #111111, transparent);
+    z-index: 1;
+}
+
+.banner_left > video {
+    border-radius: 8px;
+}
+
+.banner_title_box {
+    position: absolute;
+    left: 4%;
+    bottom: 11%;
+    width: 40%;
+    z-index: 2;
+}
+
+.banner_title_box > h2 {
+    font-family: 'SpoqaHanSansNeo';
+    font-size: 40px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 5%;
+}
+
+.banner_title_box > p {
+    font-family: 'SpoqaHanSansNeo';
+    font-size: 18px;
+    font-weight: 400;
+    color: #ffffff;
+    margin-bottom: 10%;
+}
+
+.banner_title_box > a {
+    font-family: 'SpoqaHanSansNeo';
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    padding: 18px 44px;
+    transition: all 0.3s ease;
+}
+
+.banner_title_box > a:hover {
+    background-color: #ffffff;
+    color: #1428A0;   
 }
 
 .banner_left > video,
@@ -211,4 +266,11 @@
 .banner_right {
     width: 24%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.right_topbottom {
+    
 }
