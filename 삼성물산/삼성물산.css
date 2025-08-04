@@ -1,0 +1,214 @@
+.header_top_container {
+    width: 100%;
+    height: 49px;
+    background-color: #1428A0;
+    position: fixed;
+    z-index: 2;
+}
+
+.header_top {
+    height: 49px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 80px;
+}
+
+.header_top_category_box {
+    display: flex;
+    gap: 22px;
+}
+
+.header_category {
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'SpoqaHanSansNeo';
+    font-size: 13px;
+    font-weight: 500;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.header_category:hover {
+    opacity: 1;
+}
+
+.header_top_keyinfo {
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+.header_top_keyinfo>a {
+    font-family: 'SpoqaHanSansNeo';
+    font-size: 13px;
+    font-weight: 900;
+    text-decoration: none;
+    color: #1428A0;
+    background-color: #ffffff;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.header_bottom_container {
+    width: 100%;
+    height: 76px;
+    background-color: #ffffff;
+    border: 1px solid #e5e5ec;
+    position: fixed;
+    top: 49px;
+    z-index: 2;
+}
+
+.header_bottom {
+    height: 76px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+}
+
+.logo>a>svg {
+    width: 192px;
+    height: 36px;
+}
+
+.header_menu_box {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.header_menu {
+    height: 100%;
+    text-decoration: none;
+    color: #111111;
+    font-family: 'SpoqaHanSansNeo';
+    font-size: 15px;
+    font-weight: 700;
+    position: relative;
+}
+
+.header_menu_line {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #1428A0;
+    bottom: -5px;
+    animation: menuhover 0.3s linear;
+}
+
+@keyframes menuhover {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.header_menu:hover {
+    color: #1428A0;
+}
+
+.header_menu:hover .header_menu_line {
+    display: flex;
+}
+
+.header_menu:hover .under_lnb_container {
+    opacity: 1;
+}
+
+.header_right_box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 28px;
+}
+
+.header_right_ref {
+    font-family: 'SpoqaHanSansNeo';
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #111111;
+    letter-spacing: -1px;
+}
+
+#language {
+    font-family: 'SpoqaHanSansNeo';
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 8px;
+    color: #111111;
+    border: none;
+    outline: none;
+    padding: 0 4px;
+    cursor: pointer;
+}
+
+.header_right_magnify {
+    width: 42px;
+    height: 42px;
+    background-color: #ffffff;
+    border-radius: 999px;
+    border: 1px solid #e5e5ec;
+    transition: all 0.3s ease;
+}
+
+.fa-magnifying-glass {
+    color: #1428A0;
+    transition: all 0.3s ease;
+}
+
+.header_right_magnify:hover {
+    background-color: #1428A0;
+    border: #1428A0;
+}
+
+.header_right_magnify:hover > a > .fa-magnifying-glass {
+    color: #ffffff;
+}
+
+/* 헤더 끝!!!!!!!!!!!!!!!!!!!!!! */
+
+.space_1 {
+    width: 100%;
+    height: 125px;
+}
+
+/* main 시작!!!!!!!!!!!!!!!!!!!!1 */
+
+.banner_container {
+    width: 100%;
+    height: 685px;
+}
+
+.banner_wrapper {
+    height: 100%;
+    padding: 0 80px;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.banner_left {
+    width: 75%;
+    height: 100%;
+}
+
+.banner_left > video,
+.banner_right > video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner_right {
+    width: 24%;
+    height: 100%;
+}
