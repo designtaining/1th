@@ -106,6 +106,7 @@
     0% {
         width: 0%;
     }
+
     100% {
         width: 100%;
     }
@@ -170,7 +171,7 @@
     border: #1428A0;
 }
 
-.header_right_magnify:hover > a > .fa-magnifying-glass {
+.header_right_magnify:hover>a>.fa-magnifying-glass {
     color: #ffffff;
 }
 
@@ -184,23 +185,19 @@
 /* main 시작!!!!!!!!!!!!!!!!!!!!1 */
 
 .banner_container {
-    width: 100%;
-    height: 685px;
-}
-
-.banner_wrapper {
-    height: 100%;
     padding: 0 80px;
     display: flex;
-    justify-content: space-between;
     gap: 16px;
 }
 
 .banner_left {
     width: 75%;
-    height: 100%;
     position: relative;
-    top: 4px;
+}
+
+.banner_left>video {
+    width: 100%;
+    border-radius: 8px;
 }
 
 .banner_left_shadow {
@@ -208,69 +205,202 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(to top, #111111, transparent);
-    z-index: 1;
-}
-
-.banner_left > video {
+    bottom: 0;
     border-radius: 8px;
 }
 
 .banner_title_box {
     position: absolute;
-    left: 4%;
-    bottom: 11%;
-    width: 40%;
+    bottom: 0;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
     z-index: 2;
 }
 
-.banner_title_box > h2 {
+.banner_title_box>h2 {
     font-family: 'SpoqaHanSansNeo';
     font-size: 40px;
     font-weight: 700;
     color: #ffffff;
-    margin-bottom: 5%;
+    letter-spacing: -1.5px;
 }
 
-.banner_title_box > p {
+.banner_title_box>p {
     font-family: 'SpoqaHanSansNeo';
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 20px;
+    font-weight: 500;
     color: #ffffff;
-    margin-bottom: 10%;
+    letter-spacing: -1.5px;
 }
 
-.banner_title_box > a {
+.banner_title_box>a {
+    display: flex;
+    justify-content: center;
+    width: 128px;
     font-family: 'SpoqaHanSansNeo';
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 700;
     color: #ffffff;
+    letter-spacing: -1.5px;
     text-decoration: none;
+    padding: 20px 24px;
     border: 1px solid #ffffff;
     border-radius: 8px;
-    padding: 18px 44px;
     transition: all 0.3s ease;
 }
 
-.banner_title_box > a:hover {
+.banner_title_box>a:hover {
+    color: #1428A0;
     background-color: #ffffff;
-    color: #1428A0;   
-}
-
-.banner_left > video,
-.banner_right > video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 
 .banner_right {
     width: 24%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-.right_topbottom {
-    
+.banner_right>figure {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.banner_right_figure {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 17, 17, 0.4);
+    position: absolute;
+    bottom: 0;
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.banner_right>figure>img {
+    transition: all 0.6s ease;
+}
+
+.banner_right>figure:hover img {
+    transform: scale(1.08);
+}
+
+.banner_right_title_box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    padding: 28px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.right_title_top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.right_title_top>h4 {
+    font-family: 'SpoqaHanSansNeo';
+    font-size: 22px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.right_title_top>p {
+    font-family: 'SpoqaHanSansNeo';
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: rgba(17, 17, 17, 0.5);
+    padding: 4px 12px;
+    letter-spacing: 2.5px;
+    border-radius: 16px;
+}
+
+.right_title_bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.right_title_bottom > h3 {
+    font-family: 'SpoqaHanSansNeo';
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.right_title_bottom > a {
+    font-family: 'SpoqaHanSansNeo';
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.faau1 {
+    transform: rotate(90deg);
+    transition: all 0.3s ease;
+}
+
+.right_title_bottom > a:hover .faau1 {
+    transform: rotate(90deg) translateY(-4px);
+}
+
+.banner_right>figure>img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.banner_right_bottombox {
+    width: 100%;
+    height: 28.2%;
+    background-color: #1C9C9E;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #ffffff;
+    gap: 24px;
+    padding: 0 28px;
+    box-sizing: border-box;
+}
+
+.banner_right_value {
+    display: flex;
+    color: #ffffff;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner_right_bottombox {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'SpoqaHanSansNeo';
+}
+
+.banner_strong {
+    font-weight: 800;
+}
+
+.banner_right_value>h2 {
+    font-size: 36px;
+    font-weight: 600;
+    font-family: 'SpoqaHanSansNeo';
+}
+
+/* 배너끝 !!!!!!! */
+
+/* shrink시작~~~~~~~~~~ */
+
+.business_container {
+    padding: 0 80px;
+    display: flex;
+    gap: 16px;
 }
