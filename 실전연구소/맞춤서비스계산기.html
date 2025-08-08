@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+
+        @font-face {
+            font-family: 'SUIT-Regular';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .calculator-container {
+            font-family: 'SUIT-Regular';
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            padding: 0 320px;
+            width: 100%;
+        }
+
+        .calculator {
+            background: #ffffff;
+            color: #111111;
+            padding: 40px;
+            box-sizing: border-box;
+            border: 2px solid #0800a0;
+            border-radius: 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .calculator h2 {
+            margin-top: 20px;
+            margin-left: 20px;
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 80%;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            font-weight: 300;
+            margin-left: 20px;
+            margin-bottom: 60px;
+        }
+
+        .section {
+            background: #ffffff;
+            border: 1px solid #cdcdcd;
+            padding: 20px;
+            border-radius: 16px;
+            margin-bottom: 24px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            margin-top: -2px;
+        }
+
+        .section-desc {
+            font-size: 14px;
+            font-weight: 300;
+            color: #505050;
+            margin-bottom: 40px;
+        }
+
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 12px;
+            justify-content: flex-end;
+        }
+
+        .option-btn {
+            background-color: #ffffff;
+            border: 2px solid #e5e5ec;
+            border-radius: 999px;
+            padding: 10px 18px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #505050;
+            transition: all 0.2s ease;
+        }
+
+        .option-btn:hover {
+            border-color: #6363ba;
+            background-color: #6363ba;
+            color: #ffffff;
+        }
+
+        .option-btn.active {
+            border-color: #0800a0;
+            background: #0800a0;
+            color: #ffffff;
+        }
+
+        .counter {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-top: 12px;
+            justify-content: flex-end;
+        }
+
+        .counter-text {
+            color: #767676;
+        }
+
+        .circle-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 2px solid #e5e5ec;
+            background: transparent;
+            color: #111111;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .circle-btn:hover {
+            border-color: #6464ea;
+            background-color: #6464ea;
+            color: #ffffff;
+        }
+
+        .result {
+            text-align: right;
+            margin-top: 60px;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .submit-btn {
+            margin-top: 20px;
+            display: block;
+            width: 100%;
+            background: #0800a0;
+            color: #ffffff;
+            font-family: 'SUIT-Regular';
+            font-weight: 500;
+            border: none;
+            border-radius: 12px;
+            padding: 16px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background: #2a2adf !important;
+        }
+
+        @media screen and (max-width: 768px) {
+            .calculator {
+                width: 100% !important;
+                padding: 24px !important;
+                height: auto !important;
+                box-sizing: border-box;
+            }
+
+            .option-btn {
+                font-size: 14px;
+                padding: 8px 14px;
+            }
+
+            .circle-btn {
+                width: 28px;
+                height: 28px;
+                font-size: 16px;
+            }
+
+            .submit-btn {
+                font-size: 18px;
+                padding: 14px;
+            }
+
+            .calculator h2 {
+                font-size: 28px !important;
+                margin-left: 0 !important;
+            }
+
+            .subtitle {
+                font-size: 14px !important;
+                margin-left: 0 !important;
+            }
+
+            .section {
+                padding: 16px !important;
+            }
+
+            .result {
+                font-size: 22px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculator-container">
+        <div class="calculator">
+            <h2>맞춤 서비스 계산기</h2>
+            <p class="subtitle">
+                필요한 기능만 선택해서 가격을 알아보세요.<br>
+                디자인테이닝의 홈페이지 작업은 '아임웹'으로 제작됩니다.
+            </p>
+
+            <!-- SELECT PAGE -->
+            <div class="section">
+                <p class="section-title">SELECT PAGE</p>
+                <p class="section-desc">홈페이지에 포함할 주요 페이지를 선택하세요.</p>
+                <div class="options">
+                    <button class="option-btn" data-price="190000">메인페이지 190,000</button>
+                    <button class="option-btn" data-price="100000">브랜드스토리 100,000</button>
+                </div>
+                <div class="counter">
+                    <span class="counter-text">페이지갯수(추가 각 70,000)</span>
+                    <button class="circle-btn" onclick="adjustPages(-1)">
+                        <i class="fa-light fa-angle-down"></i>
+                    </button>
+                    <span id="pageCount">0</span>
+                    <button class="circle-btn" onclick="adjustPages(1)">
+                        <i class="fa-light fa-angle-up"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- FUNCTIONS -->
+            <div class="section">
+                <p class="section-title">FUNCTIONS</p>
+                <p class="section-desc">홈페이지에 필요한 부가 기능을 자유롭게 추가해보세요.</p>
+                <div class="options">
+                    <button class="option-btn" data-price="40000">게시판 폼</button>
+                    <button class="option-btn" data-price="60000">설문지 폼</button>
+                    <button class="option-btn" data-price="150000">예약 시스템</button>
+                    <button class="option-btn" data-price="190000">결제 시스템</button>
+                    <button class="option-btn" data-price="700000">쇼핑몰</button>
+                </div>
+            </div>
+
+            <!-- SET OPTIONS -->
+            <div class="section">
+                <p class="section-title">SET OPTIONS</p>
+                <p class="section-desc">전체 구성 세트를 한번에 선택할 수 있어요.</p>
+                <div class="options">
+                    <button class="option-btn" data-price="190000">Basic 메인1+서브1</button>
+                    <button class="option-btn" data-price="390000">Standard 메인1+서브5</button>
+                    <button class="option-btn" data-price="790000">Premium 메인1+서브10</button>
+                </div>
+            </div>
+
+            <div class="result">
+                나의 맞춤 견적<br><span id="totalPrice">0</span>원
+            </div>
+            <button class="submit-btn" onclick="location.href='25'">설문지 작성하기</button>
+        </div>
+    </div>
+
+    <script>
+
+        let total = 0;
+        let pageCount = 0;
+
+        const priceDisplay = document.getElementById("totalPrice");
+        const pageCountDisplay = document.getElementById("pageCount");
+
+        const updateTotal = () => {
+            let newTotal = 0;
+            document.querySelectorAll(".option-btn.active").forEach(btn => {
+                newTotal += parseInt(btn.dataset.price);
+            });
+            newTotal += pageCount * 70000;
+            priceDisplay.innerText = newTotal.toLocaleString();
+        };
+
+        document.querySelectorAll(".option-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                btn.classList.toggle("active");
+                updateTotal();
+            });
+        });
+
+        function adjustPages(change) {
+            pageCount = Math.max(0, pageCount + change);
+            pageCountDisplay.innerText = pageCount;
+            updateTotal();
+        }
+
+        updateTotal();
+
+    </script>
+
+</body>
+
+</html>
