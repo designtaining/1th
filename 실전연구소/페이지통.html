@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: 'SUIT-Regular';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .melon_container {
+            display: flex;
+        }
+
+        .melon_wrapper {
+            max-width: 1280px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .melon_box {
+            width: 100%;
+            border: 1px solid #dddddd;
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 20px;
+            box-shadow: 0 4px 12px rgba(17, 17, 17, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .melon_box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 4px 12px rgba(17, 17, 17, 0.2);
+            border: 1px solid #1428A0;
+            background: linear-gradient(to top, #fcfcfc, #ffffff);
+        }
+
+        .melon_title_box {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .melon_title {
+            font-family: 'SUIT-Regular';
+            font-size: 28px;
+            font-weight: 600;
+            color: #111111;
+            margin: 0;
+        }
+
+        .melon_desc {
+            font-family: 'SUIT-Regular';
+            font-size: 16px;
+            font-weight: 4;
+            color: #767676;
+            margin: 0;
+        }
+
+        .melon_middle_box {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .melon_middle_cube {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .cube_title {
+            font-family: 'SUIT-Regular';
+            font-size: 16px;
+            font-weight: 500;
+            color: #111111;
+            margin: 0;
+        }
+
+        .cube_desc {
+            font-family: 'SUIT-Regular';
+            font-size: 14px;
+            font-weight: 400;
+            color: #767676;
+            margin: 0;
+        }
+
+        .melon_bottom_box {
+            display: flex;
+            justify-content: flex-end;
+            gap: 4px;
+        }
+
+        .melon_vat {
+            font-family: 'SUIT-Regular';
+            font-size: 16px;
+            font-weight: 400;
+            color: #767676;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .melon_price {
+            font-family: 'SUIT-Regular';
+            font-size: 36px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .melon_purchase {
+            padding: 16px 0;
+            font-family: 'SUIT-Regular';
+            font-size: 18px;
+            font-weight: 500;
+            color: #1428A0;
+            background-color: #ffffff;
+            border: 1px solid #1428A0;
+            border-radius: 8px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .melon_purchase:hover {
+            color: #ffffff;
+            background-color: #1428A0;
+            font-weight: 500;
+        }
+
+        .melon_line {
+            width: 100%;
+            height: 1px;
+            background-color: #dddddd;
+        }
+
+        .melon_mark1 {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            top: 12px;
+            right: 16px;
+        }
+
+        .melon_mark1 > img {
+            width: 80px;
+            height: 80px;
+            animation: melon linear 4s infinite;
+        }
+
+        .melon_mark2 {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            top: 12px;
+            right: 16px;
+        }
+
+        .melon_mark2 > img {
+            width: 80px;
+            height: 80px;
+            animation: melon linear 4s infinite;
+        }
+
+        .melon_mark3 {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            top: 12px;
+            right: 16px;
+        }
+
+        .melon_mark3 > img {
+            width: 80px;
+            height: 80px;
+            animation: melon linear 4s infinite;
+        }
+
+        @keyframes melon {
+            0% {
+                transform: rotate(0);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* ✅ 1728px 이하 */
+@media screen and (max-width: 1728px) {
+  
+}
+
+/* ✅ 1512px 이하 */
+@media screen and (max-width: 1512px) {
+    .melon_wrapper {
+            max-width: 1120px;
+        }
+}
+
+/* ✅ 1280px 이하 */
+@media screen and (max-width: 1280px) {
+    .melon_wrapper {
+            max-width: 992px;
+        }
+        .melon_mark1 {
+            width: 40px;
+            height: 40px;
+        }
+
+        .melon_mark1 > img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .melon_mark2 {
+            width: 40px;
+            height: 40px;
+        }
+
+        .melon_mark2 > img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .melon_mark3 {
+            width: 40px;
+            height: 40px;
+        }
+
+        .melon_mark3 > img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .melon_title {
+            font-size: 24px;
+        }
+
+        .melon_desc {
+            font-size: 14px;
+        }
+}
+
+/* ✅ 1024px 이하 */
+@media screen and (max-width: 1024px) {
+        .melon_container {
+            display: flex;
+            padding: 16px;
+        }
+        .melon_wrapper {
+            flex-direction: column;
+        }
+}
+
+/* ✅ 768px 이하 */
+@media screen and (max-width: 768px) {
+  
+}
+
+/* ✅ 440px 이하 */
+@media screen and (max-width: 440px) {
+  
+}
+
+/* ✅ 375px 이하 */
+@media screen and (max-width: 375px) {
+  
+}
+    </style>
+</head>
+
+<body>
+
+    <section class="melon_container">
+
+        <div class="melon_wrapper">
+
+            <div class="melon_box">
+                <div class="melon_mark1">
+                    <img src="https://ncryk7.mycafe24.com/goodday1.png" alt="">
+                </div>
+                <div class="melon_title_box">
+                    <p class="melon_title">GOOD-DAY 원</p>
+                    <p class="melon_desc">광고, 이벤트용 기본형 웹사이트</p>
+                </div>
+                <div class="melon_line"></div>
+                <div class="melon_middle_box">
+                    <div class="melon_middle_cube">
+                        <p class="cube_title">페이지</p>
+                        <p class="cube_desc">
+                            ㅁㄴㅇㄻㄴㅇ
+                            <br>
+                            ㅁㄴㅇㄻㄴㅇ
+                        </p>
+                    </div>
+                    <div class="melon_middle_cube">
+                        <p class="cube_title">1섹션 추가</p>
+                        <p class="cube_desc">
+                            ㅁㄴㅇㄻㄴㅇ
+                        </p>
+                    </div>
+                    <div class="melon_middle_cube">
+                        <p class="cube_title">서비스</p>
+                        <p class="cube_desc">
+                            ㅁㄴㅇㄻㄴㅇ
+                            <br>
+                            ㅁㄴㅇㄻㄴㅇ
+                            <br>
+                            ㅁㄴㅇㄻㄴㅇ
+                        </p>
+                    </div>
+                    <div class="melon_middle_cube">
+                        <p class="cube_title">수정횟수</p>
+                        <p class="cube_desc">
+                            ㅁㄴㅇㄻㄴㅇ
+                        </p>
+                    </div>
+                    <div class="melon_middle_cube">
+                        <p class="cube_title">제작기간</p>
+                        <p class="cube_desc">
+                            5일 이내
+                        </p>
+                    </div>
+                </div>
+
+                <div class="melon_line"></div>
+
+                <div class="melon_bottom_box">
+                    <p class="melon_vat">(vat포함)</p>
+                    <p class="melon_price">25만원~</p>
+                </div>
+
+                <a href="#" class="melon_purchase">
+                    구매하기
+                </a>
+
+            </div>
+            <div class="melon_box">
+                <div class="melon_mark2">
+                    <img src="https://ncryk7.mycafe24.com/fiveplus.png" alt="">
+                </div>
+                <div class="melon_title_box">
+                    <p class="melon_title">FIVE+ 시그니처</p>
+                    <p class="melon_desc">기업, 소상공인용 맞춤형 웹사이트</p>
+                </div>
+                <div class="melon_line"></div>
+                <div class="melon_middle_box">
+                    <div class="melon_middle_cube">
+                        <p class="cube_title">페이지</p>
+                        <p class="cube_desc">
+                            ㅁㄴㅇㄻㄴㅇ
+                            <br>
+                            ㅁㄴㅇㄻㄴㅇ
+                        </p>
+                    </div>
+                    <div class="melon_middle_cube">
+                        <p class="cube_title">1페이지 추가</p>
+                        <p class="cube_desc">
+                            ㅁㄴㅇㄻㄴㅇ
+                        </p>
+                    </div>
+                    <div class="melon_middle_cube">
+                        <p class="cube_title">서비스</p>
+                        <p class="cube_desc">
+                            ㅁㄴㅇㄻㄴㅇ
+                            <br>
+                            ㅁㄴㅇㄻㄴㅇ
+                            <br>
+                            ㅁㄴㅇㄻㄴㅇ
+                        </p>
+                    </div>
+                    <div class="melon_middle_cube">
+                        <p class="cube_title">수정횟수</p>
+                        <p class="cube_desc">
+                            무제한
+                        </p>
+                    </div>
+                    <div class="melon_middle_cube">
+                        <p class="cube_title">제작기간</p>
+                        <p class="cube_desc">
+                            10일 이내
+                        </p>
+                    </div>
+                </div>
+
+                <div class="melon_line"></div>
+
+                <div class="melon_bottom_box">
+                    <p class="melon_vat">(vat포함)</p>
+                    <p class="melon_price">42만원~</p>
+                </div>
+
+                <a href="#" class="melon_purchase">
+                    구매하기
+                </a>
+
+            </div>
+            <div class="melon_box">
+                <div class="melon_mark3">
+                    <img src="https://ncryk7.mycafe24.com/prestige.png" alt="">
+                </div>
+                <div class="melon_title_box">
+                    <p class="melon_title">FULL 프레스티지</p>
+                    <p class="melon_desc">기관, 커뮤니티용 프리미엄 웹사이트</p>
+                </div>
+                <div class="melon_line"></div>
+                <div class="melon_middle_box">
+                    <div class="melon_middle_cube">
+                        <p class="cube_title">페이지</p>
+                        <p class="cube_desc">
+                            ㅁㄴㅇㄻㄴㅇ
+                            <br>
+                            ㅁㄴㅇㄻㄴㅇ
+                        </p>
+                    </div>
+                    <div class="melon_middle_cube">
+                        <p class="cube_title">페이지 추가</p>
+                        <p class="cube_desc">
+                            ㅁㄴㅇㄻㄴㅇ
+                        </p>
+                    </div>
+                    <div class="melon_middle_cube">
+                        <p class="cube_title">서비스</p>
+                        <p class="cube_desc">
+                            ㅁㄴㅇㄻㄴㅇ
+                            <br>
+                            ㅁㄴㅇㄻㄴㅇ
+                            <br>
+                            ㅁㄴㅇㄻㄴㅇ
+                        </p>
+                    </div>
+                    <div class="melon_middle_cube">
+                        <p class="cube_title">수정횟수</p>
+                        <p class="cube_desc">
+                            무제한
+                        </p>
+                    </div>
+                    <div class="melon_middle_cube">
+                        <p class="cube_title">제작기간</p>
+                        <p class="cube_desc">
+                            14일 이내
+                        </p>
+                    </div>
+                </div>
+
+                <div class="melon_line"></div>
+
+                <div class="melon_bottom_box">
+                    <p class="melon_vat">(vat포함)</p>
+                    <p class="melon_price">120만원~</p>
+                </div>
+
+                <a href="#" class="melon_purchase">
+                    구매하기
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>
