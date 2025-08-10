@@ -14,8 +14,38 @@
             font-style: normal;
         }
 
+        
+        .price_tbox {
+            display: flex;
+            gap: 12px;
+            padding: 24px 48px;
+            background-color: #4768C9;
+            border-radius: 999px;
+        }
+
+        .price_title {
+            font-family: 'SUIT-Regular';
+            font-size: 40px;
+            font-weight: 500;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .price_tag {
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+
         .melon_container {
             display: flex;
+            flex-direction: column;
+            background-image: url(https://ncryk7.mycafe24.com/melonblue.jpg);
+            background-size: cover;
+            align-items: center;
         }
 
         .melon_wrapper {
@@ -31,6 +61,7 @@
             width: 100%;
             border: 1px solid #dddddd;
             border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.5);
             padding: 20px;
             display: flex;
             flex-direction: column;
@@ -144,7 +175,7 @@
         }
 
         .melon_purchase:hover {
-            color: #ffffff;
+            color: #ffffff !important;
             background-color: #1428A0;
             font-weight: 500;
         }
@@ -163,7 +194,7 @@
             right: 16px;
         }
 
-        .melon_mark1 > img {
+        .melon_mark1>img {
             width: 80px;
             height: 80px;
             animation: melon linear 4s infinite;
@@ -177,7 +208,7 @@
             right: 16px;
         }
 
-        .melon_mark2 > img {
+        .melon_mark2>img {
             width: 80px;
             height: 80px;
             animation: melon linear 4s infinite;
@@ -191,7 +222,7 @@
             right: 16px;
         }
 
-        .melon_mark3 > img {
+        .melon_mark3>img {
             width: 80px;
             height: 80px;
             animation: melon linear 4s infinite;
@@ -201,98 +232,102 @@
             0% {
                 transform: rotate(0);
             }
+
             100% {
                 transform: rotate(360deg);
             }
         }
 
         /* ✅ 1728px 이하 */
-@media screen and (max-width: 1728px) {
-  
-}
+        @media screen and (max-width: 1728px) {}
 
-/* ✅ 1512px 이하 */
-@media screen and (max-width: 1512px) {
-    .melon_wrapper {
-            max-width: 1120px;
-        }
-}
-
-/* ✅ 1280px 이하 */
-@media screen and (max-width: 1280px) {
-    .melon_wrapper {
-            max-width: 992px;
-        }
-        .melon_mark1 {
-            width: 40px;
-            height: 40px;
+        /* ✅ 1512px 이하 */
+        @media screen and (max-width: 1512px) {
+            .melon_wrapper {
+                max-width: 1120px;
+            }
         }
 
-        .melon_mark1 > img {
-            width: 40px;
-            height: 40px;
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .melon_wrapper {
+                max-width: 992px;
+            }
+
+            .melon_mark1 {
+                width: 40px;
+                height: 40px;
+            }
+
+            .melon_mark1>img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .melon_mark2 {
+                width: 40px;
+                height: 40px;
+            }
+
+            .melon_mark2>img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .melon_mark3 {
+                width: 40px;
+                height: 40px;
+            }
+
+            .melon_mark3>img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .melon_title {
+                font-size: 24px;
+            }
+
+            .melon_desc {
+                font-size: 14px;
+            }
         }
 
-        .melon_mark2 {
-            width: 40px;
-            height: 40px;
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .melon_container {
+                display: flex;
+                padding: 16px;
+            }
+
+            .melon_wrapper {
+                flex-direction: column;
+            }
         }
 
-        .melon_mark2 > img {
-            width: 40px;
-            height: 40px;
-        }
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {}
 
-        .melon_mark3 {
-            width: 40px;
-            height: 40px;
-        }
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {}
 
-        .melon_mark3 > img {
-            width: 40px;
-            height: 40px;
-        }
-
-        .melon_title {
-            font-size: 24px;
-        }
-
-        .melon_desc {
-            font-size: 14px;
-        }
-}
-
-/* ✅ 1024px 이하 */
-@media screen and (max-width: 1024px) {
-        .melon_container {
-            display: flex;
-            padding: 16px;
-        }
-        .melon_wrapper {
-            flex-direction: column;
-        }
-}
-
-/* ✅ 768px 이하 */
-@media screen and (max-width: 768px) {
-  
-}
-
-/* ✅ 440px 이하 */
-@media screen and (max-width: 440px) {
-  
-}
-
-/* ✅ 375px 이하 */
-@media screen and (max-width: 375px) {
-  
-}
+        /* ✅ 375px 이하 */
+        @media screen and (max-width: 375px) {}
     </style>
 </head>
 
 <body>
 
     <section class="melon_container">
+
+        <div class="price_tbox">
+            <p class="price_tag">
+                [3종 세트옵션]
+            </p>
+            <p class="price_title">
+                한눈에 보기+
+            </p>
+        </div>
 
         <div class="melon_wrapper">
 
@@ -476,9 +511,7 @@
                 </a>
 
             </div>
-
         </div>
-
     </section>
 
 </body>
