@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+
+        @font-face {
+            font-family: 'SUIT-Regular';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .advertise_container {
+            width: 100%;
+            height: 620px;
+            background: linear-gradient(to right, #111111 0%, #222222 40%, #777777 50%, #222222 60%, #111111 100%);
+            display: flex;
+            align-items: center;
+        }
+
+        .advertise_wrapper {
+            width: 1280px;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .advertise_left {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 72px;
+        }
+
+        .advertise_left_top {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .alt_title {
+            font-family: 'SUIT-Regular';
+            font-size: 36px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .advertise_bottom {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .advertise_right > figure {
+            width: 400px;
+            height: 433px;
+        }
+
+        .advertise_right > figure > img {
+            width: 400px;
+            height: 433px;
+        }
+
+        .alt_middleline {
+            font-family: 'SUIT-Regular';
+            font-size: 24px;
+            font-weight: 400;
+            color: #ffffff;
+            text-decoration: 1px line-through;
+            margin: 0;
+        }
+
+        .fa-arrow-turn-down-right {
+            color: #ffffff;
+        }
+
+        .alt_price {
+            font-family: 'SUIT-Regular';
+            font-size: 60px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .fp {
+            width: 300px;
+            height: 300px;
+        }
+
+        .fp >img {
+            width: 300px;
+            height: 300px;
+            animation: updown linear 1.6s infinite;
+        }
+
+        @keyframes updown {
+            0%{
+                transform: translateY(24px);
+            }
+
+            50% {
+                transform: translate(0);
+            }
+
+            100%{
+                transform: translateY(24px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="advertise_container">
+
+        <div class="advertise_wrapper">
+
+            <div class="advertise_left">
+                <div class="advertise_left_top">
+                    <p class="alt_title">
+                        한번에 전체페이지
+                        <br>
+                        기능 택1 무료!
+                    </p>
+                </div>
+                <div class="advertise_bottom">
+                    <p class="alt_middleline">
+                        500,000원 + DB모듈 디자인
+                    </p>
+                    <p class="alt_price">
+                        <i class="fa-regular fa-arrow-turn-down-right"></i>
+                        429,000원!
+                    </p>
+                </div>
+            </div>
+
+            <figure class="fp">
+                <img src="https://ncryk7.mycafe24.com/fiveplus.png" alt="">
+            </figure>
+
+            <div class="advertise_right">
+                <figure>
+                    <img src="https://ncryk7.mycafe24.com/adver.png" alt="">
+                </figure>
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>
