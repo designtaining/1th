@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: 'SUIT-Regular';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .port_container {
+            width: 100%;
+            height: 270vh;
+            display: flex;
+            justify-content: center;
+            background-image: url(https://ncryk7.mycafe24.com/snow.jpg);
+            background-attachment: fixed;
+        }
+
+        .port_wrapper {
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .port_main_title {
+            font-family: 'SUIT-Regular';
+            font-size: 80px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+        }
+
+        .port_box_wrapper {
+            width: 100%;
+            height: 90%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .port_left_box {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .port_right_box {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .port_box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            text-decoration: none;
+        }
+
+        .port_box>video {
+            border: 10px solid #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 4px 12px rgba(17, 17, 17, 0.7);
+            transition: all 0.3s ease;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            will-change: transform;
+            transform-origin: center center;
+        }
+
+        .port_box:hover video {
+            box-shadow: 0 8px 24px #7817ED;
+            animation: twisted 0.7s forwards;
+        }
+
+        @keyframes twisted {
+         0% {
+    transform: translateZ(0px) rotateX(0deg) rotateY(0deg) scale(1);
+  }
+  60% {
+    transform: translateZ(50px) rotateX(-16deg) rotateY(-16deg) scale(1.06);
+  }
+  80% {
+    transform: translateZ(50px) rotateX(-12deg) rotateY(12deg) scale(1.08);
+  }
+  100% {
+    transform: translateZ(80px) rotateX(0deg) rotateY(0deg) scale(1.1);
+  }
+        }
+
+        .port_title_box {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .port_title {
+            font-family: 'SUIT-Regular';
+            font-size: 36px;
+            font-weight: 500;
+            color: #111111;
+            margin: 0;
+        }
+
+        .port_desc {
+            font-family: 'SUIT-Regular';
+            font-size: 18px;
+            font-weight: 500;
+            color: #111111;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="port_container">
+        <div class="port_wrapper">
+            <p class="port_main_title">
+                PORTFOLIO
+            </p>
+            <div class="port_box_wrapper">
+
+                <div class="port_left_box">
+                    <a href="#" class="port_box">
+                        <video src="https://ncryk7.mycafe24.com/turtle1.mp4" muted autoplay playsinline></video>
+                        <div class="port_title_box">
+                            <p class="port_title">로오딘</p>
+                            <p class="port_desc">&#35;OLED재료 &#35;유기전자재료</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="port_right_box">
+                    <a href="#" class="port_box">
+                        <video src="https://ncryk7.mycafe24.com/undersea1.mp4" muted autoplay playsinline></video>
+                        <div class="port_title_box">
+                            <p class="port_title">로오딘</p>
+                            <p class="port_desc">&#35;OLED재료 &#35;유기전자재료</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="port_box_wrapper">
+
+                <div class="port_left_box">
+                    <a href="#" class="port_box">
+                        <video src="https://ncryk7.mycafe24.com/turtle1.mp4" muted autoplay playsinline></video>
+                        <div class="port_title_box">
+                            <p class="port_title">로오딘</p>
+                            <p class="port_desc">&#35;OLED재료 &#35;유기전자재료</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="port_right_box">
+                    <a href="#" class="port_box">
+                        <video src="https://ncryk7.mycafe24.com/undersea1.mp4" muted autoplay playsinline></video>
+                        <div class="port_title_box">
+                            <p class="port_title">로오딘</p>
+                            <p class="port_desc">&#35;OLED재료 &#35;유기전자재료</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="port_box_wrapper">
+
+                <div class="port_left_box">
+                    <a href="#" class="port_box">
+                        <video src="https://ncryk7.mycafe24.com/turtle1.mp4" muted autoplay playsinline></video>
+                        <div class="port_title_box">
+                            <p class="port_title">로오딘</p>
+                            <p class="port_desc">&#35;OLED재료 &#35;유기전자재료</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="port_right_box">
+                    <a href="#" class="port_box">
+                        <video src="https://ncryk7.mycafe24.com/undersea1.mp4" muted autoplay playsinline></video>
+                        <div class="port_title_box">
+                            <p class="port_title">로오딘</p>
+                            <p class="port_desc">&#35;OLED재료 &#35;유기전자재료</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+
+</html>
