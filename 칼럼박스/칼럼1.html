@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        @font-face {
+            font-family: 'SUIT-Regular';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .column1_container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            font-family: 'SUIT-Regular';
+        }
+
+        .column1_wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .column1_title_box {
+            width: 100%;
+            border-bottom: 1px solid #767676;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .column1_desc_box {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .column1_head {
+            font-size: 40px;
+            font-weight: 500;
+            color: #111111;
+        }
+
+        .column1_title {
+            font-size: 32px;
+            font-weight: 500;
+            color: #111111;
+        }
+
+        .column1_desc {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.6;
+            color: #111111;
+        }
+
+        .info_box {
+            width: 50%;
+            border-bottom: 1px solid #767676;
+            display: flex;
+            flex-direction: column;
+            /* align-items: center; */
+        }
+
+        .info_picture_box {
+            width: 100%;
+            display: flex;
+            gap: 12px;
+        }
+
+        .info_picture_box > figure {
+            width: 50%;
+            margin: 0;
+        }
+
+        .info_picture_box > figure > img {
+            width: 100%;
+        }
+
+        .info_title_box {
+            border-left: 4px solid #4768C9;
+            padding: 0 40px;
+        }
+
+        .info_title {
+            font-size: 28px;
+            text-align: center;
+        }
+
+        .info_desc {
+            font-size: 18px;
+            font-weight: 300;
+            color: #505050;
+            text-align: center;
+        }
+
+        .info_link_box {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info_link_tap {
+            text-decoration: none;
+            color: #111111;
+            padding: 16px 0;
+            border-bottom: 1px solid #767676;
+            transition: all 0.3s ease;
+        }
+
+        .info_link_tap:hover {
+            color: #4768C9;
+            text-decoration: underline 1px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <section class="column1_container">
+        <div class="column1_wrapper">
+            <div class="column1_title_box">
+                <div class="column1_head_box">
+                    <p class="column1_head">전문 칼럼</p>
+                </div>
+                <div class="column1_desc_box">
+                    <p class="column1_title">홈페이지 제작 체크리스트 3가지</p>
+                    <p class="column1_desc">
+                        안녕하세요, 소상공인 홈페이지 제작전문업체 디자인테이닝입니다.
+                        <br>
+                        홈페이지 제작 전, 미리 준비할 세가지를 안내드리겠습니다.
+                        <br>
+                        <br>
+                        이야기를 시작하기에 앞서, 단순히 예쁜 홈페이지를 원하신다면
+                        <br>
+                        반드시 이 체크리스트를 확인하고 구성해 볼 필요는 없습니다.
+                        <br>
+                        우리의 비즈니스에 효과적으로 적용이 된다고 증명된 작업들은
+                        <br>
+                        꽤나 귀찮은 작업을 요구합니다.
+                        <br>
+                        하지만 딱 한번만 해놓는다면 이후의 작업은 수월해집니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="info_box">
+
+                <div class="info_picture_box">
+                    <figure>
+                        <img src="https://ncryk7.mycafe24.com/c-a-1png.png" alt="">
+                    </figure>
+                    <figure>
+                        <img src="https://ncryk7.mycafe24.com/c-a-2png.png" alt="">
+                    </figure>
+                </div>
+                <div class="info_title_box">
+                    <p class="info_title">
+                        01. 타겟층이 명확히 설정되어 있는지 체크해 봐야 합니다.
+                        <br>
+                        "어떤식으로 타겟팅을 해야하나요?"
+                    </p>
+                </div>
+                <div class="info_desc_box">
+                    <p class="info_desc">
+                        타겟팅이란 내가 상품을 판매할 고객의 카테고리를 명확하게 정의하고 구분하는것을 의미합니다.
+                        <br>
+                        이 방법은 아주 큰대기업부터 규모가 작은 소상공인까지 모두 필수로 준비해야만하는 요소입니다.
+                        <br>
+                        우선 주타겟(Main Target), 보조타겟(Secondary Target)을 아주 구체적으로 나누어야 합니다.
+                        <br>
+                        <br>
+                        예를 들어 커피를 판매하기 위한 타겟팅을 가정하겠습니다.
+                        <br>
+                        타겟의 나이 32세, 여자, 월소득 320만원, 근처 병원 간호사, 아이스 아메리카노,
+                        <br>
+                        하루에 커피 두번, 쿠폰을 꼼꼼히 챙김, Dine-in 일때도 있지만 Take-out을 선호함,
+                        <br>
+                        40분 거리에서 자취중이며 운전으로 출퇴근, 필라테스를 다님.
+                        <br>
+                        이렇게 구체적인 타겟팅을 해놓습니다. 그리고 사람에 맞는 프로모션이나 설명을 준비합니다.
+                        <br>
+                        <br>
+                        홈페이지에 한 섹션에 이런 설정을 해놓습니다.
+                        <br>
+                        am 08-09 / pm 06-07, 아메리카노 테이크아웃 20% 할인제공, 쿠폰이벤트는 정상 적용됩니다.
+                        <br>
+                        <br>
+                        그리고 보조타겟을 또 다시 정해서 고객마다의 섹션을 만들어 놓으면 됩니다.
+                        <br>
+                        타겟팅을 설정해놓으셨나요? 안하셨다면 지금 하시면 됩니다.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="info_box">
+
+                <div class="info_picture_box">
+                    <figure>
+                        <img src="" alt="">
+                    </figure>
+                    <figure>
+                        <img src="" alt="">
+                    </figure>
+                </div>
+                <div class="info_title_box">
+                    <p class="info_title">
+                        01. 브랜드컬러로 사용할 색상을 정해 놓아야 합니다.
+                        <br>
+                        "좋아하는 색을 써도 되나요?"
+                    </p>
+                </div>
+                <div class="info_desc_box">
+                    <p class="info_desc">
+                        '톤앤매너' 브랜드컨텐츠를 일관되게 전달하고자 하는 말투(Tone)와 태도(Manner).
+                        <br>
+                        브랜드는 따뜻하지만 전문성이 있어보이도록,
+                        <br>
+                        SNS컨텐츠는 친근하고 활기차지만 폰트의 색은 차분하게,
+                        <br>
+                        정부기관은 공식적이며 신뢰감있는 컬러를,
+                        <br>
+                        명품브랜드는 고급스럽고 절제된 컬러를 선호합니다.
+                        <br>
+                        <br>
+                        당연하게도 좋아하는 색을 사용하셔도 좋습니다.
+                        <br>
+                        다만 내가 좋아하는 색과 대중의 시선을 목적에 의거하여 일치시켜야 합니다.
+                        <br>
+                        저는 파란색을 정말 좋아합니다. 파란옷, 파란신발, 파란베개
+                        <br>
+                        그래서 저는 파란색을 포인트컬러로 정하고 그보다 두꺼운 네이비컬러를 베이스로 하였습니다.
+                        <br>
+                        이때 반드시 고려해야 할 것은, 조합이 정신사나우면 게임 끝이라는 겁니다.
+                        <br>
+                        <br>
+                        브랜드 컬러란, 정체성을 시각적으로 표현하기위한 전략입니다.
+                        <br>
+                        브랜드 컬러를 설정해놓으셨나요? 결정이 어려우시다면 어쩌구저쩌구
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="info_box">
+
+                <div class="info_picture_box">
+                    <figure>
+                        <img src="https://ncryk7.mycafe24.com/c-a-5png.png" alt="">
+                    </figure>
+                    <figure>
+                        <img src="https://ncryk7.mycafe24.com/c-a-6png.png" alt="">
+                    </figure>
+                </div>
+                <div class="info_title_box">
+                    <p class="info_title">
+                        03. 사진과 비주얼을 많이 준비할수록 유리합니다.
+                        <br>
+                        "어떤식으로 사진을 준비해야 하나요?"
+                    </p>
+                </div>
+                <div class="info_desc_box">
+                    <p class="info_desc">
+                        사진과 비주얼 '이미지'는 웹디자인의 필수 4대 요소 중 하나입니다.
+                        <br>
+                        전문적인 홈페이지일수록 이미지의 비중은 더더욱 커집니다.
+                        <br>
+                        너무나 유명한 삼성전자, 포르쉐, YG엔터테인먼트 처럼 홈페이지에서 이미지로만 승부를 보는 곳도 많습니다.
+                        <br>
+                        <br>
+                        그럼 도대체 우리들은 사진을 어떻게 찍어야 할까요?
+                        <br>
+                        우리의 방법은 바로 일관성입니다.
+                        <br>
+                        음식점이나 카페에서는 컵이나 접시를 최대한 비슷하게 정해놓고,
+                        <br>
+                        같은 앵글, 같은 각도, 같은 크기로 찍어야합니다.
+                        <br>
+                        헬스장일 경우는 같은 앵글, 같은 각도, 같은 크기로 머신의 모양만 바뀌도록 찍어야합니다.
+                        <br>
+                        주방용품을 판매할때에 뒤집게는 위를 향하고, 칼은 왼쪽, 프라이팬은 대각선 오른쪽을 향하고 있다면,
+                        <br>
+                        보는 사람이 정신이 사나워 집중하지 못할것 입니다.
+                        <br>
+                        <br>
+                        상업적으로 공개되어있는 유료이미지는 디자인테이닝이 무상제공할 수 있습니다.
+                        <br>
+                        별다른 사진 준비를 안해놓으셨나요?
+                        <br>
+                        디자인테이닝은 고객님이 원할때 직접 사진을 변경할 수 있도록 관리법을 제공합니다.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="info_link_box">
+                <a href="#" class="info_link_tap">
+                    초기창업 홈페이지 전략 3가지 &darr;
+                </a>
+                <a href="#" class="info_link_tap">
+                    방치되는 홈페이지가 겪는 3가지 문제 &darr;
+                </a>
+                <a href="#" class="info_link_tap">
+                    실패 극복하기 3가지 &darr;
+                </a>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
