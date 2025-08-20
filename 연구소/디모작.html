@@ -26,7 +26,7 @@
             display: flex;
             justify-content: center;
             font-family: 'SUIT-Regular';
-            background-image: url('https://ncryk7.mycafe24.com/tiger1.jpg');
+            background: linear-gradient(to top, #111111 0%, #222222 50%, #333333 100%);
             background-size: cover;
             background-attachment: fixed;
             padding: 100px 0;
@@ -38,67 +38,115 @@
             gap: 48px;
         }
 
-        .phrase_box1 {}
-
-        .phrase_text1 {
-            margin: 0;
-            font-size: 60px;
-            font-weight: 500;
-            letter-spacing: -1px;
-            color: #ffffff;
-        }
-
-        .phrase_box2 {}
-
-        .phrase_text2 {
-            margin: 0;
-            font-size: 60px;
-            font-weight: 500;
-            letter-spacing: -1px;
-            color: #ffffff;
-        }
-
-        .phrase_box3 {}
-
-        .phrase_text3 {
-            margin: 0;
-            font-size: 60px;
-            font-weight: 500;
-            letter-spacing: -1px;
-            color: #ffffff;
-        }
-
-        .phrase_box4 {}
-
+        .phrase_text1,
+        .phrase_text2,
+        .phrase_text3,
         .phrase_text4 {
             margin: 0;
-            font-size: 60px;
+            font-size: 48px;
             font-weight: 500;
             letter-spacing: -1px;
             color: #ffffff;
+
+            /* ✅ 애니메이션 초기 상태 */
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 0.8s ease;
+        }
+
+        /* ✅ 보이게 되었을 때 상태 */
+        .show {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .phrase_span {
             font-family: 'STUNNING-Bd';
             font-size: 72px;
             font-weight: 700;
+            color: #4768C9;
         }
 
         .phrase_other_text {
-            font-size: 32px;
+            font-size: 24px;
             font-weight: 500;
             letter-spacing: -1px;
             color: #dddddd;
         }
+
+        /* ✅ 1512px 이하 */
+        @media screen and (max-width: 1512px) {
+            .phrase_wrapper {
+                gap: 40px;
+            }
+
+            .phrase_text1,
+            .phrase_text2,
+            .phrase_text3,
+            .phrase_text4 {
+                font-size: 40px;
+            }
+
+            .phrase_span {
+                font-size: 64px;
+            }
+
+            .phrase_other_text {
+                font-size: 22px;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .phrase_wrapper {
+                gap: 24px;
+            }
+
+            .phrase_text1,
+            .phrase_text2,
+            .phrase_text3,
+            .phrase_text4 {
+                font-size: 24px;
+            }
+
+            .phrase_span {
+                font-size: 40px;
+            }
+
+            .phrase_other_text {
+                font-size: 16px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .phrase_wrapper {
+                gap: 20px;
+            }
+
+            .phrase_text1,
+            .phrase_text2,
+            .phrase_text3,
+            .phrase_text4 {
+                font-size: 20px;
+            }
+
+            .phrase_span {
+                font-size: 32px;
+            }
+
+            .phrase_other_text {
+                font-size: 12px;
+            }
+        }
+
     </style>
 </head>
 
 <body>
 
     <section class="phrase_container">
-
         <div class="phrase_wrapper">
-
             <div class="phrase_box1">
                 <p class="phrase_text1">
                     디자인테이닝의 <span class="phrase_span">모든 작업</span>은
@@ -125,10 +173,31 @@
                     * 개별요청된 모바일전용 섹션의 경우 추가금액이 발생합니다.
                 </p>
             </div>
-
         </div>
-
     </section>
+
+    <script>
+        // ✅ Intersection Observer 활용 (성능 굿!)
+        const targets = document.querySelectorAll(
+            ".phrase_text1, .phrase_text2, .phrase_text3, .phrase_text4"
+        );
+
+        const observer = new IntersectionObserver(
+            (entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                        obs.unobserve(entry.target); // 한 번만 실행되도록
+                    }
+                });
+            },
+            {
+                threshold: 0.3, // 30% 보이면 발동
+            }
+        );
+
+        targets.forEach(el => observer.observe(el));
+    </script>
 
 </body>
 
