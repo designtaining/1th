@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .circle_container {
+            width: 100%;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circle_box {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 260px;
+            height: 260px;
+            border-radius: 999px;
+            background-color: #6868ff;
+        }
+
+        .circle_box:hover .circle1,
+        .circle_box:hover .circle2,
+        .circle_box:hover .circle3,
+        .circle_box:hover .circle4,
+        .circle_box:hover .circle5,
+        .circle_box:hover .circle6 {
+            display: flex;
+        }
+
+        .circle_title {
+            font-size: 32px;
+            color: #ffffff;
+        }
+
+        .circle1,
+        .circle2,
+        .circle3,
+        .circle4,
+        .circle5,
+        .circle6 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 999px;
+            background-color: #1528A0;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circle1 {
+            left: -8px;
+            top: -68px;
+        }
+
+        .circle2 {
+            left: -92px;
+        }
+
+        .circle3 {
+            left: -8px;
+            bottom: -68px;
+        }
+
+        .circle4 {
+            right: -8px;
+            top: -68px;
+        }
+
+        .circle5 {
+            right: -92px;
+        }
+
+        .circle6 {
+            right: -8px;
+            bottom: -68px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <section class="circle_container">
+            <div class="circle_box">
+                <a href="#" class="circle1">asdf</a>
+                <a href="#" class="circle2">asdf</a>
+                <a href="#" class="circle3">asdf</a>
+                <a href="#" class="circle4">asdf</a>
+                <a href="#" class="circle5">asdf</a>
+                <a href="#" class="circle6">asdf</a>
+                <p class="circle_title">
+                    더보기
+                </p>
+            </div>
+    </section>
+    
+</body>
+</html>

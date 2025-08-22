@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+        .guide_container {
+            max-width: 1280px;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            gap: 60px;
+        }
+
+        .guide_title_box {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .guide_title {
+            font-family: '';
+            font-size: 60px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+        }
+
+        .guide_desc {
+            display: flex;
+            align-items: flex-end;
+            text-decoration: none;
+            font-family: '';
+            font-size: 20px;
+            font-weight: 500;
+            color: #111111;
+            margin: 0;
+            transition: all 0.3s ease;
+        }
+
+        .fa-angle-up {
+            transform: rotateZ(90deg);
+        }
+
+        .guide_desc:hover {
+            transform: translateX(8px);
+        }
+
+        .guide_wrapper {
+            display: flex;
+            gap: 32px;
+        }
+
+        .guide_box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: #f2f5f7;
+            border-radius: 32px;
+            box-shadow: 0 4px 12px rgba(17, 17, 17, 0.2);
+        }
+
+        .guide_img {
+            margin: 0;
+            border-radius: 32px;
+        }
+
+        .guide_img>img {
+            width: 100%;
+            border-radius: 32px 32px 0 0;
+        }
+
+        .guide_explanation_box {
+            display: flex;
+            flex-direction: column;
+            padding: 32px;
+            gap: 16px;
+        }
+
+        .guide_mark {
+            font-family: '';
+            font-size: 16px;
+            font-weight: 700;
+            color: #1428A0;
+            margin: 0;
+        }
+
+        .guide_exp_title {
+            font-family: '';
+            font-size: 26px;
+            font-weight: 700;
+            color: #111111;
+            letter-spacing: -1px;
+            margin: 0;
+        }
+
+        .guide_exp_desc {
+            font-family: '';
+            font-size: 18px;
+            font-weight: 500;
+            color: #767676;
+            letter-spacing: -1px;
+            margin: 0;
+        }
+
+        .guide_date {
+            font-family: '';
+            font-size: 16px;
+            font-weight: 500;
+            color: #a5a5a5;
+            letter-spacing: -1px;
+            margin: 0;
+        }
+
+        /* ✅ 1352px 이하 */
+        @media screen and (max-width: 1352px) {
+            .guide_container {
+                max-width: 100%;
+                padding: 0 32px;
+            }
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .guide_title_box {
+                gap: 12px;
+            }
+
+            .guide_title {
+                font-size: 56px;
+            }
+
+            .guide_desc {
+                font-size: 18px;
+            }
+
+            .guide_mark {
+                font-size: 14px;
+            }
+
+            .guide_exp_title {
+                font-size: 24px;
+            }
+
+            .guide_exp_desc {
+                font-size: 16px;
+            }
+
+            .guide_date {
+                font-size: 14px;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .guide_container {
+                padding: 0 16px;
+                gap: 32px;
+            }
+
+            .guide_title_box {
+                gap: 12px;
+            }
+
+            .guide_title {
+                font-size: 40px;
+            }
+
+            .guide_desc {
+                font-size: 16px;
+            }
+
+            .guide_wrapper {
+                gap: 16px;
+            }
+
+            .guide_explanation_box {
+                padding: 24px;
+                gap: 12px;
+            }
+
+            .guide_mark {
+                font-size: 12px;
+            }
+
+            .guide_exp_title {
+                font-size: 20px;
+            }
+
+            .guide_exp_desc {
+                font-size: 12px;
+            }
+
+            .guide_date {
+                font-size: 12px;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .guide_wrapper {
+                flex-direction: column;
+            }
+            .guide_mark {
+                font-size: 16px;
+            }
+
+            .guide_exp_title {
+                font-size: 26px;
+            }
+
+            .guide_exp_desc {
+                font-size: 18px;
+            }
+
+            .guide_date {
+                font-size: 16px;
+            }
+        }
+
+        /* ✅ 540px 이하 */
+        @media screen and (max-width: 540px) {
+            .guide_title {
+                font-size: 32px;
+            }
+
+            .guide_desc {
+                font-size: 14px;
+            }
+            .guide_mark {
+                font-size: 14px;
+            }
+
+            .guide_exp_title {
+                font-size: 24px;
+            }
+
+            .guide_exp_desc {
+                font-size: 16px;
+            }
+
+            .guide_date {
+                font-size: 14px;
+            }
+        }
+
+        /* ✅ 480px 이하 */
+        @media screen and (max-width: 480px) {
+            .guide_container {
+                gap: 20px;
+            }
+            .guide_title {
+                font-size: 24px;
+            }
+            .guide_mark {
+                font-size: 12px;
+            }
+
+            .guide_exp_title {
+                font-size: 20px;
+            }
+
+            .guide_exp_desc {
+                font-size: 12px;
+            }
+
+            .guide_date {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="guide_container">
+
+        <div class="guide_title_box">
+            <p class="guide_title">PR center</p>
+            <a href="#" class="guide_desc">
+                다양한 가이드 보러가기
+                <i class="fa-regular fa-angle-up"></i>
+            </a>
+        </div>
+
+        <div class="guide_wrapper">
+            <div class="guide_box">
+                <figure class="guide_img">
+                    <img src="https://ncryk7.mycafe24.com/mockto01.png" alt="">
+                </figure>
+                <div class="guide_explanation_box">
+                    <p class="guide_mark">New</p>
+                    <p class="guide_exp_title">삼성 SDI 배터리 탑재 차량, 세계 최장</p>
+                    <p class="guide_exp_desc">루시드 에어 그랜드 투어링 1회 충전에 어쩌고저쩌고</p>
+                    <p class="guide_date">2025.08.07</p>
+                </div>
+            </div>
+            <div class="guide_box">
+                <figure class="guide_img">
+                    <img src="https://ncryk7.mycafe24.com/mockto01.png" alt="">
+                </figure>
+                <div class="guide_explanation_box">
+                    <p class="guide_mark">New</p>
+                    <p class="guide_exp_title">삼성 SDI 배터리 탑재 차량, 세계 최장</p>
+                    <p class="guide_exp_desc">루시드 에어 그랜드 투어링 1회 충전에 어쩌고저쩌고</p>
+                    <p class="guide_date">2025.08.07</p>
+                </div>
+            </div>
+            <div class="guide_box">
+                <figure class="guide_img">
+                    <img src="https://ncryk7.mycafe24.com/mockto01.png" alt="">
+                </figure>
+                <div class="guide_explanation_box">
+                    <p class="guide_mark">New</p>
+                    <p class="guide_exp_title">삼성 SDI 배터리 탑재 차량, 세계 최장</p>
+                    <p class="guide_exp_desc">루시드 에어 그랜드 투어링 1회 충전에 어쩌고저쩌고</p>
+                    <p class="guide_date">2025.08.07</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+
+</html>
