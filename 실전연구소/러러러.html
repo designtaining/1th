@@ -9,11 +9,18 @@
     <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
 
     <style>
+        @font-face {
+            font-family: 'SUIT-Regular';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         .guide_container {
             max-width: 1280px;
             display: flex;
             flex-direction: column;
-            margin: 0 auto;
+            margin: 200px auto;
             gap: 60px;
         }
 
@@ -23,7 +30,7 @@
         }
 
         .guide_title {
-            font-family: '';
+            font-family: 'SUIT-Regular';
             font-size: 60px;
             font-weight: 700;
             color: #111111;
@@ -37,16 +44,18 @@
             font-family: '';
             font-size: 20px;
             font-weight: 500;
-            color: #111111;
+            color: #111111 !important;
             margin: 0;
             transition: all 0.3s ease;
         }
 
         .fa-angle-up {
             transform: rotateZ(90deg);
+            margin: 2% 0;
         }
 
         .guide_desc:hover {
+            color: #1428A0 !important;
             transform: translateX(8px);
         }
 
@@ -63,16 +72,22 @@
             background-color: #f2f5f7;
             border-radius: 32px;
             box-shadow: 0 4px 12px rgba(17, 17, 17, 0.2);
+            overflow: hidden;
         }
 
         .guide_img {
             margin: 0;
-            border-radius: 32px;
+            border-radius: 32px 32px 0 0;
         }
 
-        .guide_img>img {
+        .guide_img>a>img {
             width: 100%;
             border-radius: 32px 32px 0 0;
+            transition: all 0.3s ease;
+        }
+
+        .guide_img>a>img:hover {
+            transform: scale(1.07);
         }
 
         .guide_explanation_box {
@@ -83,7 +98,7 @@
         }
 
         .guide_mark {
-            font-family: '';
+            font-family: 'SUIT-Regular';
             font-size: 16px;
             font-weight: 700;
             color: #1428A0;
@@ -91,7 +106,7 @@
         }
 
         .guide_exp_title {
-            font-family: '';
+            font-family: 'SUIT-Regular';
             font-size: 26px;
             font-weight: 700;
             color: #111111;
@@ -100,7 +115,7 @@
         }
 
         .guide_exp_desc {
-            font-family: '';
+            font-family: 'SUIT-Regular';
             font-size: 18px;
             font-weight: 500;
             color: #767676;
@@ -109,7 +124,7 @@
         }
 
         .guide_date {
-            font-family: '';
+            font-family: 'SUIT-Regular';
             font-size: 16px;
             font-weight: 500;
             color: #a5a5a5;
@@ -206,6 +221,7 @@
             .guide_wrapper {
                 flex-direction: column;
             }
+
             .guide_mark {
                 font-size: 16px;
             }
@@ -232,6 +248,7 @@
             .guide_desc {
                 font-size: 14px;
             }
+
             .guide_mark {
                 font-size: 14px;
             }
@@ -254,9 +271,11 @@
             .guide_container {
                 gap: 20px;
             }
+
             .guide_title {
                 font-size: 24px;
             }
+
             .guide_mark {
                 font-size: 12px;
             }
@@ -291,7 +310,9 @@
         <div class="guide_wrapper">
             <div class="guide_box">
                 <figure class="guide_img">
-                    <img src="https://ncryk7.mycafe24.com/mockto01.png" alt="">
+                    <a href="#">
+                        <img src="https://ncryk7.mycafe24.com/mockto01.png" alt="">
+                    </a>
                 </figure>
                 <div class="guide_explanation_box">
                     <p class="guide_mark">New</p>
@@ -302,7 +323,9 @@
             </div>
             <div class="guide_box">
                 <figure class="guide_img">
-                    <img src="https://ncryk7.mycafe24.com/mockto01.png" alt="">
+                    <a href="#">
+                        <img src="https://ncryk7.mycafe24.com/mockto01.png" alt="">
+                    </a>
                 </figure>
                 <div class="guide_explanation_box">
                     <p class="guide_mark">New</p>
@@ -313,7 +336,9 @@
             </div>
             <div class="guide_box">
                 <figure class="guide_img">
-                    <img src="https://ncryk7.mycafe24.com/mockto01.png" alt="">
+                    <a href="#">
+                        <img src="https://ncryk7.mycafe24.com/mockto01.png" alt="">
+                    </a>
                 </figure>
                 <div class="guide_explanation_box">
                     <p class="guide_mark">New</p>
