@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+        .pr2_container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .pr2_wrapper {
+            width: 1280px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .pr2_box {
+            width: 44%;
+            display: flex;
+            border-radius: 8px;
+            border: 1px solid #4768C9;
+            padding: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .pr2_box:hover {
+            background-color: #4768C9;
+        }
+
+        .pr2_box:hover .pr2_left>i,
+        .pr2_box:hover .pr2_title,
+        .pr2_box:hover .pr2_step,
+        .pr2_box:hover .pr2_desc {
+            color: #ffffff;
+        }
+
+        .pr2_left {
+            width: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pr2_left>i {
+            transition: all 0.3s ease;
+        }
+
+        .pr2_right {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .pr2_title {
+            font-family: '';
+            font-size: 32px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+            transition: all 0.3s ease;
+        }
+
+        .pr2_step {
+            font-family: '';
+            font-size: 16px;
+            font-weight: 300;
+            color: #767676;
+            margin: 0;
+            transition: all 0.3s ease;
+        }
+
+        .pr2_desc {
+            font-family: '';
+            font-size: 18px;
+            font-weight: 300;
+            color: #505050;
+            margin: 0;
+            transition: all 0.3s ease;
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .pr2_box {
+                width: 43.7%;
+                padding: 32px;
+            }
+
+            .pr2_wrapper {
+                padding: 16px;
+                gap: 16px;
+            }
+            .pr2_left {
+                width: 70%;
+            }
+
+            .pr2_title {
+                font-size: 28px;
+            }
+
+            .pr2_step {
+                font-size: 14px;
+            }
+
+            .pr2_desc {
+                font-size: 16px;
+            }
+        }
+
+        /* ✅ 1224px 이하 */
+        @media screen and (max-width: 1224px) {
+            .pr2_box {
+                width: 43%;
+                padding: 32px;
+            }
+            .pr2_left {
+                width: 60%;
+            }
+        }
+
+        /* ✅ 1106px 이하 */
+        @media screen and (max-width: 1106px) {
+            .pr2_box {
+                width: 42.4%;
+            }
+            .pr2_left {
+                width: 60%;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .pr2_container {
+            width: 100%;
+        }
+            .pr2_wrapper {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            gap: 16px;
+        }
+        .pr2_box {
+                width: 100%;
+                padding: 16px;
+                box-sizing: border-box;
+            }
+            .pr2_left {
+                width: 24%;
+                padding: 0 32px;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .pr2_title {
+                font-size: 22px;
+            }
+
+            .pr2_step {
+                font-size: 12px;
+            }
+
+            .pr2_desc {
+                font-size: 14px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .pr2_title {
+                font-size: 20px;
+            }
+
+            .pr2_step {
+                font-size: 10px;
+            }
+
+            .pr2_desc {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="pr2_container">
+        <div class="pr2_wrapper">
+            <div class="pr2_box">
+                <div class="pr2_left">
+                    <i class="fa-regular fa-ballot-check fa-2xl"></i>
+                </div>
+                <div class="pr2_right">
+                    <p class="pr2_title">기획단계</p>
+                    <p class="pr2_step">STEP 01</p>
+                    <p class="pr2_desc">
+                        홈페이지 전문컨설턴트의 상담을 통하여 분석, 문제점, 디자인 방향 등을 파악하여 제작범위와 금액을 조율합니다. 모든 전화상담 및 방문상담은 무료로 받으실 수 있습니다.
+                    </p>
+                </div>
+            </div>
+            <div class="pr2_box">
+                <div class="pr2_left">
+                    <i class="fa-regular fa-hammer-brush fa-2xl"></i>
+                </div>
+                <div class="pr2_right">
+                    <p class="pr2_title">웹디자인</p>
+                    <p class="pr2_step">STEP 02</p>
+                    <p class="pr2_desc">
+                        홈페이지 전문컨설턴트의 상담을 통하여 분석, 문제점, 디자인 방향 등을 파악하여 제작범위와 금액을 조율합니다. 모든 전화상담 및 방문상담은 무료로 받으실 수 있습니다.
+                    </p>
+                </div>
+            </div>
+            <div class="pr2_box">
+                <div class="pr2_left">
+                    <i class="fa-regular fa-rectangle-code fa-2xl"></i>
+                </div>
+                <div class="pr2_right">
+                    <p class="pr2_title">퍼블리싱</p>
+                    <p class="pr2_step">STEP 03</p>
+                    <p class="pr2_desc">
+                        홈페이지 전문컨설턴트의 상담을 통하여 분석, 문제점, 디자인 방향 등을 파악하여 제작범위와 금액을 조율합니다. 모든 전화상담 및 방문상담은 무료로 받으실 수 있습니다.
+                    </p>
+                </div>
+            </div>
+            <div class="pr2_box">
+                <div class="pr2_left">
+                    <i class="fa-regular fa-browsers fa-2xl"></i>
+                </div>
+                <div class="pr2_right">
+                    <p class="pr2_title">UXUI개발</p>
+                    <p class="pr2_step">STEP 04</p>
+                    <p class="pr2_desc">
+                        홈페이지 전문컨설턴트의 상담을 통하여 분석, 문제점, 디자인 방향 등을 파악하여 제작범위와 금액을 조율합니다. 모든 전화상담 및 방문상담은 무료로 받으실 수 있습니다.
+                    </p>
+                </div>
+            </div>
+            <div class="pr2_box">
+                <div class="pr2_left">
+                    <i class="fa-regular fa-circle-check fa-2xl"></i>
+                </div>
+                <div class="pr2_right">
+                    <p class="pr2_title">홈페이지 검수</p>
+                    <p class="pr2_step">STEP 05</p>
+                    <p class="pr2_desc">
+                        홈페이지 전문컨설턴트의 상담을 통하여 분석, 문제점, 디자인 방향 등을 파악하여 제작범위와 금액을 조율합니다. 모든 전화상담 및 방문상담은 무료로 받으실 수 있습니다.
+                    </p>
+                </div>
+            </div>
+            <div class="pr2_box">
+                <div class="pr2_left">
+                    <i class="fa-regular fa-house-chimney fa-2xl"></i>
+                </div>
+                <div class="pr2_right">
+                    <p class="pr2_title">페이지 오픈</p>
+                    <p class="pr2_step">STEP 06</p>
+                    <p class="pr2_desc">
+                        홈페이지 전문컨설턴트의 상담을 통하여 분석, 문제점, 디자인 방향 등을 파악하여 제작범위와 금액을 조율합니다. 모든 전화상담 및 방문상담은 무료로 받으실 수 있습니다.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>
