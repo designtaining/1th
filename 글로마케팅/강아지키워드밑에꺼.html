@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .puppy_container {
+            width: 100%;
+            display: flex;
+        }
+
+        .puppy_wrapper {
+            width: 1000px;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            margin: 20px auto 0;
+        }
+
+        .puppy_box {
+            width: 235px;
+            height: 235px;
+            overflow: hidden;
+        }
+
+        .puppy_box>a>img {
+            width: 235px;
+            height: 235px;
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .puppy_box>a>img:hover {
+            transform: scale(1.05);
+        }
+
+        .puppy_box>a {
+            position: relative;
+            width: 100%;
+        }
+
+        .puppy_title {
+            width: 100%;
+            position: absolute;
+            font-family: 'NanumSquareNeoExtraBold';
+            font-size: 20px;
+            color: #111111;
+            top: 4px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .puppy_button {
+            width: 100%;
+            position: absolute;
+            font-family: 'NanumSquareNeoLight';
+            font-size: 16px;
+            color: #ffffff;
+            bottom: 0;
+            transform: translateY(40px);
+            display: flex;
+            opacity: 0;
+            justify-content: center;
+            position: absolute;
+            background-color: #111111;
+            padding: 16px 0;
+            transition: all 0.3s ease;
+        }
+
+        .puppy_box>a:hover .galaxy_button {
+            display: flex;
+            opacity: 1;
+            transform: translate(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="puppy_container">
+        <div class="puppy_wrapper">
+
+            <div class="puppy_box">
+                <a href="#">
+                    <img
+                        src="https://images.samsung.com/kdp/cms_contents/473867/7918f1fc-fd79-46d2-ab0e-9275dab8e402.png $ORIGIN_JPG$">
+                    <p class="puppy_title">Neo QLED</ㅔ>
+                    <p class="puppy_button">
+                        보러가기
+                    </p>
+                </a>
+            </div>
+            <div class="puppy_box">
+                <a href="#">
+                    <img
+                        src="https://images.samsung.com/kdp/cms_contents/473867/ba845228-22a1-4f78-80af-020a84c46806.png?$ORIGIN_JPG$">
+                    <p class="puppy_title">OLED</ㅔ>
+                    <p class="puppy_button">
+                        보러가기
+                    </p>
+                </a>
+            </div>
+            <div class="puppy_box">
+                <a href="#">
+                    <img
+                        src="https://images.samsung.com/kdp/cms_contents/473867/6b42467c-f327-4489-b1eb-05c44d24a147.jpg?$ORIGIN_JPG$">
+                    <p class="puppy_title">The Frame</ㅔ>
+                    <p class="puppy_button">
+                        보러가기
+                    </p>
+                </a>
+            </div>
+            <div class="puppy_box">
+                <a href="#">
+                    <img
+                        src="https://images.samsung.com/kdp/cms_contents/506487/3bc9aadc-cd82-46e7-9d42-3628b7f53bfd.jpg?$ORIGIN_JPG$">
+                    <p class="puppy_title">무빙스타일 Edge 런칭</ㅔ>
+                    <p class="puppy_button">
+                        보러가기
+                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

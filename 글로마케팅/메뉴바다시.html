@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .custom-header-div {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: transparent;
+            z-index: 9999;
+            padding: 12px 30px;
+            box-shadow: none;
+            transition: all 0.3s ease;
+        }
+
+        .custom-header-div.scrolled {
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-inner-div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1920px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .logo-div {
+            width: 120px;
+            height: 40px;
+            margin-left: 280px;
+            background: url('https://cdn.imweb.me/thumbnail/20250531/d47c346d13535.png') no-repeat center center;
+            background-size: contain;
+            transition: filter 0.3s ease;
+        }
+
+        .nav-menu-div {
+            display: flex;
+            gap: 80px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .nav-menu-div a {
+            position: relative;
+            font-family: 'Pretendard';
+            font-size: 16px;
+            font-weight: 600;
+            color: #111111;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu-div a:hover {
+            color: #111111;
+        }
+
+        .nav-menu-div a::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            right: -10px;
+            width: 8px;
+            height: 8px;
+            background-color: #2e50e2;
+            border-radius: 50%;
+            opacity: 0;
+            transform: scale(0);
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu-div a:hover::before {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .custom-header-div:not(.scrolled) .nav-menu-div a {
+            color: #ffffff;
+        }
+
+        .custom-header-div:not(.scrolled) .nav-menu-div a:hover {
+            color: #2e50e2;
+        }
+
+        .custom-header-div:not(.scrolled) .global-submenu-bar {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .custom-header-div:not(.scrolled) .submenu-column a {
+            color: #ffffff;
+        }
+
+        .custom-header-div:not(.scrolled) .submenu-column a:hover {
+            color: #2e50e2;
+        }
+
+        .contact-button-div {
+            position: relative;
+            overflow: hidden;
+            margin-left: 45px;
+            margin-right: 280px;
+            margin-bottom: 5px;
+            background: linear-gradient(90deg, #6868ff 0%, #2727d9 50%, #2727d9 50%, #000091 100%);
+            background-size: 200% 100%;
+            background-position: left center;
+            color: #ffffff !important;
+            padding: 23px 44px;
+            border: none;
+            border-radius: 999px;
+            font-family: 'Pretendard';
+            font-size: 16px;
+            font-weight: 500;
+            height: 44px;
+            line-height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-position 0.6s ease, color 0.3s ease;
+            text-decoration: none;
+            z-index: 1;
+        }
+
+        .contact-button-div:hover {
+            background-position: right center;
+        }
+
+        .global-submenu-bar {
+            width: 100%;
+            background-color: #f8f8f8;
+            border-top: 1px solid #e0e0e0;
+            padding: 16px 320px;
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .custom-header-div:hover .global-submenu-bar,
+        .custom-header-div.scrolled:hover .global-submenu-bar {
+            display: block;
+        }
+
+        .submenu-group {
+            display: flex;
+            justify-content: center;
+            max-width: 1280px;
+            margin: 0 auto;
+            gap: 70px;
+        }
+
+        .submenu-column {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .submenu-column a {
+            font-family: 'Pretendard';
+            font-size: 16px;
+            color: #111;
+            text-decoration: none;
+        }
+
+        .submenu-column a:hover {
+            color: #2e50e2;
+        }
+
+        /* ✅ 반응형 - 태블릿 */
+        @media (max-width: 1280px) {
+            .logo-div {
+                margin-left: 40px;
+            }
+
+            .contact-button-div {
+                margin-right: 40px;
+            }
+
+            .global-submenu-bar {
+                padding: 16px 40px;
+            }
+        }
+
+        /* ✅ 반응형 - MAC 작은 화면용 (최대 1024) */
+        @media (max-width: 1024px) {
+            .nav-menu-div {
+                gap: 40px;
+            }
+
+            .contact-button-div {
+                padding: 18px 32px;
+            }
+        }
+
+        /* ✅ 반응형 - 모바일 */
+        @media (max-width: 768px) {
+
+            .nav-menu-div,
+            .contact-button-div,
+            .global-submenu-bar {
+                display: none !important;
+            }
+
+            .logo-div {
+                margin-left: 16px;
+                width: 100px;
+            }
+
+            .header-inner-div {
+                justify-content: flex-start;
+            }
+        }
+    </style>
+
+    <section id="headerSection">
+        <div class="custom-header-div">
+            <div class="header-inner-div">
+                <a href="https://geulomarketing.co.kr" class="logo-div"></a>
+                <nav class="nav-menu-div">
+                    <a href="Introduction">회사소개</a>
+                    <a href="#">서비스소개</a>
+                    <a href="column">전문칼럼</a>
+                    <a href="notice">공지사항</a>
+                    <a href="26" class="contact-button-div">문의하기</a>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('.custom-header-div');
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+    </body>
+
+</html>

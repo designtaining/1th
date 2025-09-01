@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: 'AstaSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2505-1@1.0/AstaSans-Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+        .banner_container {
+            width: 1920px;
+            height: 960px;
+            background-image: url(https://cdn.imweb.me/thumbnail/20250901/4e153f7fe82e5.jpg);
+            background-size: cover;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .banner_shadow {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: rgba(17, 17, 17, 0.6);
+            bottom: 0;
+            z-index: 1;
+        }
+
+        .banner_wrapper {
+            z-index: 2;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            width: 1000px;
+        }
+
+        .banner_top_wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .banner_top_left {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .banner_title {
+            font-family: 'AstaSans';
+            font-size: 52px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .banner_desc {
+            font-family: 'AstaSans';
+            font-size: 24px;
+            font-weight: 500;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .banner_top_right {
+            width: 280px;
+            height: 280px;
+        }
+
+        .banner_top_right > img {
+            width: 280px;
+            height: 280px;
+        }
+
+        .banner_bottom_wrapper {
+            width: 1000px;
+            height: 360px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .banner_proof_box {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .proof_title {
+            font-family: 'AstaSans';
+            font-size: 20px;
+            font-weight: 500;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .proof_desc {
+            font-family: 'AstaSans';
+            font-size: 48px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .proof_line {
+            width: 1px;
+            height: 22%;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="banner_container">
+        <div class="banner_shadow"></div>
+
+        <div class="banner_wrapper">
+
+            <div class="banner_top_wrapper">
+                <div class="banner_top_left">
+                    <p class="banner_title">
+                        수의학 전공
+                        <br>
+                        동물병원 전문 블로그 마케팅
+                    </p>
+                    <p class="banner_desc">
+                        강아지 고양이 키워드 상위노출 100%
+                        <br>
+                        차별화된 디테일로 쌓아올린 설계비법
+                        <br>
+                        지금 확인하세요.
+                    </p>
+                </div>
+                <figure class="banner_top_right">
+                    <img src="https://cdn.imweb.me/thumbnail/20250901/a29383ac4490a.png" alt="강아지와 고양이">
+                </figure>
+            </div>
+
+            <div class="banner_bottom_wrapper">
+                <div class="banner_proof_box">
+                    <p class="proof_title">
+                        고객만족도
+                    </p>
+                    <p class="proof_desc">
+                        98%
+                    </p>
+                </div>
+                <div class="proof_line"></div>
+                <div class="banner_proof_box">
+                    <p class="proof_title">
+                        재계약율
+                    </p>
+                    <p class="proof_desc">
+                        95%
+                    </p>
+                </div>
+                <div class="proof_line"></div>
+                <div class="banner_proof_box">
+                    <p class="proof_title">
+                        환불건수
+                    </p>
+                    <p class="proof_desc">
+                        0건
+                    </p>
+                </div>
+                <div class="proof_line"></div>
+                <div class="banner_proof_box">
+                    <p class="proof_title">
+                        작업완수율
+                    </p>
+                    <p class="proof_desc">
+                        100%
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+        @font-face {
+            font-family: 'AstaSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2505-1@1.0/AstaSans-Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        .gnb_container {
+            width: 100%;
+            height: 80px;
+            border-bottom: 1px solid #e5e5ec;
+            box-shadow: 0 4px 12px rgba(17, 17, 17, 0.05);
+            position: fixed;
+            top: 0;
+            z-index: 1;
+        }
+
+        .gnb_wrapper {
+            width: 1000px;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        .gnb_logo {
+            width: 96px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gnb_logo>img {
+            width: 96px;
+            height: 40px;
+        }
+
+        .gnb_menu_box {
+            display: flex;
+            gap: 40px;
+        }
+
+        .gnb_menu,
+        .gnb_button {
+            list-style: none;
+        }
+
+        .gnb_menu>a {
+            font-family: 'AstaSans';
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            color: #111111;
+            transition: all 0.3s ease;
+        }
+
+        .gnb_menu>a:hover {
+            color: #1428A0;
+        }
+
+        .gnb_button>a {
+            font-family: 'AstaSans';
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            color: #ffffff;
+            border-radius: 999px;
+            background-color: #1428A0;
+            padding: 10px 32px;
+            transition: all 0.3s ease;
+        }
+
+        .gnb_button>a:hover {
+            background-color: #09196e;
+        }
+
+        .gnb_menu_right {
+            display: none;
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .gnb_wrapper {
+                width: 100%;
+                padding: 0 16px;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .gnb_menu_box {
+                display: none;
+            }
+            .gnb_menu_right {
+            display: flex;
+        }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {}
+
+        /* ✅ 375px 이하 */
+        @media screen and (max-width: 375px) {}
+    </style>
+</head>
+
+<body>
+
+    <section class="gnb_container">
+
+        <div class="gnb_wrapper">
+
+            <a href="https://www.geulomarketing.co.kr" class="gnb_logo">
+                <img src="https://cdn.imweb.me/thumbnail/20250531/d47c346d13535.png" alt="">
+            </a>
+
+            <ul class="gnb_menu_box">
+                <li class="gnb_menu">
+                    <a href="#">
+                        회사소개
+                    </a>
+                </li>
+                <li class="gnb_menu">
+                    <a href="#">
+                        전문칼럼
+                    </a>
+                </li>
+                <li class="gnb_menu">
+                    <a href="#">
+                        고객후기
+                    </a>
+                </li>
+                <li class="gnb_menu">
+                    <a href="#">
+                        포트폴리오
+                    </a>
+                </li>
+                <li class="gnb_button">
+                    <a href="#">
+                        문의하기
+                    </a>
+                </li>
+            </ul>
+
+            <div class="gnb_menu_right">
+                <i class="fa-light fa-bars fa-2xl"></i>
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>
