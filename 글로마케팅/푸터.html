@@ -18,22 +18,28 @@
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: 60px;
+            gap: 32px;
         }
 
         .footer_top {
             display: flex;
             width: 100%;
-            padding: 16px 0;
-            border-bottom: 1px solid #ffffff;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer_title_box {
+            display: flex;
+            gap: 32px;
         }
 
         .footer_title {
             font-family: 'Pretendard';
-            font-size: 24px;
-            font-weight: 500;
-            color: #ffffff;
+            font-size: 14px;
+            font-weight: 300;
+            color: #cccccc;
             margin: 0;
+            text-decoration: none;
         }
 
         .footer_bottom {
@@ -43,37 +49,9 @@
             justify-content: space-between;
         }
 
-        .footer_bottom_left {
-            display: flex;
-            flex-direction: column;
-            width: 50%;
-            gap: 28px;
-        }
-
-        .footer_logo {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 120px;
-            height: 40px;
-        }
-
-        .footer_logo>img {
-            width: 120px;
-            height: 40px;
-        }
-
-        .footer_phone {
-            font-family: 'Pretendard';
-            font-size: 32px;
-            font-weight: 700;
-            color: #ffffff;
-            margin: 0;
-        }
-
         .footer_desc {
             font-family: 'Pretendard';
-            font-size: 18px;
+            font-size: 14px;
             font-weight: 300;
             color: #a5a5a5;
             margin: 0;
@@ -88,12 +66,12 @@
         .right_left {
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 16px;
         }
 
         .footer_val {
             font-family: 'Pretendard';
-            font-size: 18px;
+            font-size: 14px;
             font-weight: 300;
             color: #ffffff;
             margin: 0;
@@ -102,7 +80,7 @@
         .right_right {
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 16px;
         }
     </style>
 </head>
@@ -114,23 +92,16 @@
         <div class="footer_wrapper">
 
             <div class="footer_top">
-                <p class="footer_title">
-                    합리적인 비용. 좋은글로 생각하는 마케팅
-                </p>
+                <div class="footer_title_box">
+                    <a class="footer_title" href="#">회사소개</a>
+                    <a class="footer_title" href="#">개인정보처리방침</a>
+                    <a class="footer_title" href="#">칼럼보기</a>
+                    <a class="footer_title" href="#">설문지작성</a>
+                </div>
             </div>
 
             <div class="footer_bottom">
-                <div class="footer_bottom_left">
-                    <div class="footer_logo">
-                        <img src="https://cdn.imweb.me/thumbnail/20250531/d47c346d13535.png" alt="">
-                    </div>
-                    <p class="footer_phone">
-                        010-4065-2752
-                    </p>
-                    <p class="footer_desc">
-                        영업시간 : 09:00 - 18:00
-                    </p>
-                </div>
+
                 <div class="footer_bottom_right">
                     <div class="right_left">
                         <p class="footer_val">대표자명</p>
@@ -143,6 +114,17 @@
                         <p class="footer_desc">서울특별시 강남구 언주로30길</p>
                         <p class="footer_desc">239-69-00551</p>
                         <p class="footer_desc">하나은행 / 391-911717-62307</p>
+                    </div>
+                </div>
+
+                <div class="footer_bottom_right">
+                    <div class="right_left">
+                        <p class="footer_val">TEL.</p>
+                        <p class="footer_val">EMAIL.</p>
+                    </div>
+                    <div class="right_right">
+                        <p class="footer_desc">010-4065-2752</p>
+                        <p class="footer_desc">--</p>
                     </div>
                 </div>
             </div>
