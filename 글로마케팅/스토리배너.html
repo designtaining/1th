@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .story_container {
+            position: relative;
+            width: 100%;
+            height: 960px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(https://ncryk7.mycafe24.com/tiger1.jpg);
+            background-size: cover;
+        }
+
+        .story_shadow {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: rgba(17, 17, 17, 0.6);
+            z-index: 1;
+        }
+
+        .story_box {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            z-index: 2;
+            gap: 16px;
+        }
+
+        .story_banner_desc {
+            font-family: 'Pretendard';
+            font-size: 32px;
+            font-weight: 300;
+            color: #ffffff;
+            margin: 0;
+            text-align: center;
+        }
+
+        .story_banner_title {
+            font-family: 'Pretendard';
+            font-size: 60px;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 0;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+    </style>
+</head>
+<body>
+
+    <section class="story_container">
+        <div class="story_shadow"></div>
+
+        <div class="story_box">
+            <p class="story_banner_desc">
+                동물병원 전문 마케팅?
+            </p>
+            <p class="story_banner_title">"우리의 이야기<br>솔직하게 들려드릴께요"</p>
+        </div>
+
+    </section>
+    
+</body>
+</html>
