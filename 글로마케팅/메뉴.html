@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+        @font-face {
+            font-family: 'AstaSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2505-1@1.0/AstaSans-Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        .head_container {
+            width: 100%;
+            height: 72px;
+            border-bottom: 1px solid #e5e5ec;
+            position: fixed !important;
+            z-index: 5;
+            top: 0;
+        }
+
+        .head_wrapper {
+            width: 1000px;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        .head_logo {
+            width: 96px;
+            height: 40px;
+            background-image: url(https://cdn.imweb.me/thumbnail/20250531/d47c346d13535.png);
+            background-size: cover;
+        }
+
+        .head_right {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .head_menu_box {
+            display: flex;
+            gap: 40px;
+        }
+
+        .head_menu {
+            font-family: 'AstaSans';
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            color: #111111;
+            transition: all 0.3s ease;
+        }
+
+        .head_menu:hover {
+            color: #1428A0;
+        }
+
+        .head_qsn {
+            font-family: 'AstaSans';
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            color: #ffffff;
+            border-radius: 999px;
+            background-color: #1428A0;
+            padding: 10px 32px;
+            transition: all 0.3s ease;
+        }
+
+        .head_qsn:hover {
+            background-color: #09196e;
+        }
+
+        .overlay_container {
+            width: 100%;
+            height: 600px;
+            background-color: rgba(17, 17, 17, 0.9);
+            position: absolute;
+            top: 73px;
+        }
+
+        .overlay_wrapper {
+            width: 1000px;
+            height: 100%;
+            margin: 0 auto;
+            padding: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .overlay_box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+        }
+
+        .overlay_top {
+            display: flex;
+            justify-content: center;
+        }
+
+        .overlay_top>svg {
+            color: #ffffff;
+        }
+
+        .overlay_ple {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+        }
+
+        .overlay_middle {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .overlay_title {
+            font-family: 'Pretendard';
+            font-size: 48px;
+            font-weight: 700;
+            color: #555555;
+            text-align: center;
+            margin: 0;
+        }
+
+        .overlay_menu {
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 300;
+            color: #ffffff;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .overlay_bottom {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .overlay_brands {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .fa-blog {
+            color: #03c75a;
+        }
+
+        .fa-instagram {
+            color: #F72AB3;
+        }
+
+        .fa-kakao-talk {
+            color: #ffff1f
+        }
+
+        /* 처음엔 숨김 */
+        .overlay_container {
+            display: none;
+        }
+
+        /* 클릭감 주기 (선택) */
+        .head_hamburger {
+            cursor: pointer;
+        }
+
+        .overlay_top svg {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="head_container">
+        <div class="head_wrapper">
+            <a href="" class="head_logo"></a>
+            <div class="head_right">
+                <div class="head_menu_box">
+                    <a href="" class="head_menu">
+                        회사소개
+                    </a>
+                    <a href="" class="head_menu">
+                        포트폴리오
+                    </a>
+                    <a href="" class="head_menu">
+                        전문칼럼
+                    </a>
+                    <a href="" class="head_menu">
+                        고객후기
+                    </a>
+                </div>
+                <div class="head_menu_qsnbox">
+                    <a href="" class="head_qsn">
+                        문의하기
+                    </a>
+                </div>
+            </div>
+            <div class="head_hamburger">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+                    aria-label="Menu">
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <div class="overlay_container">
+        <div class="overlay_wrapper">
+            <div class="overlay_box">
+                <div class="overlay_top">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-label="Close">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </div>
+                <div class="overlay_ple">
+                    <div class="overlay_middle">
+                        <p class="overlay_title">
+                            About us
+                        </p>
+                        <a href="" class="overlay_menu">
+                            회사소개
+                        </a>
+                        <a href="" class="overlay_menu">
+                            포트폴리오
+                        </a>
+                        <a href="" class="overlay_menu">
+                            전문칼럼
+                        </a>
+                        <a href="" class="overlay_menu">
+                            고객후기
+                        </a>
+                        <a href="" class="overlay_menu">
+                            문의하기
+                        </a>
+                    </div>
+                    <div class="overlay_bottom">
+                        <p class="overlay_title">
+                            Channel
+                        </p>
+                        <div class="overlay_brands">
+                            <a href="" class="overlay_link_blog">
+                                <i class="fa-solid fa-blog fa-2xl"></i>
+                            </a>
+                            <a href="" class="overlay_link_insta">
+                                <i class="fa-brands fa-instagram fa-2xl"></i>
+                            </a>
+                            <a href="" class="overlay_link_kakao">
+                                <i class="fa-brands fa-kakao-talk fa-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const overlay = document.querySelector('.overlay_container');
+            const openBtn = document.querySelector('.head_hamburger');
+            const closeBtn = document.querySelector('.overlay_top svg');
+
+            const openOverlay = () => {
+                overlay.style.display = 'block';     // 필요하면 'flex'로 바꿔도 OK
+                document.body.style.overflow = 'hidden'; // 스크롤 잠금(선택)
+            };
+
+            const closeOverlay = () => {
+                overlay.style.display = 'none';
+                document.body.style.overflow = ''; // 스크롤 복구
+            };
+
+            // 열기/닫기 버튼
+            openBtn.addEventListener('click', openOverlay);
+            closeBtn.addEventListener('click', closeOverlay);
+
+            // 오버레이 바깥 여백 클릭 시 닫기
+            overlay.addEventListener('click', (e) => {
+                if (!e.target.closest('.overlay_box')) closeOverlay();
+            });
+
+            // ESC로 닫기
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeOverlay();
+            });
+        });
+    </script>
+
+</body>
+
+</html>

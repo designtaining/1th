@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+        .pf_banner_container {
+            width: 100%;
+            padding: 100px 0;
+        }
+
+        .pf_banner_wrapper {
+            width: 1000px;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            gap: 40px;
+        }
+
+        .pf_banner_title {
+            font-family: 'Pretendard';
+            font-size: 36px;
+            font-weight: 600;
+            color: #111111;
+        }
+
+        .pf_banner_box_wrapper {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .pf_banner_box {
+            width: 100%;
+            height: 420px;
+            text-decoration: none;
+            color: #111111;
+            border: 1px solid #e5e5ec;
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .pf_banner_top {
+            height: 15%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 32px;
+        }
+
+        .pf_banner_top_title {
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 600;
+            color: #111111;
+        }
+
+        .pf_banner_bottom {
+            width: 100%;
+            height: 85%;
+            background-image: url(https://cdn.imweb.me/thumbnail/20250901/7530bc7631b7c.png);
+            background-size: cover;
+        }
+
+        .pf_shadow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(17, 17, 17, 0.85);
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+
+        .pf_sticker {
+            position: absolute;
+            padding: 12px 32px;
+            top: 0;
+            right: 0;
+            background-color: #a50000;
+            font-family: 'Pretendard';
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+            border-radius: 0 0 0 24px;
+        }
+
+        .pf_banner_box:hover .pf_shadow {
+            background-color: rgba(17, 17, 17, 0.4);
+        }
+
+        /* 포폴배너상단 끝~~~~~~~~~ 포폴배너하단시작 */
+
+        .outside_container {
+            width: 100%;
+            padding: 60px 0;
+            background-color: #333333;
+        }
+
+        .outside_wrapper {
+            width: 1000px;
+            display: flex;
+            margin: 0 auto;
+            justify-content: space-between;
+        }
+
+        .outside_title {
+            width: 50%;
+            font-family: 'Pretendard';
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .outside_desc {
+            width: 50%;
+            font-family: 'Pretendard';
+            font-size: 18px;
+            font-weight: 300;
+            color: #ffffff;
+            line-height: 1.4;
+            margin: 0;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <section class="pf_banner_container">
+
+        <div class="pf_banner_wrapper">
+            <div class="pf_banner_title">
+                포트폴리오
+            </div>
+            <div class="pf_banner_box_wrapper">
+                <a href="#" class="pf_banner_box">
+                    <div class="pf_sticker">
+                        현재 페이지
+                    </div>
+                    <div class="pf_banner_top">
+                        <p class="pf_banner_top_title">
+                            1인 동물병원
+                        </p>
+                        <i class="fa-regular fa-arrow-right fa-xl"></i>
+                    </div>
+                    <div class="pf_banner_bottom">
+                    </div>
+                </a>
+                <a href="#" class="pf_banner_box">
+                    <div class="pf_shadow"></div>
+                    <div class="pf_banner_top">
+                        <p class="pf_banner_top_title">
+                            1인 동물병원
+                        </p>
+                        <i class="fa-regular fa-arrow-right fa-xl"></i>
+                    </div>
+                    <div class="pf_banner_bottom">
+                    </div>
+                </a>
+                <a href="#" class="pf_banner_box">
+                    <div class="pf_shadow"></div>
+                    <div class="pf_banner_top">
+                        <p class="pf_banner_top_title">
+                            블로그대행 사례
+                        </p>
+                        <i class="fa-regular fa-arrow-right fa-xl"></i>
+                    </div>
+                    <div class="pf_banner_bottom">
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </section>
+    <div class="outside_container">
+        <div class="outside_wrapper">
+            <p class="outside_title">
+                보호자는 한번 정착한 동물병원을
+                <br>
+                잘 바꾸지 않습니다.
+            </p>
+            <p class="outside_desc">
+                기존에 다녔던 병원에서
+                <br>
+                내 아이의 성향과 특징을 누구보다 잘 알기 때문입니다.
+                <br>
+                이런 상황에서 원장님은 보호자를 어떻게 설득하고 계신가요?
+            </p>
+        </div>
+    </div>
+
+</body>
+
+</html>
