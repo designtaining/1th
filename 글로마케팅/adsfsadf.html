@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .puppy_container {
+            width: 100%;
+            display: flex;
+        }
+
+        .puppy_wrapper {
+            width: 1000px;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            margin: 20px auto 0;
+        }
+
+        .puppy_box {
+            width: 235px;
+            height: 235px;
+            overflow: hidden;
+            border: 1px solid #e5e5ec;
+            box-shadow: 0 4px 12px rgba(17, 17, 17, 0.03);
+            position: relative;
+        }
+
+        .puppy_sticker1 {
+            position: absolute;
+            background-color: #a50000;
+            top: 0;
+            right: 0;
+            z-index: 1;
+            border: 4px solid #700000;
+            border-top: none;
+            border-radius: 0 0 999px 999px;
+            display: flex;
+        }
+
+        .puppy_sticker2 {
+            position: absolute;
+            background-color: #2e50e2;
+            top: 0;
+            right: 0;
+            z-index: 1;
+            border: 4px solid #19319c;
+            border-top: none;
+            border-radius: 0 0 999px 999px;
+            display: flex;
+        }
+
+        .puppy_sticker1_title {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 400;
+            color: #ffffff;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .puppy_sticker2_title {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 400;
+            color: #ffffff;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .puppy_span {
+            font-size: 12px;
+        }
+
+        .puppy_box>a>img {
+            width: 235px;
+            height: 235px;
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .puppy_box>a>img:hover {
+            transform: scale(1.05);
+        }
+
+        .puppy_box>a {
+            position: relative;
+            width: 100%;
+        }
+
+        .puppy_button {
+            width: 100%;
+            position: absolute;
+            font-family: 'NanumSquareNeoLight';
+            font-size: 16px;
+            color: #ffffff;
+            bottom: 0;
+            transform: translateY(40px);
+            display: flex;
+            opacity: 0;
+            justify-content: center;
+            position: absolute;
+            background-color: #111111;
+            padding: 16px 0;
+            transition: all 0.3s ease;
+        }
+
+        .puppy_box>a:hover .puppy_button {
+            display: flex;
+            opacity: 1;
+            transform: translate(0px);
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .puppy_wrapper {
+                width: 100%;
+                padding: 0 16px;
+            }
+
+            .puppy_box {
+                width: 100%;
+                height: 100%;
+            }
+
+            .puppy_box>a>img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .puppy_wrapper {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="puppy_container">
+        <div class="puppy_wrapper">
+
+            <div class="puppy_box">
+                <div class="puppy_sticker1">
+                    <p class="puppy_sticker1_title">
+                        <span class="puppy_span">최상단 노출</span>
+                        <br>
+                        1st
+                    </p>
+                </div>
+                <a href="#">
+                    <img src="https://cdn.imweb.me/thumbnail/20250905/637933b3edf42.png">
+                    <p class="puppy_button">
+                        보러가기
+                    </p>
+                </a>
+            </div>
+            <div class="puppy_box">
+                <div class="puppy_sticker2">
+                    <p class="puppy_sticker2_title">
+                        <span class="puppy_span">최상단 노출</span>
+                        <br>
+                        3rd
+                    </p>
+                </div>
+                <a href="#">
+                    <img src="https://cdn.imweb.me/thumbnail/20250905/a67348aa7ad6e.png">
+                    <p class="puppy_button">
+                        보러가기
+                    </p>
+                </a>
+            </div>
+            <div class="puppy_box">
+                <div class="puppy_sticker2">
+                    <p class="puppy_sticker2_title">
+                        <span class="puppy_span">최상단 노출</span>
+                        <br>
+                        3rd
+                    </p>
+                </div>
+                <a href="#">
+                    <img src="https://cdn.imweb.me/thumbnail/20250905/b57dc13075578.png">
+                    <p class="puppy_button">
+                        보러가기
+                    </p>
+                </a>
+            </div>
+            <div class="puppy_box">
+                <div class="puppy_sticker2">
+                    <p class="puppy_sticker2_title">
+                        <span class="puppy_span">최상단 노출</span>
+                        <br>
+                        3rd
+                    </p>
+                </div>
+                <a href="#">
+                    <img src="https://cdn.imweb.me/thumbnail/20250905/0e9d7d53b9737.png">
+                    <p class="puppy_button">
+                        보러가기
+                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
