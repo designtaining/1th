@@ -4,8 +4,180 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+  .story_container {
+    width: 100%;
+    margin: 80px auto;
+  }
+
+  .story_wrap {
+    margin-left: 320px;
+    overflow: hidden;
+  }
+
+  .story_title {
+    font-family: 'NanumSquareNeoExtraBold', sans-serif;
+    font-size: 36px;
+	font-weight: 700;
+  }
+  
+  .concept_span {
+	font-size: 16px;
+	color: #a5a5a5;
+  }
+
+  .story_wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: nowrap;
+    /* ✅ 뷰포트(스크롤 상자) 너비를 화면 기준으로 고정 */
+    width: calc(100vw - 320px);
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    padding-bottom: 8px;
+    cursor: grab;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    user-select: none;
+    box-sizing: border-box;
+  }
+  .story_wrapper::-webkit-scrollbar { display: none; }
+
+  .story_wrapper.dragging { cursor: grabbing; }
+
+  .story_box {
+    width: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    flex: 0 0 auto;
+	border: 1px solid #e5e5ec;
+	box-shadow: 0 4px 12px rgba(17, 17, 17, 0.1);
+  }
+
+  .story_box > figure {
+    width: 400px;
+    height: 280px;
+    transition: all 0.3s ease;
+  }
+
+  .story_box > figure > a > img {
+    width: 400px;
+    height: 280px;
+    transition: transform 0.3s ease;
+    pointer-events: none;
+  }
+
+  .story_desc_box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+	padding: 16px 0;
+  }
+
+  .story1 {
+	font-family: 'NanumSquareNeoBold', sans-serif;
+	font-size: 16px;
+	color: #111;
+	line-height: 1.4;
+	margin: 0;
+	text-align: center;
+  }
+  .story2 {
+	font-family: 'NanumSquareNeoBold', sans-serif;
+	font-size: 20px;
+	color: #111;
+	line-height: 1.4;
+	margin: 0;
+	text-align: center;
+  }
+
+  .story_box:hover figure > a > img { transform: scale(1.05); }
+  
+/* ✅ 1728px 이하 */
+@media screen and (max-width: 1728px) {
+  	:root { --left-gap: 320px; }
+  	.story_wrap { margin-left: var(--left-gap); }
+	.story_wrapper { width: calc(100vw - var(--left-gap)); }
+}
+
+/* ✅ 1512px 이하 */
+@media screen and (max-width: 1512px) {
+  	:root { --left-gap: 252px; }
+}
+
+/* ✅ 1280px 이하 */
+@media screen and (max-width: 1280px) {
+  	:root { --left-gap: 144px; }
+}
+
+@media screen and (max-width: 1024px) {
+  .story_wrap {
+    margin-left: 0;
+    padding-left: 16px;
+  }
+
+  .story_wrapper {
+    width: 100%;
+  }
+}
+
+/* ✅ 768px 이하 */
+@media screen and (max-width: 768px) {
+  .story_container {
+    width: 100%;
+    margin: 0 auto 20px;
+  }
+  	.story_title {
+    font-size: 24px;
+  }
+  	.concept_span {
+	font-size: 12px;
+  }
+  	.story_box {
+    width: 343px;
+  }
+    .story_box > figure {
+    width: 343px;
+    height: 240px;
+  }
+
+  .story_box > figure > a > img {
+    width: 343px;
+    height: 240px;
+  }
+}
+
+/* ✅ 440px 이하 */
+@media screen and (max-width: 440px) {
+  	  	.story_box {
+    width: 286px;
+  }
+  	    .story_box > figure {
+    width: 286px;
+    height: 200px;
+  }
+
+  .story_box > figure > a > img {
+    width: 286px;
+    height: 200px;
+  }
+}
+
+
+</style>
 </head>
 <body>
+
+    
     
 </body>
 </html>

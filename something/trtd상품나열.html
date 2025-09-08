@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: 'STUNNING-Bd';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-2@1.0/STUNNING-Bd.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .stuff_container {
+            width: 100%;
+            padding: 80px 0;
+            background-color: #111111;
+        }
+
+        .stuff_wrapper {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .stuff_title {
+            font-family: 'STUNNING-Bd';
+            font-size: 40px;
+            color: #ffffff;
+        }
+
+        .stuff_box {
+            width: 100%;
+            background-color: #ffffff;
+            padding: 60px;
+            border-bottom: 1px solid #111111;
+        }
+
+        .stuff_top_items>img {
+            width: 60px;
+            height: 60px;
+        }
+
+        .stuff_top_items1 {
+            font-family: 'STUNNING-Bd';
+            font-size: 20px;
+            color: #111111;
+            text-align: center;
+            vertical-align: center;
+            padding: 12px 0;
+        }
+
+        .stuff_top_items {
+            font-family: 'STUNNING-Bd';
+            font-size: 16px;
+            color: #505050;
+            text-align: center;
+            vertical-align: center;
+            padding: 12px 0;
+        }
+
+        .stuff_box td {
+            border-bottom: 1px solid #e5e5ec;
+        }
+
+        /* ✅ 1512px 이하 */
+        @media screen and (max-width: 1512px) {
+            .stuff_wrapper {
+                max-width: 1080px;
+                gap: 24px;
+            }
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .stuff_wrapper {
+                max-width: 980px;
+                gap: 24px;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .stuff_wrapper {
+                max-width: 100%;
+                padding: 0 16px;
+            }
+
+            .stuff_top_items {
+                font-size: 12px;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .stuff_top {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .stuff_top_items1 {
+                display: none;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {}
+    </style>
+</head>
+
+<body>
+
+    <section class="stuff_container">
+
+        <div class="stuff_wrapper">
+
+            <p class="stuff_title">
+                패키지상품 안내
+            </p>
+
+            <table class="stuff_box">
+                <tr class="stuff_top">
+                    <td class="stuff_top_items1"></td>
+                    <td class="stuff_top_items1">종류</td>
+                    <td class="stuff_top_items1">가격</td>
+                    <td class="stuff_top_items1">구성</td>
+                    <td class="stuff_top_items1">할인율</td>
+                </tr>
+                <tr class="stuff_top">
+                    <td class="stuff_top_items">
+                        <img src="https://ncryk7.mycafe24.com/goodday1.png" alt="">
+                    </td>
+                    <td class="stuff_top_items">
+                        굿데이 원 (이벤트,프로모션형)
+                    </td>
+                    <td class="stuff_top_items">25만원</td>
+                    <td class="stuff_top_items">메인1 + 서브1</td>
+                    <td class="stuff_top_items">약 22%</td>
+                </tr>
+                <tr class="stuff_top">
+                    <td class="stuff_top_items">
+                        <img src="https://ncryk7.mycafe24.com/fiveplus.png" alt="">
+                    </td>
+                    <td class="stuff_top_items">
+                        시그니처 (지속비즈니스형)
+                    </td>
+                    <td class="stuff_top_items">49만원</td>
+                    <td class="stuff_top_items">메인1 + 서브4</td>
+                    <td class="stuff_top_items">최대 40.6%</td>
+                </tr>
+                <tr class="stuff_top">
+                    <td class="stuff_top_items">
+                        <img src="https://ncryk7.mycafe24.com/prestige.png" alt="">
+                    </td>
+                    <td class="stuff_top_items">
+                        프레스티지 (공공,커뮤니티형)
+                    </td>
+                    <td class="stuff_top_items">139만원</td>
+                    <td class="stuff_top_items">메인1 + 서브11</td>
+                    <td class="stuff_top_items">약 22%</td>
+                </tr>
+            </table>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>
