@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: 'SUIT-Regular';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        .portfolio_container5 {
+            width: 100%;
+            background-color: #fffdf5;
+        }
+
+        .portfolio_wrapper5 {
+            display: flex;
+            justify-content: center;
+            width: 1280px;
+            gap: 20px;
+            margin: 0 auto;
+            padding: 10px 0;
+        }
+
+        .left_portfolio5 {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 400px;
+        }
+
+        .middle_portfolio5 {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 400px;
+        }
+
+        .right_portfolio5 {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 400px;
+        }
+
+        .box_portfolio5 {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background-color: #111111;
+            perspective: 1000px;
+        }
+
+        .name_box5 {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            left: 0;
+            bottom: 0;
+            margin: 16px;
+        }
+
+        .category_portfolio5 {
+            left: 0;
+            bottom: 0;
+            font-family: 'SUIT-Regular';
+            font-size: 16px;
+            font-weight: 200;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .name_portfolio5 {
+            left: 0;
+            bottom: 0;
+            font-family: 'SUIT-Regular';
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .p11 {
+            background-image: url(https://ncryk7.mycafe24.com/wait.png);
+            background-size: cover;
+        }
+
+        .p22 {
+            background-image: url(https://ncryk7.mycafe24.com/wait.png);
+            background-size: cover;
+        }
+
+        .p33 {
+            background-image: url(https://ncryk7.mycafe24.com/wait.png);
+            background-size: cover;
+        }
+
+        .p44 {
+            background-image: url(https://ncryk7.mycafe24.com/wait.png);
+            background-size: cover;
+        }
+
+        .p55 {
+            background-image: url(https://ncryk7.mycafe24.com/wait.png);
+            background-size: cover;
+        }
+
+        .p66 {
+            background-image: url(https://ncryk7.mycafe24.com/wait.png);
+            background-size: cover;
+        }
+
+        .p77 {
+            background-image: url(https://ncryk7.mycafe24.com/wait.png);
+            background-size: cover;
+        }
+
+        .p88 {
+            background-image: url(https://ncryk7.mycafe24.com/wait.png);
+            background-size: cover;
+        }
+
+        .hover_overlay5 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 400px;
+            height: 400px;
+            background-color: rgba(17, 17, 17, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: rotateY(90deg);
+            transform-origin: left;
+            backface-visibility: hidden;
+            transition: all 0.5s ease;
+            z-index: 2;
+        }
+
+        .box_portfolio5:hover .hover_overlay5 {
+            opacity: 1;
+            transform: rotateY(0deg);
+        }
+
+        .hover_title5 {
+            font-family: 'SUIT-Regular';
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0;
+            text-align: center;
+        }
+
+        .hover_desc5 {
+            font-family: 'SUIT-Regular';
+            font-size: 16px;
+            font-weight: 300;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 0 20px;
+            line-height: 1.6;
+        }
+
+        .hover_button5 {
+            padding: 12px 48px;
+            color: #ffffff !important;
+            font-family: 'SUIT-Regular';
+            font-size: 16px;
+            font-weight: 700;
+            border: 1px solid #ffffff;
+            border-radius: 999px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .hover_button5:hover {
+            background-color: #ffffff;
+            color: #1428A0 !important;
+        }
+
+        /* ✅ 1728px 이하 */
+        @media screen and (max-width: 1728px) {
+            .portfolio_wrapper5 {
+                gap: 20px;
+                width: 1512px;
+                padding: 10px 0;
+            }
+
+            .left_portfolio5 {
+                gap: 20px;
+                width: 363px;
+            }
+
+            .middle_portfolio5 {
+                gap: 20px;
+                width: 363px;
+            }
+
+            .right_portfolio5 {
+                gap: 20px;
+                width: 363px;
+            }
+
+            .box_portfolio5 {
+                width: 363px;
+                height: 363px;
+            }
+
+            .hover_overlay5 {
+                width: 363px;
+                height: 363px;
+            }
+        }
+
+        /* ✅ 1512px 이하 */
+        @media screen and (max-width: 1512px) {
+            .portfolio_wrapper5 {
+                gap: 16px;
+                width: 1280px;
+                padding: 8px 0;
+            }
+
+            .left_portfolio5 {
+                gap: 16px;
+                width: 308px;
+            }
+
+            .middle_portfolio5 {
+                gap: 16px;
+                width: 308px;
+            }
+
+            .right_portfolio5 {
+                gap: 16px;
+                width: 308px;
+            }
+
+            .box_portfolio5 {
+                width: 308px;
+                height: 308px;
+            }
+
+            .hover_overlay5 {
+                width: 308px;
+                height: 308px;
+            }
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .portfolio_wrapper5 {
+                display: flex;
+                justify-content: center;
+                gap: 12px;
+                padding: 6px 0;
+                width: 100%;
+                max-width: 1280px;
+                padding: 0 16px;
+                box-sizing: border-box;
+            }
+
+            .left_portfolio5 {
+                gap: 12px;
+                width: 247px;
+            }
+
+            .middle_portfolio5 {
+                gap: 12px;
+                width: 247px;
+            }
+
+            .right_portfolio5 {
+                gap: 12px;
+                width: 247px;
+            }
+
+            .box_portfolio5 {
+                width: 247px;
+                height: 247px;
+            }
+
+            .hover_overlay5 {
+                width: 247px;
+                height: 247px;
+            }
+
+            .category_portfolio5 {
+                font-size: 14px;
+            }
+
+            .name_portfolio5 {
+                font-size: 24px;
+            }
+
+            .hover_title5 {
+                font-size: 24px;
+            }
+
+            .hover_desc5 {
+                font-size: 16px;
+                line-height: 1.4;
+            }
+
+            .hover_button5 {
+                padding: 12px 36px;
+                font-size: 16px;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .portfolio_wrapper5 {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                padding: 0 8px;
+                gap: 0;
+            }
+
+            .box_portfolio5 {
+                flex: 1 1 0;
+                aspect-ratio: 1 / 1;
+                max-width: 500px;
+                height: auto;
+            }
+
+            .hover_overlay5 {
+                width: 100%;
+                height: 100%;
+            }
+
+            .left_portfolio5 {
+                flex-direction: row;
+                justify-content: center;
+                gap: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .middle_portfolio5 {
+                flex-direction: row;
+                justify-content: center;
+                gap: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .right_portfolio5 {
+                flex-direction: row;
+                justify-content: center;
+                gap: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .box_portfolio5 {
+                flex: 0 0 calc(50%);
+                aspect-ratio: 1 / 1;
+                height: auto;
+                max-width: 360px;
+            }
+
+            .hover_overlay5 {
+                width: 100%;
+                height: 100%;
+            }
+
+            .category_portfolio5 {
+                font-size: 12px;
+            }
+
+            .name_portfolio5 {
+                font-size: 20px;
+            }
+
+            .hover_title5 {
+                font-size: 16px;
+                font-weight: 400;
+            }
+
+            .hover_desc5 {
+                font-size: 12px;
+                font-weight: 200;
+                line-height: 1.4;
+            }
+
+            .hover_button5 {
+                padding: 8px 20px;
+                font-size: 12px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .category_portfolio5 {
+                font-size: 12px;
+            }
+
+            .name_portfolio5 {
+                font-size: 16px;
+                font-weight: 700;
+            }
+
+            .hover_title5 {
+                font-size: 16px;
+                font-weight: 700;
+            }
+
+            .hover_desc5 {
+                font-size: 12px;
+                font-weight: 200;
+                line-height: 1.4;
+            }
+
+            .hover_button5 {
+                padding: 6px 16px;
+                font-size: 12px;
+                font-weight: 200;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="portfolio_container5">
+
+        <div class="portfolio_wrapper5">
+
+            <article class="left_portfolio5">
+                <div class="box_portfolio5 p11">
+                    <div class="name_box5">
+                        <p class="category_portfolio5">
+                            HOMEPAGE
+                        </p>
+                        <p class="name_portfolio5">
+                            PAGE NAME
+                        </p>
+                    </div>
+                    <div class="hover_overlay5">
+                        <p class="hover_title5">반응형 웹제작</p>
+                        <p class="hover_desc5">SOMETHING<br>DESCRIPTION OR</p>
+                        <a href="" class="hover_button5">MORE VIEW+</a>
+                    </div>
+                </div>
+                <div class="box_portfolio5 p22">
+                    <div class="name_box5">
+                        <p class="category_portfolio5">
+                            HOMEPAGE
+                        </p>
+                        <p class="name_portfolio5">
+                            PAGE NAME
+                        </p>
+                    </div>
+                    <div class="hover_overlay5">
+                        <p class="hover_title5">반응형 웹제작</p>
+                        <p class="hover_desc5">SOMETHING<br>DESCRIPTION OR</p>
+                        <a href="" class="hover_button5">MORE VIEW+</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="middle_portfolio5">
+                <div class="box_portfolio5 p33">
+                    <div class="name_box5">
+                        <p class="category_portfolio5">
+                            HOMEPAGE
+                        </p>
+                        <p class="name_portfolio5">
+                            PAGE NAME
+                        </p>
+                    </div>
+                    <div class="hover_overlay5">
+                        <p class="hover_title5">반응형 웹제작</p>
+                        <p class="hover_desc5">SOMETHING<br>DESCRIPTION OR</p>
+                        <a href="" class="hover_button5">MORE VIEW+</a>
+                    </div>
+                </div>
+                <div class="box_portfolio5 p44">
+                    <div class="name_box5">
+                        <p class="category_portfolio5">
+                            HOMEPAGE
+                        </p>
+                        <p class="name_portfolio5">
+                            PAGE NAME
+                        </p>
+                    </div>
+                    <div class="hover_overlay5">
+                        <p class="hover_title5">반응형 웹제작</p>
+                        <p class="hover_desc5">SOMETHING<br>DESCRIPTION OR</p>
+                        <a href="" class="hover_button5">MORE VIEW+</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="right_portfolio5">
+                <div class="box_portfolio5 p55">
+                    <div class="name_box5">
+                        <p class="category_portfolio5">
+                            HOMEPAGE
+                        </p>
+                        <p class="name_portfolio5">
+                            PAGE NAME
+                        </p>
+                    </div>
+                    <div class="hover_overlay5">
+                        <p class="hover_title5">반응형 웹제작</p>
+                        <p class="hover_desc5">SOMETHING<br>DESCRIPTION OR</p>
+                        <a href="" class="hover_button5">MORE VIEW+</a>
+                    </div>
+                </div>
+
+                <div class="box_portfolio5 p66">
+                    <div class="name_box5">
+                        <p class="category_portfolio5">
+                            HOMEPAGE
+                        </p>
+                        <p class="name_portfolio5">
+                            PAGE NAME
+                        </p>
+                    </div>
+                    <div class="hover_overlay5">
+                        <p class="hover_title5">반응형 웹제작</p>
+                        <p class="hover_desc5">SOMETHING<br>DESCRIPTION OR</p>
+                        <a href="" class="hover_button5">MORE VIEW+</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="right_portfolio5">
+                <div class="box_portfolio5 p77">
+                    <div class="name_box5">
+                        <p class="category_portfolio5">
+                            HOMEPAGE
+                        </p>
+                        <p class="name_portfolio5">
+                            PAGE NAME
+                        </p>
+                    </div>
+                    <div class="hover_overlay5">
+                        <p class="hover_title5">반응형 웹제작</p>
+                        <p class="hover_desc5">SOMETHING<br>DESCRIPTION OR</p>
+                        <a href="" class="hover_button5">MORE VIEW+</a>
+                    </div>
+                </div>
+
+                <div class="box_portfolio5 p88">
+                    <div class="name_box5">
+                        <p class="category_portfolio5">
+                            HOMEPAGE
+                        </p>
+                        <p class="name_portfolio5">
+                            PAGE NAME
+                        </p>
+                    </div>
+                    <div class="hover_overlay5">
+                        <p class="hover_title5">반응형 웹제작</p>
+                        <p class="hover_desc5">SOMETHING<br>DESCRIPTION OR</p>
+                        <a href="" class="hover_button5">MORE VIEW+</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+    </section>
+
+</body>
+
+</html>
