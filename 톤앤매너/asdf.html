@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <style>
+        :root {
+            --panelMaxW: 1280px;
+        }
+
+        /* 트리거(핀) 컨테이너 */
+        #pinShowcase {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+            display: grid;
+            place-items: center;
+            /* 항상 중앙 */
+        }
+
+        /* 중앙 정렬용 쉘 (스크롤바/뷰포트 변화에도 균형 유지) */
+        .pinShell {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+        }
+
+        /* 실제 시각적 프레임(여기를 키웠다/줄였다 함) */
+        .pinFrame {
+            position: relative;
+            margin: 0 auto;
+            /* ✅ 데스크톱: 16:9, 좌우 안밀리도록 width/height 계산 */
+            aspect-ratio: 16 / 9;
+            width: min(100vw, calc(100vh * 16 / 9));
+            height: auto;
+            border-radius: 0;
+            overflow: hidden;
+            will-change: width, height, border-radius, transform;
+            background: #000;
+            /* 가장자리 대비 */
+        }
+
+        /* ✅ 모바일/태블릿: 세로 꽉 채움, 9:16 비율 */
+        @media (max-width: 1024px) {
+            .pinFrame {
+                height: 100vh;
+                width: auto;
+                /* 높이에 맞춰 폭 자동 */
+                aspect-ratio: 9 / 16;
+                border-radius: 0;
+            }
+        }
+
+        /* 아웃트로 순간: 정사각형으로 전환 (height는 width에 종속) */
+        .pinFrame.is-square {
+            aspect-ratio: 1 / 1;
+            height: auto;
+            /* width로부터 자동 계산 */
+        }
+
+        .stage {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .panel {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            opacity: 0;
+            transform: translateY(40px);
+            will-change: transform, opacity;
+        }
+
+        .p1 {
+            z-index: 1;
+        }
+
+        .p2 {
+            z-index: 2;
+        }
+
+        .p3 {
+            z-index: 3;
+        }
+
+        .p4 {
+            z-index: 4;
+        }
+
+        .p2 {
+            background: linear-gradient(180deg, #2e50e2, #1428A0);
+        }
+
+        .p3 {
+            background: linear-gradient(180deg, #0f0f0f, #000);
+        }
+
+        .p4 {
+            background: linear-gradient(180deg, #333, #111);
+        }
+
+        /* p1 hero */
+        .p1 {
+            position: relative;
+        }
+
+        .p1 .centerOverlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .p1 .centerOverlay .inner {
+            pointer-events: auto;
+        }
+
+        /* 🔁 프레임 내부 퍼센트로 제어 → 반응형 안전 */
+        .p1 .heroBox {
+            width: 80%;
+            height: 80%;
+            background: url(https://ncryk7.mycafe24.com/package2.png) center/cover no-repeat;
+            border-radius: 24px;
+            display: grid;
+            place-items: center;
+            will-change: width, height, border-radius;
+            z-index: 1;
+        }
+
+        .inner {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 24px;
+            max-width: 960px;
+        }
+
+        .title {
+            font-size: 56px;
+            line-height: 1.15;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 16px;
+        }
+
+        .desc {
+            font-size: 18px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* p2 그리드 */
+        .panel_box_wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            width: min(var(--panelMaxW), 92%);
+        }
+
+        .panel_box {
+            width: 380px;
+            border-radius: 32px;
+            transform: translateZ(0);
+        }
+
+        .panel_box>img {
+            width: 380px;
+            border-radius: 32px;
+            display: block;
+        }
+
+        /* p3 확장 요소 */
+        .p3 .featureImgWrap {
+            width: min(70%, 1100px);
+            max-width: var(--panelMaxW);
+            margin-top: 24px;
+            transform: translateY(60px);
+            opacity: 0;
+        }
+
+        .p3 .featureImgWrap img {
+            width: 100%;
+            display: block;
+            border-radius: 24px;
+        }
+
+        .p3 .msg2 {
+            margin-top: 24px;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        @media (max-width: 1024px) {
+            .title {
+                font-size: 40px;
+            }
+
+            .p1 .heroBox {
+                border-radius: 0;
+            }
+
+            /* 모바일 풀스크린 감성 유지 */
+            .panel_box,
+            .panel_box>img {
+                width: 44vw;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 32px;
+            }
+
+            .desc {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section id="pinShowcase">
+        <div class="pinShell">
+            <div class="pinFrame"><!-- ✅ 이 프레임이 비율/크기 담당 -->
+                <div class="stage">
+                    <!-- p1 -->
+                    <div class="panel p1">
+                        <div class="heroBox" aria-hidden="true"></div>
+                        <div class="centerOverlay">
+                            <div class="inner">
+                                <p class="title">Step 1 — 인트로</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- p2 -->
+                    <div class="panel p2">
+                        <div class="inner">
+                            <p class="title">디자인테이닝의 모든 작업은</p>
+                            <p class="title">반응형으로 제작됩니다.</p>
+                        </div>
+                        <div class="panel_box_wrapper">
+                            <div class="panel_box"><img src="https://ncryk7.mycafe24.com/package1.png" alt=""></div>
+                            <div class="panel_box"><img src="https://ncryk7.mycafe24.com/package1.png" alt=""></div>
+                            <div class="panel_box"><img src="https://ncryk7.mycafe24.com/package1.png" alt=""></div>
+                            <div class="panel_box"><img src="https://ncryk7.mycafe24.com/package1.png" alt=""></div>
+                            <div class="panel_box"><img src="https://ncryk7.mycafe24.com/package1.png" alt=""></div>
+                            <div class="panel_box"><img src="https://ncryk7.mycafe24.com/package1.png" alt=""></div>
+                            <div class="panel_box"><img src="https://ncryk7.mycafe24.com/package1.png" alt=""></div>
+                            <div class="panel_box"><img src="https://ncryk7.mycafe24.com/package1.png" alt=""></div>
+                        </div>
+                    </div>
+
+                    <!-- p3 -->
+                    <div class="panel p3">
+                        <div class="inner">
+                            <p class="title">Step 3 — 비주얼/모션</p>
+                            <p class="desc">이미지/영상/3D 등 어떤 콘텐츠든 동일한 방식으로 교체 가능.</p>
+                            <div class="featureImgWrap">
+                                <img src="https://ncryk7.mycafe24.com/package3.png" alt="feature">
+                            </div>
+                            <p class="title msg2">메시지 2 — 실제 제작 예시를 확인해 보세요.</p>
+                        </div>
+                    </div>
+
+                    <!-- p4 (사진 없음) -->
+                    <div class="panel p4">
+                        <div class="inner">
+                            <p class="title">Step 4 — CTA</p>
+                            <p class="desc">마지막에서 버튼/링크로 다음 섹션으로 유도하세요.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        const root = document.querySelector("#pinShowcase");
+        const frame = root.querySelector(".pinFrame");
+        const p1 = root.querySelector(".p1");
+        const p2 = root.querySelector(".p2");
+        const p3 = root.querySelector(".p3");
+        const p4 = root.querySelector(".p4");
+        const panels = [p1, p2, p3, p4];
+
+        const heroBox = root.querySelector(".p1 .heroBox");
+        const p2Boxes = gsap.utils.toArray(".p2 .panel_box");
+        const firstHalf = p2Boxes.slice(0, 4);
+        const secondHalf = p2Boxes.slice(4, 8);
+
+        const featureImgWrap = p3.querySelector(".featureImgWrap");
+        const msg2 = p3.querySelector(".msg2");
+
+        /* 스크롤 길이 */
+        const SCROLL_PER_PANEL = 1100;
+        const totalScroll = (panels.length - 1) * SCROLL_PER_PANEL;
+
+        /* 초기 상태 */
+        gsap.set(p1, { opacity: 1, y: 0 });
+        gsap.set([p2, p3, p4], { opacity: 0, y: 40 });
+        gsap.set(p3, { xPercent: 100 });
+        gsap.set(p2, { xPercent: 0 });
+        gsap.set(p2Boxes, { y: 40, opacity: 0 });
+        gsap.set(featureImgWrap, { opacity: 0, y: 60 });
+        gsap.set(msg2, { opacity: 0, y: 30 });
+
+        /* 메인 타임라인 */
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: root,
+                start: "top top",
+                end: "+=" + totalScroll,
+                pin: true,
+                scrub: 1,
+                anticipatePin: 1,
+                snap: {
+                    snapTo: (v) => {
+                        const steps = panels.length - 1;
+                        return Math.round(v * steps) / steps;
+                    },
+                    duration: 0.15,
+                    ease: "power1.out"
+                }
+            }
+        });
+
+        /* 1) p1: heroBox 80% → 100% (프레임 기준) */
+        if (heroBox) {
+            tl.to(heroBox, {
+                width: "100%",
+                height: "100%",
+                borderRadius: 0,
+                ease: "power2.out",
+                duration: 0.6
+            }, 0);
+        }
+
+        /* 2) p1 → p2 */
+        tl.to(p1, { opacity: 0, y: -40, duration: 0.5, ease: "power2.out" }, ">")
+            .fromTo(p2, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, "<");
+
+        /* 3) p2 박스 8개 스태거 인 */
+        tl.fromTo(p2Boxes,
+            { y: 40, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.6, ease: "power3.out", stagger: 0.08 },
+            "<+=0.1"
+        );
+
+        /* 4) p2 → p3 (푸시) */
+        tl.add("p2to3", ">+=0.25")
+            .to(firstHalf, { y: -160, duration: 0.5, ease: "power3.in" }, "p2to3")
+            .to(secondHalf, { y: 160, duration: 0.5, ease: "power3.in" }, "p2to3")
+            .to(p2, { xPercent: -100, duration: 0.65, ease: "power2.inOut" }, "p2to3")
+            .fromTo(p3, { xPercent: 100, opacity: 1, y: 0 }, { xPercent: 0, opacity: 1, y: 0, duration: 0.65, ease: "power2.inOut" }, "p2to3")
+            .set(p2, { opacity: 0 }, ">");
+
+        /* 5) p3 내부: 이미지(70%) → 후속 메시지 */
+        tl.to(featureImgWrap, {
+            opacity: 1, y: 0, duration: 0.8, ease: "power3.out"
+        }, ">+=0.1"
+        ).to(msg2, {
+            opacity: 1, y: 0, duration: 0.6, ease: "power3.out"
+        }, ">+=0.15"
+        );
+
+        /* 6) p3 → p4 */
+        tl.to(p3, { opacity: 0, y: -40, duration: 0.5, ease: "power2.out" }, ">+=0.2")
+            .fromTo(p4, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, "<");
+
+        /* 7) ✅ 아웃트로
+              - 먼저 정사각형 비율 클래스 부여(즉시 전환)
+              - 이후 width 80vw로 축소 (height는 aspect-ratio로 80vw 자동)
+              - border-radius 32px
+        */
+        tl.add("outro", ">+=0.3")
+            .set(frame, { className: "+=is-square" }, "outro")
+            .to(frame, {
+                width: "80vw",
+                borderRadius: "32px",
+                duration: 0.9,
+                ease: "power2.inOut",
+                transformOrigin: "center center"
+            }, "outro");
+
+        /* 팁:
+         * - 만약 모바일에서 아웃트로 때 가로가 너무 좁게 느껴지면,
+         *   80vw 대신 clamp(72vw, 80vw, 88vw) 같은 값으로 튜닝해도 OK.
+         */
+    </script>
+
+</body>
+
+</html>
