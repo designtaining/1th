@@ -7,13 +7,6 @@
     <title>Document</title>
 
     <style>
-        @font-face {
-            font-family: 'STUNNING-Bd';
-            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-2@1.0/STUNNING-Bd.woff2') format('woff2');
-            font-weight: normal;
-            font-style: normal;
-        }
-
         .package_container {
             width: 100%;
             padding: 60px 0;
@@ -27,8 +20,9 @@
         }
 
         .package_main_title {
-            font-family: 'STUNNING-Bd';
+            font-family: 'Pretendard';
             font-size: 40px;
+            font-weight: 700;
             color: #111111;
         }
 
@@ -41,6 +35,7 @@
             background-color: #4768C9;
             display: flex;
             flex-direction: column;
+            gap: 24px;
         }
 
         .package_button_box {
@@ -52,8 +47,9 @@
             padding: 16px 36px;
             border: 1px solid #e5e5ec;
             border-radius: 8px;
-            font-family: 'STUNNING-Bd';
+            font-family: 'Pretendard';
             font-size: 16px;
+            font-weight: 700;
             color: #ffffff;
             background: none;
             cursor: pointer;
@@ -86,10 +82,12 @@
         }
 
         .package_exp_title {
-            font-family: 'STUNNING-Bd';
+            font-family: 'Pretendard';
             font-size: 24px;
+            font-weight: 400;
             color: #ffffff;
             margin: 0;
+            line-height: 180%;
         }
 
         .package_exp_mark {
@@ -107,12 +105,11 @@
 
         .package_middle {
             display: flex;
-            gap: 20px;
+            gap: 60px;
         }
 
         .package_card {
-            width: 480px;
-            height: 480px;
+            width: 100%;
             border-radius: 8px;
             position: relative;
             display: flex;
@@ -120,8 +117,7 @@
         }
 
         .package_card>img {
-            width: 480px;
-            height: 480px;
+            width: 100%;
             border-radius: 8px;
         }
 
@@ -135,8 +131,7 @@
         }
 
         .package_card2 {
-            width: 480px;
-            height: 480px;
+            width: 100%;
             border-radius: 8px;
             position: relative;
             background-color: #ffffff;
@@ -145,6 +140,15 @@
             justify-content: space-between;
             padding: 32px;
             box-sizing: border-box;
+            transform: translateY(40px);
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+
+        /* 활성화될 때 */
+        .package_card2.show {
+            transform: translateY(0);
+            opacity: 1;
         }
 
         .package_explain_box {
@@ -154,15 +158,17 @@
         }
 
         .package_explain_topdesc {
-            font-family: 'STUNNING-Bd';
+            font-family: 'Pretendard';
             font-size: 16px;
-            color: #111111;
+            font-weight: 500;
+            color: #767676;
             margin: 0;
         }
 
         .package_explain_bottomdesc {
-            font-family: 'STUNNING-Bd';
+            font-family: 'Pretendard';
             font-size: 28px;
+            font-weight: 400;
             color: #111111;
             margin: 0;
         }
@@ -185,7 +191,7 @@
                 <div class="package_change_box" id="goodday">
                     <div class="package_middle">
                         <div class="package_card">
-                            <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+                            <img src="https://ncryk7.mycafe24.com/package1.png" alt="">
                             <div class="package_exp">
                                 <p class="package_exp_title">
                                     굿데이원
@@ -199,6 +205,16 @@
                             <div class="package_shadow"></div>
                         </div>
                         <div class="package_card2">
+                            <div class="package_explain_box">
+                                <p class="package_explain_topdesc">
+                                    구성
+                                </p>
+                                <p class="package_explain_bottomdesc">
+                                    메인페이지1
+                                    <br>
+                                    서브페이지1
+                                </p>
+                            </div>
                             <div class="package_explain_box">
                                 <p class="package_explain_topdesc">
                                     구성
@@ -233,7 +249,7 @@
                 <div class="package_change_box" id="signature" style="display: none;">
                     <div class="package_middle">
                         <div class="package_card">
-                            <img src="https://ncryk7.mycafe24.com/eagle1.jpg" alt="">
+                            <img src="https://ncryk7.mycafe24.com/package2.png" alt="">
                             <div class="package_exp">
                                 <p class="package_exp_title">
                                     시그니처
@@ -247,6 +263,16 @@
                             <div class="package_shadow"></div>
                         </div>
                         <div class="package_card2">
+                            <div class="package_explain_box">
+                                <p class="package_explain_topdesc">
+                                    구성
+                                </p>
+                                <p class="package_explain_bottomdesc">
+                                    메인페이지1
+                                    <br>
+                                    서브페이지4
+                                </p>
+                            </div>
                             <div class="package_explain_box">
                                 <p class="package_explain_topdesc">
                                     구성
@@ -281,7 +307,7 @@
                 <div class="package_change_box" id="prestige" style="display: none;">
                     <div class="package_middle">
                         <div class="package_card">
-                            <img src="https://ncryk7.mycafe24.com/section2background.png" alt="">
+                            <img src="https://ncryk7.mycafe24.com/package3.png" alt="">
                             <div class="package_exp">
                                 <p class="package_exp_title">
                                     프레스티지
@@ -295,6 +321,16 @@
                             <div class="package_shadow"></div>
                         </div>
                         <div class="package_card2">
+                            <div class="package_explain_box">
+                                <p class="package_explain_topdesc">
+                                    구성
+                                </p>
+                                <p class="package_explain_bottomdesc">
+                                    메인페이지1
+                                    <br>
+                                    서브페이지11
+                                </p>
+                            </div>
                             <div class="package_explain_box">
                                 <p class="package_explain_topdesc">
                                     구성
@@ -337,16 +373,32 @@
                 const targetId = button.dataset.target;
 
                 // 모든 박스 숨기기
-                boxes.forEach(box => box.style.display = "none");
+                boxes.forEach(box => {
+                    box.style.display = "none";
+                    box.querySelectorAll(".package_card2").forEach(card => card.classList.remove("show"));
+                });
 
                 // 선택된 박스 보이기
-                document.getElementById(targetId).style.display = "flex";
+                const targetBox = document.getElementById(targetId);
+                targetBox.style.display = "flex";
 
-                // 버튼 active 효과 (선택된 버튼 강조)
+                // 약간의 지연을 주고 애니메이션 실행
+                setTimeout(() => {
+                    targetBox.querySelectorAll(".package_card2").forEach(card => card.classList.add("show"));
+                }, 50);
+
+                // 버튼 active 효과
                 buttons.forEach(btn => btn.classList.remove("active"));
                 button.classList.add("active");
             });
         });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const firstBox = document.querySelector("#goodday .package_card2");
+            if (firstBox) firstBox.classList.add("show");
+        });
+
+
     </script>
 
 </body>
