@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: 'STUNNING-Bd';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-2@1.0/STUNNING-Bd.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .package_container {
+            width: 100%;
+            padding: 60px 0;
+            background: linear-gradient(to top, #EEE5FF 0%, #ffffff 100%);
+        }
+
+        .package_wrapper {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .package_main_title {
+            font-family: 'STUNNING-Bd';
+            font-size: 40px;
+            color: #111111;
+        }
+
+        .package_box {
+            width: 100%;
+            padding: 60px;
+            border: 1px solid #e5e5ec;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(17, 17, 17, 0.1);
+            background-color: #4768C9;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .package_button_box {
+            display: flex;
+            gap: 16px;
+        }
+
+        .package_button {
+            padding: 16px 36px;
+            border: 1px solid #e5e5ec;
+            border-radius: 8px;
+            font-family: 'STUNNING-Bd';
+            font-size: 16px;
+            color: #ffffff;
+            background: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .package_button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .package_button.active {
+            background-color: #ffffff;
+            color: #4768C9;
+        }
+
+        .package_change_box {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .package_exp {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            position: absolute;
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 2;
+        }
+
+        .package_exp_title {
+            font-family: 'STUNNING-Bd';
+            font-size: 24px;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .package_exp_mark {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80px;
+            height: 80px;
+        }
+
+        .package_exp_mark>img {
+            width: 80px;
+            height: 80px;
+        }
+
+        .package_middle {
+            display: flex;
+            gap: 20px;
+        }
+
+        .package_card {
+            width: 480px;
+            height: 480px;
+            border-radius: 8px;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .package_card>img {
+            width: 480px;
+            height: 480px;
+            border-radius: 8px;
+        }
+
+        .package_shadow {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            background: linear-gradient(to top, #111111 0%, transparent 100%);
+            position: absolute;
+            z-index: 1;
+        }
+
+        .package_card2 {
+            width: 480px;
+            height: 480px;
+            border-radius: 8px;
+            position: relative;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 32px;
+            box-sizing: border-box;
+        }
+
+        .package_explain_box {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .package_explain_topdesc {
+            font-family: 'STUNNING-Bd';
+            font-size: 16px;
+            color: #111111;
+            margin: 0;
+        }
+
+        .package_explain_bottomdesc {
+            font-family: 'STUNNING-Bd';
+            font-size: 28px;
+            color: #111111;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="package_container">
+        <div class="package_wrapper">
+            <p class="package_main_title">
+                패키지상품 안내
+            </p>
+            <div class="package_box">
+                <div class="package_button_box">
+                    <button class="package_button active" type="button" data-target="goodday">굿데이원</button>
+                    <button class="package_button" type="button" data-target="signature">시그니처</button>
+                    <button class="package_button" type="button" data-target="prestige">프레스티지</button>
+                </div>
+                <div class="package_change_box" id="goodday">
+                    <div class="package_middle">
+                        <div class="package_card">
+                            <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+                            <div class="package_exp">
+                                <p class="package_exp_title">
+                                    굿데이원
+                                    <br>
+                                    이벤트, 프로모션형
+                                </p>
+                                <div class="package_exp_mark">
+                                    <img src="https://ncryk7.mycafe24.com/goodday1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="package_shadow"></div>
+                        </div>
+                        <div class="package_card2">
+                            <div class="package_explain_box">
+                                <p class="package_explain_topdesc">
+                                    구성
+                                </p>
+                                <p class="package_explain_bottomdesc">
+                                    메인페이지1
+                                    <br>
+                                    서브페이지1
+                                </p>
+                            </div>
+                            <div class="package_explain_box">
+                                <p class="package_explain_topdesc">
+                                    뭐뭐뭐
+                                </p>
+                                <p class="package_explain_bottomdesc">
+                                    뭐뭐무머뭐
+                                </p>
+                            </div>
+                            <div class="package_explain_box">
+                                <p class="package_explain_topdesc">
+                                    할인률
+                                </p>
+                                <p class="package_explain_bottomdesc">
+                                    약 22% 적용됨
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 시그니처 -->
+                <div class="package_change_box" id="signature" style="display: none;">
+                    <div class="package_middle">
+                        <div class="package_card">
+                            <img src="https://ncryk7.mycafe24.com/eagle1.jpg" alt="">
+                            <div class="package_exp">
+                                <p class="package_exp_title">
+                                    시그니처
+                                    <br>
+                                    지속비즈니스형
+                                </p>
+                                <div class="package_exp_mark">
+                                    <img src="https://ncryk7.mycafe24.com/fiveplus.png" alt="">
+                                </div>
+                            </div>
+                            <div class="package_shadow"></div>
+                        </div>
+                        <div class="package_card2">
+                            <div class="package_explain_box">
+                                <p class="package_explain_topdesc">
+                                    구성
+                                </p>
+                                <p class="package_explain_bottomdesc">
+                                    메인페이지1
+                                    <br>
+                                    서브페이지4
+                                </p>
+                            </div>
+                            <div class="package_explain_box">
+                                <p class="package_explain_topdesc">
+                                    뭐뭐뭐
+                                </p>
+                                <p class="package_explain_bottomdesc">
+                                    뭐뭐무머뭐
+                                </p>
+                            </div>
+                            <div class="package_explain_box">
+                                <p class="package_explain_topdesc">
+                                    할인률
+                                </p>
+                                <p class="package_explain_bottomdesc">
+                                    약 22% 적용됨
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 프레스티지 -->
+                <div class="package_change_box" id="prestige" style="display: none;">
+                    <div class="package_middle">
+                        <div class="package_card">
+                            <img src="https://ncryk7.mycafe24.com/section2background.png" alt="">
+                            <div class="package_exp">
+                                <p class="package_exp_title">
+                                    프레스티지
+                                    <br>
+                                    공공, 커뮤니티형
+                                </p>
+                                <div class="package_exp_mark">
+                                    <img src="https://ncryk7.mycafe24.com/prestige.png" alt="">
+                                </div>
+                            </div>
+                            <div class="package_shadow"></div>
+                        </div>
+                        <div class="package_card2">
+                            <div class="package_explain_box">
+                                <p class="package_explain_topdesc">
+                                    구성
+                                </p>
+                                <p class="package_explain_bottomdesc">
+                                    메인페이지1
+                                    <br>
+                                    서브페이지11
+                                </p>
+                            </div>
+                            <div class="package_explain_box">
+                                <p class="package_explain_topdesc">
+                                    뭐뭐뭐
+                                </p>
+                                <p class="package_explain_bottomdesc">
+                                    뭐뭐무머뭐
+                                </p>
+                            </div>
+                            <div class="package_explain_box">
+                                <p class="package_explain_topdesc">
+                                    할인률
+                                </p>
+                                <p class="package_explain_bottomdesc">
+                                    약 22% 적용됨
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const buttons = document.querySelectorAll(".package_button");
+        const boxes = document.querySelectorAll(".package_change_box");
+
+        buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                const targetId = button.dataset.target;
+
+                // 모든 박스 숨기기
+                boxes.forEach(box => box.style.display = "none");
+
+                // 선택된 박스 보이기
+                document.getElementById(targetId).style.display = "flex";
+
+                // 버튼 active 효과 (선택된 버튼 강조)
+                buttons.forEach(btn => btn.classList.remove("active"));
+                button.classList.add("active");
+            });
+        });
+    </script>
+
+</body>
+
+</html>
