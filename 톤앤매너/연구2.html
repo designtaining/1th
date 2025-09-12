@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <style>
+        #pinShowcase {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            color: #fff;
+        }
+
+        #pinShowcase .pinFrame {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        #pinShowcase .stage {
+            width: 100%;
+            height: 100%;
+        }
+
+        #pinShowcase .panel {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #pinShowcase,
+        #pinShowcase .pinFrame,
+        #pinShowcase .panel {
+            width: 100vw;
+            max-width: 100vw;
+            height: 100vh;
+            max-height: 100vh;
+        }
+
+        /* 겹침 순서 */
+        .pow1 {
+            z-index: 1;
+        }
+
+        .pow2 {
+            z-index: 2;
+        }
+
+        .pow3 {
+            z-index: 3;
+        }
+
+        .pow4 {
+            z-index: 4;
+        }
+
+        .pow2 {
+            background: url(https://ncryk7.mycafe24.com/fit1.png);
+            background-size: cover;
+        }
+
+        .pow3 {
+            background: linear-gradient(180deg, #0f0f0f, #000);
+        }
+
+        .pow4 {
+            background: url(https://ncryk7.mycafe24.com/lastback1.png);
+            background-size: cover;
+        }
+
+        /* p1 hero */
+        .pow1 {
+            position: relative;
+        }
+
+        .pow1 .centerOverlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .pow1 .centerOverlay .inner {
+            pointer-events: auto;
+        }
+
+        .pow1 .heroBox {
+            width: 80vw;
+            height: 80vh;
+            border-radius: 24px;
+            background: url(https://ncryk7.mycafe24.com/wel2.png) center/cover no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+
+        /* 공통 텍스트 */
+        .inner {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            max-width: 960px;
+        }
+
+        .title {
+            font-family: 'Pretendard';
+            font-size: 60px;
+            font-weight: 700;
+            line-height: 1.4;
+            margin: 0;
+            z-index: 2;
+        }
+
+        .desc {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        /* p2 그리드 */
+        .panel_box_wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            width: 1280px;
+        }
+
+        .panel_box {
+            border-radius: 32px;
+        }
+
+        .panel_box>img {
+            border-radius: 32px;
+            display: block;
+        }
+
+        .panel_box,
+        .panel_box>img {
+            width: 300px;
+        }
+
+        /* p3 확장 요소 */
+        .pow3 .featureImgWrap {
+            width: 480px;
+            transform: translateY(60px);
+            opacity: 0;
+            margin-top: 32px;
+        }
+
+        .pow3 .featureImgWrap img {
+            width: 100%;
+            border-radius: 24px;
+        }
+
+        .pow3 .msg2 {
+            margin-top: 24px;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .pin_span1 {
+            color: #4768C9;
+        }
+
+        .pin_span2 {
+            color: #ffff60;
+        }
+
+        /* ✅ 1512px 이하 */
+        @media screen and (max-width: 1512px) {
+
+            .panel_box,
+            .panel_box>img {
+                width: 260px;
+            }
+
+            .pow3 .featureImgWrap {
+                width: 380px;
+            }
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .title {
+                font-size: 48px;
+            }
+
+            .panel_box,
+            .panel_box>img {
+                width: 260px;
+            }
+        }
+
+        /* ✅ 1148px 이하 */
+        @media screen and (max-width: 1148px) {
+
+            .panel_box,
+            .panel_box>img {
+                width: 240px;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .title {
+                font-size: 40px;
+            }
+
+            .panel_box,
+            .panel_box>img {
+                width: 200px;
+            }
+
+            .pow3 .featureImgWrap {
+                width: 380px;
+            }
+        }
+
+        /* ✅ 568px 이하 */
+        @media screen and (max-width: 568px) {
+            .pow1 .heroBox {
+                background: url(https://ncryk7.mycafe24.com/wel3.jpg) center/cover no-repeat;
+            }
+
+            .title {
+                font-size: 32px;
+            }
+
+            .desc {
+                font-size: 16px;
+            }
+
+            .panel_box,
+            .panel_box>img {
+                width: 160px;
+            }
+
+            .pow3 .featureImgWrap {
+                width: 320px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .title {
+                font-size: 30px;
+            }
+
+            .desc {
+                font-size: 14px;
+            }
+
+            .panel_box,
+            .panel_box>img {
+                width: 140px;
+            }
+
+            .pow3 .featureImgWrap {
+                width: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section id="pinShowcase">
+        <div class="pinFrame">
+            <div class="stage">
+                <!-- p1 -->
+                <div class="panel pow1">
+                    <div class="heroBox" aria-hidden="true"></div>
+                    <div class="centerOverlay">
+                        <div class="inner">
+                            <p class="title"><span class="pin_span1">W</span>ELLCOME TO <span
+                                    class="pin_span1">D</span>ESIGN.<span class="pin_span2">T</span>AINING</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- p2 -->
+                <div class="panel pow2">
+                    <div class="inner">
+                        <p class="title">디자인테이닝의 모든 작업은</p>
+                        <p class="title"><span class="pin_span1">반응형</span>으로 제작됩니다.</p>
+                    </div>
+                    <div class="panel_box_wrapper">
+                        <div class="panel_box"><img src="https://ncryk7.mycafe24.com/int1.png" alt=""></div>
+                        <div class="panel_box"><img src="https://ncryk7.mycafe24.com/int2.png" alt=""></div>
+                        <div class="panel_box"><img src="https://ncryk7.mycafe24.com/int3.png" alt=""></div>
+                        <div class="panel_box"><img src="https://ncryk7.mycafe24.com/int4.png" alt=""></div>
+                        <div class="panel_box"><img src="https://ncryk7.mycafe24.com/int5.png" alt=""></div>
+                        <div class="panel_box"><img src="https://ncryk7.mycafe24.com/int6.png" alt=""></div>
+                        <div class="panel_box"><img src="https://ncryk7.mycafe24.com/int7.png" alt=""></div>
+                        <div class="panel_box"><img src="https://ncryk7.mycafe24.com/int8.png" alt=""></div>
+                    </div>
+                </div>
+
+                <!-- p3: 메시지 → 이미지(70%) → 후속 메시지 -->
+                <div class="panel pow3">
+                    <div class="inner">
+                        <p class="title">휴대기기로 <span class="pin_span1">실시간 확인</span></p>
+                        <p class="desc">제공된 링크를 통해 <span class="pin_span2">작업과정을 체크</span>하실 수 있습니다.</p>
+                        <div class="featureImgWrap">
+                            <img src="https://ncryk7.mycafe24.com/always1.png" alt="feature">
+                        </div>
+                        <p class="title msg2">Always-on <span class="pin_span1">live</span> updates</p>
+                    </div>
+                </div>
+
+                <!-- p4 (사진 제거) -->
+                <div class="panel pow4">
+                    <div class="inner">
+                        <p class="title"><span class="pin_span2">상상</span>하던 여러분의 홈페이지</p>
+                        <p class="desc">디자인테이닝과 함께 시작하세요.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        const root = document.querySelector("#pinShowcase");
+        const pow1 = root.querySelector(".pow1");
+        const pow2 = root.querySelector(".pow2");
+        const pow3 = root.querySelector(".pow3");
+        const pow4 = root.querySelector(".pow4");
+        const panels = [pow1, pow2, pow3, pow4];
+
+        const heroBox = root.querySelector(".pow1 .heroBox");
+        const pow2Boxes = gsap.utils.toArray(".pow2 .panel_box");
+        const firstHalf = pow2Boxes.slice(0, 4);
+        const secondHalf = pow2Boxes.slice(4, 8);
+
+        const featureImgWrap = pow3.querySelector(".featureImgWrap");
+        const msg2 = pow3.querySelector(".msg2");
+
+        // 스크롤 길이
+        const SCROLL_PER_PANEL = 1800;
+        const totalScroll = (panels.length - 1) * SCROLL_PER_PANEL;
+
+        // 초기 상태
+        gsap.set(pow1, { opacity: 1, y: 0 });
+        gsap.set([pow2, pow4], { opacity: 0, y: 40 }); // p3는 fromTo로 진입하므로 제외
+
+        // 메인 타임라인
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: root,
+                start: "top top",
+                end: "+=" + totalScroll,
+                pin: true,
+                scrub: 1,
+                anticipatePin: 1,
+            }
+        });
+
+        // p1 hero 80vw/80vh → 100vw/100vh
+        if (heroBox) {
+            tl.to(heroBox, {
+                width: "100vw",
+                height: "100vh",
+                borderRadius: 0,
+                ease: "power2.out",
+                duration: 0.6
+            }, 0);
+        }
+
+        // p1 → p2
+        tl.to(pow1, { opacity: 0, y: -40, duration: 0.5, ease: "power2.out" }, ">")
+            .fromTo(pow2, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, "<");
+
+        // p2 박스 8개 인
+        tl.fromTo(
+            pow2Boxes,
+            { y: 40, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.6, ease: "power3.out", stagger: 0.08 },
+            "<+=0.1"
+        );
+
+        // p2 → p3 (푸시)
+        tl.add("pow2to3", ">+=0.3")
+            .to(firstHalf, { y: -160, duration: 0.5, ease: "power3.in" }, "pow2to3")
+            .to(secondHalf, { y: 160, duration: 0.5, ease: "power3.in" }, "pow2to3")
+            .to(pow2, { xPercent: -100, duration: 0.65, ease: "power2.inOut" }, "pow2to3")
+            .fromTo(
+                pow3,
+                { xPercent: 100, opacity: 1, y: 0 }, // 진입 시작값 명시
+                { xPercent: 0, opacity: 1, y: 0, duration: 0.65, ease: "power2.inOut" },
+                "pow2to3"
+            )
+            .set(pow2, { opacity: 0 }, ">");
+
+        // p3 내부: 이미지 → 후속 메시지
+        tl.fromTo(featureImgWrap, { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, ">+=0.1")
+            .fromTo(msg2, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, ">+=0.15");
+
+        // p3 → p4
+        tl.to(pow3, { opacity: 0, y: -40, duration: 0.5, ease: "power2.out" }, ">+=0.2")
+            .fromTo(pow4, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, "<");
+    </script>
+
+</body>
+
+</html>
