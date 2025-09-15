@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+        .kakao_container {
+            width: 100%;
+            background-color: #111111;
+            padding: 100px 0;
+        }
+
+        .kakao_wrapper {
+            width: 600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+        }
+
+        .kakao_box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: #ffffff;
+            border-radius: 32px;
+            padding: 32px;
+            align-items: center;
+        }
+
+        .kakao_mark {
+            width: 160px;
+            border-radius: 999px;
+            box-shadow: 0 4px 12px rgba(17, 17, 17, 0.1);
+        }
+
+        .kakao_mark>img {
+            width: 160px;
+            border-radius: 999px;
+        }
+
+        .kakao_explain_box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .kakao_explain_title {
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 700;
+            color: #111111;
+        }
+
+        .kakao_explain_desc {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 500;
+            color: #767676;
+        }
+
+        .kakao_link_button {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid #e5e5ec;
+            background-color: #fae100;
+            color: #3c1e1e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px 0;
+            text-decoration: none;
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 700;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .kakao_link_button:hover {
+            background-color: #E3CD0C;
+        }
+
+        .kakao_phone_button {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid #e5e5ec;
+            background-color: #111111;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px 0;
+            text-decoration: none;
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 700;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .kakao_phone_button:hover {
+            background-color: #333333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="kakao_container">
+        <div class="kakao_wrapper">
+            <div class="kakao_box">
+                <div class="kakao_mark">
+                    <img src="https://ncryk7.mycafe24.com/lambchefmark.png" alt="">
+                </div>
+                <div class="kakao_explain_box">
+                    <p class="kakao_explain_title">
+                        예약 전 확인해주세요!
+                    </p>
+                    <p class="kakao_explain_desc">
+                        01. 단체예약은 최소 하루 전 부탁드립니다.
+                    </p>
+                    <p class="kakao_explain_desc">
+                        02. 양갈비의 당일소진율이 높아 전화로 문의주심이 유리합니다.
+                    </p>
+                    <p class="kakao_explain_desc">
+                        03. 주차등록은 3시간까지 가능합니다.
+                    </p>
+                </div>
+                <a href="#" class="kakao_link_button">
+                    <i class="fa-brands fa-kakao-talk"></i> 카카오로 문의하기
+                </a>
+                <p class="kakao_phone_button">
+                    <i class="fa-solid fa-phone"></i>
+                    0507-1327-7049
+                </p>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
