@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+        .menubar_container {
+            width: 100%;
+            height: 80px;
+            background-color: #111111;
+            border-bottom: 1px solid #e5e5ec;
+            position: fixed !important;
+            top: 0;
+        }
+
+        .menubar_wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: 0 40px;
+            box-sizing: border-box;
+        }
+
+        .menubar_logo {
+            width: 180px;
+            height: 39px;
+            display: flex;
+            align-items: center;
+        }
+
+        .menubar_logo>img {
+            width: 180px;
+            height: 39px;
+        }
+
+        .menubar_menu {
+            display: flex;
+            flex-direction: row;
+            gap: 60px;
+        }
+
+        .menus {
+            text-decoration: none;
+            color: #ffffff;
+            font-family: 'Pretendard';
+            font-size: 18px;
+            font-weight: 300;
+            transition: all 0.3s ease;
+        }
+
+        .menus:hover {
+            color: #767676;
+        }
+
+        .menubar_hamburger {
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .fa-bars {
+            color: #ffffff;
+        }
+
+        .lnb_container {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            position: fixed;
+            top: 81px;
+            right: 0;
+        }
+
+        .lnb_wrapper {
+            width: 400px;
+            height: 600px;
+            background-color: #111111;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0 0 0 60px;
+            gap: 60px;
+        }
+
+        .lnb_menu_box {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .lnb_menu {
+            font-family: 'Pretendard';
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .lnb_menu:hover {
+            color: #FF8E2B;
+        }
+
+        .lnb_link_box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .lnb_youtube_link {
+            text-decoration: none;
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 300;
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .lnb_youtube_link:hover {
+            color: #ff0033;
+        }
+
+        .lnb_insta_link {
+            text-decoration: none;
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 300;
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .lnb_insta_link:hover {
+            color: #c125c7;
+        }
+
+        .lnb_menu_xbutton {
+            width: 70%;
+            display: flex;
+            justify-content: flex-end;
+            padding: 0 40px;
+        }
+
+        .fa-xmark {
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="menubar_container">
+        <div class="menubar_wrapper">
+            <a href="https://lambchefkr.imweb.me" class="menubar_logo">
+                <img src="https://ncryk7.mycafe24.com/lambcheflogo.png" alt="">
+            </a>
+            <div class="menubar_menu">
+                <a href="menulist" class="menus">메뉴보기</a>
+                <a href="onway" class="menus">오시는길</a>
+                <a href="" class="menus">네이버정보</a>
+            </div>
+            <div class="menubar_hamburger">
+                <i class="fa-regular fa-bars"></i>
+            </div>
+        </div>
+    </section>
+
+    <section class="lnb_container">
+        <div class="lnb_wrapper">
+            <div class="lnb_menu_xbutton">
+                <i class="fa-solid fa-xmark fa-2xl"></i>
+            </div>
+            <div class="lnb_menu_box">
+                <a href="menulist" class="lnb_menu">메뉴보기</a>
+                <a href="onway" class="lnb_menu">오시는길</a>
+                <a href="" class="lnb_menu">네이버정보</a>
+            </div>
+            <div class="lnb_link_box">
+                <a href="" class="lnb_youtube_link">
+                    <i class="fa-brands fa-square-youtube"></i>
+                    양쉐프유튜브
+                </a>
+                <a href="" class="lnb_insta_link">
+                    <i class="fa-brands fa-square-instagram"></i>
+                    양쉐프인스타
+                </a>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
