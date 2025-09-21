@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .banner_container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 0 20px;
+        }
+
+        .banner_wrapper {
+            width: 90%;
+            aspect-ratio: 16 / 9;
+            border-radius: 24px;
+        }
+
+        .banner_box {
+            width: 100%;
+            height: 100%;
+            background-image: url(https://cdn.imweb.me/thumbnail/20250919/bf97e078eecd8.jpg);
+            background-size: cover;
+            border-radius: 24px;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+        }
+
+        .banner_shadow {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, #111111 0%, transparent 100%);
+            border-radius: 24px;
+            z-index: 1;
+            position: absolute;
+        }
+
+        .banner_title_box {
+            position: absolute;
+            z-index: 2;
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .banner_title {
+            font-family: 'Pretendard';
+            font-size: 40px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .banner_desc {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 400;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .banner_button {
+            width: 100px;
+            padding: 18px 32px;
+            border: 1px solid #ffffff;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-family: 'Pretendard';
+            font-size: 16px;
+            font-weight: 400;
+            color: #ffffff;
+            margin: 0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .banner_button:hover {
+            background-color: #ffffff;
+            color: #1428A0;
+            font-weight: 700;
+        }
+
+        /* 배너끝------------------- */
+
+        .business_container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .business_wrapper {
+            width: 90%;
+            aspect-ratio: 16 / 5;
+            border-radius: 24px;
+        }
+
+        .business_box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+
+        .business_shadow {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, #111111 0%, transparent 100%);
+            border-radius: 24px;
+            z-index: 1;
+            position: absolute;
+        }
+
+        .business_stuff:nth-child(1),
+        .business_stuff:nth-child(2),
+        .business_stuff:nth-child(3) {
+            flex: 1 1 0;
+            min-width: 0;
+            background-size: cover;
+            transition: all 0.9s ease;
+            overflow: hidden;
+            border-radius: 24px;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+        }
+
+        .business_stuff:nth-child(1) {
+            background-image: url(https://cdn.imweb.me/thumbnail/20250919/2ce9d7aa9ac10.jpg);
+        }
+
+        .business_stuff:nth-child(2) {
+            background-image: url(https://cdn.imweb.me/thumbnail/20250919/044fc4114142f.jpg);
+        }
+
+        .business_stuff:nth-child(3) {
+            background-image: url(https://cdn.imweb.me/thumbnail/20250919/69b4b55630a15.jpg);
+        }
+
+        .business_stuff:hover {
+            flex-grow: 3;
+            /* 값이 클수록 hover된 놈이 더 커져 */
+            z-index: 3;
+        }
+
+        .business_stuff:hover .business_title_box {
+            padding: 80px;
+        }
+
+        .business_stuff:hover .business_button {
+            opacity: 1;
+        }
+
+        .business_title_box {
+            position: absolute;
+            z-index: 2;
+            padding: 0 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .business_title {
+            font-family: 'Pretendard';
+            font-size: 40px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .business_desc {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 400;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .business_button {
+            width: 100px;
+            padding: 18px 32px;
+            border: 1px solid #ffffff;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-family: 'Pretendard';
+            font-size: 16px;
+            font-weight: 400;
+            color: #ffffff;
+            margin: 0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            opacity: 0;
+        }
+
+        .business_button:hover {
+            background-color: #ffffff;
+            color: #1428A0;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="banner_container">
+        <div class="banner_wrapper">
+            <div class="banner_box">
+                <div class="banner_shadow"></div>
+                <div class="banner_title_box">
+                    <p class="banner_title">
+                        소중한 사람을 기억해
+                    </p>
+                    <p class="banner_desc">
+                        Having your own song
+                    </p>
+                    <a href="#" class="banner_button">
+                        자세히 보기
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="business_container">
+        <div class="business_wrapper">
+            <div class="business_box">
+                <div class="business_stuff">
+                    <div class="business_shadow"></div>
+                    <div class="business_title_box">
+                        <p class="business_title">
+                            작곡
+                        </p>
+                        <p class="business_desc">
+                            자신만의 멜로디를 만들어보세요
+                        </p>
+                        <a href="#" class="business_button">
+                            자세히 보기
+                        </a>
+                    </div>
+                </div>
+                <div class="business_stuff">
+                    <div class="business_shadow"></div>
+                    <div class="business_title_box">
+                        <p class="business_title">
+                            작사
+                        </p>
+                        <p class="business_desc">
+                            예쁜가사로 마음에 닿게
+                        </p>
+                        <a href="#" class="business_button">
+                            자세히 보기
+                        </a>
+                    </div>
+                </div>
+                <div class="business_stuff">
+                    <div class="business_shadow"></div>
+                    <div class="business_title_box">
+                        <p class="business_title">
+                            녹음
+                        </p>
+                        <p class="business_desc">
+                            나의 노래를 녹음할 수 있어요
+                        </p>
+                        <a href="#" class="business_button">
+                            자세히 보기
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
