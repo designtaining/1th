@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+        .mhh_container {
+            width: 100%;
+            height: 1200px;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .mhh_top_background {
+            width: 100%;
+            height: 320px;
+            background-color: #f5f2ef;
+            position: absolute;
+            z-index: 1;
+            top: 0;
+        }
+
+        .mhh_bottom_background {
+            width: 100%;
+            height: 880px;
+            background-image: url(https://cdn.imweb.me/thumbnail/20250922/16f087992f7cf.png);
+            background-size: cover;
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+        }
+
+        .mhh_wrapper {
+            width: 1280px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            z-index: 2;
+            gap: 160px;
+        }
+
+        .mhh_top {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            height: 500px;
+            top: 0;
+            cursor: grab;
+            /* 드래그 UX */
+        }
+
+        .mhh_top.dragging {
+            cursor: grabbing;
+        }
+
+        .mhh_tt {
+            position: absolute;
+            z-index: 4;
+            top: 0;
+            background-color: #f5f2ef;
+            width: 100%;
+            height: 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding: 60px;
+            box-sizing: border-box;
+            pointer-events: none;
+            /* 드래그 방해 X */
+        }
+
+        .mhh_tt_title_box {
+            width: 50%;
+            height: 100%;
+        }
+
+        .mhh_tt_title {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 700;
+            color: #bc9646;
+            margin: 0;
+        }
+
+        .mhh_tt_bottom_box {
+            width: 50%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .mhh_tt_category {
+            font-family: 'Pretendard';
+            font-size: 32px;
+            font-weight: 700;
+            color: #333333;
+            margin: 0;
+        }
+
+        .mhh_tt_line {
+            width: 20%;
+            height: 1px;
+            background-color: #999999;
+            margin: 0 8px;
+        }
+
+        .mhh_tt_book_box {
+            display: flex;
+            gap: 6px;
+        }
+
+        .mhh_tt_book {
+            width: 4px;
+            height: 12px;
+            background-color: #999999;
+            border-radius: 1px;
+            transform-origin: center;
+            transition: background-color .25s ease, transform .25s ease;
+        }
+
+        .mhh_tt_book.active {
+            background-color: #bc9646;
+            transform: rotate(45deg);
+            animation: book-bounce .5s cubic-bezier(.22, .61, .36, 1);
+        }
+
+        @keyframes book-bounce {
+            0% {
+                transform: rotate(45deg) scale(1);
+            }
+
+            50% {
+                transform: rotate(45deg) scale(1.25);
+            }
+
+            70% {
+                transform: rotate(45deg) scale(0.95);
+            }
+
+            100% {
+                transform: rotate(45deg) scale(1);
+            }
+        }
+
+        /* -------------------------
+       텍스트 슬라이더 (오른쪽 박스)
+       ------------------------- */
+        .mhh_tb {
+            width: 100%;
+            height: 60%;
+            position: absolute;
+            background-color: #ffffff;
+            bottom: 0;
+            z-index: 5;
+            display: block;
+            /* 트랙이 내부 레이아웃 담당 */
+            overflow: hidden;
+            padding: 0;
+            /* 트랙에서 내부 여백 처리 */
+            box-sizing: border-box;
+        }
+
+        .mhh_tb_track {
+            height: 100%;
+            display: flex;
+            will-change: transform;
+            transition: transform .8s cubic-bezier(.22, .61, .36, 1);
+        }
+
+        .mhh_tb_track.no-transition {
+            transition: none !important;
+        }
+
+        .mhh_tb_slide {
+            flex: 0 0 100%;
+            padding: 60px;
+            /* 기존 패딩 유지 */
+            box-sizing: border-box;
+            display: flex;
+            justify-content: flex-end;
+            align-items: stretch;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mhh_tb_title_box {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .mhh_tb_title {
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+        }
+
+        .mhh_tb_desc {
+            font-family: 'Pretendard';
+            font-size: 16px;
+            font-weight: 400;
+            color: #767676;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .mhh_tb_link {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            font-family: 'Pretendard';
+            font-size: 16px;
+            font-weight: 700;
+            color: #bc9646;
+            text-decoration: none;
+        }
+
+        /* -------------------------
+       이미지 슬라이더 (좌측 카드)
+       ------------------------- */
+        .mhh_image_slider {
+            position: absolute;
+            z-index: 5;
+            top: 10%;
+            left: 4%;
+            width: 520px;
+            height: 400px;
+            border-radius: 0 48px 0 0;
+            overflow: hidden;
+            display: block;
+            /* 뷰포트는 block으로 */
+            background: #ddd;
+        }
+
+        .mhh_image_slider.no-transition {
+            transition: none !important;
+        }
+
+        .mhh_image_track {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            will-change: transform;
+            transition: transform .8s cubic-bezier(.22, .61, .36, 1);
+        }
+
+        .mhh_image_track.no-transition {
+            transition: none !important;
+        }
+
+        .mhh_image_slide {
+            flex: 0 0 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* 하단 박스들(그대로) */
+        .mhh_bottom {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .mhh_bb_box {
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            flex-direction: column;
+            padding: 100px 40px 40px;
+            gap: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .mhh_bb_box:hover {
+            background-color: #ffffff;
+        }
+
+        .mhh_bb_box:hover .mhh_bb_title,
+        .mhh_bb_box:hover .mhh_bb_desc {
+            color: #111111;
+        }
+
+        .mhh_bb_box:hover .mhh_bb_link {
+            color: #ffffff;
+            border: 1px solid #e5e5ec;
+            background-color: #bc9646;
+            box-shadow: 0 4px 12px rgba(17, 17, 17, 0.2);
+        }
+
+
+        .mhh_bb_top_box>i {
+            color: #bc9646;
+        }
+
+        .mhh_bb_title_box {
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .mhh_bb_title {
+            font-family: 'Pretendard';
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+            transition: all 0.3s ease;
+        }
+
+        .mhh_bb_desc {
+            font-family: 'Pretendard';
+            font-size: 18px;
+            font-weight: 400;
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.5;
+            transition: all 0.3s ease;
+        }
+
+        .mhh_bb_bottom_box {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .mhh_bb_link {
+            text-decoration: none;
+            font-family: 'Pretendard';
+            font-size: 16px;
+            font-weight: 400;
+            color: #ffffff;
+            margin: 0;
+            padding: 16px 32px;
+            border: 1px solid #ffffff;
+            border-radius: 999px;
+            transition: all 0.3s ease;
+        }
+
+        .mhh_bb_box:hover .mhh_bb_link:hover {
+            background-color: #9c782a;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="mhh_container">
+        <div class="mhh_top_background"></div>
+        <div class="mhh_bottom_background"></div>
+
+        <div class="mhh_wrapper">
+            <div class="mhh_top" id="mhhTop">
+                <!-- 상단 타이틀/인디케이터 -->
+                <div class="mhh_tt">
+                    <div class="mhh_tt_title_box">
+                        <p class="mhh_tt_title">We are here to help</p>
+                    </div>
+                    <div class="mhh_tt_bottom_box">
+                        <p class="mhh_tt_category">"공명" 전문상담분야</p>
+                        <div class="mhh_tt_line"></div>
+                        <div class="mhh_tt_book_box" id="mhhBooks">
+                            <div class="mhh_tt_book"></div>
+                            <div class="mhh_tt_book"></div>
+                            <div class="mhh_tt_book"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 텍스트 슬라이더 -->
+                <div class="mhh_tb" id="mhhTb">
+                    <div class="mhh_tb_track" id="mhhTbTrack">
+                        <!-- slide 1 -->
+                        <div class="mhh_tb_slide">
+                            <div class="mhh_tb_title_box">
+                                <p class="mhh_tb_title">민사소송</p>
+                                <p class="mhh_tb_desc">
+                                    개인간의 생활 관계에서 일어나는 사법적인 권리 또는 법률관계의 다툼을
+                                    <br>
+                                    법원이 국가의 재판권에 의하여 강제적으로 해결하고
+                                    <br>
+                                    조정하기 위해 행하는 재판 절차입니다.
+                                    <br>
+                                    분쟁이 일어난 경우에는 합의나 조정을 통해서 해결 할 수 있습니다.
+                                </p>
+                                <a href="#" class="mhh_tb_link">MORE VIEW</a>
+                            </div>
+                        </div>
+                        <!-- slide 2 -->
+                        <div class="mhh_tb_slide">
+                            <div class="mhh_tb_title_box">
+                                <p class="mhh_tb_title">형사소송</p>
+                                <p class="mhh_tb_desc">
+                                    개인간의 생활 관계에서 일어나는 사법적인 권리 또는 법률관계의 다툼을
+                                    <br>
+                                    법원이 국가의 재판권에 의하여 강제적으로 해결하고
+                                    <br>
+                                    조정하기 위해 행하는 재판 절차입니다.
+                                    <br>
+                                    분쟁이 일어난 경우에는 합의나 조정을 통해서 해결 할 수 있습니다.
+                                </p>
+                                <a href="#" class="mhh_tb_link">MORE VIEW</a>
+                            </div>
+                        </div>
+                        <!-- slide 3 -->
+                        <div class="mhh_tb_slide">
+                            <div class="mhh_tb_title_box">
+                                <p class="mhh_tb_title">행정소송</p>
+                                <p class="mhh_tb_desc">
+                                    개인간의 생활 관계에서 일어나는 사법적인 권리 또는 법률관계의 다툼을
+                                    <br>
+                                    법원이 국가의 재판권에 의하여 강제적으로 해결하고
+                                    <br>
+                                    조정하기 위해 행하는 재판 절차입니다.
+                                    <br>
+                                    분쟁이 일어난 경우에는 합의나 조정을 통해서 해결 할 수 있습니다.
+                                </p>
+                                <a href="#" class="mhh_tb_link">MORE VIEW</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 이미지 슬라이더 -->
+                <div class="mhh_image_slider" id="mhhImgSlider">
+                    <div class="mhh_image_track" id="mhhImgTrack">
+                        <div class="mhh_image_slide"
+                            style="background-image:url(https://cdn.imweb.me/thumbnail/20250922/ba0a14b48626a.png)">
+                        </div>
+                        <div class="mhh_image_slide"
+                            style="background-image:url(https://cdn.imweb.me/thumbnail/20250922/e9c3aa0ccc73e.png)">
+                        </div><!-- TODO: url2 -->
+                        <div class="mhh_image_slide"
+                            style="background-image:url(https://cdn.imweb.me/thumbnail/20250922/bd4edf93dc988.png)">
+                        </div><!-- TODO: url3 -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 하단 3개 카드 (기존 그대로) -->
+            <div class="mhh_bottom">
+                <div class="mhh_bb_box">
+                    <div class="mhh_bb_top_box">
+                        <i class="fa-solid fa-quote-left fa-2xl"></i>
+                        <div class="mhh_bb_title_box">
+                            <p class="mhh_bb_title">고객 상담 문의</p>
+                            <p class="mhh_bb_desc">
+                                Tel. 02-6677-4600
+                                <br>
+                                Fax. 02-6677-4601
+                                <br>
+                                E-mail. brightsun0401@hanmail.net
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mhh_bb_bottom_box">
+                        <a href="#" class="mhh_bb_link">상담 신청하기</a>
+                    </div>
+                </div>
+
+                <div class="mhh_bb_box">
+                    <div class="mhh_bb_top_box">
+                        <i class="fa-solid fa-quote-left fa-2xl"></i>
+                        <div class="mhh_bb_title_box">
+                            <p class="mhh_bb_title">문의 현황</p>
+                            <p class="mhh_bb_desc">
+                                최근 접수 :
+                                <br>
+                                예약/문의는 상담사례 페이지에서
+                                <br>
+                                확인 가능합니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mhh_bb_bottom_box">
+                        <a href="#" class="mhh_bb_link">상담 사례보기</a>
+                    </div>
+                </div>
+
+                <div class="mhh_bb_box">
+                    <div class="mhh_bb_top_box">
+                        <i class="fa-solid fa-quote-left fa-2xl"></i>
+                        <div class="mhh_bb_title_box">
+                            <p class="mhh_bb_title">오시는길</p>
+                            <p class="mhh_bb_desc">
+                                서울특별시 서초구
+                                <br>
+                                서초대로 46길 16,
+                                <br>
+                                6층 (서초동) 공명
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mhh_bb_bottom_box">
+                        <a href="#" class="mhh_bb_link">상담 신청하기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        (() => {
+            'use strict';
+
+            // ─────────────────────────────────────────────────────────────
+            // 요소 참조
+            // ─────────────────────────────────────────────────────────────
+            const tb = document.getElementById('mhhTb');
+            const tbTrack = document.getElementById('mhhTbTrack');
+            const imgViewport = document.getElementById('mhhImgSlider');
+            let imgTrack = document.getElementById('mhhImgTrack'); // 없으면 아래에서 자동 생성
+            const topArea = document.getElementById('mhhTop');
+            const books = Array.from(document.querySelectorAll('#mhhBooks .mhh_tt_book'));
+
+            // ─────────────────────────────────────────────────────────────
+            // 이미지 트랙이 없다면 자동 생성 (현재 HTML 그대로 사용 가능)
+            // ─────────────────────────────────────────────────────────────
+            if (!imgTrack) {
+                imgTrack = document.createElement('div');
+                imgTrack.id = 'mhhImgTrack';
+                imgTrack.className = 'mhh_image_track';
+                // 스타일(인라인)로 최소한의 동작 보장
+                imgTrack.style.width = '100%';
+                imgTrack.style.height = '100%';
+                imgTrack.style.display = 'flex';
+                imgTrack.style.willChange = 'transform';
+                imgTrack.style.transition = 'transform .8s cubic-bezier(.22,.61,.36,1)';
+
+                const slides = Array.from(imgViewport.querySelectorAll('.mhh_image_slide'));
+                slides.forEach(slide => imgTrack.appendChild(slide));
+                imgViewport.appendChild(imgTrack);
+            }
+
+            // ─────────────────────────────────────────────────────────────
+            // 옵션
+            // ─────────────────────────────────────────────────────────────
+            const COUNT = 3;     // 슬라이드 개수
+            const SPEED = 800;   // 이동 시간(ms)
+            const HOLD = 5000;  // 대기 시간(ms)
+
+            // ─────────────────────────────────────────────────────────────
+            // 상태
+            // ─────────────────────────────────────────────────────────────
+            let idx = 0;               // 현재 인덱스
+            let timer = null;          // 오토 재생 타이머
+            let dragging = false;      // 드래그 중 여부
+            let startX = 0;            // 드래그 시작 x
+            let tbW = 0;               // 텍스트 뷰포트 폭
+            let imgW = 0;              // 이미지 뷰포트(카드) 폭
+
+            // ─────────────────────────────────────────────────────────────
+            // 유틸
+            // ─────────────────────────────────────────────────────────────
+            function setTransition(on) {
+                if (on) {
+                    tbTrack.style.transition = `transform ${SPEED}ms cubic-bezier(.22,.61,.36,1)`;
+                    imgTrack.style.transition = `transform ${SPEED}ms cubic-bezier(.22,.61,.36,1)`;
+                } else {
+                    tbTrack.style.transition = 'none';
+                    imgTrack.style.transition = 'none';
+                }
+            }
+
+            function setTransform(i, dragDx = 0) {
+                // i번째 슬라이드 위치로 이동 + 드래그 오프셋 반영
+                const tbX = -(i * tbW) + dragDx;
+                const ratio = (tbW === 0) ? 1 : (imgW / tbW);
+                const imgX = -(i * imgW) + dragDx * ratio;
+
+                tbTrack.style.transform = `translate3d(${tbX}px,0,0)`;
+                imgTrack.style.transform = `translate3d(${imgX}px,0,0)`;
+            }
+
+            function updateBooks(i) {
+                books.forEach((b, bi) => {
+                    if (bi === i) {
+                        // bounce를 매번 재생시키기 위해 active 재적용
+                        b.classList.remove('active');
+                        // reflow
+                        void b.offsetWidth;
+                        b.classList.add('active');
+                    } else {
+                        b.classList.remove('active');
+                    }
+                });
+            }
+
+            function goTo(nextIndex, animate = true) {
+                idx = (nextIndex + COUNT) % COUNT;
+                tbW = tb.clientWidth;
+                imgW = imgViewport.clientWidth;
+
+                setTransition(animate);
+                setTransform(idx, 0);
+                updateBooks(idx);
+            }
+
+            function play() {
+                stop();
+                timer = setTimeout(function tick() {
+                    goTo(idx + 1, true);
+                    timer = setTimeout(tick, HOLD + SPEED);
+                }, HOLD);
+            }
+
+            function stop() {
+                if (timer) clearTimeout(timer);
+                timer = null;
+            }
+
+            // ─────────────────────────────────────────────────────────────
+            // 초기화 & 리사이즈
+            // ─────────────────────────────────────────────────────────────
+            window.addEventListener('load', () => {
+                // 인디케이터 초기 상태
+                updateBooks(0);
+                // 첫 프레임은 트랜지션 없이 위치 고정
+                setTransition(false);
+                goTo(0, false);
+                // 오토플레이 시작
+                play();
+            });
+
+            window.addEventListener('resize', () => {
+                // 리사이즈 시 현재 인덱스 위치 보정 (트랜지션 없이)
+                setTransition(false);
+                tbW = tb.clientWidth;
+                imgW = imgViewport.clientWidth;
+                setTransform(idx, 0);
+            });
+
+            // ─────────────────────────────────────────────────────────────
+            // 드래그 제스처 (Pointer Events)
+            // ─────────────────────────────────────────────────────────────
+            function onDown(e) {
+                dragging = true;
+                topArea.classList.add('dragging');
+                stop();
+
+                tbW = tb.clientWidth;
+                imgW = imgViewport.clientWidth;
+                startX = (e.clientX !== undefined) ? e.clientX : (e.touches && e.touches[0] ? e.touches[0].clientX : 0);
+
+                setTransition(false);
+                // 터치 스크롤 방지
+                if (e.cancelable) e.preventDefault();
+            }
+
+            function onMove(e) {
+                if (!dragging) return;
+                const x = (e.clientX !== undefined) ? e.clientX : (e.touches && e.touches[0] ? e.touches[0].clientX : 0);
+                const dx = x - startX;
+                // 좌로 끌면 다음 슬라이드 힌트가 보이도록 방향 반영
+                setTransform(idx, dx);
+            }
+
+            function onUp(e) {
+                if (!dragging) return;
+                dragging = false;
+                topArea.classList.remove('dragging');
+
+                const x = (e.clientX !== undefined) ? e.clientX : (e.changedTouches && e.changedTouches[0] ? e.changedTouches[0].clientX : 0);
+                const dx = x - startX;
+                const threshold = tbW * 0.05; // 전환 임계값(15%)
+
+                if (dx < -threshold) goTo(idx + 1, true);
+                else if (dx > threshold) goTo(idx - 1, true);
+                else goTo(idx, true);
+
+                play();
+            }
+
+            // 바인딩
+            topArea.addEventListener('pointerdown', onDown);
+            window.addEventListener('pointermove', onMove, { passive: false });
+            window.addEventListener('pointerup', onUp);
+            topArea.addEventListener('pointercancel', onUp);
+
+            // (iOS 옛 버전 대응용) 터치 이벤트도 함께
+            topArea.addEventListener('touchstart', onDown, { passive: false });
+            window.addEventListener('touchmove', onMove, { passive: false });
+            window.addEventListener('touchend', onUp);
+
+            // 호버 시 일시정지/재개
+            topArea.addEventListener('mouseenter', stop);
+            topArea.addEventListener('mouseleave', () => { if (!dragging) play(); });
+
+            // 인디케이터 클릭 점프
+            books.forEach((b, i) => {
+                b.style.pointerEvents = 'auto';
+                b.addEventListener('click', () => { stop(); goTo(i, true); play(); });
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

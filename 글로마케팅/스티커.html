@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .buttonbox_container {
+            width: 100%;
+            position: fixed;
+        }
+
+        .buttonbox_box {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            padding: 8px;
+            background-color: #ffffff;
+            border: 1px solid #1428a0;
+            animation: flash 2s infinite;
+        }
+
+        @keyframes flash {
+            0%{
+                opacity: 70%;
+            }
+            50% {
+                opacity: 100%;
+            }
+            100% {
+                opacity: 70%;
+            }
+        }
+
+        .buttonbox_box:hover {
+            animation: flash 0s;
+        }
+
+        .button_box_link {
+            text-decoration: none;
+        }
+
+        .button_box_link:hover .button_box_square {
+            background-color: #0b1e86;
+        }
+
+        .button_box_square {
+            width: 100%;
+            height: 140px;
+            background-color: #1428A0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .button_box_link_title {
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            padding: 0 12px;
+            text-align: center;
+            margin: 0;
+        }
+
+        .button_box_month {
+            margin: 8px 0 0 0;
+            width: 100%;
+            background-color: #1428A0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button_box_month_title {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 500;
+            color: #ffffff;
+            padding: 8px 0;
+            margin: 0;
+        }
+
+        .button_box1 {
+            display: flex;
+            flex-direction: column;
+            padding: 20px 8px;
+            gap: 16px;
+        }
+
+        .button_box_title {
+            font-family: 'Pretendard';
+            font-size: 16px;
+            font-weight: 500;
+            color: #111111;
+            margin: 0;
+            text-align: center;
+        }
+
+        .button_box_count {
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 700;
+            color: #1428A0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .buttonbox_line {
+            width: 100%;
+            height: 1px;
+            background-color: #1428A0;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="buttonbox_container">
+        <div class="buttonbox_box">
+            <a href="#" class="button_box_link">
+                <div class="button_box_square">
+                    <p class="button_box_link_title">
+                        수의학에<br>쏟은 노력
+                    </p>
+                </div>
+            </a>
+            <div class="button_box_month">
+                <p class="button_box_month_title">
+                    9월
+                </p>
+            </div>
+            <div class="button_box1">
+                <p class="button_box_title">
+                    블로그마케팅 T.O
+                </p>
+                <p class="button_box_count">
+                    01 건
+                </p>
+            </div>
+            <div class="buttonbox_line"></div>
+            <div class="button_box1">
+                <p class="button_box_title">
+                    글로마케팅 T.O
+                </p>
+                <p class="button_box_count">
+                    01 건
+                </p>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>
