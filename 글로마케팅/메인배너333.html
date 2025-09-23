@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .banner_container {
+            width: 100%;
+            height: 960px;
+            background-image: url(https://cdn.imweb.me/thumbnail/20250901/4e153f7fe82e5.jpg);
+            background-size: cover;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            margin: -30px 0 0 0;
+        }
+
+        .banner_shadow {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: rgba(17, 17, 17, 0.6);
+            bottom: 0;
+            z-index: 1;
+        }
+
+        .banner_wrapper {
+            z-index: 2;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            width: 1000px;
+        }
+
+        .banner_top_wrapper {
+            width: 1000px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .banner_top_left {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .banner_title {
+            font-family: 'Pretendard';
+            font-size: 52px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .banner_desc {
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 300;
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .banner_golink {
+            width: 180px;
+            height: 60px;
+            font-family: 'Pretendard';
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 0;
+            text-decoration: none;
+            border: 1px solid #ffffff;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .banner_golink:hover {
+            background-color: #ffffff;
+            color: #1428A0;
+        }
+
+        .banner_top_right {
+            width: 280px;
+            height: 280px;
+        }
+
+        .banner_top_right>img {
+            width: 280px;
+            height: 280px;
+        }
+
+        .banner_bottom_wrapper {
+            width: 1000px;
+            height: 360px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .banner_proof_box {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            align-items: center;
+        }
+
+        .proof_title {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 500;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .proof_desc {
+            font-family: 'Pretendard';
+            font-size: 48px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .proof_line {
+            width: 1px;
+            height: 22%;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .banner_span1 {
+            color: #2e50e2;
+        }
+
+        .banner_span2 {
+            text-decoration: underline 1px;
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .banner_container {
+                background-image: url(https://cdn.imweb.me/thumbnail/20250901/a2a66415ccbe7.png);
+            }
+
+            .banner_wrapper {
+                width: 100%;
+                padding: 0 16px;
+            }
+
+            .banner_top_wrapper {
+                width: 100%;
+            }
+
+            .banner_bottom_wrapper {
+                width: 100%;
+                height: 360px;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .banner_top_right {
+                display: none;
+            }
+
+            .banner_title {
+                font-size: 36px;
+            }
+
+            .banner_desc {
+                font-size: 20px;
+            }
+
+            .proof_title {
+                font-size: 14px;
+            }
+
+            .proof_desc {
+                font-size: 32px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .banner_container {
+                background-image: url(https://cdn.imweb.me/thumbnail/20250901/74d0bd7217c50.png);
+                height: 780px;
+            }
+
+            .banner_top_right {
+                display: none;
+            }
+
+            .banner_title {
+                font-size: 28px;
+            }
+
+            .banner_desc {
+                font-size: 18px;
+            }
+
+            .proof_title {
+                font-size: 10px;
+            }
+
+            .proof_desc {
+                font-size: 24px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <section class="banner_container">
+        <div class="banner_shadow"></div>
+
+        <div class="banner_wrapper">
+
+            <div class="banner_top_wrapper">
+                <div class="banner_top_left">
+                    <p class="banner_title">
+                        수의학 전공
+                        <br>
+                        <span class="banner_span1">동물병원 전문</span> 블로그 마케팅
+                    </p>
+                    <p class="banner_desc">
+                        동물 의학에 40,000시간 이상을 쏟았기 때문에,
+                        <br>
+                        필요한 것과 불필요한 것을 확실하게 구분합니다.
+                        <br>
+                        <span class="banner_span2">지금 확인하세요.</span>
+                    </p>
+                    <a href="#" class="banner_golink">
+                        수의학 인사이트
+                    </a>
+                </div>
+                <figure class="banner_top_right">
+                    <img src="https://cdn.imweb.me/thumbnail/20250901/a29383ac4490a.png" alt="강아지와 고양이">
+                </figure>
+            </div>
+
+            <div class="banner_bottom_wrapper">
+                <div class="banner_proof_box">
+                    <p class="proof_title">
+                        고객만족도
+                    </p>
+                    <p class="proof_desc">98%</p>
+                </div>
+                <div class="proof_line"></div>
+                <div class="banner_proof_box">
+                    <p class="proof_title">
+                        재계약율
+                    </p>
+                    <p class="proof_desc">95%</p>
+                </div>
+                <div class="proof_line"></div>
+                <div class="banner_proof_box">
+                    <p class="proof_title">
+                        환불건수
+                    </p>
+                    <p class="proof_desc">0건</p>
+                </div>
+                <div class="proof_line"></div>
+                <div class="banner_proof_box">
+                    <p class="proof_title">
+                        작업완수율
+                    </p>
+                    <p class="proof_desc">100%</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script>
+        (function () {
+            // ====== Slide-up: title & desc (once) ======
+            const titleEl = document.querySelector('.banner_title');
+            const descEl = document.querySelector('.banner_desc');
+
+            // 초기 상태를 JS로만 세팅 (CSS는 그대로 유지)
+            [titleEl, descEl].forEach((el) => {
+                if (!el) return;
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(28px)';
+                el.style.willChange = 'transform, opacity';
+            });
+
+            const slideOnce = { fired: false };
+            const slideUp = (el, delayMs = 0) => {
+                if (!el) return;
+                // 개별 트랜지션 지정
+                el.style.transition = 'transform 700ms ease, opacity 700ms ease';
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, delayMs);
+            };
+
+            const slideObserver = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !slideOnce.fired) {
+                        slideOnce.fired = true;
+                        // 타이틀 먼저, 설명 살짝 딜레이
+                        slideUp(titleEl, 200);
+                        slideUp(descEl, 800);
+                        obs.disconnect(); // 한 번만
+                    }
+                });
+            }, { threshold: 0.35 });
+
+            // 배너 자체 관찰: 첫 뷰포트 진입 시 발동
+            const banner = document.querySelector('.banner_container');
+            if (banner) slideObserver.observe(banner);
+
+            // ====== Counters: left-to-right 1,2,3,4 (once) ======
+            const counterBoxes = document.querySelectorAll('.banner_proof_box .proof_desc');
+
+            // 대상 값/접미사 파싱
+            const parseTarget = (text) => {
+                const numMatch = text.replace(/\s/g, '').match(/(\d+)(?=[^0-9]*$)/); // 마지막 숫자 시퀀스
+                const number = numMatch ? parseInt(numMatch[1], 10) : 0;
+                const suffix = text.replace(/\d+/g, ''); // 숫자 제거 후 남은 것 (예: '%', '건', 빈문자 등)
+                return { number, suffix };
+            };
+
+            // 부드러운 가감속
+            const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+            const animateCount = (el, to, suffix, duration = 1200, delay = 0) => {
+                const start = 0;
+                const startTime = performance.now() + delay;
+
+                const step = (now) => {
+                    if (now < startTime) {
+                        requestAnimationFrame(step);
+                        return;
+                    }
+                    const elapsed = now - startTime;
+                    const t = Math.min(1, elapsed / duration);
+                    const eased = easeOutCubic(t);
+                    const current = Math.round(start + (to - start) * eased);
+                    el.textContent = `${current}${suffix}`;
+                    if (t < 1) requestAnimationFrame(step);
+                };
+                requestAnimationFrame(step);
+            };
+
+            let countersFired = false;
+            const counterObserver = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !countersFired) {
+                        countersFired = true;
+                        // 왼쪽부터 순차 지연(0, 150, 300, 450ms)
+                        counterBoxes.forEach((el, idx) => {
+                            const { number, suffix } = parseTarget(el.textContent);
+                            // 시작을 0으로 보이게
+                            el.textContent = `0${suffix}`;
+                            animateCount(el, number, suffix, 1200, idx * 150);
+                        });
+                        obs.disconnect(); // 한 번만
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            if (counterBoxes.length) {
+                // 숫자 영역 전체 래퍼를 관찰 대상으로
+                const bottomWrap = document.querySelector('.banner_bottom_wrapper') || counterBoxes[0].closest('.banner_bottom_wrapper');
+                if (bottomWrap) counterObserver.observe(bottomWrap);
+            }
+        })();
+    </script>
+
+</body>
+
+</html>
