@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+        .mhh_container {
+            width: 100%;
+        }
+
+        .mhh_wrapper {
+            width: 1280px;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+        }
+
+        /* 카테고리 박스 */
+        .mhh_category_box {
+            width: 100%;
+            height: 60px;
+            display: flex;
+            background-color: #ffffff;
+            border: 1px solid #e5e5ec;
+        }
+
+        .mhh_category_icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            border-right: 1px solid #e5e5ec;
+        }
+
+        .fa-house-chimney {
+            color: #bc9646;
+        }
+
+        .mhh_category_titlebox {
+            width: 176px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-right: 1px solid #e5e5ec;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .mhh_category_titlebox:hover {
+            background-color: #f9f9f9;
+        }
+
+        .mhh_category_title {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+        }
+
+        /* change box 공통 */
+        .mhh_change_box {
+            width: 100%;
+            display: none;
+            /* 처음엔 안 보이게 */
+            flex-direction: column;
+        }
+
+        .mhh_change_box.active {
+            display: flex;
+            /* 선택된 것만 보이게 */
+        }
+
+        .mhh_intro_box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mhh_intro_top {
+            width: 100%;
+            display: flex;
+        }
+
+        .mhh_intro_left {
+            width: 30%;
+            padding: 40px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mhh_intro_engtitle {
+            font-size: 20px;
+            font-weight: 700;
+            color: #bc9646;
+            margin: 0;
+        }
+
+        .mhh_intro_kortitle {
+            font-size: 40px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+        }
+
+        .mhh_intro_right {
+            width: 70%;
+            padding: 40px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mhh_intro_desc {
+            font-size: 18px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+        }
+
+        .mhh_intro_middle {
+            width: 100%;
+            height: 400px;
+            background-size: cover;
+        }
+
+        .mhh_intro_bottom {
+            width: 100%;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .mhh_intro_underdesc {
+            font-size: 18px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .explanation_box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .explanation_titlebox {
+            width: 180px;
+            height: 40px;
+            border: 2px solid #bc9646;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top: none;
+            border-bottom: none;
+        }
+
+        .explanation_toptitle {
+            font-size: 24px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+        }
+
+        .explanation_square {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 40px;
+            box-sizing: border-box;
+            border: 1px solid #e5e5ec;
+        }
+
+        .explanation_title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #bc9646;
+            margin: 0;
+        }
+
+        .explanation_desc {
+            font-size: 16px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <section class="mhh_container">
+        <div class="mhh_wrapper">
+
+            <!-- 카테고리 버튼 -->
+            <div class="mhh_category_box">
+                <div class="mhh_category_icon">
+                    <i class="fa-solid fa-house-chimney"></i>
+                </div>
+                <div class="mhh_category_titlebox" data-target="civil">
+                    <p class="mhh_category_title">민사</p>
+                </div>
+                <div class="mhh_category_titlebox" data-target="criminal">
+                    <p class="mhh_category_title">형사</p>
+                </div>
+                <div class="mhh_category_titlebox" data-target="admin">
+                    <p class="mhh_category_title">행정</p>
+                </div>
+            </div>
+
+            <!-- 민사 -->
+            <div class="mhh_change_box active" id="civil">
+                <div class="mhh_intro_box">
+                    <div class="mhh_intro_top">
+                        <div class="mhh_intro_left">
+                            <p class="mhh_intro_engtitle">CIVIL ACTION</p>
+                            <p class="mhh_intro_kortitle">민사소송</p>
+                        </div>
+                        <div class="mhh_intro_right">
+                            <p class="mhh_intro_desc">민사소송 설명이 들어갑니다...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 형사 -->
+            <div class="mhh_change_box" id="criminal">
+                <div class="mhh_intro_box">
+                    <div class="mhh_intro_top">
+                        <div class="mhh_intro_left">
+                            <p class="mhh_intro_engtitle">CRIMINAL ACTION</p>
+                            <p class="mhh_intro_kortitle">형사소송</p>
+                        </div>
+                        <div class="mhh_intro_right">
+                            <p class="mhh_intro_desc">형사소송 설명이 들어갑니다...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 행정 -->
+            <div class="mhh_change_box" id="admin">
+                <div class="mhh_intro_box">
+                    <div class="mhh_intro_top">
+                        <div class="mhh_intro_left">
+                            <p class="mhh_intro_engtitle">ADMINISTRATIVE ACTION</p>
+                            <p class="mhh_intro_kortitle">행정소송</p>
+                        </div>
+                        <div class="mhh_intro_right">
+                            <p class="mhh_intro_desc">행정소송 설명이 들어갑니다...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        // 버튼 클릭 시 내용 전환
+        document.querySelectorAll('.mhh_category_titlebox').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetId = btn.getAttribute('data-target');
+
+                // 모든 박스 숨기기
+                document.querySelectorAll('.mhh_change_box').forEach(box => {
+                    box.classList.remove('active');
+                });
+
+                // 선택한 박스 보이기
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

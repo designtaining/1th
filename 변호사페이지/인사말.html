@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+        .sayhi_container {
+            width: 100%;
+        }
+
+        .sayhi_wrapper {
+            width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .say_hi_top {
+            width: 100%;
+            padding: 16px;
+            background-color: #bc9646;
+            border-radius: 8px;
+        }
+
+        .say_hi_title {
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .say_hi_middle1 {
+            width: 100%;
+            padding: 60px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .say_hi_catchphrase {
+            font-family: 'Pretendard';
+            font-size: 28px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+            text-align: center;
+        }
+
+        .say_hi_middle2 {
+            width: 100%;
+            display: flex;
+            padding: 0 0 120px;
+        }
+
+        .say_hi_img_box {
+            width: 50%;
+            border-radius: 8px;
+        }
+
+        .say_hi_img_box:nth-child(2) {
+            transform: translateY(40px);
+        }
+
+        .say_hi_img_box>img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .say_hi_bottom {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .say_hi_insistence_top {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .insistence_icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .fa-gavel,
+        .fa-books,
+        .fa-person {
+            color: #bc9646;
+            font-size: 28px;
+        }
+
+        .insistence_title {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+        }
+
+        .dot_box {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 999px;
+            background-color: #999999;
+        }
+
+        .insistence_line {
+            width: 100%;
+            height: 1px;
+            background-color: #e5e5ec;
+        }
+
+        .insistence_bottom {
+            width: 100%;
+            padding: 60px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .insistence {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+            line-height: 1.6;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="sayhi_container">
+        <div class="sayhi_wrapper">
+            <div class="say_hi_top">
+                <p class="say_hi_title">
+                    Great Lawyers Great Law firm
+                </p>
+            </div>
+            <div class="say_hi_middle1">
+                <p class="say_hi_catchphrase">
+                    가장 어려운 지금의 순간,
+                    <br>
+                    "公明"은 끝까지 함께 하겠습니다.
+                </p>
+            </div>
+            <div class="say_hi_middle2">
+                <div class="say_hi_img_box">
+                    <img src="https://cdn.imweb.me/thumbnail/20250924/b465f6549ed3c.png" alt="">
+                </div>
+                <div class="say_hi_img_box">
+                    <img src="https://cdn.imweb.me/thumbnail/20250924/e3057556ff2d0.png" alt="">
+                </div>
+            </div>
+            <div class="say_hi_bottom">
+
+                <div class="say_hi_insistence_top">
+                    <div class="insistence_icon">
+                        <i class="fa-regular fa-gavel"></i>
+                        <p class="insistence_title">
+                            윤리의식
+                        </p>
+                    </div>
+                    <div class="dot_box">
+                        <div class="dot"></div>
+                    </div>
+                    <div class="insistence_icon">
+                        <i class="fa-regular fa-books"></i>
+                        <p class="insistence_title">
+                            전문성
+                        </p>
+                    </div>
+                    <div class="dot_box">
+                        <div class="dot"></div>
+                    </div>
+                    <div class="insistence_icon">
+                        <i class="fa-solid fa-person"></i>
+                        <p class="insistence_title">
+                            고객중심
+                        </p>
+                    </div>
+                </div>
+
+                <div class="insistence_line"></div>
+
+                <div class="insistence_bottom">
+                    <div class="insistence_box">
+                        <p class="insistence">
+                            풍부한 경험과 전문지식을 갖춘 변호사들로 구성된 "公明"은 전문적인 분석시스템으로
+                            <br>
+                            의뢰인의 만족을 넘어 따뜻한 감동을 선사하기 위해 노력하고 있습니다.
+                            <br>
+                            단순히 의뢰인의 요구사항에 따라 처리하는 것이 아닌, 전문변호사들의 다양한 실전경험과 노하우로
+                            <br>
+                            의뢰인의 법률적 문제를 효율적으로 해결하기 위한 맞춤 법률서비스를 제공하여 의뢰인의 권익을 보호하고 있습니다.
+                        </p>
+                    </div>
+                    <div class="insistence_box">
+                        <p class="insistence">
+                            지금까지의 노력과 발전에 만족하지 않고 앞으로도 의뢰인과 함께 고민하며,
+                            <br>
+                            문제를 해결하는데 노력을 아끼지 않는 "公明"이 되겠습니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

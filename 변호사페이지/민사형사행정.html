@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+        .mhh_container {
+            width: 100%;
+        }
+
+        .mhh_wrapper {
+            width: 1280px;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+        }
+
+        .mhh_category_box {
+            width: 100%;
+            height: 60px;
+            display: flex;
+            background-color: #ffffff;
+            border: 1px solid #e5e5ec;
+        }
+
+        .mhh_category_icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            border-right: 1px solid #e5e5ec;
+        }
+
+        .fa-house-chimney {
+            color: #bc9646;
+        }
+
+        .mhh_category_titlebox {
+            width: 176px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-right: 1px solid #e5e5ec;
+            cursor: pointer;
+        }
+
+        .mhh_category_title {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+        }
+
+        .mhh_category_titlebox:hover {
+            background-color: #fdf8f2;
+        }
+
+        .mhh_category_titlebox.active {
+            background-color: #bc9646;
+        }
+
+        .mhh_category_titlebox.active .mhh_category_title {
+            color: #ffffff;
+        }
+
+        /* 카테고리 끝 */
+
+        .mhh_change_box {
+            width: 100%;
+            display: none;
+            flex-direction: column;
+            opacity: 0.5;
+            transform: translateY(20px);
+            transition: opacity 1.2s ease, transform 1.2s ease;
+            gap: 40px;
+        }
+
+        .mhh_change_box.show {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mhh_intro_box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mhh_intro_top {
+            width: 100%;
+            display: flex;
+        }
+
+        .mhh_intro_left {
+            width: 30%;
+            padding: 40px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mhh_intro_engtitle {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 700;
+            color: #bc9646;
+            margin: 0;
+        }
+
+        .mhh_intro_kortitle {
+            font-family: 'Pretendard';
+            font-size: 40px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+        }
+
+        .mhh_intro_right {
+            width: 70%;
+            padding: 40px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mhh_intro_desc {
+            font-family: 'Pretendard';
+            font-size: 18px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+        }
+
+        .mhh_intro_middle {
+            width: 100%;
+            height: 400px;
+            background-image: url(https://cdn.imweb.me/thumbnail/20250924/009a403e4fb9f.png);
+            background-size: cover;
+        }
+
+        .mhh_intro_middle2 {
+            width: 100%;
+            height: 400px;
+            background-image: url(https://cdn.imweb.me/thumbnail/20250924/9f81b22407bf1.png);
+            background-size: cover;
+        }
+
+        .mhh_intro_middle3 {
+            width: 100%;
+            height: 400px;
+            background-image: url(https://cdn.imweb.me/thumbnail/20250924/33cd992bfb43a.png);
+            background-size: cover;
+        }
+
+
+        .mhh_intro_bottom {
+            width: 100%;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .mhh_intro_underdesc {
+            font-family: 'Pretendard';
+            font-size: 18px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* 인트로박스끝 */
+
+        .explanation_box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+
+        .explanation_titlebox {
+            width: 180px;
+            height: 40px;
+            border: 2px solid #bc9646;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top: none;
+            border-bottom: none;
+        }
+
+        .explanation_toptitle {
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+        }
+
+        .explanation_square {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 60px;
+            box-sizing: border-box;
+            border: 1px solid #e5e5ec;
+            gap: 40px;
+        }
+
+        .explanation_type {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .explanation_title {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 700;
+            color: #bc9646;
+            margin: 0;
+        }
+
+        .explanation_desc {
+            font-family: 'Pretendard';
+            font-size: 16px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="mhh_container">
+        <div class="mhh_wrapper">
+
+            <div class="mhh_category_box">
+                <div class="mhh_category_icon">
+                    <i class="fa-solid fa-house-chimney"></i>
+                </div>
+                <div class="mhh_category_titlebox active">
+                    <p class="mhh_category_title">
+                        민사
+                    </p>
+                </div>
+                <div class="mhh_category_titlebox">
+                    <p class="mhh_category_title">
+                        형사
+                    </p>
+                </div>
+                <div class="mhh_category_titlebox">
+                    <p class="mhh_category_title">
+                        행정
+                    </p>
+                </div>
+            </div>
+
+            <div class="mhh_change_box">
+
+                <div class="mhh_intro_box">
+
+                    <div class="mhh_intro_top">
+                        <div class="mhh_intro_left">
+                            <p class="mhh_intro_engtitle">
+                                CIVIL ACTION
+                            </p>
+                            <p class="mhh_intro_kortitle">
+                                민사소송
+                            </p>
+                        </div>
+                        <div class="mhh_intro_right">
+                            <p class="mhh_intro_desc">
+                                개인간의 생활 관계에서 일어나는 사법적인 권리 또는 법률관계의 다툼을
+                                <br>
+                                법원이 국가의 재판권에 의하여 강제적으로 해결하고 조정하기 위해 행하는 재판 절차입니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mhh_intro_middle"></div>
+
+                    <div class="mhh_intro_bottom">
+                        <p class="mhh_intro_underdesc">
+                            사전에 계약내용을 정확히 함으로써 분쟁을 피할 수 있는데, 분쟁이 일어난 경우에는 합의나 조정을 통해서 해결 할 수 있습니다.
+                            <br>
+                            "公明" 에서는 사후적 해결보다는 사전적 대비가 더욱 중요하다고 생각하기에 법률 분쟁을 사전에 막기 위한 조치를
+                            <br>
+                            우선적으로 고려하여, 분쟁시의 피해를 최소화하여 고객님이 만족하실 수 있도록 진행하고 있습니다.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="explanation_box">
+                    <div class="explanation_titlebox">
+                        <p class="explanation_toptitle">
+                            민사소송 유형
+                        </p>
+                    </div>
+                    <div class="explanation_square">
+                        <div class="explanation_type">
+                            <p class="explanation_title">
+                                01 부동산
+                            </p>
+                            <p class="explanation_desc">
+                                부동산 계약, 주택임대차, 주택임차권등기명령, 상가건물임대차 등
+                            </p>
+                        </div>
+                        <div class="explanation_type">
+                            <p class="explanation_title">
+                                02 재건축 / 재개발
+                            </p>
+                            <p class="explanation_desc">
+                                계획수립 및 구역지정, 정비사업시행, 조합설립, 사업시행인가, 분양, 공사완료 후 문제 등
+                            </p>
+                        </div>
+                        <div class="explanation_type">
+                            <p class="explanation_title">
+                                03 손해배상
+                            </p>
+                            <p class="explanation_desc">
+                                채무불이행, 불법행위, 제조물 책임, 증권집단소송 등
+                            </p>
+                        </div>
+                        <div class="explanation_type">
+                            <p class="explanation_title">
+                                04 교통사고
+                            </p>
+                            <p class="explanation_desc">
+                                형사적 문제, 행정적 책임, 교통사고와 민사적 책임, 교통사고와 손해배상, 교통사고와 의료사고 등
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mhh_change_box">
+
+                <div class="mhh_intro_box">
+
+                    <div class="mhh_intro_top">
+                        <div class="mhh_intro_left">
+                            <p class="mhh_intro_engtitle">
+                                CRIMINAL PROCEEDINGS
+                            </p>
+                            <p class="mhh_intro_kortitle">
+                                형사소송
+                            </p>
+                        </div>
+                        <div class="mhh_intro_right">
+                            <p class="mhh_intro_desc">
+                                형법의 적용을 받게 된 사건들을 말하는데, 우리가 대체적으로 알고 있는 바와 같이 폭행죄,
+                                <br>
+                                절도죄, 사기죄, 살인죄 등 각종 범죄에 관한 사건이 형사사건에 해당합니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mhh_intro_middle2"></div>
+
+                    <div class="mhh_intro_bottom">
+                        <p class="mhh_intro_underdesc">
+                            형사재판은 검사에 의하여 법원에 기소된 피고인에 대하여 법원의 재판에 의하여 유/무죄를 가리고,
+                            <br>
+                            유죄를 인정되는 경우에는 형벌을 과하는 형사소송사건에 대한 재판을
+                            말합니다.
+                            <br>
+                            형사사건은 크게 자기 자신이 다른 사람을 고소 고발하는 경우와 반대로 자신이 다른 사람으로부터 고소 고발을 당하거나
+                            <br>
+                            수사기관의 인지에 의하여 사건화가 된 경우 등으로 분류할 수 있습니다.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="explanation_box">
+                    <div class="explanation_titlebox">
+                        <p class="explanation_toptitle">
+                            형사소송 유형
+                        </p>
+                    </div>
+                    <div class="explanation_square">
+                        <div class="explanation_type">
+                            <p class="explanation_title">
+                                01 인권에 관한 사건
+                            </p>
+                            <p class="explanation_desc">
+                                국가보안사범, 보안관할처분 대상자
+                            </p>
+                        </div>
+                        <div class="explanation_type">
+                            <p class="explanation_title">
+                                02 국가적 법익에 관련한 사건
+                            </p>
+                            <p class="explanation_desc">
+                                공무집행방해, 위증, 무고
+                            </p>
+                        </div>
+                        <div class="explanation_type">
+                            <p class="explanation_title">
+                                03 개인적인 법익에 관련한 사건
+                            </p>
+                            <p class="explanation_desc">
+                                상해, 강간, 간음, 사기, 절도, 명예훼손, 횡령, 강제집행명령
+                            </p>
+                        </div>
+                        <div class="explanation_type">
+                            <p class="explanation_title">
+                                04 형사특별법 관련 사건
+                            </p>
+                            <p class="explanation_desc">
+                                교통사고처리 특례법, 부정수표단속법 위반 등
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mhh_change_box">
+
+                <div class="mhh_intro_box">
+
+                    <div class="mhh_intro_top">
+                        <div class="mhh_intro_left">
+                            <p class="mhh_intro_engtitle">
+                                ADMINISTRATIVE LITIGATION
+                            </p>
+                            <p class="mhh_intro_kortitle">
+                                행정소송
+                            </p>
+                        </div>
+                        <div class="mhh_intro_right">
+                            <p class="mhh_intro_desc">
+                                공법상의 법률관계에 관한 분쟁에 대하여 행하는 재판절차를 말하는데, 이는 항고소송과
+                                <br>
+                                당사자소송으로 나눌 수 있습니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mhh_intro_middle3"></div>
+
+                    <div class="mhh_intro_bottom">
+                        <p class="mhh_intro_underdesc">
+                            항고소송은 행정청의 위법한 처분 등이나 부작위로 인하여 권리, 이익을 침해받은 자가 그 위법을 다투기 위하여
+                            <br>
+                            행정청을 피고로 하여 제기하는 소송으로, 여기에는
+                            취소송, 무효등확인소송, 무작위위법확인소송이 포함됩니다.
+                            <br>
+                            당사자소송은 행정청의 처분 등을 원인으로 하는 법률관계에 관한 소송과 그 밖에 공법상의 법률관계에 관한 소송으로서
+                            <br>
+                            그 법률관계의 한쪽 당사자를 피고로 하는 소송입니다.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="explanation_box">
+                    <div class="explanation_titlebox">
+                        <p class="explanation_toptitle">
+                            행정소송 유형
+                        </p>
+                    </div>
+                    <div class="explanation_square">
+                        <div class="explanation_type">
+                            <p class="explanation_title">
+                                01 영업정지, 과징금구제 행정소송
+                            </p>
+                            <p class="explanation_desc">
+                                사업자가 부당한 영업정지나 과징금 처분을 받았을 때 행정심판을 통해 구제받을 수 있습니다. 일반적으로 미성년자 고용이나 주류판매, 내부시설의 관리소홀 등이
+                                이에 해당합니다.
+                            </p>
+                        </div>
+                        <div class="explanation_type">
+                            <p class="explanation_title">
+                                02 국가유공자심사 행정소송
+                            </p>
+                            <p class="explanation_desc">
+                                국가유공자심사 행정소송은 국가발전을 목적으로 업무를 수행하는 중 사망, 장애를 받았을 때 신청가능하며 본인이나 상속자가 신청할 수 있습니다.
+                            </p>
+                        </div>
+                        <div class="explanation_type">
+                            <p class="explanation_title">
+                                03 유족보상금 행정소송
+                            </p>
+                            <p class="explanation_desc">
+                                근로자가 산업재해에 의해서 사망할 때, 공무원이 국가공무수행 중 사고에 의해서 사망할 때, 교직원이 직무상 질병이나 부상으로 사망할 때 행정소송을 통해
+                                유족보상금을 청구할 수 있습니다.
+                            </p>
+                        </div>
+                        <div class="explanation_type">
+                            <p class="explanation_title">
+                                04 건축허가취소 / 토지수용 등에 대한 행정소송
+                            </p>
+                            <p class="explanation_desc">
+                                과도한 건축허가취소결정, 국가에 의한 토지, 건축물 수용결정에 대한 보상문제도 행정소송을 통해 해결할 수 있습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+
+    <script>
+        const tabs = document.querySelectorAll(".mhh_category_titlebox");
+        const changeBoxes = document.querySelectorAll(".mhh_change_box");
+
+        // 초기 상태: 첫 번째만 보이게
+        changeBoxes.forEach((box, idx) => {
+            if (idx === 0) {
+                box.classList.add("show");
+                box.style.display = "flex";
+            } else {
+                box.style.display = "none";
+            }
+        });
+
+        // 탭 클릭 이벤트
+        tabs.forEach((tab, idx) => {
+            tab.addEventListener("click", () => {
+                // 모든 박스 숨김
+                changeBoxes.forEach(box => {
+                    box.classList.remove("show");
+                    box.style.display = "none";
+                });
+
+                // 해당 박스 표시
+                const target = changeBoxes[idx];
+                target.style.display = "flex";
+                // 약간의 지연 후 show 클래스 붙여서 트랜지션 발동
+                setTimeout(() => target.classList.add("show"), 10);
+
+                // 탭 active 표시
+                tabs.forEach(t => t.classList.remove("active"));
+                tab.classList.add("active");
+            });
+        });
+    </script>
+
+</body>
+
+</html>
