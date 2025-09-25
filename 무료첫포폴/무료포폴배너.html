@@ -24,12 +24,16 @@
         .banner_box {
             width: 100%;
             height: 100%;
-            background-image: url(https://cdn.imweb.me/thumbnail/20250919/bf97e078eecd8.jpg);
-            background-size: cover;
             border-radius: 24px;
             display: flex;
             align-items: flex-end;
             position: relative;
+        }
+
+        .banner_box>video {
+            width: 100%;
+            height: 100%;
+            border-radius: 24px;
         }
 
         .banner_shadow {
@@ -64,6 +68,7 @@
             font-weight: 400;
             color: #ffffff;
             margin: 0;
+            letter-spacing: 1.4px;
         }
 
         .banner_button {
@@ -137,15 +142,15 @@
         }
 
         .business_stuff:nth-child(1) {
-            background-image: url(https://cdn.imweb.me/thumbnail/20250919/2ce9d7aa9ac10.jpg);
+            background-image: url(https://ncryk7.mycafe24.com/bannerbottom1.png);
         }
 
         .business_stuff:nth-child(2) {
-            background-image: url(https://cdn.imweb.me/thumbnail/20250919/044fc4114142f.jpg);
+            background-image: url(https://ncryk7.mycafe24.com/bannerbottom2.png);
         }
 
         .business_stuff:nth-child(3) {
-            background-image: url(https://cdn.imweb.me/thumbnail/20250919/69b4b55630a15.jpg);
+            background-image: url(https://ncryk7.mycafe24.com/bannerbottom3.png);
         }
 
         .business_stuff:hover {
@@ -220,17 +225,18 @@
     <section class="banner_container">
         <div class="banner_wrapper">
             <div class="banner_box">
+                <video class="banner_video" autoplay muted loop playsinline>
+                    <source src="https://ncryk7.mycafe24.com/newbanner.mp4" type="video/mp4">
+                    브라우저가 영상을 지원하지 않습니다.
+                </video>
                 <div class="banner_shadow"></div>
                 <div class="banner_title_box">
                     <p class="banner_title">
-                        소중한 사람을 기억해
+                        상상했던 트렌드, 디자인테이닝
                     </p>
                     <p class="banner_desc">
-                        Having your own song
+                        We design your Entertaining. DESIGN-TAINING
                     </p>
-                    <a href="#" class="banner_button">
-                        자세히 보기
-                    </a>
                 </div>
             </div>
         </div>
@@ -243,10 +249,10 @@
                     <div class="business_shadow"></div>
                     <div class="business_title_box">
                         <p class="business_title">
-                            작곡
+                            컨셉트
                         </p>
                         <p class="business_desc">
-                            자신만의 멜로디를 만들어보세요
+                            홈페이지 설계 가이드
                         </p>
                         <a href="#" class="business_button">
                             자세히 보기
@@ -257,10 +263,10 @@
                     <div class="business_shadow"></div>
                     <div class="business_title_box">
                         <p class="business_title">
-                            작사
+                            프로세스
                         </p>
                         <p class="business_desc">
-                            예쁜가사로 마음에 닿게
+                            제작과정을 한눈에
                         </p>
                         <a href="#" class="business_button">
                             자세히 보기
@@ -271,10 +277,10 @@
                     <div class="business_shadow"></div>
                     <div class="business_title_box">
                         <p class="business_title">
-                            녹음
+                            컨시퀀스
                         </p>
                         <p class="business_desc">
-                            나의 노래를 녹음할 수 있어요
+                            포트폴리오 보기
                         </p>
                         <a href="#" class="business_button">
                             자세히 보기
