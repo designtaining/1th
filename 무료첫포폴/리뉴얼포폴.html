@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .portfolio_container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .portfolio_wrapper {
+            width: 90%;
+            height: 960px;
+        }
+
+        .portfolio_box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        .portfolio_top {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .portfolio_top_title_box {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .portfolio_title {
+            font-family: 'Pretendard';
+            font-size: 60px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+        }
+
+        .portfolio_desc {
+            font-family: 'Pretendard';
+            font-size: 28px;
+            font-weight: 400;
+            color: #767676;
+            margin: 0;
+        }
+
+        .portfolio_date {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+        }
+
+        .portfolio_bottom {
+            width: 100%;
+            display: flex;
+            gap: 40px;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            /* 가로 스크롤 가능 */
+            overflow-y: hidden;
+            scroll-behavior: auto;
+            /* JS가 제어하니 부드러운 스크롤 X */
+            -ms-overflow-style: none;
+            /* IE/Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        .portfolio_bottom::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Chrome/Safari */
+
+        .portfolio_card_box {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .portfolio_card {
+            width: 280px;
+            height: 400px;
+            background-color: #e5e5ec;
+            border-radius: 24px;
+            position: relative;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .portfolio_card_inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s;
+            border-radius: 24px;
+        }
+
+        .portfolio_card:hover .portfolio_card_inner {
+            transform: rotateY(180deg);
+        }
+
+        .portfolio_card_title {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 500;
+            color: #111111;
+            margin: 0;
+        }
+
+        .otherside_card {
+            width: 100%;
+            height: 100%;
+            border-radius: 24px;
+            background-color: #4768C9;
+            position: absolute;
+            backface-visibility: hidden;
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .otherside_title {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 500;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .otherside_desc {
+            font-family: 'Pretendard';
+            font-size: 16px;
+            font-weight: 400;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .otherside_link {
+            font-family: 'Pretendard';
+            font-size: 16px;
+            font-weight: 400;
+            color: #ffffff;
+            margin: 0;
+            text-decoration: none;
+            padding: 12px 32px;
+            border: 1px solid #ffffff;
+            border-radius: 999px;
+            transition: all 0.3s ease;
+        }
+
+        .otherside_link:hover {
+            background-color: #ffffff;
+            color: #4768C9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="portfolio_container">
+        <div class="portfolio_wrapper">
+            <div class="portfolio_box">
+
+                <div class="portfolio_top">
+                    <div class="portfolio_top_title_box">
+                        <p class="portfolio_title">
+                            OUR PROJECTS
+                        </p>
+                        <p class="portfolio_desc">
+                            고객을 목적으로 유도하는 전략,
+                            <br>
+                            심플함의 미학을 강조하는 그룹입니다.
+                        </p>
+                    </div>
+                    <div class="portfolio_top_right">
+                        <p class="portfolio_date">
+                            UPDATED in Sept 2025
+                        </p>
+                    </div>
+                </div>
+
+                <div class="portfolio_bottom">
+
+                    <div class="portfolio_card_box">
+                        <div class="portfolio_card">
+                            <div class="portfolio_card_inner">
+                                <div class="otherside_card">
+                                    <p class="otherside_title">
+                                        양쉐프양구이
+                                    </p>
+                                    <p class="otherside_desc">
+                                        반응형 웹제작
+                                    </p>
+                                    <a href="#" target="_blank" class="otherside_link">
+                                        MORE VIEW
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio_card_title">
+                            양쉐프양구이
+                        </div>
+                    </div>
+                    <div class="portfolio_card_box">
+                        <div class="portfolio_card">
+                            <div class="portfolio_card_inner">
+                                <div class="otherside_card">
+                                    <p class="otherside_title">
+                                        양쉐프양구이
+                                    </p>
+                                    <p class="otherside_desc">
+                                        반응형 웹제작
+                                    </p>
+                                    <a href="#" target="_blank" class="otherside_link">
+                                        MORE VIEW
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio_card_title">
+                            공명 법률사무소
+                        </div>
+                    </div>
+                    <div class="portfolio_card_box">
+                        <div class="portfolio_card">
+                            <div class="portfolio_card_inner">
+                                <div class="otherside_card">
+                                    <p class="otherside_title">
+                                        양쉐프양구이
+                                    </p>
+                                    <p class="otherside_desc">
+                                        반응형 웹제작
+                                    </p>
+                                    <a href="#" target="_blank" class="otherside_link">
+                                        MORE VIEW
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio_card_title">
+                            글로마케팅
+                        </div>
+                    </div>
+                    <div class="portfolio_card_box">
+                        <div class="portfolio_card">
+                            <div class="portfolio_card_inner">
+                                <div class="otherside_card">
+                                    <p class="otherside_title">
+                                        양쉐프양구이
+                                    </p>
+                                    <p class="otherside_desc">
+                                        반응형 웹제작
+                                    </p>
+                                    <a href="#" target="_blank" class="otherside_link">
+                                        MORE VIEW
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio_card_title">
+                            에버클래스
+                        </div>
+                    </div>
+                    <div class="portfolio_card_box">
+                        <div class="portfolio_card">
+                            <div class="portfolio_card_inner">
+                                <div class="otherside_card">
+                                    <p class="otherside_title">
+                                        양쉐프양구이
+                                    </p>
+                                    <p class="otherside_desc">
+                                        반응형 웹제작
+                                    </p>
+                                    <a href="#" target="_blank" class="otherside_link">
+                                        MORE VIEW
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio_card_title">
+                            HIGHEND영어
+                        </div>
+                    </div>
+                    <div class="portfolio_card_box">
+                        <div class="portfolio_card">
+                            <div class="portfolio_card_inner">
+                                <div class="otherside_card">
+                                    <p class="otherside_title">
+                                        양쉐프양구이
+                                    </p>
+                                    <p class="otherside_desc">
+                                        반응형 웹제작
+                                    </p>
+                                    <a href="#" target="_blank" class="otherside_link">
+                                        MORE VIEW
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio_card_title">
+                            청운
+                        </div>
+                    </div>
+                    <div class="portfolio_card_box">
+                        <div class="portfolio_card">
+                            <div class="portfolio_card_inner">
+                                <div class="otherside_card">
+                                    <p class="otherside_title">
+                                        양쉐프양구이
+                                    </p>
+                                    <p class="otherside_desc">
+                                        반응형 웹제작
+                                    </p>
+                                    <a href="#" target="_blank" class="otherside_link">
+                                        MORE VIEW
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio_card_title">
+                            뮤직나무
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        (function () {
+            const track = document.querySelector('.portfolio_bottom');
+            if (!track) return;
+
+            // 1) 무한루프를 위해 한 벌 더 복제
+            const items = Array.from(track.children);
+            const clone = items.map(n => n.cloneNode(true));
+            clone.forEach(n => track.appendChild(n));
+
+            // 공통 상태
+            let paused = false;           // 호버/사용자 조작 시 일시정지
+            let stepSize = 0;             // 카드 한 칸(카드폭 + gap)
+            let moveDuration = 800;       // "휙" 이동 시간(ms)
+            let dwell = 3000;             // 정지 시간(ms)
+            let timer = null;             // dwell 타이머
+            let resumeKick = null;        // 사용자 조작 후 재개 타이머
+            const GAP = getGap(track);
+
+            // 2) 카드 한 칸 픽셀 계산
+            function recalc() {
+                const first = track.querySelector('.portfolio_card_box');
+                if (!first) return;
+                const rect = first.getBoundingClientRect();
+                stepSize = Math.round(rect.width + GAP);
+            }
+            function getGap(el) {
+                const cs = getComputedStyle(el);
+                const g = parseFloat(cs.columnGap || cs.gap || '0');
+                return isNaN(g) ? 0 : g;
+            }
+            recalc();
+            window.addEventListener('resize', recalc);
+
+            // 3) 호버 시 정지
+            bindHoverPause(track);
+
+            function bindHoverPause(root) {
+                root.querySelectorAll('.portfolio_card').forEach(card => {
+                    card.addEventListener('mouseenter', () => { paused = true; clearTimer(); });
+                    card.addEventListener('mouseleave', () => { paused = false; scheduleNext(dwell); });
+                    card.addEventListener('focusin', () => { paused = true; clearTimer(); });
+                    card.addEventListener('focusout', () => { paused = false; scheduleNext(dwell); });
+                });
+            }
+
+            // 4) 휠/드래그로 수동 이동 + 잠깐 멈춤
+            let isDown = false, startX = 0, startLeft = 0;
+            track.addEventListener('wheel', (e) => {
+                if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+                    e.preventDefault();
+                    track.scrollLeft += e.deltaY;
+                }
+                userPause();
+            }, { passive: false });
+
+            track.addEventListener('pointerdown', (e) => {
+                isDown = true;
+                track.setPointerCapture(e.pointerId);
+                startX = e.clientX;
+                startLeft = track.scrollLeft;
+                userPause();
+            });
+            track.addEventListener('pointermove', (e) => {
+                if (!isDown) return;
+                const dx = e.clientX - startX;
+                track.scrollLeft = startLeft - dx;
+                wrapIfNeeded();
+            });
+            track.addEventListener('pointerup', () => { isDown = false; afterUserPause(); });
+            track.addEventListener('pointercancel', () => { isDown = false; afterUserPause(); });
+
+            // 5) 무한 랩
+            function wrapIfNeeded() {
+                const half = Math.floor(track.scrollWidth / 2);
+                if (track.scrollLeft >= half) track.scrollLeft -= half;
+                if (track.scrollLeft < 0) track.scrollLeft += half;
+            }
+
+            // 6) 현재 위치를 가장 가까운 "칸 경계"로 정렬
+            function snapToNearest(behavior = 'auto', duration = 0) {
+                wrapIfNeeded();
+                const target = Math.round(track.scrollLeft / stepSize) * stepSize;
+                animateScrollTo(target, duration, behavior);
+            }
+
+            // 7) 다음 칸으로 "휙" 이동
+            function snapToNext() {
+                if (paused) return scheduleNext(300); // 잠깐 후 재시도
+                wrapIfNeeded();
+                const base = Math.round(track.scrollLeft / stepSize) * stepSize;
+                const target = base + stepSize;
+                animateScrollTo(target, moveDuration, 'smooth', () => scheduleNext(dwell));
+            }
+
+            // 8) 스크롤 애니메이션 (requestAnimationFrame 기반)
+            function animateScrollTo(target, duration = 300, behavior = 'smooth', onDone) {
+                wrapIfNeeded();
+                if (duration <= 0) {
+                    track.scrollLeft = target;
+                    wrapIfNeeded();
+                    onDone && onDone();
+                    return;
+                }
+                const start = track.scrollLeft;
+                let startTime = null;
+
+                function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+                function step(ts) {
+                    if (startTime == null) startTime = ts;
+                    const p = Math.min(1, (ts - startTime) / duration);
+                    const v = start + (target - start) * easeOutCubic(p);
+                    track.scrollLeft = v;
+                    wrapIfNeeded();
+                    if (p < 1) {
+                        requestAnimationFrame(step);
+                    } else {
+                        onDone && onDone();
+                    }
+                }
+                requestAnimationFrame(step);
+            }
+
+            // 9) 타이머 관리
+            function scheduleNext(wait) {
+                clearTimer();
+                timer = setTimeout(snapToNext, wait);
+            }
+            function clearTimer() {
+                if (timer) { clearTimeout(timer); timer = null; }
+            }
+
+            // 사용자 조작 시 잠깐 멈춘 뒤, 경계에 스냅하고 4초 후 다시 자동
+            function userPause() {
+                paused = true;
+                clearTimer();
+                if (resumeKick) clearTimeout(resumeKick);
+            }
+            function afterUserPause() {
+                // 사용자가 손 뗀 뒤 500ms 대기 → 가장 가까운 경계에 스냅 → 4초 뒤 재개
+                if (resumeKick) clearTimeout(resumeKick);
+                resumeKick = setTimeout(() => {
+                    paused = false;
+                    snapToNearest('auto', 180);
+                    scheduleNext(dwell);
+                }, 500);
+            }
+
+            // 10) 초기 시작: 경계 정렬 후 4초 뒤 첫 이동
+            snapToNearest('auto', 0);
+            scheduleNext(dwell);
+
+        })();
+    </script>
+
+</body>
+
+</html>
