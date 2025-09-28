@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .downdown_container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .downdown_wrapper {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .downdown_img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            perspective: 1000px;
+        }
+
+        .downdown_img>img {
+            width: 600px;
+            height: 600px;
+            animation: floatshake 3s ease-in-out infinite;
+            transform-style: preserve-3d;
+        }
+
+        .downdown_title {
+            position: absolute;
+            font-family: 'Pretendard';
+            font-size: 140px;
+            font-weight: 700;
+            color: #111111;
+            z-index: 2;
+        }
+
+        @keyframes floatshake {
+            0% {
+                transform: translateY(0) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            }
+
+            25% {
+                transform: translateY(-20px) rotateX(4deg) rotateY(4deg) rotateZ(2deg);
+            }
+
+            50% {
+                transform: translateY(-16px) rotateX(-4deg) rotateY(-4deg) rotateZ(-2deg);
+            }
+
+            75% {
+                transform: translateY(-18px) rotateX(2deg) rotateY(2deg) rotateZ(1deg);
+            }
+
+            100% {
+                transform: translateY(0) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            }
+        }
+
+        @keyframes floatshake2 {
+            0% {
+                transform: translateY(0);
+            }
+
+            25% {
+                transform: translateY(-20px);
+            }
+
+            50% {
+                transform: translateY(-16px);
+            }
+
+            75% {
+                transform: translateY(-18px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .downdown_box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .downdown_photobox {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .downdown_photobox>img {
+            width: 600px;
+            height: 600px;
+            animation: floatshake2 3s ease-in-out infinite;
+        }
+
+        .downdown_desc_box {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .downdown_desc_wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .downdown_subtitle {
+            font-family: 'Pretendard';
+            font-size: 60px;
+            font-weight: 700;
+            color: #111111;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .downdown_subtitle2 {
+            font-family: 'Pretendard';
+            font-size: 60px;
+            font-weight: 700;
+            color: #111111;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .downdown_desc {
+            font-family: 'Pretendard';
+            font-size: 32px;
+            font-weight: 400;
+            color: #505050;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .downdown_photobox2 {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .downdown_photobox2>img {
+            width: 600px;
+            height: 600px;
+            animation: floatshake2 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="downdown_container">
+
+        <div class="downdown_wrapper">
+            <div class="downdown_img">
+                <img src="https://ncryk7.mycafe24.com/heart1.png" alt="">
+            </div>
+            <p class="downdown_title">
+                WELCOME
+            </p>
+        </div>
+
+        <div class="downdown_wrapper">
+            <div class="downdown_box">
+                <div class="downdown_photobox">
+                    <img src="https://ncryk7.mycafe24.com/graphup.png" alt="">
+                </div>
+                <div class="downdown_desc_box">
+                    <div class="downdown_desc_wrap">
+                        <p class="downdown_subtitle">
+                            디테일한 전략을 설립하고,
+                            <br>
+                            브랜드가치를 확장하며,
+                            <br>
+                            지속적인 성장을 함께합니다.
+                        </p>
+                        <p class="downdown_desc">
+                            고객사의 비즈니스를 깊이 이해하는 것을 시작으로,
+                            <br>
+                            업종마다 벤치마킹을 통해 경쟁사의 상황을 파악합니다.
+                            <br>
+                            목표와 비전을 확실히 하여 아이덴티티를 확립합니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="downdown_wrapper">
+            <div class="downdown_box">
+                <div class="downdown_desc_box">
+                    <div class="downdown_desc_wrap">
+                        <p class="downdown_subtitle2">
+                            복잡한 발전의식을 추구하며,
+                            <br>
+                            니즈를 파악하는데 힘쏟고,
+                            <br>
+                            <span class="downdown_span1">가격대비 최고의 퀄리티</span>를 보여드립니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="downdown_photobox2">
+                    <img src="https://ncryk7.mycafe24.com/structure.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="downdown_wrapper">
+            <div class="downdown_box">
+                <div class="downdown_photobox">
+                    <img src="https://ncryk7.mycafe24.com/web1.png" alt="">
+                </div>
+                <div class="downdown_desc_box">
+                    <div class="downdown_desc_wrap">
+                        <p class="downdown_subtitle2">
+                            모든 작업은 반응형으로 진행되고,
+                            <br>
+                            당사가 제공한 링크를 통하여
+                            <br>
+                            어떤 디바이스에서도 실시간 작업내용을
+                            <br>
+                            실시간으로 체크할 수 있습니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+
+</html>
