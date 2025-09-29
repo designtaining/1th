@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 아이콘 & 폰트 -->
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+
+    <style>
+        /* ========== MENUBAR 기본 ========== */
+        .menubar_container {
+            position: fixed !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: transparent;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            z-index: 1000;
+            transition: background-color .25s ease, border-color .25s ease, box-shadow .25s ease;
+        }
+
+        .menubar_wrapper {
+            width: 1280px;
+            height: 100%;
+            margin: 0 auto;
+        }
+
+        .menubar_box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .menubar_logo_box {
+            height: 100%;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .menubar_logo_box>img {
+            width: 52px;
+        }
+
+        .menubar_menu_box {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .menubar_hamburger {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        /* 로고 글꼴 */
+        .menubar_logo_box>p {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 40px;
+            margin: 0;
+        }
+
+        .menubar_menu_box>a {
+            font-family: 'Pretendard';
+            font-size: 16px;
+            text-decoration: none;
+            color: #111111;
+        }
+
+        .menubar_link {
+            padding: 12px 32px;
+            border: 1px solid #111111;
+            border-radius: 999px;
+        }
+
+        /* ========== 상태: 최상단(at-top) / 스크롤(scrollmenubar) ========== */
+        /* at top: 투명 배경 + 흰글자 */
+        .menubar_container.at-top .menubar_logo_box>p,
+        .menubar_container.at-top .menubar_menu_box>a {
+            color: #ffffff;
+        }
+
+        .menubar_container.at-top .menubar_link {
+            color: #ffffff;
+            border: 1px solid #ffffff;
+        }
+
+        /* 스크롤 시: 흰 배경 + 어두운 글자 */
+        .menubar_container.scrollmenubar {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e5ec;
+            box-shadow: 0 4px 16px rgba(17, 17, 17, 0.06);
+        }
+
+        .menubar_container.scrollmenubar .menubar_logo_box>p,
+        .menubar_container.scrollmenubar .menubar_menu_box>a {
+            color: #111111;
+        }
+
+        .menubar_container.scrollmenubar .menubar_link {
+            color: #111111;
+            border: 1px solid #111111;
+        }
+
+        /* ========== LNB(모바일 메뉴) ========== */
+        .lnb_dim {
+            position: fixed;
+            inset: 80px 0 0 0;
+            /* 상단 80px(네비 높이) 제외 */
+            background: rgba(17, 17, 17, 0.35);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .28s ease;
+            z-index: 998;
+        }
+
+        .lnb_container {
+            position: fixed !important;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 80px);
+            background: #ffffff;
+            z-index: 999;
+            opacity: 0;
+            transform: translateY(-12px);
+            pointer-events: none;
+            transition: opacity .28s ease, transform .28s ease;
+        }
+
+        .lnb_wrapper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .lnb_box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            box-sizing: border-box;
+            padding: 60px;
+        }
+
+        .lnb_top {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .lnb_top button {
+            all: unset;
+            cursor: pointer;
+        }
+
+        .lnb_top .fa-xmark {
+            color: #111111;
+        }
+
+        .lnb_bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-end;
+        }
+
+        .lnb_bottom>a {
+            text-decoration: none;
+            font-family: 'Pretendard';
+            font-size: 20px;
+            color: #111111;
+            transition: color .2s ease;
+        }
+
+        .lnb_bottom>a:hover {
+            color: #bc9646;
+        }
+
+        .lnb_bottom_line {
+            width: 100%;
+            height: 1px;
+            background: rgba(17, 17, 17, 0.1);
+        }
+
+        .lnb_last {
+            margin-top: auto;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            font-family: 'Pretendard';
+            font-size: 14px;
+            font-weight: 200;
+            color: #111111;
+        }
+
+        /* 열린 상태 */
+        .lnb_container.is-open {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .lnb_dim.is-open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        @media (max-width:1024px) {
+            .menubar_wrapper {
+                width: 90%;
+            }
+
+            .menubar_menu_box {
+                display: none;
+            }
+
+            .menubar_hamburger {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="menubar_container at-top" id="menubar">
+        <div class="menubar_wrapper">
+            <div class="menubar_box">
+                <a href="#" class="menubar_logo_box">
+                    <img src="https://cdn.imweb.me/thumbnail/20250929/25fc69d00b4fa.png" alt="">
+                    <p>公明</p>
+                </a>
+                <div class="menubar_menu_box">
+                    <a href="introduce">사무소소개</a>
+                    <a href="Service">주요서비스</a>
+                    <a href="onway">오시는길</a>
+                    <a href="notice">공지사항</a>
+                    <a href="review">의뢰후기</a>
+                    <a href="questionaire" class="menubar_link">상담 및 예약</a>
+                </div>
+                <div class="menubar_hamburger" id="btnLnbOpen" aria-label="메뉴 열기" aria-expanded="false">
+                    <i class="fa-regular fa-bars fa-xl"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 딤드 -->
+    <div class="lnb_dim" id="lnbDim"></div>
+
+    <!-- LNB -->
+    <section class="lnb_container" id="lnb">
+        <div class="lnb_wrapper">
+            <div class="lnb_box">
+                <div class="lnb_top">
+                    <button id="btnLnbClose" aria-label="닫기">
+                        <i class="fa-solid fa-xmark fa-xl"></i>
+                    </button>
+                </div>
+                <div class="lnb_bottom">
+                    <a href="introduce">사무소소개</a>
+                    <div class="lnb_bottom_line"></div>
+                    <a href="Service">주요서비스</a>
+                    <div class="lnb_bottom_line"></div>
+                    <a href="onway">오시는길</a>
+                    <div class="lnb_bottom_line"></div>
+                    <a href="notice">공지사항</a>
+                    <div class="lnb_bottom_line"></div>
+                    <a href="review">의뢰후기</a>
+                    <div class="lnb_bottom_line"></div>
+                    <a href="questionaire">상담 및 예약</a>
+                    <div class="lnb_bottom_line"></div>
+                </div>
+                <div class="lnb_last">© 2025 公明법률사무소.</div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        (function () {
+            const menubar = document.getElementById('menubar');
+            const lnb = document.getElementById('lnb');
+            const lnbDim = document.getElementById('lnbDim');
+            const btnOpen = document.getElementById('btnLnbOpen');
+            const btnClose = document.getElementById('btnLnbClose');
+
+            // 상단 상태 적용
+            function applyState() {
+                if (window.scrollY > 0) {
+                    menubar.classList.add('scrollmenubar');
+                    menubar.classList.remove('at-top');
+                } else {
+                    menubar.classList.remove('scrollmenubar');
+                    menubar.classList.add('at-top');
+                }
+            }
+
+            // LNB 열고/닫기
+            function openLnb() {
+                lnb.classList.add('is-open');
+                lnbDim.classList.add('is-open');
+                document.body.style.overflow = 'hidden';
+                btnOpen.setAttribute('aria-expanded', 'true');
+            }
+            function closeLnb() {
+                lnb.classList.remove('is-open');
+                lnbDim.classList.remove('is-open');
+                document.body.style.overflow = '';
+                btnOpen.setAttribute('aria-expanded', 'false');
+            }
+
+            // 이벤트 바인딩
+            btnOpen.addEventListener('click', openLnb);
+            btnClose.addEventListener('click', closeLnb);
+            lnbDim.addEventListener('click', closeLnb);
+            window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLnb(); });
+
+            // 초기/스크롤 상태
+            applyState();
+            window.addEventListener('scroll', applyState, { passive: true });
+
+            // 리사이즈 시 데스크톱으로 돌아오면 LNB 닫기(상태 꼬임 방지)
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 1024) closeLnb();
+            });
+        })();
+    </script>
+
+</body>
+
+</html>
