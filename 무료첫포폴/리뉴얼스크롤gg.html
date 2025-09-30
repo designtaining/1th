@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
     <style>
         .downdown_container {
             width: 100%;
@@ -425,7 +428,7 @@
                 <div class="downdown_cp_bottom">
                     <div class="downdown_cp_value">
                         <p class="downdown_value1">
-                            누적 작업
+                            프로젝트
                         </p>
                         <p class="downdown_value2">
                             40+
@@ -441,18 +444,18 @@
                     </div>
                     <div class="downdown_cp_value">
                         <p class="downdown_value1">
-                            매출 성장
+                            납기율 준수
                         </p>
                         <p class="downdown_value2">
-                            215%
+                            100%
                         </p>
                     </div>
                     <div class="downdown_cp_value">
                         <p class="downdown_value1">
-                            재구매문의
+                            런칭
                         </p>
                         <p class="downdown_value2">
-                            25+
+                            2025
                         </p>
                     </div>
                 </div>
@@ -460,6 +463,240 @@
         </div>
 
     </section>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        /* ===== 설정 ===== */
+        const CFG = {
+            distance: 48,        // 슬라이드업 오프셋(px)
+            scrollLen: "140%",   // 섹션 핀 길이(120~180% 권장)
+            scrub: 0.5,          // 스크럽 감도
+            ease: "power2.out"   // 떠오를 때 이징
+        };
+
+        // ⬇️ 여기만 바꾸면 전부 통일됨: 'auto' | 'scrub' | 'mixed'
+        const COUNTER = {
+            mode: "auto",
+            autoDuration: 2.2,   // auto일 때 카운트업 시간
+            scrubSegment: 0.35,  // scrub일 때 타임라인 구간 길이
+            ease: "power2.out"
+        };
+
+        const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        /* ===== 유틸 ===== */
+        const setUp = (el) => el && gsap.set(el, { y: CFG.distance, autoAlpha: 0 });
+        const parseNum = (txt) => {
+            const m = (txt || "").trim().match(/^(\d+(?:[\.,]\d+)?)(.*)$/);
+            if (!m) return null;
+            return { target: parseFloat(m[1].replace(",", "")), suffix: m[2] || "" };
+        };
+
+        /* ===== 섹션별 스크럽 타임라인 ===== */
+        function buildSectionTimeline(sec) {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: sec,
+                    start: "top top",
+                    end: "+=" + CFG.scrollLen,
+                    pin: true,
+                    scrub: CFG.scrub,
+                    anticipatePin: 1,
+                    invalidateOnRefresh: true,
+                    // markers: true,
+                },
+                defaults: { ease: "none" }
+            });
+
+            // 요소 수집
+            const title = sec.querySelector(".downdown_title");
+            const eng = sec.querySelector(".downdown_desc_engtitle");
+            const sub1 = sec.querySelector(".downdown_subtitle");
+            const sub2 = sec.querySelector(".downdown_subtitle2");
+            const desc = sec.querySelector(".downdown_desc");
+
+            const img1C = sec.querySelector(".downdown_photobox, .downdown_img");
+            const img2C = sec.querySelector(".downdown_photobox2");
+
+            const catchphrase = sec.querySelector(".downdown_catchphrase");
+            const metricsBox = sec.querySelector(".downdown_cp_bottom");
+            const bg1 = sec.querySelector(".downdown_bg_title1");
+            const bg2 = sec.querySelector(".downdown_bg_title2");
+
+            const counters = sec.querySelectorAll(".downdown_value2");
+
+            // 모션 최소화 모드
+            if (prefersReduced) {
+                [title, eng, sub1, sub2, desc, img1C, img2C, catchphrase, metricsBox].forEach(el => el && gsap.set(el, { y: 0, autoAlpha: 1 }));
+                [bg1, bg2].forEach(el => el && gsap.set(el, { autoAlpha: 1 }));
+                return tl;
+            }
+
+            // 초기 세팅
+            [title, eng, sub1, sub2, desc, img1C, img2C, catchphrase, metricsBox].forEach(setUp);
+            [bg1, bg2].forEach(el => el && gsap.set(el, { autoAlpha: 0 })); // 배경 텍스트는 투명도만
+
+            // 타임라인 구성
+            if (img1C) tl.to(img1C, { y: 0, autoAlpha: 1, duration: 0.25, ease: CFG.ease }, 0.00);
+            if (img2C) tl.to(img2C, { y: 0, autoAlpha: 1, duration: 0.25, ease: CFG.ease }, 0.00);
+
+            let pos = 0.12;
+            if (title) { tl.to(title, { y: 0, autoAlpha: 1, duration: 0.25, ease: CFG.ease }, pos); pos += 0.12; }
+            if (eng) { tl.to(eng, { y: 0, autoAlpha: 1, duration: 0.30, ease: CFG.ease }, pos); pos += 0.12; }
+
+            const subs = [sub1, sub2].filter(Boolean);
+            if (subs.length) { tl.to(subs, { y: 0, autoAlpha: 1, duration: 0.30, ease: CFG.ease, stagger: 0.05 }, pos); pos += 0.12; }
+
+            if (desc) { tl.to(desc, { y: 0, autoAlpha: 1, duration: 0.30, ease: CFG.ease }, pos); pos += 0.12; }
+
+            const bgGroup = [catchphrase, bg1, bg2].filter(Boolean);
+            if (bgGroup.length) { tl.to(bgGroup, { autoAlpha: 1, duration: 0.30, ease: CFG.ease }, pos); pos += 0.12; }
+            if (metricsBox) { tl.to(metricsBox, { y: 0, autoAlpha: 1, duration: 0.30, ease: CFG.ease }, pos); pos += 0.12; }
+
+            // ===== value2 한꺼번에 처리 (모드 스위치) =====
+            if (counters.length) {
+                const arr = Array.from(counters);
+
+                if (COUNTER.mode === "scrub") {
+                    // 전부 스크롤 비례
+                    const startPos = pos;
+                    arr.forEach(node => {
+                        const p = parseNum(node.textContent);
+                        if (!p) return;
+                        const isInt = Number.isInteger(p.target);
+                        node.textContent = (isInt ? 0 : 0) + p.suffix;
+                        const obj = { val: 0 };
+                        tl.to(obj, {
+                            val: p.target,
+                            duration: COUNTER.scrubSegment,
+                            ease: "none",
+                            onUpdate: () => {
+                                const v = isInt ? Math.round(obj.val) : Math.round(obj.val * 100) / 100;
+                                node.textContent = v + p.suffix;
+                            }
+                        }, startPos);
+                    });
+                    pos += 0.10;
+
+                } else if (COUNTER.mode === "auto") {
+                    // 전부 자동 카운트업 (뷰포트 닿으면 onEnter/onEnterBack)
+                    arr.forEach(node => {
+                        const p = parseNum(node.textContent);
+                        if (!p) return;
+                        const isInt = Number.isInteger(p.target);
+                        const setText = v => node.textContent = (isInt ? Math.round(v) : Math.round(v * 100) / 100) + p.suffix;
+                        setText(0);
+
+                        ScrollTrigger.create({
+                            trigger: node,           // 요소 기준으로 트리거
+                            start: "top 85%",        // 필요 시 90%/center로 조정
+                            end: "bottom top+=10%",
+                            onEnter: () => {
+                                if (node._tw) node._tw.kill();
+                                node._tw = gsap.to({ val: 0 }, {
+                                    val: p.target,
+                                    duration: COUNTER.autoDuration,
+                                    ease: COUNTER.ease,
+                                    overwrite: true,
+                                    onUpdate: function () { setText(this.targets()[0].val); }
+                                });
+                            },
+                            onEnterBack: () => {
+                                if (node._tw) node._tw.kill();
+                                node._tw = gsap.to({ val: 0 }, {
+                                    val: p.target,
+                                    duration: COUNTER.autoDuration,
+                                    ease: COUNTER.ease,
+                                    overwrite: true,
+                                    onUpdate: function () { setText(this.targets()[0].val); }
+                                });
+                            }
+                        });
+                    });
+
+                } else {
+                    // mixed: 앞 1~3은 스크럽, 마지막만 자동
+                    const last = arr[arr.length - 1];
+                    const scrubs = arr.slice(0, -1);
+
+                    const startPos = pos;
+                    scrubs.forEach(node => {
+                        const p = parseNum(node.textContent);
+                        if (!p) return;
+                        const isInt = Number.isInteger(p.target);
+                        node.textContent = (isInt ? 0 : 0) + p.suffix;
+                        const obj = { val: 0 };
+                        tl.to(obj, {
+                            val: p.target,
+                            duration: COUNTER.scrubSegment,
+                            ease: "none",
+                            onUpdate: () => {
+                                const v = isInt ? Math.round(obj.val) : Math.round(obj.val * 100) / 100;
+                                node.textContent = v + p.suffix;
+                            }
+                        }, startPos);
+                    });
+                    pos += 0.10;
+
+                    if (last) {
+                        const p = parseNum(last.textContent);
+                        if (p) {
+                            const isInt = Number.isInteger(p.target);
+                            const setText = v => last.textContent = (isInt ? Math.round(v) : Math.round(v * 100) / 100) + p.suffix;
+                            setText(0);
+                            ScrollTrigger.create({
+                                trigger: last,
+                                start: "top 85%",
+                                end: "bottom top+=10%",
+                                onEnter: () => {
+                                    if (last._tw) last._tw.kill();
+                                    last._tw = gsap.to({ val: 0 }, {
+                                        val: p.target,
+                                        duration: COUNTER.autoDuration,
+                                        ease: COUNTER.ease,
+                                        overwrite: true,
+                                        onUpdate: function () { setText(this.targets()[0].val); }
+                                    });
+                                },
+                                onEnterBack: () => {
+                                    if (last._tw) last._tw.kill();
+                                    last._tw = gsap.to({ val: 0 }, {
+                                        val: p.target,
+                                        duration: COUNTER.autoDuration,
+                                        ease: COUNTER.ease,
+                                        overwrite: true,
+                                        onUpdate: function () { setText(this.targets()[0].val); }
+                                    });
+                                }
+                            });
+                        }
+                    }
+                }
+            }
+
+            return tl;
+        }
+
+        /* ===== 초기화 ===== */
+        function init() {
+            // 중복 방지
+            ScrollTrigger.getAll().forEach(t => t.kill());
+            gsap.killTweensOf("*");
+
+            document.querySelectorAll(".downdown_wrapper").forEach(sec => buildSectionTimeline(sec));
+
+            setTimeout(() => ScrollTrigger.refresh(), 0);
+            window.addEventListener("load", () => ScrollTrigger.refresh());
+            window.addEventListener("resize", () => ScrollTrigger.refresh());
+        }
+
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", init);
+        } else {
+            init();
+        }
+    </script>
 
 </body>
 
