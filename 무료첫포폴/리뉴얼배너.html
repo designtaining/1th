@@ -71,30 +71,6 @@
             letter-spacing: 1.4px;
         }
 
-        .banner_button {
-            width: 100px;
-            padding: 18px 32px;
-            border: 1px solid #ffffff;
-            border-radius: 8px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            font-family: 'Pretendard';
-            font-size: 16px;
-            font-weight: 400;
-            color: #ffffff;
-            margin: 0;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .banner_button:hover {
-            background-color: #ffffff;
-            color: #4768C9;
-            font-weight: 700;
-        }
-
         /* 배너끝------------------- */
 
         .business_container {
@@ -362,6 +338,301 @@
         .introduce_bottom_button:hover {
             background-color: #294baf;
         }
+
+        /* ✅ 1512px 이하 */
+        @media screen and (max-width: 1512px) {
+            .banner_wrapper {
+                width: 95%;
+            }
+
+            .banner_title_box {
+                padding: 48px;
+            }
+
+            .business_wrapper {
+                width: 95%;
+            }
+
+            .business_stuff:hover .business_title_box {
+                padding: 48px;
+            }
+
+            .business_title_box {
+                padding: 0 48px;
+            }
+
+            .introduce_wrapper {
+                width: 95%;
+            }
+
+            .introduce_bottom_desc {
+                font-size: 24px;
+                line-height: 1.6;
+            }
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .business_title_box {
+                gap: 20px;
+            }
+
+            .business_title {
+                font-size: 32px;
+            }
+
+            .business_desc {
+                font-size: 18px;
+            }
+
+            .business_button {
+                padding: 12px 32px;
+            }
+
+            .introduce_wrapper {
+                height: 840px;
+            }
+
+            .introduce_title {
+                font-family: 'Pretendard';
+                font-size: 100px;
+            }
+
+            .introduce_bottom_desc {
+                font-size: 20px;
+                line-height: 1.6;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .banner_container {
+                padding: 80px 0 12px;
+            }
+
+            .banner_wrapper {
+                width: 100%;
+                padding: 0 16px;
+            }
+
+            .banner_title_box {
+                padding: 32px;
+                gap: 16px;
+            }
+
+            .banner_title {
+                font-size: 32px;
+            }
+
+            .banner_desc {
+                font-size: 16px;
+            }
+
+            .business_wrapper {
+                width: 100%;
+                padding: 0 16px;
+            }
+
+            .business_box {
+                gap: 12px;
+            }
+
+            .business_title_box {
+                padding: 0 32px;
+                gap: 12px;
+            }
+
+            .business_stuff:hover .business_title_box {
+                padding: 32px;
+            }
+
+            .business_title {
+                font-size: 24px;
+            }
+
+            .business_desc {
+                font-size: 16px;
+            }
+
+            .business_button {
+                width: 80px;
+                padding: 12px 24px;
+                font-size: 16px;
+            }
+
+            .introduce_container {
+                padding: 80px 0;
+            }
+
+            .introduce_wrapper {
+                height: 720px;
+            }
+
+            .introduce_top {
+                height: 40%;
+            }
+
+            .introduce_top_left>img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .introduce_title {
+                font-size: 80px;
+            }
+
+            .introduce_bottom {
+                height: 60%;
+                padding: 24px;
+            }
+
+            .introduce_bottom_desc {
+                font-size: 20px;
+                line-height: 1.4;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .banner_wrapper {
+                width: 100%;
+                padding: 0 8px;
+                height: auto;
+                aspect-ratio: 16 / 16;
+            }
+
+            .banner_box {
+                width: 100%;
+                height: 100%;
+                position: relative;
+            }
+
+            .banner_box>video {
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .banner_shadow {
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(to top, #111111 0%, transparent 100%);
+                border-radius: 24px;
+                z-index: 1;
+                position: absolute;
+            }
+
+            .banner_title_box {
+                padding: 24px;
+                gap: 12px;
+            }
+
+            .banner_title {
+                font-size: 28px;
+            }
+
+            .banner_desc {
+                font-size: 14px;
+            }
+
+            .business_wrapper {
+                aspect-ratio: 16 / 14;
+                padding: 0 8px;
+            }
+
+            .business_box {
+                flex-direction: column;
+            }
+
+            .business_title_box {
+                width: 100%;
+                padding: 24px;
+                gap: 12px;
+                flex-direction: row;
+                align-items: flex-end;
+            }
+
+            .business_stuff:hover .business_title_box {
+                padding: 24px;
+            }
+
+            .business_title {
+                font-size: 20px;
+            }
+
+            .business_desc {
+                font-size: 14px;
+            }
+
+            .business_button {
+                width: 80px;
+                padding: 12px 24px;
+                font-size: 12px;
+            }
+
+            .introduce_container {
+                padding: 60px 0;
+            }
+
+            .introduce_wrapper {
+                height: 800px;
+            }
+
+            .introduce_top {
+                height: 28%;
+            }
+
+            .introduce_top_left>img {
+                width: 140px;
+                height: 140px;
+            }
+
+            .introduce_title {
+                font-size: 60px;
+            }
+
+            .introduce_bottom {
+                height: 72%;
+                padding: 16px;
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .introduce_bottom_left {
+                width: 100%;
+                height: 100%;
+            }
+
+            .introduce_bottom_right {
+                width: 100%;
+                padding-left: 0;
+            }
+
+            .introduce_bottom_desc {
+                font-size: 20px;
+                line-height: 1.4;
+            }
+
+            .introduce_num {
+                font-size: 28px;
+                margin-right: 12px;
+            }
+
+            .introduce_bottom_button {
+                width: 148px;
+                height: 48px;
+                font-size: 16px;
+            }
+        }
+
+        /* ✅ 540px 이하 */
+        @media screen and (max-width: 540px) {
+            .introduce_bottom_desc {
+                font-size: 18px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {}
     </style>
 </head>
 
@@ -462,7 +733,8 @@
                         <div class="introduce_bottom_title_box">
                             <p class="introduce_bottom_desc">
                                 <span class="introduce_num">#</span> 디자인테이닝은 다양한 업종의 홈페이지 제작경험을 바탕으로, 고객사의 브랜드가치를
-                                높이기 위해 최고의 노력을 보여드립니다. 브랜드가 가진 비즈니스철학을 깊이 이해하는것, 사용자의 경험이 고려된 UIUX, 구성된 스토리라인들이 사용자를 최종목적지로 안내하는것까지, 고객사 브랜드만의 아이덴티티를 확립할 수 있도록 함께 하겠습니다.
+                                높이기 위해 최고의 노력을 보여드립니다. 브랜드가 가진 비즈니스철학을 깊이 이해하는것, 사용자의 경험이 고려된 UIUX, 구성된 스토리라인들이 사용자를
+                                최종목적지로 안내하는것까지, 고객사 브랜드만의 아이덴티티를 확립할 수 있도록 함께 하겠습니다.
                             </p>
                         </div>
                         <a href="#" class="introduce_bottom_button">

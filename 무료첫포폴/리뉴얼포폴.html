@@ -16,7 +16,7 @@
 
         .portfolio_wrapper {
             width: 90%;
-            height: 960px;
+            height: 648px;
         }
 
         .portfolio_box {
@@ -65,24 +65,18 @@
         .portfolio_bottom {
             width: 100%;
             display: flex;
-            gap: 40px;
+            gap: 32px;
             flex-wrap: nowrap;
             overflow-x: auto;
-            /* 가로 스크롤 가능 */
             overflow-y: hidden;
             scroll-behavior: auto;
-            /* JS가 제어하니 부드러운 스크롤 X */
             -ms-overflow-style: none;
-            /* IE/Edge */
             scrollbar-width: none;
-            /* Firefox */
         }
 
         .portfolio_bottom::-webkit-scrollbar {
             display: none;
         }
-
-        /* Chrome/Safari */
 
         .portfolio_card_box {
             display: flex;
@@ -167,6 +161,143 @@
         .otherside_link:hover {
             background-color: #ffffff;
             color: #4768C9;
+        }
+
+        /* ✅ 1512px 이하 */
+        @media screen and (max-width: 1512px) {
+            .portfolio_wrapper {
+                width: 95%;
+                height: 648px;
+            }
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .portfolio_top_title_box {
+                gap: 20px;
+            }
+
+            .portfolio_title {
+                font-size: 48px;
+            }
+
+            .portfolio_desc {
+                font-size: 20px;
+            }
+
+            .portfolio_bottom {
+                gap: 24px;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .portfolio_wrapper {
+                width: 100%;
+                height: 554px;
+                padding: 0 16px;
+            }
+
+            .portfolio_bottom {
+                gap: 16px;
+            }
+
+            .portfolio_card {
+                width: 240px;
+                height: 343px;
+                border-radius: 24px;
+            }
+
+            .portfolio_card_title {
+                font-size: 20px;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .portfolio_wrapper {
+                height: 460px;
+            }
+
+            .portfolio_box {
+                gap: 32px;
+            }
+
+            .portfolio_top_title_box {
+                gap: 16px;
+            }
+
+            .portfolio_card {
+                width: 220px;
+                height: 314px;
+                border-radius: 16px;
+            }
+
+            .portfolio_card_title {
+                font-size: 16px;
+            }
+
+            .portfolio_title {
+                font-size: 32px;
+            }
+
+            .portfolio_desc {
+                font-size: 16px;
+            }
+
+            .portfolio_date {
+                font-size: 12px;
+            }
+
+            .otherside_title {
+                font-size: 16px;
+            }
+
+            .otherside_desc {
+                font-size: 12px;
+            }
+
+            .otherside_link {
+                font-size: 12px;
+                padding: 8px 24px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .portfolio_wrapper {
+                height: 372px;
+            }
+
+            .portfolio_box {
+                gap: 24px;
+            }
+
+            .portfolio_top_title_box {
+                gap: 8px;
+            }
+
+            .portfolio_card {
+                width: 180px;
+                height: 257px;
+                border-radius: 16px;
+            }
+
+            .portfolio_card_title {
+                font-size: 16px;
+            }
+
+            .portfolio_title {
+                font-size: 24px;
+            }
+
+            .portfolio_desc {
+                font-size: 12px;
+            }
+
+            .portfolio_date {
+                font-size: 10px;
+            }
         }
     </style>
 </head>
@@ -348,21 +479,21 @@
             const track = document.querySelector('.portfolio_bottom');
             if (!track) return;
 
-            // 1) 무한루프를 위해 한 벌 더 복제
+            // 1) 무한루프 위해 복제
             const items = Array.from(track.children);
             const clone = items.map(n => n.cloneNode(true));
             clone.forEach(n => track.appendChild(n));
 
-            // 공통 상태
-            let paused = false;           // 호버/사용자 조작 시 일시정지
-            let stepSize = 0;             // 카드 한 칸(카드폭 + gap)
-            let moveDuration = 800;       // "휙" 이동 시간(ms)
-            let dwell = 3000;             // 정지 시간(ms)
-            let timer = null;             // dwell 타이머
-            let resumeKick = null;        // 사용자 조작 후 재개 타이머
+            // 상태값
+            let paused = false;
+            let stepSize = 0;
+            let moveDuration = 800;
+            let dwell = 3000;
+            let timer = null;
+            let resumeKick = null;
             const GAP = getGap(track);
 
-            // 2) 카드 한 칸 픽셀 계산
+            // 카드 한 칸 크기 계산
             function recalc() {
                 const first = track.querySelector('.portfolio_card_box');
                 if (!first) return;
@@ -377,28 +508,16 @@
             recalc();
             window.addEventListener('resize', recalc);
 
-            // 3) 호버 시 정지
-            bindHoverPause(track);
+            // hover 시 정지
+            track.querySelectorAll('.portfolio_card').forEach(card => {
+                card.addEventListener('mouseenter', () => { paused = true; clearTimer(); });
+                card.addEventListener('mouseleave', () => { paused = false; scheduleNext(dwell); });
+                card.addEventListener('focusin', () => { paused = true; clearTimer(); });
+                card.addEventListener('focusout', () => { paused = false; scheduleNext(dwell); });
+            });
 
-            function bindHoverPause(root) {
-                root.querySelectorAll('.portfolio_card').forEach(card => {
-                    card.addEventListener('mouseenter', () => { paused = true; clearTimer(); });
-                    card.addEventListener('mouseleave', () => { paused = false; scheduleNext(dwell); });
-                    card.addEventListener('focusin', () => { paused = true; clearTimer(); });
-                    card.addEventListener('focusout', () => { paused = false; scheduleNext(dwell); });
-                });
-            }
-
-            // 4) 휠/드래그로 수동 이동 + 잠깐 멈춤
+            // 2) 드래그(마우스/터치)만 허용
             let isDown = false, startX = 0, startLeft = 0;
-            track.addEventListener('wheel', (e) => {
-                if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-                    e.preventDefault();
-                    track.scrollLeft += e.deltaY;
-                }
-                userPause();
-            }, { passive: false });
-
             track.addEventListener('pointerdown', (e) => {
                 isDown = true;
                 track.setPointerCapture(e.pointerId);
@@ -415,31 +534,31 @@
             track.addEventListener('pointerup', () => { isDown = false; afterUserPause(); });
             track.addEventListener('pointercancel', () => { isDown = false; afterUserPause(); });
 
-            // 5) 무한 랩
+            // 3) 무한 루프 보정
             function wrapIfNeeded() {
                 const half = Math.floor(track.scrollWidth / 2);
                 if (track.scrollLeft >= half) track.scrollLeft -= half;
                 if (track.scrollLeft < 0) track.scrollLeft += half;
             }
 
-            // 6) 현재 위치를 가장 가까운 "칸 경계"로 정렬
-            function snapToNearest(behavior = 'auto', duration = 0) {
+            // 경계에 스냅
+            function snapToNearest(duration = 0) {
                 wrapIfNeeded();
                 const target = Math.round(track.scrollLeft / stepSize) * stepSize;
-                animateScrollTo(target, duration, behavior);
+                animateScrollTo(target, duration);
             }
 
-            // 7) 다음 칸으로 "휙" 이동
+            // 다음 칸으로 자동 이동
             function snapToNext() {
-                if (paused) return scheduleNext(300); // 잠깐 후 재시도
+                if (paused) return scheduleNext(300);
                 wrapIfNeeded();
                 const base = Math.round(track.scrollLeft / stepSize) * stepSize;
                 const target = base + stepSize;
-                animateScrollTo(target, moveDuration, 'smooth', () => scheduleNext(dwell));
+                animateScrollTo(target, moveDuration, () => scheduleNext(dwell));
             }
 
-            // 8) 스크롤 애니메이션 (requestAnimationFrame 기반)
-            function animateScrollTo(target, duration = 300, behavior = 'smooth', onDone) {
+            // 스크롤 애니메이션
+            function animateScrollTo(target, duration = 300, onDone) {
                 wrapIfNeeded();
                 if (duration <= 0) {
                     track.scrollLeft = target;
@@ -467,7 +586,7 @@
                 requestAnimationFrame(step);
             }
 
-            // 9) 타이머 관리
+            // 타이머 관리
             function scheduleNext(wait) {
                 clearTimer();
                 timer = setTimeout(snapToNext, wait);
@@ -476,24 +595,28 @@
                 if (timer) { clearTimeout(timer); timer = null; }
             }
 
-            // 사용자 조작 시 잠깐 멈춘 뒤, 경계에 스냅하고 4초 후 다시 자동
+            // 사용자 조작 시 잠깐 멈춘 뒤, 경계에 스냅하고 일정시간 뒤 재개
             function userPause() {
                 paused = true;
                 clearTimer();
                 if (resumeKick) clearTimeout(resumeKick);
             }
             function afterUserPause() {
-                // 사용자가 손 뗀 뒤 500ms 대기 → 가장 가까운 경계에 스냅 → 4초 뒤 재개
                 if (resumeKick) clearTimeout(resumeKick);
                 resumeKick = setTimeout(() => {
                     paused = false;
-                    snapToNearest('auto', 180);
+                    snapToNearest(180);
                     scheduleNext(dwell);
                 }, 500);
             }
 
-            // 10) 초기 시작: 경계 정렬 후 4초 뒤 첫 이동
-            snapToNearest('auto', 0);
+            // 4) 휠 스크롤 차단 (원치 않으니까 막음)
+            track.addEventListener('wheel', (e) => {
+                e.preventDefault();
+            }, { passive: false });
+
+            // 초기 시작
+            snapToNearest(0);
             scheduleNext(dwell);
 
         })();
