@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+
+    <style>
+        .lawyerprofile_container {
+            width: 100%;
+            padding: 100px 0;
+        }
+
+        .lawyerprofile_wrapper {
+            width: 1280px;
+            margin: 0 auto;
+        }
+
+        .lawyerprofile_box {
+            width: 100%;
+            display: flex;
+            gap: 60px;
+        }
+
+        .lawyerprofile_left {
+            width: 610px;
+            height: 862px;
+            position: sticky;
+            top: 0;
+        }
+
+        .lawyerprofile_left>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .lawyerprofile_right {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .lawyerprofile_title_box {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .lawyerprofile_title1 {
+            font-family: 'Pretendard';
+            font-size: 28px;
+            font-weight: 600;
+            color: #111111;
+            margin: 0;
+        }
+
+        .lawyerprofile_title2 {
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 300;
+            color: #767676;
+            margin: 0;
+        }
+
+        .lawyerprofile_name_box {
+            display: flex;
+            gap: 12px;
+            align-items: flex-end;
+        }
+
+        .lawyerprofile_title3 {
+            font-family: 'Pretendard';
+            font-size: 60px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+        }
+
+        .lawyerprofile_title4 {
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+            line-height: 1.8;
+        }
+
+        .lawyerprofile_line {
+            width: 100%;
+            height: 1px;
+            background-color: rgba(17, 17, 17, 0.1);
+        }
+
+        .lawyerprofile_catchphrase {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 200px;
+        }
+
+        .lawyerprofile_catchphrase>i {
+            font-size: 80px;
+            margin: 0;
+            color: rgba(17, 17, 17, 0.2);
+        }
+
+        .catchphrase {
+            font-family: 'Nanum Myeongjo', serif;
+            font-size: 40px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+            line-height: 1.8;
+            letter-spacing: -1px;
+        }
+
+        .lawyerprofile_proof {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            border-left: 1px solid rgba(17, 17, 17, 0.1);
+        }
+
+        .lawyerprofile_proof_title {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+            border-left: 4px solid #bc9646;
+            padding: 0 16px;
+        }
+
+        .lawyerprofile_proof_desc {
+            display: flex;
+            flex-direction: column;
+            padding: 0 16px;
+        }
+
+        .lawyerprofile_desc {
+            font-family: 'Pretendard';
+            font-size: 16px;
+            font-weight: 300;
+            color: #505050;
+            margin: 0;
+            line-height: 2.4;
+        }
+
+        /* ✅ 1512px 이하 */
+        @media screen and (max-width: 1512px) {
+            .lawyerprofile_wrapper {
+                width: 1160px;
+            }
+
+            .lawyerprofile_left {
+                width: 520px;
+                height: 735px;
+            }
+
+            .lawyerprofile_catchphrase>i {
+                font-size: 60px;
+            }
+
+            .catchphrase {
+                font-size: 32px;
+            }
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .lawyerprofile_wrapper {
+                width: 960px;
+            }
+
+            .lawyerprofile_left {
+                width: 420px;
+                height: 594px;
+            }
+
+            .lawyerprofile_catchphrase>i {
+                font-size: 60px;
+            }
+
+            .catchphrase {
+                font-size: 32px;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .lawyerprofile_wrapper {
+                width: 100%;
+                padding: 0 16px;
+            }
+
+            .catchphrase {
+                font-size: 24px;
+            }
+
+            .lawyerprofile_left {
+                width: 360px;
+                height: 509px;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .lawyerprofile_left {
+                position: static;
+                top: auto;
+                width: 100%;
+                height: 80vh;
+            }
+
+            .lawyerprofile_box {
+                flex-direction: column;
+            }
+
+            .lawyerprofile_box {
+                gap: 24px;
+            }
+
+            .lawyerprofile_right {
+                gap: 24px;
+            }
+
+            .lawyerprofile_catchphrase {
+                margin-bottom: 80px;
+            }
+
+            .catchphrase {
+                font-size: 20px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {}
+    </style>
+</head>
+
+<body>
+
+    <section class="lawyerprofile_container">
+        <div class="lawyerprofile_wrapper">
+            <div class="lawyerprofile_box">
+                <div class="lawyerprofile_left">
+                    <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+                </div>
+                <div class="lawyerprofile_right">
+
+                    <div class="lawyerprofile_title_box">
+                        <p class="lawyerprofile_title1">
+                            지식재산권 / 이혼전문
+                        </p>
+                        <p class="lawyerprofile_title2">
+                            SON HEUNG MIN
+                        </p>
+                        <div class="lawyerprofile_name_box">
+                            <p class="lawyerprofile_title3">
+                                손흥민
+                            </p>
+                            <p class="lawyerprofile_title4">
+                                대표변호사
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="lawyerprofile_line"></div>
+
+                    <div class="lawyerprofile_catchphrase">
+                        <i class="fa-solid fa-quote-left"></i>
+                        <p class="catchphrase">
+                            의뢰인의 권리를 최우선으로
+                            <br>
+                            최선을 다하겠습니다.
+                            <br>
+                            나를 아무도 믿지 않는다고 생각할때
+                            <br>
+                            반드시 당신의 편에 서겠습니다.
+                        </p>
+                    </div>
+
+                    <div class="lawyerprofile_proof">
+                        <p class="lawyerprofile_proof_title">
+                            학력
+                        </p>
+                        <div class="lawyerprofile_proof_desc">
+                            <p class="lawyerprofile_desc">
+                                -2002 한영외국어 고등학교 졸업
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -2009 고려대학교 법학과 졸업
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="lawyerprofile_proof">
+                        <p class="lawyerprofile_proof_title">
+                            약력 및 자격
+                        </p>
+                        <div class="lawyerprofile_proof_desc">
+                            <p class="lawyerprofile_desc">
+                                -대한변호사협회 등록 전문 변호사
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -2009 제51회 사법시험 합격
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -2013-2018 법무법인 민후 변호사
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -2014 개인정보인증심사원
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -2019 한국정보법학회 정회원
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -2019 가톨릭대학교 법률자문 위원
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -2019 한국산업기술보호협회 법률자문
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -2020 경기도 분쟁조정 위원
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="lawyerprofile_proof">
+                        <p class="lawyerprofile_proof_title">
+                            주요 업무 사례
+                        </p>
+                        <div class="lawyerprofile_proof_desc">
+                            <p class="lawyerprofile_desc">
+                                -제조기술, 설계도면, 회로도, 레시피 유출 관련
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -SW 저작권침해, SW 개발 하자 관련 민,형사 소송
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -개인정보 유출 관련 개인정보보호법 위반 수사대응 및 소송
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -음원 해외 수출 관련 저작물 이용료 반환 소송
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -제조기술, 설계도면, 회로도, 레시피 유출 관련
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -SW 저작권침해, SW 개발 하자 관련 민,형사 소송
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -개인정보 유출 관련 개인정보보호법 위반 수사대응 및 소송
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -음원 해외 수출 관련 저작물 이용료 반환 소송
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -제조기술, 설계도면, 회로도, 레시피 유출 관련
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -SW 저작권침해, SW 개발 하자 관련 민,형사 소송
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -개인정보 유출 관련 개인정보보호법 위반 수사대응 및 소송
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -음원 해외 수출 관련 저작물 이용료 반환 소송
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -제조기술, 설계도면, 회로도, 레시피 유출 관련
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -SW 저작권침해, SW 개발 하자 관련 민,형사 소송
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -개인정보 유출 관련 개인정보보호법 위반 수사대응 및 소송
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -음원 해외 수출 관련 저작물 이용료 반환 소송
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -제조기술, 설계도면, 회로도, 레시피 유출 관련
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -SW 저작권침해, SW 개발 하자 관련 민,형사 소송
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -개인정보 유출 관련 개인정보보호법 위반 수사대응 및 소송
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -음원 해외 수출 관련 저작물 이용료 반환 소송
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
