@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <style>
+        .downdown_container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+        }
+
+        /* 섹션 전용 고정 배경 레이어 (뷰포트 전체) */
+        .downdown_local_bg {
+            position: fixed;
+            /* 스크롤 중에도 화면 꽉 채움 */
+            inset: 0;
+            background: #4768C9;
+            /* 바뀌길 원하는 컬러 */
+            opacity: 0;
+            /* 기본은 숨김 */
+            pointer-events: none;
+            /* 클릭 방해 X */
+            z-index: 0;
+            /* 컨텐츠보다 뒤 */
+        }
+
+        /* 이 섹션의 실제 컨텐츠는 레이어 위에 오도록 보장 */
+        .downdown_container>*:not(.downdown_local_bg) {
+            position: relative;
+            z-index: 1;
+        }
+
+        .downdown_wrapper {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .downdown_img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            perspective: 1000px;
+        }
+
+        .downdown_img>img {
+            width: 600px;
+            height: 600px;
+            animation: floatshake 3s ease-in-out infinite;
+            transform-style: preserve-3d;
+        }
+
+        .downdown_main_sticker1 {
+            position: absolute;
+            z-index: 3;
+            width: 200px;
+            height: 200px;
+            top: 10%;
+            left: 20%;
+        }
+
+        .downdown_main_sticker1>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .downdown_main_sticker2 {
+            position: absolute;
+            z-index: 3;
+            width: 400px;
+            height: 400px;
+            top: 30%;
+            left: 5%;
+        }
+
+        .downdown_main_sticker2>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .downdown_main_sticker3 {
+            position: absolute;
+            z-index: 3;
+            width: 240px;
+            height: 240px;
+            bottom: 7%;
+            left: 25%;
+        }
+
+        .downdown_main_sticker3>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .downdown_main_sticker4 {
+            position: absolute;
+            z-index: 3;
+            width: 240px;
+            height: 240px;
+            top: 7%;
+            right: 15%;
+        }
+
+        .downdown_main_sticker4>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .downdown_main_sticker5 {
+            position: absolute;
+            z-index: 3;
+            width: 280px;
+            height: 280px;
+            top: 25%;
+            right: 10%;
+        }
+
+        .downdown_main_sticker5>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .downdown_main_sticker6 {
+            position: absolute;
+            z-index: 3;
+            width: 280px;
+            height: 280px;
+            bottom: 7%;
+            right: 27%;
+        }
+
+        .downdown_main_sticker6>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .downdown_main_sticker7 {
+            position: absolute;
+            z-index: 3;
+            width: 220px;
+            height: 220px;
+            top: 5%;
+        }
+
+        .downdown_main_sticker7>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .downdown_title {
+            position: absolute;
+            font-family: 'Pretendard';
+            font-size: 140px;
+            font-weight: 700;
+            color: #ffffff;
+            z-index: 2;
+        }
+
+        @keyframes floatshake {
+            0% {
+                transform: translateY(0) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            }
+
+            25% {
+                transform: translateY(-20px) rotateX(4deg) rotateY(4deg) rotateZ(2deg);
+            }
+
+            50% {
+                transform: translateY(-16px) rotateX(-4deg) rotateY(-4deg) rotateZ(-2deg);
+            }
+
+            75% {
+                transform: translateY(-18px) rotateX(2deg) rotateY(2deg) rotateZ(1deg);
+            }
+
+            100% {
+                transform: translateY(0) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            }
+        }
+
+        @keyframes floatshake2 {
+            0% {
+                transform: translateY(0);
+            }
+
+            25% {
+                transform: translateY(-20px);
+            }
+
+            50% {
+                transform: translateY(-16px);
+            }
+
+            75% {
+                transform: translateY(-18px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .downdown_box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .downdown_photobox {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .downdown_photobox>img {
+            width: 600px;
+            height: 600px;
+            animation: floatshake2 3s ease-in-out infinite;
+        }
+
+        .downdown_desc_box {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 120px;
+        }
+
+        .downdown_desc_wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .downdown_desc_engtitle {
+            font-family: 'Pretendard';
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 1.4;
+            margin: 0;
+
+            /* ✅ 왼쪽 → 오른쪽 그라디언트 */
+            background: linear-gradient(90deg,
+                    #ffdd00 0%,
+                    #ad69e9 20%,
+                    /* 연보라 */
+                    #ff4b4b 65%,
+                    /* 빨간색 */
+                    #ffdd00 100%
+                    /* 노란색 */
+                );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .downdown_subtitle {
+            font-family: 'Pretendard';
+            font-size: 48px;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .downdown_subtitle2 {
+            font-family: 'Pretendard';
+            font-size: 48px;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .downdown_desc {
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 400;
+            color: #dddddd;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .downdown_photobox2 {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .downdown_photobox2>img {
+            width: 600px;
+            height: 600px;
+            animation: floatshake2 3s ease-in-out infinite;
+        }
+
+        .downdown_span1 {
+            text-decoration: underline 2px;
+        }
+
+        .downdown_span2 {
+            color: #ffff60;
+        }
+
+        /* 위에꺼끝!! */
+
+        .downdown_catchphrase_bg {
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            gap: 40px;
+        }
+
+        .downdown_bg_title1,
+        .downdown_bg_title2 {
+            font-family: 'Pretendard';
+            font-size: 320px;
+            font-weight: 900;
+            color: rgba(17, 17, 17, 0.05);
+            white-space: nowrap;
+            margin: 0;
+            line-height: 1.4;
+            display: flex;
+        }
+
+        .downdown_bg_title1 span,
+        .downdown_bg_title2 span {
+            padding-right: 200px;
+        }
+
+        .downdown_bg_title1 {
+            animation: slideLeft 100s linear infinite;
+        }
+
+        .downdown_bg_title2 {
+            animation: slideRight 100s linear infinite;
+        }
+
+        @keyframes slideLeft {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes slideRight {
+            0% {
+                transform: translateX(-50%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .downdown_catchphrase_box {
+            position: absolute;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 160px;
+        }
+
+        .downdown_catchphrase {
+            font-family: 'Pretendard';
+            font-size: 80px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+        }
+
+        .downdown_cp_bottom {
+            display: flex;
+            align-items: center;
+            gap: 120px;
+        }
+
+        .downdown_cp_value {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .downdown_value1 {
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+            text-align: center;
+        }
+
+        .downdown_value2 {
+            font-family: 'Pretendard';
+            font-size: 80px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+            text-align: center;
+            letter-spacing: -4px;
+            line-height: 1.1;
+        }
+
+        .downdown_catchphrase_model {
+            position: absolute;
+            z-index: 2;
+            width: 360px;
+            height: 360px;
+            bottom: 4%;
+            right: 0;
+        }
+
+        .downdown_catchphrase_model>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* ✅ 1512px 이하 */
+        @media screen and (max-width: 1512px) {
+            .downdown_photobox>img {
+                width: 520px;
+                height: 520px;
+            }
+
+            .downdown_photobox2>img {
+                width: 520px;
+                height: 520px;
+            }
+
+            .downdown_desc_box {
+                width: 50%;
+                padding: 0 60px;
+            }
+
+            .downdown_desc_wrap {
+                gap: 24px;
+            }
+
+            .downdown_desc_engtitle {
+                font-size: 56px;
+            }
+
+            .downdown_subtitle {
+                font-size: 40px;
+            }
+
+            .downdown_subtitle2 {
+                font-size: 40px;
+            }
+
+            .downdown_desc {
+                font-size: 24px;
+            }
+
+            .downdown_main_sticker1 {
+                width: 180px;
+                height: 180px;
+                top: 10%;
+                left: 16%;
+            }
+
+            .downdown_main_sticker2 {
+                width: 340px;
+                height: 340px;
+                left: 1%;
+            }
+
+            .downdown_main_sticker3 {
+                width: 220px;
+                height: 220px;
+                left: 21%;
+            }
+
+            .downdown_main_sticker4 {
+                width: 220px;
+                height: 220px;
+                right: 11%;
+            }
+
+            .downdown_main_sticker5 {
+                width: 260px;
+                height: 260px;
+                right: 6%;
+            }
+
+            .downdown_main_sticker6 {
+                width: 260px;
+                height: 260px;
+                right: 23%;
+            }
+
+            .downdown_main_sticker7 {
+                width: 220px;
+                height: 220px;
+                top: 3%;
+            }
+
+            .downdown_catchphrase_model {
+                width: 260px;
+                height: 260px;
+            }
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .downdown_photobox>img {
+                width: 520px;
+                height: 520px;
+            }
+
+            .downdown_photobox2>img {
+                width: 520px;
+                height: 520px;
+            }
+
+            .downdown_desc_box {
+                width: 50%;
+                padding: 0 60px;
+            }
+
+            .downdown_desc_wrap {
+                gap: 24px;
+            }
+
+            .downdown_desc_engtitle {
+                font-size: 56px;
+            }
+
+            .downdown_subtitle {
+                font-size: 40px;
+            }
+
+            .downdown_subtitle2 {
+                font-size: 40px;
+            }
+
+            .downdown_desc {
+                font-size: 24px;
+            }
+
+            .downdown_cp_bottom {
+                display: flex;
+                align-items: center;
+                gap: 100px;
+            }
+
+            .downdown_main_sticker1 {
+                width: 160px;
+                height: 160px;
+                top: 10%;
+                left: 16%;
+            }
+
+            .downdown_main_sticker2 {
+                width: 320px;
+                height: 320px;
+                top: 30%;
+                left: 1%;
+            }
+
+            .downdown_main_sticker3 {
+                width: 200px;
+                height: 200px;
+                bottom: 7%;
+                left: 21%;
+            }
+
+            .downdown_main_sticker4 {
+                width: 200px;
+                height: 200px;
+                top: 7%;
+                right: 11%;
+            }
+
+            .downdown_main_sticker5 {
+                width: 240px;
+                height: 240px;
+                top: 25%;
+                right: 6%;
+            }
+
+            .downdown_main_sticker6 {
+                width: 240px;
+                height: 240px;
+                bottom: 7%;
+                right: 23%;
+            }
+
+            .downdown_main_sticker7 {
+                width: 200px;
+                height: 200px;
+                top: 3%;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .downdown_img>img {
+                width: 420px;
+                height: 420px;
+            }
+
+            .downdown_title {
+                font-size: 100px;
+            }
+
+            .downdown_photobox>img {
+                width: 420px;
+                height: 420px;
+            }
+
+            .downdown_photobox2>img {
+                width: 420px;
+                height: 420px;
+            }
+
+            .downdown_desc_box {
+                width: 50%;
+                padding: 0 24px;
+            }
+
+            .downdown_desc_wrap {
+                gap: 20px;
+            }
+
+            .downdown_desc_engtitle {
+                font-size: 40px;
+            }
+
+            .downdown_subtitle {
+                font-size: 32px;
+            }
+
+            .downdown_subtitle2 {
+                font-size: 32px;
+            }
+
+            .downdown_desc {
+                font-size: 20px;
+            }
+
+            .downdown_cp_bottom {
+                display: flex;
+                align-items: center;
+                gap: 100px;
+            }
+
+            .downdown_value1 {
+                font-size: 24px;
+            }
+
+            .downdown_value2 {
+                font-size: 80px;
+            }
+
+            .downdown_main_sticker1 {
+                width: 160px;
+                height: 160px;
+                top: 10%;
+                left: 16%;
+            }
+
+            .downdown_main_sticker2 {
+                width: 220px;
+                height: 220px;
+                top: 30%;
+                left: 1%;
+            }
+
+            .downdown_main_sticker3 {
+                width: 200px;
+                height: 200px;
+                bottom: 7%;
+                left: 21%;
+            }
+
+            .downdown_main_sticker4 {
+                width: 180px;
+                height: 180px;
+                top: 7%;
+                right: 11%;
+            }
+
+            .downdown_main_sticker5 {
+                width: 180px;
+                height: 180px;
+                top: 25%;
+                right: 6%;
+            }
+
+            .downdown_main_sticker6 {
+                width: 240px;
+                height: 240px;
+                bottom: 7%;
+                right: 23%;
+            }
+
+            .downdown_main_sticker7 {
+                width: 200px;
+                height: 200px;
+                top: 3%;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .downdown_img>img {
+                width: 360px;
+                height: 360px;
+            }
+
+            .downdown_title {
+                font-size: 68px;
+            }
+
+            .downdown_box {
+                flex-direction: column;
+            }
+
+            .downdown_box_reverse {
+                flex-direction: column-reverse;
+            }
+
+            .downdown_photobox {
+                width: 100%;
+            }
+
+            .downdown_photobox2 {
+                width: 100%;
+            }
+
+            .downdown_desc_box {
+                width: 100%;
+                justify-content: flex-start;
+                padding: 0 16px;
+            }
+
+            .downdown_desc_engtitle {
+                font-size: 60px;
+                text-align: center;
+            }
+
+            .downdown_subtitle {
+                font-size: 40px;
+                text-align: center;
+            }
+
+            .downdown_subtitle2 {
+                font-size: 40px;
+                text-align: center;
+            }
+
+            .downdown_desc {
+                font-size: 24px;
+                text-align: center;
+            }
+
+            .downdown_catchphrase {
+                font-size: 60px;
+            }
+
+            .downdown_cp_bottom {
+                gap: 60px;
+            }
+
+            .downdown_value1 {
+                font-size: 16px;
+            }
+
+            .downdown_value2 {
+                font-size: 60px;
+            }
+
+            .downdown_main_sticker1 {
+                width: 140px;
+                height: 140px;
+                top: 16%;
+                left: 16%;
+            }
+
+            .downdown_main_sticker2 {
+                width: 180px;
+                height: 180px;
+                top: 40%;
+                left: 1%;
+            }
+
+            .downdown_main_sticker3 {
+                width: 160px;
+                height: 160px;
+                bottom: 7%;
+                left: 21%;
+            }
+
+            .downdown_main_sticker4 {
+                width: 120px;
+                height: 120px;
+                top: 7%;
+                right: 6%;
+            }
+
+            .downdown_main_sticker5 {
+                width: 180px;
+                height: 180px;
+                top: 40%;
+                right: 2%;
+            }
+
+            .downdown_main_sticker6 {
+                width: 200px;
+                height: 200px;
+                bottom: 7%;
+                right: 23%;
+            }
+
+            .downdown_main_sticker7 {
+                width: 160px;
+                height: 160px;
+                top: 3%;
+            }
+            .downdown_catchphrase_model {
+                width: 260px;
+                height: 260px;
+                right: auto;
+            }
+        }
+
+        /* ✅ 580px 이하 */
+        @media screen and (max-width: 580px) {
+            .downdown_wrapper {
+                height: 105vh;
+            }
+
+            .downdown_desc_engtitle {
+                font-size: 40px;
+                text-align: center;
+            }
+
+            .downdown_subtitle {
+                font-size: 32px;
+                text-align: center;
+            }
+
+            .downdown_subtitle2 {
+                font-size: 32px;
+                text-align: center;
+            }
+
+            .downdown_desc {
+                font-size: 20px;
+                text-align: center;
+            }
+
+            .downdown_catchphrase {
+                font-size: 40px;
+            }
+
+            .downdown_cp_bottom {
+                gap: 60px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .downdown_value1 {
+                font-size: 20px;
+            }
+
+            .downdown_value2 {
+                font-size: 80px;
+            }
+
+            .downdown_main_sticker1 {
+                width: 140px;
+                height: 140px;
+                top: 4%;
+                left: 2%;
+            }
+
+            .downdown_main_sticker2 {
+                width: 180px;
+                height: 180px;
+                top: 40%;
+                left: 2%;
+            }
+
+            .downdown_main_sticker3 {
+                width: 160px;
+                height: 160px;
+                bottom: 7%;
+                left: 2%;
+            }
+
+            .downdown_main_sticker4 {
+                width: 120px;
+                height: 120px;
+                top: 4%;
+                right: 2%;
+            }
+
+            .downdown_main_sticker5 {
+                width: 160px;
+                height: 160px;
+                top: 40%;
+                right: 2%;
+            }
+
+            .downdown_main_sticker6 {
+                width: 200px;
+                height: 200px;
+                bottom: 7%;
+                right: 2%;
+            }
+
+            .downdown_main_sticker7 {
+                width: 160px;
+                height: 160px;
+                top: 3%;
+            }
+
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .downdown_img>img {
+                width: 240px;
+                height: 240px;
+            }
+
+            .downdown_title {
+                font-size: 48px;
+            }
+
+            .downdown_photobox>img {
+                width: 320px;
+                height: 320px;
+            }
+
+            .downdown_photobox2>img {
+                width: 320px;
+                height: 320px;
+            }
+
+            .downdown_desc_wrap {
+                gap: 12px;
+            }
+
+            .downdown_desc_engtitle {
+                font-size: 32px;
+            }
+
+            .downdown_subtitle {
+                font-size: 24px;
+            }
+
+            .downdown_subtitle2 {
+                font-size: 24px;
+            }
+
+            .downdown_desc {
+                font-size: 14px;
+            }
+
+            .downdown_catchphrase {
+                font-size: 40px;
+            }
+
+            .downdown_cp_bottom {
+                gap: 60px;
+            }
+
+            .downdown_value1 {
+                font-size: 16px;
+            }
+
+            .downdown_value2 {
+                font-size: 48px;
+            }
+
+            .downdown_main_sticker1 {
+                width: 140px;
+                height: 140px;
+                top: 4%;
+                left: 2%;
+            }
+
+            .downdown_main_sticker2 {
+                width: 180px;
+                height: 180px;
+                top: 24%;
+                left: 2%;
+            }
+
+            .downdown_main_sticker3 {
+                width: 160px;
+                height: 160px;
+                bottom: 21%;
+                left: 2%;
+            }
+
+            .downdown_main_sticker4 {
+                width: 120px;
+                height: 120px;
+                top: 18%;
+                right: 2%;
+            }
+
+            .downdown_main_sticker5 {
+                width: 160px;
+                height: 160px;
+                top: 52%;
+                right: 2%;
+            }
+
+            .downdown_main_sticker6 {
+                width: 200px;
+                height: 200px;
+                bottom: 7%;
+                right: 2%;
+            }
+
+            .downdown_main_sticker7 {
+                width: 160px;
+                height: 160px;
+                top: 3%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="downdown_container">
+
+        <div class="downdown_local_bg" aria-hidden="true"></div>
+
+        <div class="downdown_wrapper">
+            <div class="downdown_main_sticker1">
+                <img src="https://ncryk7.mycafe24.com/downdownsticker3.png" alt="">
+            </div>
+            <div class="downdown_main_sticker2">
+                <img src="https://ncryk7.mycafe24.com/downdownsticker6.png" alt="">
+            </div>
+            <div class="downdown_main_sticker3">
+                <img src="https://ncryk7.mycafe24.com/downdownsticker2.png" alt="">
+            </div>
+            <div class="downdown_main_sticker4">
+                <img src="https://ncryk7.mycafe24.com/downdownsticker5.png" alt="">
+            </div>
+            <div class="downdown_main_sticker5">
+                <img src="https://ncryk7.mycafe24.com/downdownsticker4.png" alt="">
+            </div>
+            <div class="downdown_main_sticker6">
+                <img src="https://ncryk7.mycafe24.com/downdownsticker1.png" alt="">
+            </div>
+            <div class="downdown_main_sticker7">
+                <img src="https://ncryk7.mycafe24.com/downdownsticker7.png" alt="">
+            </div>
+            <div class="downdown_img">
+                <img src="https://ncryk7.mycafe24.com/heart1.png" alt="">
+            </div>
+            <p class="downdown_title">
+                WELCOME
+            </p>
+        </div>
+
+        <div class="downdown_wrapper">
+            <div class="downdown_box">
+                <div class="downdown_photobox">
+                    <img src="https://ncryk7.mycafe24.com/graphup.png" alt="">
+                </div>
+                <div class="downdown_desc_box">
+                    <div class="downdown_desc_wrap">
+                        <p class="downdown_desc_engtitle">
+                            Operational Plan+
+                        </p>
+                        <p class="downdown_subtitle">
+                            디테일한 전략을 설립하고,
+                            <br>
+                            <span class="downdown_span1">브랜드가치를 확장</span>하며,
+                            <br>
+                            <span class="downdown_span2">지속적인 성장</span>을 함께합니다.
+                        </p>
+                        <p class="downdown_desc">
+                            고객사의 비즈니스를 깊이 이해하는 것을 시작으로,
+                            <br>
+                            업종마다 벤치마킹을 통해 경쟁사의 상황을 파악합니다.
+                            <br>
+                            목표와 비전을 확실히 하여 아이덴티티를 확립합니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="downdown_wrapper">
+            <div class="downdown_box downdown_box_reverse">
+                <div class="downdown_desc_box">
+                    <div class="downdown_desc_wrap">
+                        <p class="downdown_desc_engtitle">
+                            Beyond Worth+
+                        </p>
+                        <p class="downdown_subtitle2">
+                            복잡한 발전의식을 추구하며,
+                            <br>
+                            <span class="downdown_span1">니즈를 파악</span>하는데 힘쏟고,
+                            <br>
+                            <span class="downdown_span2">가격대 최고퀄리티</span>를 보여드립니다.
+                        </p>
+                        <p class="downdown_desc">
+                            아임웹에서 국한되었던 기능을 확장함으로써,
+                            <br>
+                            제공되는 DB와 코딩을 완벽히 구분하여 병행하고,
+                            <br>
+                            매력적인 임팩트와 효율성을 하나도 포기하지 않습니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="downdown_photobox2">
+                    <img src="https://ncryk7.mycafe24.com/structure.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="downdown_wrapper">
+            <div class="downdown_box">
+                <div class="downdown_photobox">
+                    <img src="https://ncryk7.mycafe24.com/web1.png" alt="">
+                </div>
+                <div class="downdown_desc_box">
+                    <div class="downdown_desc_wrap">
+                        <p class="downdown_desc_engtitle">
+                            Easy Access+
+                        </p>
+                        <p class="downdown_subtitle2">
+                            당사가 제공한 링크를 통하여
+                            <br>
+                            <span class="downdown_span1">작업진행률을 실시간</span>으로
+                            <br>
+                            <span class="downdown_span2">휴대기기에서 체크</span>할 수 있습니다.
+                        </p>
+                        <p class="downdown_desc">
+                            제작 진행에 궁금한점을 직접 눈으로 확인하고,
+                            <br>
+                            의뢰측이 원하는 피드백이 더 쉽게 떠오르도록,
+                            <br>
+                            모든 디바이스 반응형으로 작업이 진행됩니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="downdown_wrapper">
+            <div class="downdown_catchphrase_model">
+                <img src="https://ncryk7.mycafe24.com/model1.png" alt="">
+            </div>
+            <div class="downdown_catchphrase_bg">
+                <p class="downdown_bg_title1">
+                    <span>DESIGN YOUR ENTERTAINING</span>
+                    <span>DESIGN YOUR ENTERTAINING</span>
+                    <span>DESIGN YOUR ENTERTAINING</span>
+                    <span>DESIGN YOUR ENTERTAINING</span>
+                </p>
+                <p class="downdown_bg_title2">
+                    <span>SMART & EASY GROWTH FINE</span>
+                    <span>SMART & EASY GROWTH FINE</span>
+                    <span>SMART & EASY GROWTH FINE</span>
+                    <span>SMART & EASY GROWTH FINE</span>
+                </p>
+            </div>
+            <div class="downdown_catchphrase_box">
+                <div class="downdown_cp_top">
+                    <p class="downdown_catchphrase">
+                        Make it Your own
+                    </p>
+                </div>
+                <div class="downdown_cp_bottom">
+                    <div class="downdown_cp_value">
+                        <p class="downdown_value1">
+                            런칭
+                        </p>
+                        <p class="downdown_value2">
+                            2025
+                        </p>
+                    </div>
+                    <div class="downdown_cp_value">
+                        <p class="downdown_value1">
+                            프로젝트
+                        </p>
+                        <p class="downdown_value2">
+                            40+
+                        </p>
+                    </div>
+                    <div class="downdown_cp_value">
+                        <p class="downdown_value1">
+                            고객만족도
+                        </p>
+                        <p class="downdown_value2">
+                            100%
+                        </p>
+                    </div>
+                    <div class="downdown_cp_value">
+                        <p class="downdown_value1">
+                            납기율 준수
+                        </p>
+                        <p class="downdown_value2">
+                            100%
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        /* ===== 설정 ===== */
+        const CFG = {
+            distance: 48,        // 슬라이드업 오프셋(px)
+            scrollLen: "140%",   // 섹션 핀 길이
+            scrub: 0.5,          // 스크럽 감도
+            ease: "power2.out"   // 떠오를 때 이징
+        };
+
+        // 카운터 모드: auto | scrub | mixed
+        const COUNTER = {
+            mode: "auto",
+            autoDuration: 2.2,
+            scrubSegment: 0.35,
+            ease: "power2.out"
+        };
+
+        const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        /* ===== 유틸 ===== */
+        const setUp = (el) => el && gsap.set(el, { y: CFG.distance, autoAlpha: 0 });
+        const parseNum = (txt) => {
+            const m = (txt || "").trim().match(/^(\d+(?:[\.,]\d+)?)(.*)$/);
+            if (!m) return null;
+            return { target: parseFloat(m[1].replace(",", "")), suffix: m[2] || "" };
+        };
+
+        /* ===== 섹션 타임라인 빌드 ===== */
+        function buildSectionTimeline(sec, idx) {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: sec,
+                    start: "top top",
+                    end: "+=" + CFG.scrollLen,
+                    pin: true,
+                    scrub: CFG.scrub,
+                    anticipatePin: 1,
+                    invalidateOnRefresh: true,
+                    // markers: true,
+                },
+                defaults: { ease: "none" }
+            });
+
+            // 요소 수집
+            const title = sec.querySelector(".downdown_title");
+            const eng = sec.querySelector(".downdown_desc_engtitle");
+            const sub1 = sec.querySelector(".downdown_subtitle");
+            const sub2 = sec.querySelector(".downdown_subtitle2");
+            const desc = sec.querySelector(".downdown_desc");
+
+            const img1C = sec.querySelector(".downdown_photobox") || sec.querySelector(".downdown_img");
+            const img2C = sec.querySelector(".downdown_photobox2");
+
+            const catchphrase = sec.querySelector(".downdown_catchphrase");
+            const metricsBox = sec.querySelector(".downdown_cp_bottom");
+            const bg1 = sec.querySelector(".downdown_bg_title1");
+            const bg2 = sec.querySelector(".downdown_bg_title2");
+
+            const counters = sec.querySelectorAll(".downdown_value2");
+
+            // 모션 최소화 모드
+            if (prefersReduced) {
+                [title, eng, sub1, sub2, desc, img1C, img2C, catchphrase, metricsBox].forEach(el => el && gsap.set(el, { y: 0, autoAlpha: 1 }));
+                [bg1, bg2].forEach(el => el && gsap.set(el, { autoAlpha: 1 }));
+                return tl;
+            }
+
+            // 초기 세팅
+            [title, eng, sub1, sub2, desc, img1C, img2C, catchphrase, metricsBox].forEach(setUp);
+            [bg1, bg2].forEach(el => el && gsap.set(el, { autoAlpha: 0 }));
+
+            // 타임라인
+            if (img1C) tl.to(img1C, { y: 0, autoAlpha: 1, duration: 0.25, ease: CFG.ease }, 0.00);
+            if (img2C) tl.to(img2C, { y: 0, autoAlpha: 1, duration: 0.25, ease: CFG.ease }, 0.00);
+
+            let pos = 0.12;
+            if (title) { tl.to(title, { y: 0, autoAlpha: 1, duration: 0.25, ease: CFG.ease }, pos); pos += 0.12; }
+            if (eng) { tl.to(eng, { y: 0, autoAlpha: 1, duration: 0.30, ease: CFG.ease }, pos); pos += 0.12; }
+
+            const subs = [sub1, sub2].filter(Boolean);
+            if (subs.length) { tl.to(subs, { y: 0, autoAlpha: 1, duration: 0.30, ease: CFG.ease, stagger: 0.05 }, pos); pos += 0.12; }
+
+            if (desc) { tl.to(desc, { y: 0, autoAlpha: 1, duration: 0.30, ease: CFG.ease }, pos); pos += 0.12; }
+
+            const bgGroup = [catchphrase, bg1, bg2].filter(Boolean);
+            if (bgGroup.length) { tl.to(bgGroup, { autoAlpha: 1, duration: 0.30, ease: CFG.ease }, pos); pos += 0.12; }
+            if (metricsBox) { tl.to(metricsBox, { y: 0, autoAlpha: 1, duration: 0.30, ease: CFG.ease }, pos); pos += 0.12; }
+
+            // value2 카운터 처리 (auto)
+            if (counters.length && COUNTER.mode === "auto") {
+                counters.forEach(node => {
+                    const p = parseNum(node.textContent);
+                    if (!p) return;
+                    const isInt = Number.isInteger(p.target);
+                    const setText = v => node.textContent = (isInt ? Math.round(v) : Math.round(v * 100) / 100) + p.suffix;
+                    setText(0);
+
+                    ScrollTrigger.create({
+                        trigger: node,
+                        start: "top 85%",
+                        end: "bottom top+=10%",
+                        onEnter: () => {
+                            if (node._tw) node._tw.kill();
+                            node._tw = gsap.to({ val: 0 }, {
+                                val: p.target,
+                                duration: COUNTER.autoDuration,
+                                ease: COUNTER.ease,
+                                overwrite: true,
+                                onUpdate: function () { setText(this.targets()[0].val); }
+                            });
+                        },
+                        onEnterBack: () => {
+                            if (node._tw) node._tw.kill();
+                            node._tw = gsap.to({ val: 0 }, {
+                                val: p.target,
+                                duration: COUNTER.autoDuration,
+                                ease: COUNTER.ease,
+                                overwrite: true,
+                                onUpdate: function () { setText(this.targets()[0].val); }
+                            });
+                        }
+                    });
+                });
+            }
+
+            /* ===== 첫 섹션 전용: WELCOME 다 나온 "이후" 스티커 퍼짐 ===== */
+            if (idx === 0) {
+                const stickers = document.querySelectorAll(
+                    ".downdown_main_sticker1, .downdown_main_sticker2, .downdown_main_sticker3, .downdown_main_sticker4, .downdown_main_sticker5, .downdown_main_sticker6, .downdown_main_sticker7"
+                );
+
+                stickers.forEach(el => {
+                    el.style.willChange = "transform, opacity";
+                    el.style.transformOrigin = "50% 50%";
+                });
+
+                const stickersMove = [
+                    { x: -300, y: -200, scale: 1.8 }, // 1: 왼위
+                    { x: -400, y: 0, scale: 1.8 }, // 2: 왼
+                    { x: -300, y: 200, scale: 1.8 }, // 3: 왼아래
+                    { x: 300, y: -200, scale: 1.8 }, // 4: 오위
+                    { x: 400, y: 0, scale: 1.8 }, // 5: 오
+                    { x: 300, y: 200, scale: 1.8 }, // 6: 오아래
+                    { x: 0, y: -350, scale: 1.8 }, // 7: 위
+                ];
+
+                tl.add("welcomeShown", "+=0.10");
+                stickers.forEach((el, i) => {
+                    const conf = stickersMove[i] || { x: 0, y: -300, scale: 1.6 };
+                    tl.to(el, {
+                        x: conf.x, y: conf.y, scale: conf.scale, opacity: 0,
+                        duration: 0.45, ease: CFG.ease
+                    }, "welcomeShown+=0.05");
+                });
+            }
+
+            return tl;
+        }
+
+        /* ===== 초기화 ===== */
+        function init() {
+            ScrollTrigger.getAll().forEach(t => t.kill());
+            gsap.killTweensOf("*");
+
+            const sections = Array.from(document.querySelectorAll(".downdown_wrapper"));
+            sections.forEach((sec, idx) => buildSectionTimeline(sec, idx));
+
+            /* === 배경색 로직 (요청사항) ===
+               - 초기값: #ffffff
+               - 1번째 섹션 진입 시: #4768C9
+               - 5번째 섹션 끝나서 벗어날 때: #ffffff
+               - 위로 스크롤 시 반대로 복귀
+            */
+            gsap.set(document.body, { backgroundColor: "#ffffff" });
+
+            const firstSec = sections[0];
+            const fifthSec = sections[4];
+
+            if (firstSec) {
+                ScrollTrigger.create({
+                    trigger: firstSec,
+                    start: "top top",
+                    end: "bottom top",
+                    onEnter: () => gsap.to(document.body, { backgroundColor: "#4768C9", duration: 0.3 }),
+                    onLeaveBack: () => gsap.to(document.body, { backgroundColor: "#ffffff", duration: 0.3 }),
+                });
+            }
+
+            if (fifthSec) {
+                ScrollTrigger.create({
+                    trigger: fifthSec,
+                    start: "top top",
+                    end: "bottom top",
+                    onLeave: () => gsap.to(document.body, { backgroundColor: "#ffffff", duration: 0.3 }),
+                    onEnterBack: () => gsap.to(document.body, { backgroundColor: "#4768C9", duration: 0.3 }),
+                });
+            }
+
+            // 리프레시
+            setTimeout(() => ScrollTrigger.refresh(), 0);
+            window.addEventListener("load", () => ScrollTrigger.refresh());
+            window.addEventListener("resize", () => ScrollTrigger.refresh());
+        }
+
+        /* 시작 */
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", init);
+        } else {
+            init();
+        }
+    </script>
+
+</body>
+
+</html>
