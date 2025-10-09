@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .request_container {
+            width: 100%;
+            height: 880px;
+            padding: 40px 0;
+            position: relative;
+            display: flex;
+            overflow: hidden;
+            cursor: none;
+        }
+
+        .request_background_title {
+            width: 100%;
+            position: absolute;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .background_row {
+            display: flex;
+            white-space: nowrap;
+        }
+
+        .background_title1,
+        .background_title2 {
+            font-family: 'Pretendard';
+            font-size: 200px;
+            font-weight: 800;
+            color: rgba(17, 17, 17, 0.05);
+            margin: 0;
+            line-height: 1.6;
+            white-space: nowrap;
+            letter-spacing: 0;
+            flex-shrink: 0;
+        }
+
+        @keyframes slideLeft {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes slideRight {
+            0% {
+                transform: translateX(-50%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .background_row.row1 {
+            animation: slideLeft 25s linear infinite;
+        }
+
+        .background_row.row2 {
+            animation: slideRight 25s linear infinite;
+        }
+
+        .request_wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            width: 1280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            background: transparent;
+        }
+
+        .request_wrapper::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background: rgba(255, 255, 255, 0.75);
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+        }
+
+        .request_wrapper>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .request_cpbox {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .request_cp {
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .request_box {
+            width: 320px;
+            height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 999px;
+            background-color: #e5e5ec;
+            gap: 24px;
+            box-shadow: 0 4px 12px rgba(17, 17, 17, 0.1);
+            position: relative;
+        }
+
+        .request_box_sticker {
+            width: 48px;
+            height: 48px;
+            position: absolute;
+            right: -18%;
+            animation: ticktick 3.2s linear infinite;
+        }
+
+        .request_box_sticker>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        @keyframes ticktick {
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(8px);
+            }
+
+            50% {
+                transform: translateX(4px);
+            }
+
+            75% {
+                transform: translateX(8px);
+            }
+
+            100% {
+                transform: translate(0);
+            }
+        }
+
+        .request_title {
+            font-family: 'Pretendard';
+            font-size: 32px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        .request_span1 {
+            color: #2e50e2;
+            font-weight: 700;
+        }
+
+        .request_link {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 400;
+            color: #ffffff !important;
+            margin: 0;
+            line-height: 1.4;
+            text-decoration: none;
+            padding: 16px 36px;
+            background-color: #2e50e2;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .request_link:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(17, 17, 17, 0.3);
+        }
+
+        .custom_cursor {
+            width: 80px;
+            height: 80px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 9999;
+            border-radius: 999px;
+            overflow: hidden;
+            display: none;
+            transition: transform 0.15s ease-out;
+        }
+
+        .custom_cursor img {
+            width: 100%;
+            height: 100%;
+            border-radius: 999px;
+            object-fit: cover;
+        }
+
+        /* ✅ 1512px 이하 */
+        @media screen and (max-width: 1512px) {
+            .request_wrapper {
+                width: 1160px;
+            }
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .request_wrapper {
+                width: 960px;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .request_wrapper {
+                width: 94%;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .request_container {
+                height: 800px;
+            }
+
+            .request_cp {
+                font-size: 20px;
+            }
+
+            .request_box {
+                width: 260px;
+                height: 260px;
+                gap: 20px;
+            }
+
+            .request_box_sticker {
+                width: 36px;
+                height: 36px;
+            }
+
+            .request_title {
+                font-size: 20px;
+            }
+
+            .request_link {
+                font-size: 16px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .request_cp {
+                font-size: 18px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="custom_cursor">
+        <img src="https://cdn.imweb.me/thumbnail/20251010/62f6d48c4a4a0.png" alt="cursor">
+    </div>
+
+    <section class="request_container">
+        <div class="request_background_title">
+            <div class="background_row row1">
+                <p class="background_title1">GEULO-MARKETING&nbsp;&nbsp;&nbsp;</p>
+                <p class="background_title1">GEULO-MARKETING&nbsp;&nbsp;&nbsp;</p>
+            </div>
+            <div class="background_row row2">
+                <p class="background_title2">PROFESSIONAL+ A&nbsp;&nbsp;&nbsp;</p>
+                <p class="background_title2">PROFESSIONAL+ A&nbsp;&nbsp;&nbsp;</p>
+            </div>
+        </div>
+
+        <div class="request_wrapper">
+            <div class="request_cpbox">
+                <p class="request_cp">
+                    7개의 포트폴리오는 단순한 공부기록이 아닙니다.
+                    <br><br>
+                    수의학 전공자가 직접 질병을 이해하고 보호자의 눈높이로 풀어낼,
+                    <br>
+                    동물병원을 가장 잘 이해하는 "<span class="request_span1">마케팅 자산</span>"입니다.
+                    <br><br>
+                    "<span class="request_span1">다른 대행사가 따라할 수 없는 단 하나의 차별성</span>"으로
+                    <br>
+                    글로마케팅은 원장님의 진료 철학과 보호자의 고민까지 함께 담아냅니다.
+                    <br><br>
+                    지금 바로 상담을 신청하시고 그 차이를 경험해보세요.
+                </p>
+            </div>
+            <div class="request_box">
+                <div class="request_box_sticker">
+                    <img src="https://cdn.imweb.me/thumbnail/20251009/39aaf0fc50daa.png" alt="">
+                </div>
+                <p class="request_title">
+                    전문설문지로
+                    <br>
+                    <span class="request_span1">상담신청하기</span>
+                </p>
+                <a href="#" class="request_link">상담 바로가기</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const cursor = document.querySelector('.custom_cursor');
+        const container = document.querySelector('.request_container');
+
+        container.addEventListener('mouseenter', () => {
+            cursor.style.display = 'block';
+        });
+
+        container.addEventListener('mouseleave', () => {
+            cursor.style.display = 'none';
+        });
+
+        container.addEventListener('mousemove', (e) => {
+            const x = e.clientX;
+            const y = e.clientY;
+            cursor.style.transform = `translate(${x - 40}px, ${y - 40}px)`; // 중앙 맞추기 (80px/2)
+        });
+    </script>
+
+</body>
+
+</html>
