@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .insight_container {
+            width: 100%;
+            padding: 80px 0;
+            background: linear-gradient(to bottom, #111111 0%, #ffffff 60%, #ffffff 100%);
+        }
+
+        .insight_wrapper {
+            width: 1000px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0 auto;
+            gap: 100px;
+        }
+
+        .insight_box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .insight_title {
+            font-family: 'Pretendard';
+            font-size: 60px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        .insight_span1 {
+            text-decoration: 2px underline;
+        }
+
+        .insight_desc {
+            font-family: 'Pretendard';
+            font-size: 40px;
+            font-weight: 500;
+            color: #111111;
+            margin: 0;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        .insight_span2 {
+            color: #2e50e2;
+            font-weight: 700;
+        }
+
+        .insight_button_box {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .insight_button {
+            width: 220px;
+            padding: 18px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+            border-radius: 999px;
+            border: 4px solid #2e50e2;
+            text-decoration: none;
+            color: #111111;
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .insight_button:hover {
+            background-color: #2e50e2;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="insight_container">
+        <div class="insight_wrapper">
+            <div class="insight_box">
+                <p class="insight_title">
+                    블로그 마케팅의 기본은
+                    <br>
+                    <span class="insight_span1">업종에 대한 이해</span>입니다.
+                </p>
+                <p class="insight_desc">
+                    다른 대행사들이 가질수 없는
+                    <br>
+                    "<span class="insight_span2">수의학 전공</span>"의 전문지식
+                    <br>
+                    글로마케팅은 가지고 있습니다.
+                </p>
+            </div>
+            <div class="insight_button_box">
+                <a href="#" class="insight_button">
+                    수의학 인사이트
+                </a>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
