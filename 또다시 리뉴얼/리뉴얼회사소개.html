@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .story_container {
+            width: 100%;
+        }
+
+        .story_wrapper {
+            width: 90%;
+            aspect-ratio: 16 / 9;
+            margin: 0 auto;
+        }
+
+        .story_first_box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .first_title {
+            font-family: 'Pretendard';
+            font-size: 100px;
+            font-weight: 700;
+            color: #111111;
+            text-align: center;
+            margin: 0;
+        }
+
+        /* 첫번째 파트 끝 */
+
+        .story_second_box {
+            width: 100%;
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 60px;
+        }
+
+        .story_second_top {
+            flex: 0 0 auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .second_title {
+            font-family: 'Pretendard';
+            font-size: 32px;
+            font-weight: 700;
+            color: #111111;
+            text-align: center;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .second_desc {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 400;
+            color: #767676;
+            text-align: center;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .story_second_bottom {
+            flex: 1 1 auto;
+            width: 70%;
+            display: flex;
+            gap: 20px;
+            margin: 0 auto;
+        }
+
+        .second_bottom_left {
+            flex: 1 1 0;
+        }
+
+        .second_left_box {
+            width: 100%;
+            height: 100%;
+            background-color: #e5e5ec;
+            border-radius: 24px;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .second_left_box video {
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 24px;
+        }
+
+        .second_name_tag {
+            position: absolute;
+            z-index: 2;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .second_name_title {
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+        }
+
+        .second_name_desc {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+        }
+
+        .second_right_box {
+            flex: 2 1 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            height: 100%;
+        }
+
+        .second_right_top,
+        .second_right_bottom {
+            flex: 1 1 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        .second_box1,
+        .second_box2 {
+            flex: 1 1 0;
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .second_box1 {
+            background-image: url(https://ncryk7.mycafe24.com/tiger1.jpg);
+            background-size: cover;
+        }
+
+        .second_box2 {
+            background-image: url(https://ncryk7.mycafe24.com/tiger1.jpg);
+            background-size: cover;
+        }
+
+        .second_last_box {
+            width: 100%;
+            height: 100%;
+            border-radius: 24px;
+            background-image: url(https://ncryk7.mycafe24.com/tiger2.jpg);
+            background-size: cover;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* 두번째끝!!!!!!!!!! */
+
+        .story_third_box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .third_title {
+            font-family: 'Pretendard';
+            font-size: 80px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+        }
+
+        .third_desc {
+            width: 680px;
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        /* 세번째 끝!!!!!!!! */
+
+        .story_fourth_box {
+            width: 70%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            gap: 20px;
+        }
+
+        .fourth_top_box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            gap: 20px;
+        }
+
+        .fourth_left {
+            width: 100%;
+            height: 100%;
+            background-image: url(https://ncryk7.mycafe24.com/eagle1.jpg);
+            background-size: cover;
+            border-radius: 16px;
+        }
+
+        .fourth_right {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .fourth_right_top {
+            width: 100%;
+            height: 100%;
+            background-image: url(https://ncryk7.mycafe24.com/eagle1.jpg);
+            background-size: cover;
+            border-radius: 16px;
+        }
+
+        .fourth_right_bottom {
+            width: 100%;
+            height: 100%;
+            background-image: url(https://ncryk7.mycafe24.com/eagle1.jpg);
+            background-size: cover;
+            border-radius: 16px;
+        }
+
+        .fourth_bottom_box {
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #e5e5ec;
+            border-radius: 16px;
+        }
+
+        .fourth_last_box {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .fourth_last_title_box {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .last_title {
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+        }
+
+        .last_desc {
+            font-family: 'Pretendard';
+            font-size: 16px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+        }
+
+        .fourth_last_img_box {
+            width: 120px;
+            height: 120px;
+        }
+
+        .fourth_last_img_box>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 네번째 끝!!!!!!!!!!!!1 */
+
+        .story_fifth_box {
+            width: 80%;
+            height: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .fifth_top_box {
+            display: flex;
+            gap: 20px;
+        }
+
+        .fifth_card {
+            width: 100%;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            box-sizing: border-box;
+            border-radius: 16px;
+            background-color: #e5e5ec;
+        }
+
+        .fifth_card_title_box {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .fifth_eng_title {
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 500;
+            color: #111111;
+            margin: 0;
+            text-align: center;
+        }
+
+        .fifth_title {
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 500;
+            color: #111111;
+            margin: 0;
+            text-align: center;
+        }
+
+        .fifth_card_img_box {
+            width: 120px;
+            height: 120px;
+        }
+
+        .fifth_card_img_box>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .fifth_bottom_box {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background-color: #e5e5ec;
+            border-radius: 16px;
+            padding: 20px;
+        }
+
+        .fifth_bottom_title {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 500;
+            color: #111111;
+            margin: 0;
+        }
+
+        .fifth_bottom_desc {
+            font-family: 'Pretendard';
+            font-size: 16px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+        }
+
+        /* 다섯번째 끝!!!!!!! */
+
+        .story_sixth_box {
+            width: 90%;
+            height: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .story_sixth_title1,
+        .story_sixth_title2,
+        .story_sixth_title3 {
+            font-family: 'Pretendard';
+            font-size: 160px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+        }
+
+        /* 여섯번째 끝!!!!!!! */
+
+        .story_seventh_box {
+            width: 90%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+            gap: 20px;
+        }
+
+        .seventh_left_box {
+            width: 25%;
+            height: 600px;
+        }
+
+        .seventh_left_box>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .seventh_right_box {
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .seventh_right_last_box {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .seventh_right_profile {
+            display: flex;
+            gap: 20px;
+        }
+
+        .profile_img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+
+        .profile_img>img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        .seventh_right_title {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+        }
+
+        .seventh_right_desc {
+            font-family: 'Pretendard';
+            font-size: 16px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+        }
+
+        .seventh_right_last_link {
+            width: 220px;
+            padding: 16px 0;
+            background-color: #2e50e2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="story_container">
+
+        <div class="story_wrapper">
+            <div class="story_first_box">
+                <p class="first_title">
+                    OUR STORY <br>
+                    <br>
+                    Design
+                    <br>
+                    for your
+                    <br>
+                    EnterTaining
+                </p>
+            </div>
+        </div>
+
+        <div class="story_wrapper">
+            <div class="story_second_box">
+                <div class="story_second_top">
+                    <p class="second_title">
+                        당사의 비즈니스를 이해함으로 시작해
+                        고객의 니즈와 기대를 충족시키기 위해
+                        최선을 다함을 약속합니다.
+                    </p>
+                    <p class="second_desc">
+                        컨셉을 유지하고, 요소들을 균형있게 정돈하고, 제품 또는 서비스가 돋보이도록 표현합니다.
+                    </p>
+                </div>
+                <div class="story_second_bottom">
+                    <div class="second_bottom_left">
+
+                        <div class="second_left_box">
+
+                            <video autoplay loop muted playsinline>
+                                <source src="https://ncryk7.mycafe24.com/Drum.mp4" type="video/mp4">
+                            </video>
+                            <div class="second_name_tag">
+                                <p class="second_name_title">
+                                    Video
+                                </p>
+                                <p class="second_name_desc">
+                                    동영상
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="second_right_box">
+
+                        <div class="second_right_top">
+                            <div class="second_box1">
+                                <div class="second_name_tag">
+                                    <p class="second_name_title">
+                                        Image
+                                    </p>
+                                    <p class="second_name_desc">
+                                        이미지
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="second_box2">
+                                <div class="second_name_tag">
+                                    <p class="second_name_title">
+                                        Icon
+                                    </p>
+                                    <p class="second_name_desc">
+                                        아이콘
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="second_right_bottom">
+                            <div class="second_last_box">
+                                <div class="second_name_tag">
+                                    <p class="second_name_title">
+                                        Concept
+                                    </p>
+                                    <p class="second_name_desc">
+                                        컨셉트
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="story_wrapper">
+            <div class="story_third_box">
+                <p class="third_title">
+                    매력적인 디자인을,
+                </p>
+                <p class="third_title">
+                    효율적인 사용자 경험을,
+                </p>
+                <p class="third_desc">
+                    정보와 메시지를 효과적으로 전달하기 위해서 사용자에게 재미를 더하고,
+                    실제 사용자가 편리하게 이용할 수 있는 편리함을 조화롭게 배치합니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="story_wrapper">
+            <div class="story_fourth_box">
+                <div class="fourth_top_box">
+                    <div class="fourth_left"></div>
+                    <div class="fourth_right">
+                        <div class="fourth_right_top"></div>
+                        <div class="fourth_right_bottom"></div>
+                    </div>
+                </div>
+                <div class="fourth_bottom_box">
+                    <div class="fourth_last_box">
+                        <div class="fourth_last_title_box">
+                            <p class="last_title">
+                                UIUX와 브라우저 접근성
+                            </p>
+                            <p class="last_desc">
+                                모든 디바이스의 호환성과 접근성을 고려한 UIUX는 브랜드이미지를 일관성있게 보여주는 장치입니다.
+                            </p>
+                        </div>
+                        <div class="fourth_last_img_box">
+                            <img src="" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="story_wrapper">
+            <div class="story_fifth_box">
+
+                <div class="fifth_top_box">
+                    <div class="fifth_card">
+                        <div class="fifth_card_title_box">
+                            <p class="fifth_eng_title">
+                                SEO
+                            </p>
+                            <p class="fifth_title">
+                                검색 엔진 최적화
+                            </p>
+                        </div>
+                        <div class="fifth_card_img_box">
+                            <img src="" alt="">
+                        </div>
+                    </div>
+                    <div class="fifth_card">
+                        <div class="fifth_card_title_box">
+                            <p class="fifth_eng_title">
+                                Interaction
+                            </p>
+                            <p class="fifth_title">
+                                인터랙션
+                            </p>
+                        </div>
+                        <div class="fifth_card_img_box">
+                            <img src="" alt="">
+                        </div>
+                    </div>
+                    <div class="fifth_card">
+                        <div class="fifth_card_title_box">
+                            <p class="fifth_eng_title">
+                                UI/UX Design
+                            </p>
+                            <p class="fifth_title">
+                                UI/UX 디자인
+                            </p>
+                        </div>
+                        <div class="fifth_card_img_box">
+                            <img src="" alt="">
+                        </div>
+                    </div>
+                    <div class="fifth_card">
+                        <div class="fifth_card_title_box">
+                            <p class="fifth_eng_title">
+                                Color
+                            </p>
+                            <p class="fifth_title">
+                                컬러
+                            </p>
+                        </div>
+                        <div class="fifth_card_img_box">
+                            <img src="" alt="">
+                        </div>
+                    </div>
+                    <div class="fifth_card">
+                        <div class="fifth_card_title_box">
+                            <p class="fifth_eng_title">
+                                Typography
+                            </p>
+                            <p class="fifth_title">
+                                타이포그래피
+                            </p>
+                        </div>
+                        <div class="fifth_card_img_box">
+                            <img src="" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fifth_bottom_box">
+                    <p class="fifth_bottom_title">
+                        고객과의 긴밀한 협업과 쳬계적인 접근을 통해 고품질의 결과를 제공하며,
+                        고객의 기대를 뛰어넘는 웹사이트를 제작하는것을 목표로 합니다.
+                    </p>
+                    <p class="fifth_bottom_desc">
+                        각 단계에서의 명확한 목표와 활동은 프로젝트의 성공을 보장하며,
+                        고객의 만족도를 높이는데 기여합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="story_wrapper">
+            <div class="story_sixth_box">
+                <p class="story_sixth_title1">
+                    Experience
+                </p>
+                <p class="story_sixth_title2">
+                    Communication
+                </p>
+                <p class="story_sixth_title3">
+                    Creative
+                </p>
+            </div>
+        </div>
+
+        <div class="story_wrapper">
+            <div class="story_seventh_box">
+                <div class="seventh_left_box">
+                    <img src="https://ncryk7.mycafe24.com/tiger3.jpg" alt="">
+                </div>
+                <div class="seventh_right_box">
+                    <div class="seventh_right_last_box">
+                        <div class="seventh_right_profile">
+                            <div class="profile_img">
+                                <img src="https://ncryk7.mycafe24.com/ad1.png" alt="">
+                            </div>
+                            <p class="seventh_right_title">
+                                디자인테이닝 일동.
+                            </p>
+                        </div>
+                        <p class="seventh_right_desc">
+                            찾아주시는 모든분들께 감사의 말씀을 드리며, 최고의 서비스를 제공할 수 있도록 최선의 노력을 보여드리겠습니다.
+                        </p>
+                    </div>
+                    <a href="#" class="seventh_right_last_link">
+                        설문지 작성하기
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
