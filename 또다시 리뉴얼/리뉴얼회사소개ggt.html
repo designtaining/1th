@@ -10,6 +10,22 @@
     <style>
         .story_container {
             width: 100%;
+            position: relative;
+            isolation: isolate;
+        }
+
+        .story_bg_layer {
+            position: fixed;
+            inset: 0;
+            background: #ffff99;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .story_container>*:not(.story_bg_layer) {
+            position: relative;
+            z-index: 1;
         }
 
         .story_wrapper {
@@ -589,6 +605,8 @@
 
     <section class="story_container">
 
+        <div class="story_bg_layer" aria-hidden="true"></div>
+
         <div class="story_wrapper">
             <div class="story_first_box">
                 <p class="first_title">
@@ -894,11 +912,11 @@
 
             // 섹션 1: OUR STORY
             if (q(".story_first_box")) {
-                gsap.set(q(".first_title"), { y: 0, autoAlpha: 1 }); // 처음부터 보이게
-                return; // 첫 섹션은 pin/애니메이션 건너뛰기
+                gsap.set(q(".first_title"), { y: 0, autoAlpha: 1 });
+                return;
             }
 
-            // 섹션 2: Video/Image/Icon/Concept
+            // 섹션 2
             if (q(".story_second_box")) {
                 groupA = [
                     q(".second_left_box"),
@@ -910,34 +928,33 @@
                 groupC = qa(".second_name_tag");
             }
 
-            // 섹션 3: 큰 타이틀 2줄 + 본문
+            // 섹션 3
             if (q(".story_third_box")) {
                 groupA = [...qa(".third_title")];
                 groupB = [q(".third_desc")].filter(Boolean);
             }
 
-            // 섹션 4: 3이미지 + 하단설명
+            // 섹션 4
             if (q(".story_fourth_box")) {
                 groupA = [q(".fourth_left"), q(".fourth_right_top"), q(".fourth_right_bottom")].filter(Boolean);
                 groupB = [q(".fourth_bottom_box")].filter(Boolean);
                 groupC = [q(".last_title"), q(".last_desc")].filter(Boolean);
             }
 
-            // === 섹션 5: "중앙에 겹침 → 펼쳐짐" 커스텀 처리 ===
+            // 섹션 5: 카드 펼쳐짐
             if (q(".story_fifth_box")) {
                 const cards = [...qa(".fifth_card")];
                 const bottomBox = q(".fifth_bottom_box");
 
-                // 모션 최소화 모드면 즉시 표시
                 if (prefersReduced) {
                     cards.forEach(el => gsap.set(el, { x: 0, scale: 1, autoAlpha: 1 }));
                     bottomBox && gsap.set(bottomBox, { y: 0, autoAlpha: 1 });
                 } else {
                     const center = Math.floor((cards.length - 1) / 2);
-                    const pull = 140; // 중앙으로 끌어당길 거리(px) (120~180 추천)
+                    const pull = 140;
 
                     gsap.set(cards, {
-                        x: (i) => (center - i) * pull, // 모두 중앙으로 모여 시작
+                        x: (i) => (center - i) * pull,
                         scale: 0.88,
                         autoAlpha: 0,
                         zIndex: (i) => 10 - Math.abs(center - i),
@@ -953,22 +970,19 @@
                             scrub: CFG.scrub,
                             anticipatePin: 1,
                             invalidateOnRefresh: true,
-                            // markers: true,
                         },
                         defaults: { ease: "none" }
                     });
 
-                    // 1) 카드 중앙 겹침 → 본래 위치로 펼쳐짐
                     tl5.to(cards, {
                         x: 0,
                         scale: 1,
                         autoAlpha: 1,
                         duration: 0.6,
                         ease: CFG.ease,
-                        stagger: { amount: 0.28, from: "center" } // 가운데부터 양옆으로
+                        stagger: { amount: 0.28, from: "center" }
                     }, 0.06);
 
-                    // 2) 하단 설명 박스 슬라이드업
                     if (bottomBox) {
                         gsap.set(bottomBox, { y: 56, autoAlpha: 0, willChange: "transform,opacity" });
                         tl5.to(bottomBox, {
@@ -979,11 +993,10 @@
                         }, 0.50);
                     }
                 }
-                // 섹션 5는 커스텀으로 끝
                 return;
             }
 
-            // 섹션 6: 키워드 3개
+            // 섹션 6
             if (q(".story_sixth_box")) {
                 groupA = [
                     q(".story_sixth_title1"),
@@ -992,14 +1005,14 @@
                 ].filter(Boolean);
             }
 
-            // 섹션 7: 좌 이미지 + 우측 프로필/문구/버튼
+            // 섹션 7
             if (q(".story_seventh_box")) {
                 groupA = [q(".seventh_left_box")].filter(Boolean);
                 groupB = [q(".seventh_right_profile"), q(".seventh_right_desc")].filter(Boolean);
                 groupC = [q(".seventh_right_last_link")].filter(Boolean);
             }
 
-            // ===== 공통(슬라이드업) 처리 =====
+            // 공통 슬라이드업
             if (prefersReduced) {
                 [...groupA, ...groupB, ...groupC].forEach(el => el && gsap.set(el, { y: 0, autoAlpha: 1 }));
                 return;
@@ -1015,7 +1028,6 @@
                     scrub: CFG.scrub,
                     anticipatePin: 1,
                     invalidateOnRefresh: true,
-                    // markers: true,
                 },
                 defaults: { ease: "none" }
             });
@@ -1034,6 +1046,42 @@
             }
         }
 
+        /* ===== 배경색 단계별 변화 ===== */
+        function setupBgSteps() {
+            const bg = document.querySelector('.story_bg_layer');
+            const sections = [...document.querySelectorAll('.story_wrapper')];
+            const total = sections.length;
+            gsap.set(bg, { opacity: 0 });
+
+            // ✅ 4번째부터 시작
+            const startIndex = 3; // 배열은 0부터 시작하니까 4번째 = 인덱스 3
+            const activeSections = sections.slice(startIndex); // 4~7번째만 가져옴
+            const stepCount = activeSections.length; // 총 4단계
+
+            activeSections.forEach((sec, i) => {
+                const nextOpacity = (i + 1) / stepCount; // 25%, 50%, 75%, 100%
+                const prevOpacity = i / stepCount;
+
+                ScrollTrigger.create({
+                    trigger: sec,
+                    start: "top top",
+                    end: "bottom top",
+                    onEnter: () => gsap.to(bg, { opacity: nextOpacity, duration: 0.3, ease: "none" }),
+                    onEnterBack: () => gsap.to(bg, { opacity: nextOpacity, duration: 0.3, ease: "none" }),
+                    onLeaveBack: () => gsap.to(bg, { opacity: prevOpacity, duration: 0.3, ease: "none" }),
+                });
+            });
+
+            // ✅ 마지막(7번째) 지나가면 다시 투명하게 복귀
+            const last = sections[sections.length - 1];
+            ScrollTrigger.create({
+                trigger: last,
+                start: "bottom top",
+                onEnter: () => gsap.to(bg, { opacity: 0, duration: 0.6, ease: "none" }),
+                onEnterBack: () => gsap.to(bg, { opacity: 1, duration: 0.6, ease: "none" }),
+            });
+        }
+
         /* ===== 초기화 ===== */
         function initStory() {
             ScrollTrigger.getAll().forEach(st => st.kill());
@@ -1042,7 +1090,9 @@
             const sections = [...document.querySelectorAll(".story_wrapper")];
             sections.forEach((sec, idx) => buildSectionTimeline(sec, idx));
 
-            // 리프레시
+            // ✅ 배경 페이드 단계 세팅
+            setupBgSteps();
+
             setTimeout(() => ScrollTrigger.refresh(), 0);
             window.addEventListener("load", ScrollTrigger.refresh);
             window.addEventListener("resize", ScrollTrigger.refresh);
