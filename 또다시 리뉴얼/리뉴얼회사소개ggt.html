@@ -20,12 +20,60 @@
             background: #ffff99;
             opacity: 0;
             pointer-events: none;
+            z-index: -1;
+        }
+
+        .story_container>*:not(.story_bg_layer):not(.story_fx_layer):not(.story_bg_text_layer) {
+            position: relative;
+            z-index: 1;
+        }
+
+        .story_fx_layer {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .story_container>.story_fx_layer {
             z-index: 0;
         }
 
-        .story_container>*:not(.story_bg_layer) {
-            position: relative;
-            z-index: 1;
+        .story_bg_text_layer {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            /* 배경색(-1) 위, 본문(1) 아래 */
+            pointer-events: none;
+        }
+
+        /* 두 줄 공통 스타일 */
+        .first_line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120%;
+            font-family: 'Pretendard';
+            font-weight: 700;
+            letter-spacing: .02em;
+            white-space: nowrap;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, .18);
+            will-change: transform;
+        }
+
+        /* 위/아래 줄 + 항상 0.1로 고정 */
+        .first_line1 {
+            top: 24%;
+            font-size: clamp(200px, 4vw, 200px);
+            color: #4768C9;
+            opacity: .1;
+        }
+
+        .first_line2 {
+            bottom: 24%;
+            font-size: clamp(240px, 3.5vw, 240px);
+            color: #111;
+            opacity: .1;
         }
 
         .story_wrapper {
@@ -38,21 +86,36 @@
         }
 
         .story_first_box {
+            position: relative;
+            z-index: 1;
             width: 100%;
             height: 100%;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
         }
 
+        .story_first_bg {
+            position: absolute;
+            inset: 0;
+            background: center / cover no-repeat;
+            background-image: url("https://ncryk7.mycafe24.com/story1background.png");
+            z-index: 0;
+            pointer-events: none;
+        }
+
         .first_title {
+            position: relative;
+            z-index: 1;
             font-family: 'Pretendard';
             font-size: 100px;
             font-weight: 700;
-            color: #111111;
+            color: #111;
             text-align: center;
-            margin: 0;
+        }
+
+        .fisrt_span1 {
+            font-size: 60px;
         }
 
         /* 첫번째 파트 끝 */
@@ -204,6 +267,9 @@
             justify-content: center;
             align-items: center;
             gap: 16px;
+            background-image: url(https://ncryk7.mycafe24.com/story3background.png);
+            background-size: cover;
+            background-position: center center;
         }
 
         .third_title {
@@ -431,7 +497,9 @@
             gap: 60px;
             box-sizing: border-box;
             border-radius: 16px;
-            background-color: #e5e5ec;
+            background-color: #ffffff;
+            border: 1px solid #e5e5ec;
+            box-sizing: border-box;
         }
 
         .fifth_card_title_box {
@@ -472,7 +540,7 @@
             display: flex;
             flex-direction: column;
             gap: 12px;
-            background-color: #e5e5ec;
+            background-color: #4768C9;
             border-radius: 16px;
             padding: 20px;
         }
@@ -481,7 +549,7 @@
             font-family: 'Pretendard';
             font-size: 20px;
             font-weight: 500;
-            color: #111111;
+            color: #ffffff;
             margin: 0;
         }
 
@@ -489,7 +557,7 @@
             font-family: 'Pretendard';
             font-size: 16px;
             font-weight: 400;
-            color: #111111;
+            color: #ffffff;
             margin: 0;
         }
 
@@ -510,8 +578,21 @@
             font-family: 'Pretendard';
             font-size: 160px;
             font-weight: 700;
-            color: #111111;
             margin: 0;
+
+            background: linear-gradient(90deg,
+                    #ffdd00 0%,
+                    #ad69e9 20%,
+                    /* 연보라 */
+                    #ff4b4b 65%,
+                    /* 빨간색 */
+                    #ffdd00 100%
+                    /* 노란색 */
+                );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
         }
 
         /* 여섯번째 끝!!!!!!! */
@@ -528,7 +609,7 @@
         .seventh_left_box {
             width: 40%;
             height: 600px;
-            background-image: url(https://ncryk7.mycafe24.com/tiger1.jpg);
+            background-image: url(https://ncryk7.mycafe24.com/hicat.png);
             background-size: cover;
         }
 
@@ -560,7 +641,7 @@
             width: 32px;
             height: 32px;
             border-radius: 50%;
-            background-image: url(https://ncryk7.mycafe24.com/tiger1.jpg);
+            background-image: url(https://ncryk7.mycafe24.com/goodcat.png);
             background-size: cover;
         }
 
@@ -578,6 +659,7 @@
             font-weight: 400;
             color: #111111;
             margin: 0;
+            line-height: 1.4;
             background-color: #ffffff;
             border-radius: 16px;
             padding: 20px;
@@ -607,16 +689,26 @@
 
         <div class="story_bg_layer" aria-hidden="true"></div>
 
+        <div class="story_bg_text_layer" aria-hidden="true">
+            <p class="first_line first_line1">
+                DESIGN YOUR ENTERTAINING • DESIGN YOUR ENTERTAINING •
+            </p>
+            <p class="first_line first_line2">
+                SMART & EASY GROWTH • SMART & EASY GROWTH •
+            </p>
+        </div>
+
         <div class="story_wrapper">
             <div class="story_first_box">
+                <div class="story_first_bg"></div>
                 <p class="first_title">
                     OUR STORY <br>
                     <br>
-                    Design
-                    <br>
-                    for your
-                    <br>
-                    EnterTaining
+                    <span class="fisrt_span1">Design
+                        <br>
+                        for your
+                        <br>
+                        EnterTaining</span>
                 </p>
             </div>
         </div>
@@ -781,7 +873,7 @@
                             </p>
                         </div>
                         <div class="fifth_card_img_box">
-                            <img src="" alt="">
+                            <img src="https://ncryk7.mycafe24.com/fifthicon1.png" alt="">
                         </div>
                     </div>
                     <div class="fifth_card">
@@ -794,7 +886,7 @@
                             </p>
                         </div>
                         <div class="fifth_card_img_box">
-                            <img src="" alt="">
+                            <img src="https://ncryk7.mycafe24.com/fifthicon2.png" alt="">
                         </div>
                     </div>
                     <div class="fifth_card">
@@ -807,7 +899,7 @@
                             </p>
                         </div>
                         <div class="fifth_card_img_box">
-                            <img src="" alt="">
+                            <img src="https://ncryk7.mycafe24.com/fifthicon3.png" alt="">
                         </div>
                     </div>
                     <div class="fifth_card">
@@ -820,7 +912,7 @@
                             </p>
                         </div>
                         <div class="fifth_card_img_box">
-                            <img src="" alt="">
+                            <img src="https://ncryk7.mycafe24.com/fifthicon4.png" alt="">
                         </div>
                     </div>
                     <div class="fifth_card">
@@ -833,7 +925,7 @@
                             </p>
                         </div>
                         <div class="fifth_card_img_box">
-                            <img src="" alt="">
+                            <img src="https://ncryk7.mycafe24.com/fifthicon5.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -872,11 +964,29 @@
                             <div class="profile_img">
                             </div>
                             <p class="seventh_right_title">
-                                디자인테이닝 일동.
+                                DESIGN TAINING.
                             </p>
                         </div>
                         <p class="seventh_right_desc">
-                            찾아주시는 모든분들께 감사의 말씀을 드리며, 최고의 서비스를 제공할 수 있도록 최선의 노력을 보여드리겠습니다.
+                            디자인테이닝은 2025년에 처음으로 런칭한 회사이지만,
+                            <br>
+                            당당하게 주문을 맡기셔도 된다고 말씀드리겠습니다.
+                            <br>
+                            대표자 본인은 '달리는아저씨'라는 화물업체를 7년간
+                            <br>
+                            운영하였고 순대국밥 집을 차린다고 까불다가 넘어지기도 했고,
+                            <br>
+                            광고비가 모자르면 쿠팡물류센터로 아르바이트를 뛰러 갔고,
+                            <br>
+                            점심때엔 킥보드를 줏으러 다닌적도 있습니다.
+                            <br>
+                            누구보다 소상공인들의 마음을 잘 알고있기때문에
+                            <br>
+                            여러분들에게 더욱더 노력을 보여드릴 수 있습니다.
+                            <br>
+                            찾아주시는 모든분들께 감사의 말씀을 드리며,
+                            <br>
+                            최고의 서비스를 제공할 수 있도록 최선의 노력을 보여드리겠습니다.
                         </p>
                     </div>
                     <a href="#" class="seventh_right_last_link">
