@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+        .concept_container {
+            width: 100%;
+            padding: 100px 0;
+        }
+
+        .concept_wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            aspect-ratio: 16 / 7;
+            width: 90%;
+            height: 800px;
+            margin: 0 auto;
+        }
+
+        .concept_title {
+            font-family: 'Pretendard';
+            font-size: 60px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+        }
+
+        .concept_box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            padding: 60px;
+            background-color: #ebeffc;
+            border: 1px solid #e5e5ec;
+            border-radius: 12px;
+            box-sizing: border-box;
+        }
+
+        .concept_top_box {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .concept_left {
+            display: flex;
+            gap: 8px;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+
+        .concept_category {
+            border: 1px solid #e5e5ec;
+            border-radius: 8px;
+            padding: 16px 24px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(17, 17, 17, 0.05);
+            font-family: 'Pretendard';
+            font-size: 16px;
+            font-weight: 300;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            flex: 0 0 auto;
+            white-space: nowrap;
+            word-break: keep-all;
+            min-width: max-content;
+        }
+
+        .concept_right {
+            display: flex;
+            gap: 8px;
+        }
+
+        .concept_arrow_left,
+        .concept_arrow_right {
+            padding: 16px;
+            background-color: #ffffff;
+            border: 1px solid #e5e5ec;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(17, 17, 17, 0.05);
+            cursor: pointer;
+        }
+
+        .arl {
+            transform: rotateZ(-90deg);
+            font-size: 20px;
+        }
+
+        .arr {
+            transform: rotateZ(90deg);
+            font-size: 20px;
+        }
+
+        .concept_bottom_box {
+            display: flex;
+            gap: 60px;
+            overflow: hidden;
+            flex-wrap: nowrap;
+        }
+
+        .concept_item {
+            width: 400px;
+            height: 400px;
+            background-color: #ffffff;
+            border: 1px solid #e5e5ec;
+            border-radius: 12px;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            flex: 0 0 400px;
+            cursor: pointer;
+            overflow: hidden;
+
+        }
+
+        .concept_item>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: inherit;
+            position: absolute;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .concept_item:hover img {
+            transform: scale(1.04);
+        }
+
+        .concept_item_title_box {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 2;
+            padding: 24px;
+        }
+
+        .concept_item_title {
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 500;
+            color: #111111;
+            margin: 0;
+        }
+
+        .concept_item_desc {
+            font-family: 'Pretendard';
+            font-size: 16px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+        }
+
+        /* 스크롤 가능 + 스크롤바 숨김 + 드래그 중 텍스트 선택 방지 */
+        .concept_left,
+        .concept_bottom_box {
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .concept_left::-webkit-scrollbar,
+        .concept_bottom_box::-webkit-scrollbar {
+            display: none;
+        }
+
+        .is-dragging {
+            cursor: default;
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .concept_top_box {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .concept_box {
+                gap: 40px;
+                padding: 40px;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .concept_title {
+                font-size: 40px;
+            }
+
+            .concept_wrapper {
+                gap: 20px;
+                aspect-ratio: 16 / 7;
+                width: 100%;
+                height: 720px;
+                padding: 0 16px;
+            }
+
+            .concept_top_box {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .concept_box {
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .concept_bottom_box {
+                gap: 40px;
+            }
+
+            .concept_item {
+                width: 360px;
+                height: 360px;
+                flex: 0 0 360px;
+
+            }
+
+            .concept_item>img {
+                width: 360px;
+                height: 360px;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .concept_title {
+                font-size: 32px;
+            }
+
+            .concept_wrapper {
+                height: 600px;
+            }
+
+            .concept_top_box {
+                gap: 16px;
+            }
+
+            .concept_box {
+                gap: 16px;
+                padding: 16px;
+            }
+
+            .concept_bottom_box {
+                gap: 16px;
+            }
+
+            .concept_item {
+                width: 320px;
+                height: 320px;
+                flex: 0 0 320px;
+
+            }
+
+            .concept_item>img {
+                width: 320px;
+                height: 320px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .concept_item {
+                width: 100%;
+                aspect-ratio: 1 / 1;
+                flex: 0 0 100%;
+                box-sizing: border-box;
+            }
+
+            .concept_item>img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: inherit;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="concept_container">
+        <div class="concept_wrapper">
+
+            <p class="concept_title">
+                Concept guide
+            </p>
+
+            <div class="concept_box">
+
+                <div class="concept_top_box">
+                    <div class="concept_left">
+                        <p class="concept_category">레이아웃</p>
+                        <p class="concept_category">브랜드컬러</p>
+                        <p class="concept_category">타이포그래피</p>
+                        <p class="concept_category">이미지</p>
+                        <p class="concept_category">컨텐츠</p>
+                        <p class="concept_category">인터랙션</p>
+                        <p class="concept_category">UIUX</p>
+                    </div>
+                    <div class="concept_right">
+                        <div class="concept_arrow_left">
+                            <i class="fa-regular fa-angle-up arl"></i>
+                        </div>
+                        <div class="concept_arrow_right">
+                            <i class="fa-regular fa-angle-up arr"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept_bottom_box">
+                    <div class="concept_item">
+                        <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+                        <div class="concept_item_title_box">
+                            <p class="concept_item_title">풀해상도</p>
+                            <p class="concept_item_desc">1920</p>
+                        </div>
+                    </div>
+                    <div class="concept_item">
+                        <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+                        <div class="concept_item_title_box">
+                            <p class="concept_item_title">고해상도</p>
+                            <p class="concept_item_desc">1580</p>
+                        </div>
+                    </div>
+                    <div class="concept_item">
+                        <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+                        <div class="concept_item_title_box">
+                            <p class="concept_item_title">고해상도</p>
+                            <p class="concept_item_desc">1560</p>
+                        </div>
+                    </div>
+                    <div class="concept_item">
+                        <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+                        <div class="concept_item_title_box">
+                            <p class="concept_item_title">저해상도</p>
+                            <p class="concept_item_desc">1320</p>
+                        </div>
+                    </div>
+                    <div class="concept_item">
+                        <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+                        <div class="concept_item_title_box">
+                            <p class="concept_item_title">저해상도</p>
+                            <p class="concept_item_desc">1280</p>
+                        </div>
+                    </div>
+                    <div class="concept_item">
+                        <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+                        <div class="concept_item_title_box">
+                            <p class="concept_item_title">태블릿</p>
+                            <p class="concept_item_desc">1024</p>
+                        </div>
+                    </div>
+                    <div class="concept_item">
+                        <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+                        <div class="concept_item_title_box">
+                            <p class="concept_item_title">핸드폰</p>
+                            <p class="concept_item_desc">768</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        /* ==== 데이터: 카테고리별 아이템 ==== */
+        const DATA = {
+            "레이아웃": [
+                { title: "풀해상도", desc: "1920", img: "https://ncryk7.mycafe24.com/tiger1.jpg" },
+                { title: "고해상도", desc: "1580", img: "https://ncryk7.mycafe24.com/tiger1.jpg" },
+                { title: "고해상도", desc: "1560", img: "https://ncryk7.mycafe24.com/tiger1.jpg" },
+                { title: "저해상도", desc: "1320", img: "https://ncryk7.mycafe24.com/tiger1.jpg" },
+                { title: "저해상도", desc: "1280", img: "https://ncryk7.mycafe24.com/tiger1.jpg" },
+                { title: "태블릿", desc: "1024", img: "https://ncryk7.mycafe24.com/tiger1.jpg" },
+                { title: "핸드폰", desc: "768", img: "https://ncryk7.mycafe24.com/tiger1.jpg" },
+            ],
+            "브랜드컬러": [
+                { title: "메인 블루", desc: "#4768C9", img: "https://ncryk7.mycafe24.com/tiger1.jpg" },
+                { title: "포인트 옐로", desc: "#F5F500", img: "https://ncryk7.mycafe24.com/tiger1.jpg" },
+                { title: "딥 네이비", desc: "#1428A0", img: "https://ncryk7.mycafe24.com/tiger1.jpg" },
+                { title: "서브 그레이", desc: "#505050", img: "https://ncryk7.mycafe24.com/tiger1.jpg" },
+            ],
+            "타이포그래피": [
+                { title: "Pretendard", desc: "Bold/700", img: "https://ncryk7.mycafe24.com/tiger1.jpg" },
+                { title: "Pretendard", desc: "Regular/400", img: "https://ncryk7.mycafe24.com/tiger1.jpg" },
+                { title: "GmarketSans", desc: "Medium/500", img: "https://ncryk7.mycafe24.com/tiger1.jpg" },
+                { title: "NS Neo", desc: "Light/300", img: "https://ncryk7.mycafe24.com/tiger1.jpg" },
+            ],
+            "이미지": [
+                { title: "Hero", desc: "1920x1080", img: "https://ncryk7.mycafe24.com/tiger1.jpg" },
+                { title: "Thumbnail", desc: "400x400", img: "https://ncryk7.mycafe24.com/tiger1.jpg" },
+                { title: "Banner", desc: "1280x540", img: "https://ncryk7.mycafe24.com/tiger1.jpg" },
+            ],
+            "컨텐츠": [
+                { title: "슬로건", desc: "Make it Yours", img: "https://ncryk7.mycafe24.com/tiger1.jpg" },
+                { title: "핵심문장", desc: "Easy Growth", img: "https://ncryk7.mycafe24.com/tiger1.jpg" },
+                { title: "보조카피", desc: "Familiar UX", img: "https://ncryk7.mycafe24.com/tiger1.jpg" },
+            ],
+            "인터랙션": [
+                { title: "ScrollTrigger", desc: "Pin/Reveal", img: "https://ncryk7.mycafe24.com/tiger1.jpg" },
+                { title: "Parallax", desc: "Speed/Start", img: "https://ncryk7.mycafe24.com/tiger1.jpg" },
+                { title: "Hover", desc: "Scale/Blur", img: "https://ncryk7.mycafe24.com/tiger1.jpg" },
+            ],
+            "UIUX": [
+                { title: "Card", desc: "400x400", img: "https://ncryk7.mycafe24.com/tiger1.jpg" },
+                { title: "List", desc: "Item/Hover", img: "https://ncryk7.mycafe24.com/tiger1.jpg" },
+                { title: "Form", desc: "Focus/Valid", img: "https://ncryk7.mycafe24.com/tiger1.jpg" },
+                { title: "Banner", desc: "CTA/Ratio", img: "https://ncryk7.mycafe24.com/tiger1.jpg" },
+            ],
+        };
+
+        /* ==== 엘리먼트 ==== */
+        const categoryRow = document.querySelector(".concept_left");
+        const categories = [...document.querySelectorAll(".concept_category")];
+        const bottomBox = document.querySelector(".concept_bottom_box");
+        const btnLeft = document.querySelector(".concept_arrow_left");
+        const btnRight = document.querySelector(".concept_arrow_right");
+
+        /* ==== 카드 이동 간격 계산 ==== */
+        function getStep(container) {
+            const gap = parseInt(getComputedStyle(container).gap || "0", 10);
+            const firstItem = container.querySelector(".concept_item");
+            if (!firstItem) return 400 + gap; // 기본 추정
+            const rect = firstItem.getBoundingClientRect();
+            return Math.round(rect.width) + gap;
+        }
+
+        /* ==== 하단 아이템 렌더 (인라인 크기 제거) ==== */
+        function renderBottom(categoryLabel) {
+            const list = DATA[categoryLabel] || [];
+            bottomBox.innerHTML = list.map(item => `
+    <div class="concept_item">
+      <img src="${item.img}" alt="">
+      <div class="concept_item_title_box">
+        <p class="concept_item_title">${item.title}</p>
+        <p class="concept_item_desc">${item.desc}</p>
+      </div>
+    </div>
+  `).join("");
+
+            enableDragScroll(bottomBox);                 // 새 DOM에 드래그 바인딩
+            bottomBox.scrollTo({ left: 0, behavior: "instant" }); // 시작 위치 초기화
+        }
+
+        /* ==== 카테고리 클릭 ==== */
+        categories.forEach(cat => {
+            cat.addEventListener("click", () => {
+                renderBottom(cat.textContent.trim());
+            });
+        });
+
+        /* ==== 좌우 화살표: 카드 1칸씩 이동 ==== */
+        function scrollByOne(direction = 1) {
+            const step = getStep(bottomBox);
+            const target = bottomBox.scrollLeft + direction * step;
+            bottomBox.scrollTo({ left: target, behavior: "smooth" });
+        }
+        btnLeft.addEventListener("click", () => scrollByOne(-1));
+        btnRight.addEventListener("click", () => scrollByOne(1));
+
+        /* ==== 드래그 스크롤 공통 유틸 ==== */
+        function enableDragScroll(el) {
+            // 중복 바인딩 방지: 이미 바인딩되어 있으면 건너뜀
+            if (el.__dragBound) return;
+            el.__dragBound = true;
+
+            let isDown = false;
+            let startX = 0;
+            let startScroll = 0;
+
+            const onDown = (clientX) => {
+                isDown = true;
+                startX = clientX;
+                startScroll = el.scrollLeft;
+                el.classList.add("is-dragging");
+            };
+            const onMove = (clientX) => {
+                if (!isDown) return;
+                const dx = clientX - startX;
+                el.scrollLeft = startScroll - dx;
+            };
+            const onUp = () => {
+                isDown = false;
+                el.classList.remove("is-dragging");
+            };
+
+            el.addEventListener("mousedown", (e) => { onDown(e.clientX); });
+            window.addEventListener("mousemove", (e) => { onMove(e.clientX); });
+            window.addEventListener("mouseup", onUp);
+
+            el.addEventListener("touchstart", (e) => { onDown(e.touches[0].clientX); }, { passive: true });
+            el.addEventListener("touchmove", (e) => { onMove(e.touches[0].clientX); }, { passive: true });
+            el.addEventListener("touchend", onUp);
+
+            el.addEventListener("dragstart", (e) => e.preventDefault());
+        }
+
+        /* ==== 하단 드래그 스크롤: 항상 활성 ==== */
+        enableDragScroll(bottomBox);
+
+        /* ==== 상단 카테고리 드래그: 1024px 이하에서만 ==== */
+        const mediaQuery = window.matchMedia("(max-width: 1024px)");
+        function bindOrUnbindCategoryDrag() {
+            if (mediaQuery.matches) {
+                enableDragScroll(categoryRow);   // 바인딩(중복 방지 포함)
+            } else {
+                // 주요 시작 이벤트만 제거해서 드래그 비활성화
+                categoryRow.onmousedown = null;
+                categoryRow.ontouchstart = null;
+            }
+        }
+        bindOrUnbindCategoryDrag();
+        mediaQuery.addEventListener("change", bindOrUnbindCategoryDrag);
+
+        /* ==== 리사이즈 대응(스텝 재계산 트리거 용) ==== */
+        window.addEventListener("resize", () => {
+            getStep(bottomBox);
+        });
+    </script>
+
+</body>
+
+</html>
