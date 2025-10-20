@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .business_container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .business_wrapper {
+            width: 90%;
+            aspect-ratio: 16 / 5;
+            border-radius: 24px;
+        }
+
+        .business_box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+
+        .business_shadow {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, #111111 0%, transparent 100%);
+            border-radius: 24px;
+            z-index: 1;
+            position: absolute;
+        }
+
+        .business_stuff:nth-child(1),
+        .business_stuff:nth-child(2),
+        .business_stuff:nth-child(3) {
+            flex: 1 1 0;
+            min-width: 0;
+            background-size: cover;
+            transition: all 0.9s ease;
+            overflow: hidden;
+            border-radius: 24px;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+        }
+
+        .business_stuff:nth-child(1) {
+            background-image: url(https://ncryk7.mycafe24.com/bannerbottom1.png);
+        }
+
+        .business_stuff:nth-child(2) {
+            background-image: url(https://ncryk7.mycafe24.com/bannerbottom2.png);
+        }
+
+        .business_stuff:nth-child(3) {
+            background-image: url(https://ncryk7.mycafe24.com/bannerbottom3.png);
+        }
+
+        .business_stuff:hover {
+            flex-grow: 3;
+            /* 값이 클수록 hover된 놈이 더 커져 */
+            z-index: 3;
+        }
+
+        .business_stuff:hover .business_title_box {
+            padding: 80px;
+        }
+
+        .business_stuff:hover .business_button {
+            opacity: 1;
+            display: flex;
+        }
+
+        .business_title_box {
+            position: absolute;
+            z-index: 2;
+            padding: 0 0 80px 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .business_title {
+            font-family: 'Pretendard';
+            font-size: 40px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .business_desc {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 400;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .business_button {
+            display: none;
+            padding: 18px 32px;
+            width: 180px;
+            border: 1px solid #ffffff;
+            border-radius: 8px;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-family: 'Pretendard';
+            font-size: 16px;
+            font-weight: 400;
+            color: #ffffff !important;
+            margin: 0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            opacity: 0;
+        }
+
+        .business_button:hover {
+            background-color: #ffffff;
+            color: #4768C9 !important;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="business_container">
+        <div class="business_wrapper">
+            <div class="business_box">
+                <div class="business_stuff">
+                    <div class="business_shadow"></div>
+                    <div class="business_title_box">
+                        <p class="business_title">
+                            컨셉트
+                        </p>
+                        <p class="business_desc">
+                            홈페이지 설계 가이드
+                        </p>
+                        <a href="concept" class="business_button">
+                            자세히 보기
+                        </a>
+                    </div>
+                </div>
+                <div class="business_stuff">
+                    <div class="business_shadow"></div>
+                    <div class="business_title_box">
+                        <p class="business_title">
+                            프로세스
+                        </p>
+                        <p class="business_desc">
+                            제작과정을 한눈에
+                        </p>
+                        <a href="process" class="business_button">
+                            자세히 보기
+                        </a>
+                    </div>
+                </div>
+                <div class="business_stuff">
+                    <div class="business_shadow"></div>
+                    <div class="business_title_box">
+                        <p class="business_title">
+                            컨시퀀스
+                        </p>
+                        <p class="business_desc">
+                            포트폴리오 보기
+                        </p>
+                        <a href="portfolio" class="business_button">
+                            자세히 보기
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
