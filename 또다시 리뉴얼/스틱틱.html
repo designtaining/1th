@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .series_container {
+            width: 100%;
+            padding: 0 20px;
+            box-sizing: border-box;
+            position: fixed !important;
+            top: 92px;
+            display: flex;
+            justify-content: flex-end;
+            z-index: 9;
+        }
+
+        .series_box {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-end;
+            right: 20px;
+        }
+
+        .series_fixed_group,
+        .series_hover_group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-end;
+        }
+
+        .series_letsgo1,
+        .series_letsgo2,
+        .series_letsgo3,
+        .series_letsgo4 {
+            text-decoration: none;
+            color: #ffffff !important;
+            font-family: 'Pretendard';
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 999px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.4s ease;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .series_letsgo1 {
+            background-color: #c00000;
+            padding: 6px 24px;
+        }
+
+        .series_letsgo1:hover {
+            background-color: #a10000;
+        }
+
+        .series_letsgo2 {
+            background-color: #4768C9;
+            padding: 6px 24px;
+        }
+
+        .series_letsgo2:hover {
+            background-color: #3e5aaf;
+        }
+
+        .series_letsgo3,
+        .series_letsgo4 {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            padding: 0;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .series_letsgo3 {
+            background-color: #108440;
+        }
+
+        .series_letsgo4 {
+            background-color: #dada17;
+        }
+
+        .series_letsgo_desc3,
+        .series_letsgo_desc4 {
+            opacity: 0;
+            transform: translateX(10px);
+            transition: all 0.3s ease;
+            margin: 0;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .series_letsgo3:hover {
+            width: 116px;
+            border-radius: 999px;
+            justify-content: flex-start;
+            padding-left: 20px;
+            transform-origin: right center;
+        }
+
+        .series_letsgo4:hover {
+            width: 102px;
+            border-radius: 999px;
+            justify-content: flex-start;
+            padding-left: 20px;
+            transform-origin: right center;
+        }
+
+        .series_letsgo3:hover .series_letsgo_desc3,
+        .series_letsgo4:hover .series_letsgo_desc4 {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .series_container {
+                padding: 0 20px;
+                top: 68px;
+            }
+
+            .series_letsgo1,
+            .series_letsgo2,
+            .series_letsgo3,
+            .series_letsgo4 {
+                font-size: 14px;
+            }
+
+            .series_letsgo1 {
+                padding: 4px 18px;
+            }
+
+            .series_letsgo2 {
+                padding: 4px 18px;
+            }
+
+            .series_letsgo3,
+            .series_letsgo4 {
+                width: 32px;
+                height: 32px;
+            }
+
+            .series_letsgo3:hover {
+                width: 100px;
+                padding-left: 20px;
+            }
+
+            .series_letsgo4:hover {
+                width: 88px;
+                padding-left: 20px;
+            }
+
+            .series_box {
+                gap: 8px;
+            }
+
+            .series_fixed_group,
+            .series_hover_group {
+                gap: 8px;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .series_container {
+                padding: 0 16px;
+            }
+
+            .series_box {
+                right: 16px;
+                flex-direction: row-reverse;
+            }
+
+            .series_hover_group {
+                flex-direction: row;
+            }
+
+            .series_fixed_group {
+                flex-direction: row-reverse;
+            }
+
+            .series_letsgo3,
+            .series_letsgo4 {
+                width: auto;
+                height: auto;
+                border-radius: 999px;
+                padding: 4px 18px;
+                justify-content: center;
+                transition: none;
+            }
+
+            .series_letsgo3:hover,
+            .series_letsgo4:hover {
+                width: auto;
+                padding-left: 20px;
+                border-radius: 999px;
+                transform: none;
+            }
+
+            .series_letsgo_desc3,
+            .series_letsgo_desc4 {
+                opacity: 1;
+                transform: none;
+                position: static;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+
+            .series_letsgo1,
+            .series_letsgo2,
+            .series_letsgo3,
+            .series_letsgo4 {
+                font-size: 12px;
+                font-weight: 600;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="series_container">
+        <div class="series_box">
+
+            <div class="series_fixed_group">
+                <a href="questionaire" class="series_letsgo1">제작신청</a>
+                <a href="Service" class="series_letsgo2">견적보기</a>
+            </div>
+
+            <div class="series_hover_group">
+                <a href="concept" class="series_letsgo3">
+                    <p class="series_letsgo_desc3">컨셉가이드</p>
+                </a>
+                <a href="process" class="series_letsgo4">
+                    <p class="series_letsgo_desc4">제작과정</p>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+
+</html>
