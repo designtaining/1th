@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        :root {
+            --brand-blue: #4768C9;
+            --text-strong: #111111;
+            --text-muted: #767676;
+        }
+
+        .subbanner_container {
+            width: 100%;
+            height: 720px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            background: url(https://ncryk7.mycafe24.com/columnback.png);
+            background-size: cover;
+        }
+
+        .subbanner_bg {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .subbanner_bg_title {
+            position: absolute;
+            top: 160px;
+            right: 120px;
+            width: 100%;
+            height: auto;
+            margin: 0;
+            font-family: 'Pretendard';
+            font-size: 160px;
+            font-weight: 700;
+            letter-spacing: -20px;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke: 2px var(--brand-blue);
+            text-align: right;
+            line-height: 1.1;
+            display: inline-block;
+            user-select: none;
+        }
+
+        /* ✨ 각 글자별 미세한 웨이브 효과 */
+        .subbanner_bg_title span {
+            display: inline-block;
+            animation: waveUpDown 2.4s ease-in-out infinite;
+        }
+
+        /* 한 번에 위로 올라갔다가 내려오는 부드러운 파도 */
+        @keyframes waveUpDown {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-32px);
+            }
+        }
+
+        /* 순차적 딜레이 */
+        .subbanner_bg_title span:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .subbanner_bg_title span:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .subbanner_bg_title span:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .subbanner_bg_title span:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+
+        .subbanner_bg_title span:nth-child(5) {
+            animation-delay: 0.4s;
+        }
+
+        .subbanner_bg_title span:nth-child(6) {
+            animation-delay: 0.5s;
+        }
+
+        .subbanner_bg_title span:nth-child(7) {
+            animation-delay: 0.6s;
+        }
+
+        .subbanner_bg_title span:nth-child(8) {
+            animation-delay: 0.7s;
+        }
+
+        .subbanner_bg_title span:nth-child(9) {
+            animation-delay: 0.8s;
+        }
+
+        .subbanner_bg_title span:nth-child(10) {
+            animation-delay: 0.9s;
+        }
+
+        .subbanner_wrapper {
+            width: 80%;
+            height: 100%;
+            margin: 0 auto;
+            position: absolute;
+            z-index: 2;
+            inset: 0;
+        }
+
+        .subbanner_box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            gap: 40px;
+        }
+
+        .subbanner_title_box {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .subbanner_subtitle {
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--brand-blue);
+            margin: 0;
+        }
+
+        .subbanner_title {
+            font-family: 'Pretendard';
+            font-size: 60px;
+            font-weight: 700;
+            color: var(--text-strong);
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .subbanner_desc_box {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .subbanner_desc {
+            font-family: 'Pretendard';
+            font-size: 32px;
+            font-weight: 400;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .subbanner_pe {
+            font-family: 'Pretendard';
+            font-size: 48px;
+            font-weight: 600;
+            color: var(--brand-blue);
+            margin: 0;
+            line-height: 1.4;
+            word-break: keep-all;
+        }
+
+        @media screen and (max-width: 1512px) {
+            .subbanner_bg_title {
+                top: 120px;
+                right: 120px;
+                font-size: 140px;
+                letter-spacing: -20px;
+            }
+
+            .subbanner_title {
+                font-size: 48px;
+            }
+
+            .subbanner_desc {
+                font-size: 28px;
+            }
+
+            .subbanner_pe {
+                font-size: 40px;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            .subbanner_container {
+                background: url(https://ncryk7.mycafe24.com/columnback1.png);
+            }
+
+            .subbanner_bg_title {
+                top: 120px;
+                right: 40px;
+                font-size: 100px;
+                letter-spacing: -12px;
+            }
+
+            .subbanner_wrapper {
+                width: 100%;
+                padding: 0 16px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .subbanner_container {
+                background: url(https://ncryk7.mycafe24.com/columnback2.png);
+            }
+
+            .subbanner_bg_title {
+                top: 220px;
+                right: 40px;
+                font-size: 80px;
+                letter-spacing: -10px;
+            }
+
+            .subbanner_title {
+                font-size: 36px;
+            }
+
+            .subbanner_desc {
+                font-size: 20px;
+            }
+
+            .subbanner_pe {
+                font-size: 28px;
+            }
+        }
+
+        @media screen and (max-width: 440px) {
+            .subbanner_container {
+                height: 760px;
+                background: url(https://ncryk7.mycafe24.com/columnback3.png);
+            }
+
+            .subbanner_bg_title {
+                top: 200px;
+                right: 40px;
+                font-size: 48px;
+                letter-spacing: -6px;
+            }
+
+            .subbanner_box {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .subbanner_title {
+                font-size: 32px;
+                line-height: 1.4;
+            }
+
+            .subbanner_desc {
+                font-size: 16px;
+            }
+
+            .subbanner_pe {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="subbanner_container">
+        <div class="subbanner_bg">
+            <p class="subbanner_bg_title">
+                <span>C</span>
+                <span>o</span>
+                <span>l</span>
+                <span>u</span>
+                <span>m</span>
+                <span>n</span>
+                <span>&nbsp;</span>
+                <span>n</span>
+                <span>o</span>
+                <span>w</span>
+            </p>
+        </div>
+
+        <div class="subbanner_wrapper">
+            <div class="subbanner_box">
+                <div class="subbanner_title_box">
+                    <p class="subbanner_subtitle">STEP. 01</p>
+                    <p class="subbanner_title">나의 홈페이지를 만들때,<br>읽어보면 도움되는 꿀팁.</p>
+                </div>
+                <div class="subbanner_desc_box">
+                    <p class="subbanner_pe">
+                        생각이 구체화가 될수록
+                        <br>
+                        결과물의 퀄리티가 좋아집니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

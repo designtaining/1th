@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Subbanner - View Quote (Typing Fixed)</title>
+
+    <style>
+        :root {
+            --brand-blue: #4768C9;
+            --text-strong: #111111;
+            --text-muted: #767676;
+            --caret-w: 2px;
+        }
+
+        .subbanner_container {
+            width: 100%;
+            height: 660px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .subbanner_bg {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .subbanner_bg_title {
+            position: absolute;
+            top: 160px;
+            right: 120px;
+            width: 100%;
+            height: 260px;
+            margin: 0;
+            font-family: 'Pretendard';
+            font-size: 160px;
+            font-weight: 700;
+            letter-spacing: -20px;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke: 2px var(--brand-blue);
+            text-align: right;
+            line-height: 1.1;
+            display: block;
+            user-select: none;
+        }
+
+        .type_wrap {
+            position: relative;
+            display: inline-block;
+            white-space: nowrap;
+            vertical-align: top;
+        }
+
+        .type_wrap .ch {
+            opacity: 0;
+            display: inline-block;
+            transform: translateY(8px);
+            will-change: transform, opacity;
+            font-family: 'Pretendard';
+        }
+
+        .caret {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: var(--caret-w);
+            height: 1em;
+            background: var(--brand-blue);
+            transform-origin: top left;
+            animation: caretBlink 1s steps(1, end) infinite;
+            pointer-events: none;
+        }
+
+        @keyframes caretBlink {
+
+            0%,
+            49% {
+                opacity: 1;
+            }
+
+            50%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .subbanner_wrapper {
+            width: 80%;
+            height: 100%;
+            margin: 0 auto;
+            position: absolute;
+            z-index: 2;
+            inset: 0;
+        }
+
+        .subbanner_box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            gap: 40px;
+        }
+
+        .subbanner_title_box {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .subbanner_subtitle {
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--brand-blue);
+            margin: 0;
+        }
+
+        .subbanner_title {
+            font-family: 'Pretendard';
+            font-size: 60px;
+            font-weight: 700;
+            color: var(--text-strong);
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .subbanner_desc_box {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .subbanner_desc {
+            font-family: 'Pretendard';
+            font-size: 32px;
+            font-weight: 400;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .subbanner_pe {
+            font-family: 'Pretendard';
+            font-size: 48px;
+            font-weight: 600;
+            color: var(--brand-blue);
+            margin: 0;
+            line-height: 1.4;
+            word-break: keep-all;
+        }
+
+        /* ✅ 1512px 이하 */
+        @media screen and (max-width: 1512px) {
+            .subbanner_bg_title {
+                position: absolute;
+                top: 120px;
+                right: 120px;
+                font-size: 140px;
+                letter-spacing: -20px;
+            }
+
+            .subbanner_box {
+                gap: 40px;
+            }
+
+            .subbanner_title {
+                font-size: 48px;
+            }
+
+            .subbanner_subtitle {
+                font-size: 22px;
+            }
+
+            .subbanner_desc_box {
+                gap: 24px;
+            }
+
+            .subbanner_desc {
+                font-family: 'Pretendard';
+                font-size: 28px;
+            }
+
+            .subbanner_pe {
+                font-size: 40px;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .subbanner_bg_title {
+                top: 120px;
+                right: 40px;
+                font-size: 100px;
+                letter-spacing: -12px;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .subbanner_wrapper {
+                width: 100%;
+                padding: 0 16px;
+            }
+
+            .subbanner_bg_title {
+                top: 220px;
+                right: 40px;
+                font-size: 80px;
+                letter-spacing: -10px;
+            }
+
+            .subbanner_box {
+                gap: 40px;
+            }
+
+            .subbanner_title {
+                font-size: 36px;
+            }
+
+            .subbanner_subtitle {
+                font-size: 18px;
+            }
+
+            .subbanner_desc_box {
+                gap: 16px;
+            }
+
+            .subbanner_desc {
+                font-size: 20px;
+            }
+
+            .subbanner_pe {
+                font-size: 28px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .subbanner_container {
+                height: 560px;
+            }
+
+            .subbanner_bg_title {
+                top: 140px;
+                right: 40px;
+                font-size: 48px;
+                letter-spacing: -6px;
+            }
+
+            .subbanner_box {
+                gap: 16px;
+            }
+
+            .subbanner_title {
+                font-size: 32px;
+            }
+
+            .subbanner_subtitle {
+                font-size: 16px;
+            }
+
+            .subbanner_desc_box {
+                gap: 16px;
+            }
+
+            .subbanner_desc {
+                font-size: 16px;
+            }
+
+            .subbanner_pe {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="subbanner_container">
+        <div class="subbanner_bg">
+            <p class="subbanner_bg_title" aria-label="View Quote">
+                <span class="type_wrap" id="typeWrap" aria-hidden="true">
+                    <span class="ch">V</span>
+                    <span class="ch">i</span>
+                    <span class="ch">e</span>
+                    <span class="ch">w</span>
+                    <span class="ch">&nbsp;</span>
+                    <span class="ch">Q</span>
+                    <span class="ch">u</span>
+                    <span class="ch">o</span>
+                    <span class="ch">t</span>
+                    <span class="ch">e</span>
+                    <span class="caret" id="caret" aria-hidden="true"></span>
+                </span>
+            </p>
+        </div>
+
+        <div class="subbanner_wrapper">
+            <div class="subbanner_box">
+                <div class="subbanner_title_box">
+                    <p class="subbanner_subtitle">View Quote</p>
+                    <p class="subbanner_title">원하는 페이지별 견적을<br>한눈에 확인하세요.</p>
+                </div>
+                <div class="subbanner_desc_box">
+                    <p class="subbanner_desc">바로 상담을 원하신다면 전화주세요.<br>언제든 기다리고 있습니다.</p>
+                    <p class="subbanner_pe">
+                        <a href="tel:05066791705" style="text-decoration:none; color:inherit;">
+                            0506-679-1705
+                        </a>
+                        <br>
+                        designtaining@gmail.com
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script>
+        window.addEventListener("load", () => {
+            const wrap = document.getElementById("typeWrap");
+            const chars = Array.from(wrap.querySelectorAll(".ch"));
+            const caret = document.getElementById("caret");
+
+            const charRevealDur = 0.16; // 한 글자 나타나는 시간
+            const staggerDelay = 0.08;  // 글자 사이 간격
+            const caretMoveDur = 0.07;  // 커서 이동 속도
+
+            function updateCaretSize() {
+                const style = window.getComputedStyle(wrap);
+                const lineH = style.lineHeight;
+                const fontS = style.fontSize;
+                const heightPx = (lineH && lineH !== "normal")
+                    ? parseFloat(lineH)
+                    : parseFloat(fontS) * 1.1;
+                caret.style.height = heightPx + "px";
+                caret.style.transform = "translateY(0.06em)";
+            }
+
+            updateCaretSize();
+            window.addEventListener("resize", updateCaretSize);
+
+            gsap.set(caret, { x: 0, opacity: 1 });
+            chars.forEach(ch => gsap.set(ch, { opacity: 0, y: 8 }));
+
+            const tl = gsap.timeline();
+
+            chars.forEach(span => {
+                tl.call(() => {
+                    const x = span.offsetLeft + span.offsetWidth;
+                    gsap.to(caret, { x, duration: caretMoveDur, ease: "power1.out" });
+                }, null, ">");
+
+                tl.to(span, { opacity: 1, y: 0, duration: charRevealDur, ease: "power2.out" }, `>+=${staggerDelay}`);
+
+                if (span.textContent === " " || span.innerHTML === "&nbsp;") {
+                    tl.to({}, { duration: 0.03 });
+                }
+            });
+
+            tl.to({}, { duration: 0.2 });
+            tl.to(caret, { opacity: 0, duration: 0.45, ease: "power1.out" });
+
+            // 재시작 방지 (한 번만 실행)
+            // document.addEventListener('click', () => tl.restart());
+        });
+    </script>
+</body>
+
+</html>
