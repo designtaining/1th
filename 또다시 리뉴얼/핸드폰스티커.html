@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+        .calling_container {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+
+        .calling_box {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            right: 40px;
+            bottom: 160px;
+            z-index: 10;
+            gap: 16px;
+            align-items: flex-end;
+        }
+
+        .calling_kakao {
+            width: 40px;
+            height: 40px;
+            background-color: #f9e108;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .calling_kakao:hover {
+            transform: scale(1.03);
+        }
+
+        .callinkakao {
+            font-size: 24px;
+            color: #3d2324;
+        }
+
+        .calling_phone {
+            position: relative;
+            padding: 12px 40px;
+            border-radius: 999px;
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 1px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            /* 왼쪽 절반: 보라→핑크 / 오른쪽 절반: 핑크→블루 */
+            background-image: linear-gradient(90deg, #773abd 0%, #d82a5e 50%, #d82a5e 50%, #4768C9 100%);
+            background-size: 200% 100%;
+            background-position: 0% 0%;
+            transition: background-position .35s ease, transform .3s ease, box-shadow .3s ease;
+        }
+
+        .calling_phone:hover {
+            background-position: 100% 0%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="calling_container">
+        <div class="calling_box">
+            <a href="#" class="calling_kakao">
+                <i class="fa-brands fa-kakao-talk callinkakao"></i>
+            </a>
+            <a href="tel:05066791705" class="calling_phone">
+                <i class="fa-solid fa-phone"></i>
+                0506. 679. 1705
+            </a>
+        </div>
+    </section>
+
+</body>
+
+</html>
