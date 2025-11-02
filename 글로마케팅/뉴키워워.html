@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .keyword_container {
+            width: 100%;
+            padding: 20px 0;
+        }
+
+        .keyword_wrapper {
+            width: 100%;
+            display: flex;
+            gap: 20px;
+            overflow: hidden;
+            position: relative;
+            user-select: none;
+            -webkit-user-drag: none;
+            -webkit-tap-highlight-color: transparent;
+            cursor: grab;
+            touch-action: none;
+        }
+
+        .keyword_box {
+            width: max-content;
+            display: flex;
+            gap: 20px;
+            justify-content: flex-start;
+            transition: transform 0.6s ease;
+        }
+
+        .keyword_cube {
+            width: 348px;
+            height: 564px;
+            border-radius: 24px;
+            border: 2px solid #1428A0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .keyword_cube_top {
+            width: 100%;
+            height: 160px;
+            border-radius: 16px 16px 0 0;
+            background-color: #1428A0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .keyword_cube_title {
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .keyword_cube_middle {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .keyword_cube_ccl {
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 700;
+            color: #1428A0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .keyword_cube_pic {
+            width: 340px;
+            height: 340px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .keyword_cube_pic>img {
+            width: 90%;
+            height: 90%;
+            border-radius: 16px;
+        }
+
+        /* ✅ 1512px 이하 */
+        @media screen and (max-width: 1512px) {
+            .keyword_cube {
+                width: 328px;
+                height: 524px;
+            }
+
+            .keyword_cube_top {
+                height: 140px;
+            }
+
+            .keyword_cube_pic {
+                width: 320px;
+                height: 320px;
+            }
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .keyword_cube {
+                width: 308px;
+                height: 484px;
+            }
+
+            .keyword_cube_title {
+                font-size: 20px;
+            }
+
+            .keyword_cube_top {
+                height: 120px;
+            }
+
+            .keyword_cube_pic {
+                width: 300px;
+                height: 300px;
+            }
+
+            .keyword_cube_ccl {
+                font-size: 20px;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .keyword_wrapper {
+                width: 100%;
+                padding: 0 16px;
+            }
+
+            .keyword_cube {
+                width: 268px;
+                height: 450px;
+            }
+
+            .keyword_cube_title {
+                font-size: 20px;
+            }
+
+            .keyword_cube_top {
+                height: 120px;
+            }
+
+            .keyword_cube_pic {
+                width: 268px;
+                height: 268px;
+            }
+
+            .keyword_cube_ccl {
+                font-size: 20px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .keyword_box {
+                gap: 8px;
+            }
+
+            .keyword_cube {
+                width: 268px;
+                height: 378px;
+                border-radius: 8px;
+            }
+
+            .keyword_cube_title {
+                font-size: 16px;
+            }
+
+            .keyword_cube_top {
+                height: 60px;
+                border-radius: 4px 4px 0 0;
+            }
+
+            .keyword_cube_pic {
+                width: 268px;
+                height: 268px;
+            }
+
+            .keyword_cube_pic>img {
+                width: 95%;
+                height: 95%;
+                border-radius: 8px;
+            }
+
+            .keyword_cube_ccl {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="keyword_container">
+        <div class="keyword_wrapper">
+            <div class="keyword_box">
+                <div class="keyword_cube">
+                    <div class="keyword_cube_top">
+                        <p class="keyword_cube_title">
+                            최상단노출 1st
+                        </p>
+                    </div>
+                    <div class="keyword_cube_middle">
+                        <p class="keyword_cube_ccl">
+                            역삼역 동물병원
+                        </p>
+                        <div class="keyword_cube_pic">
+                            <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="keyword_cube">
+                    <div class="keyword_cube_top">
+                        <p class="keyword_cube_title">
+                            최상단노출 1st
+                        </p>
+                    </div>
+                    <div class="keyword_cube_middle">
+                        <p class="keyword_cube_ccl">
+                            역삼역 동물병원
+                        </p>
+                        <div class="keyword_cube_pic">
+                            <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="keyword_cube">
+                    <div class="keyword_cube_top">
+                        <p class="keyword_cube_title">
+                            최상단노출 1st
+                        </p>
+                    </div>
+                    <div class="keyword_cube_middle">
+                        <p class="keyword_cube_ccl">
+                            역삼역 동물병원
+                        </p>
+                        <div class="keyword_cube_pic">
+                            <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="keyword_cube">
+                    <div class="keyword_cube_top">
+                        <p class="keyword_cube_title">
+                            최상단노출 1st
+                        </p>
+                    </div>
+                    <div class="keyword_cube_middle">
+                        <p class="keyword_cube_ccl">
+                            역삼역 동물병원
+                        </p>
+                        <div class="keyword_cube_pic">
+                            <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="keyword_cube">
+                    <div class="keyword_cube_top">
+                        <p class="keyword_cube_title">
+                            최상단노출 1st
+                        </p>
+                    </div>
+                    <div class="keyword_cube_middle">
+                        <p class="keyword_cube_ccl">
+                            역삼역 동물병원
+                        </p>
+                        <div class="keyword_cube_pic">
+                            <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="keyword_cube">
+                    <div class="keyword_cube_top">
+                        <p class="keyword_cube_title">
+                            최상단노출 1st
+                        </p>
+                    </div>
+                    <div class="keyword_cube_middle">
+                        <p class="keyword_cube_ccl">
+                            역삼역 동물병원
+                        </p>
+                        <div class="keyword_cube_pic">
+                            <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="keyword_cube">
+                    <div class="keyword_cube_top">
+                        <p class="keyword_cube_title">
+                            최상단노출 1st
+                        </p>
+                    </div>
+                    <div class="keyword_cube_middle">
+                        <p class="keyword_cube_ccl">
+                            역삼역 동물병원
+                        </p>
+                        <div class="keyword_cube_pic">
+                            <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="keyword_cube">
+                    <div class="keyword_cube_top">
+                        <p class="keyword_cube_title">
+                            최상단노출 1st
+                        </p>
+                    </div>
+                    <div class="keyword_cube_middle">
+                        <p class="keyword_cube_ccl">
+                            역삼역 동물병원
+                        </p>
+                        <div class="keyword_cube_pic">
+                            <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        (function () {
+            const DURATION_SEC = 0; // 슬라이드 ON하려면 48정도 쓰삼, 0이면 멈춘상태 //
+            const RESUME_DELAY = 200;
+
+            const wrapper = document.querySelector('.keyword_wrapper');
+            const track = document.querySelector('.keyword_box');
+
+            if (!wrapper || !track) return;
+
+            let originalWidth = 0;
+            let animId = null;
+            let lastTs = 0;
+            let isPaused = false;
+
+            let scrollPos = 0;
+
+            let dragging = false;
+            let lastClientX = 0;
+
+            const whenImagesReady = () => {
+                const imgs = track.querySelectorAll('img');
+                if (!imgs.length) return Promise.resolve();
+                const waits = [];
+                imgs.forEach(img => {
+                    if (img.complete) return;
+                    waits.push(new Promise(res => {
+                        img.addEventListener('load', res, { once: true });
+                        img.addEventListener('error', res, { once: true });
+                    }));
+                });
+                return Promise.all(waits);
+            };
+
+            function cloneOnceForLoop() {
+                if (track.dataset.cloned === '1') return;
+                const children = Array.from(track.children);
+                children.forEach(node => track.appendChild(node.cloneNode(true)));
+                track.dataset.cloned = '1';
+            }
+
+            function computeOriginalWidth() {
+                originalWidth = track.scrollWidth / 2;
+            }
+
+            function wrapScrollPos() {
+                if (originalWidth <= 0) return;
+                if (scrollPos >= originalWidth) scrollPos = scrollPos % originalWidth;
+                if (scrollPos < 0) {
+                    scrollPos = originalWidth + (scrollPos % originalWidth);
+                    if (scrollPos === originalWidth) scrollPos = 0;
+                }
+            }
+
+            function autoplayStart() {
+                cancelAnimationFrame(animId);
+                lastTs = 0;
+                animId = requestAnimationFrame(tick);
+            }
+
+            function tick(ts) {
+                if (DURATION_SEC <= 0) return;
+
+                if (!lastTs) lastTs = ts;
+                const dt = (ts - lastTs) / 1000; // 초
+                lastTs = ts;
+
+                if (!isPaused && originalWidth > 0 && !dragging) {
+                    const pxPerSec = originalWidth / DURATION_SEC;
+                    scrollPos += pxPerSec * dt;
+                    wrapScrollPos();
+                    wrapper.scrollLeft = scrollPos;
+                }
+
+                animId = requestAnimationFrame(tick);
+            }
+
+            wrapper.addEventListener('pointerdown', (e) => {
+                if (e.pointerType === 'mouse' && e.button !== 0) return;
+                wrapper.setPointerCapture?.(e.pointerId);
+                dragging = true;
+                isPaused = true;
+                wrapper.classList.add('dragging');
+                lastClientX = e.clientX;
+                scrollPos = wrapper.scrollLeft;
+                e.preventDefault();
+            });
+
+            wrapper.addEventListener('pointermove', (e) => {
+                if (!dragging) return;
+                const dx = e.clientX - lastClientX;
+                scrollPos -= dx;
+                wrapScrollPos();
+                wrapper.scrollLeft = scrollPos;
+                lastClientX = e.clientX;
+            });
+
+            function endDrag(e) {
+                if (!dragging) return;
+                dragging = false;
+                try { wrapper.releasePointerCapture?.(e.pointerId); } catch (_) { }
+                wrapper.classList.remove('dragging');
+                scrollPos = wrapper.scrollLeft;
+                if (DURATION_SEC > 0) {
+                    setTimeout(() => { isPaused = false; }, RESUME_DELAY);
+                }
+            }
+
+            wrapper.addEventListener('pointerup', endDrag);
+            wrapper.addEventListener('pointercancel', endDrag);
+            wrapper.addEventListener('lostpointercapture', endDrag);
+            window.addEventListener('pointerup', endDrag);
+            window.addEventListener('pointercancel', endDrag);
+
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    const ratio = originalWidth ? (wrapper.scrollLeft % originalWidth) / originalWidth : 0;
+                    computeOriginalWidth();
+                    scrollPos = ratio * originalWidth;
+                    wrapScrollPos();
+                    wrapper.scrollLeft = scrollPos;
+                }, 150);
+            });
+
+            (async function init() {
+                await whenImagesReady();
+                cloneOnceForLoop();
+                requestAnimationFrame(() => {
+                    computeOriginalWidth();
+                    scrollPos = wrapper.scrollLeft;
+                    autoplayStart();
+                });
+            })();
+        })();
+    </script>
+
+</body>
+
+</html>
