@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .hiend_slide_container {
+            width: 100%;
+        }
+
+        .hiend_slide_wrapper {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hiend_slide_track {
+            display: flex;
+            will-change: transform;
+            transform: translateX(0);
+        }
+
+        .hiend_slide_box {
+            width: 384px;
+            height: 200px;
+            flex: 0 0 384px;
+        }
+
+        .hiend_slide_box>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            user-select: none;
+            -webkit-user-drag: none;
+            pointer-events: none;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hiend_slide_container">
+        <div class="hiend_slide_wrapper">
+            <!-- 이동하는 요소를 트랙으로 한 번 감쌌어 -->
+            <div class="hiend_slide_track">
+                <div class="hiend_slide_box"><img src="https://cdn.imweb.me/thumbnail/20251105/b0e27a1c2ed3d.png"
+                        alt=""></div>
+                <div class="hiend_slide_box"><img src="https://cdn.imweb.me/thumbnail/20251105/33825baaedd95.png"
+                        alt=""></div>
+                <div class="hiend_slide_box"><img src="https://cdn.imweb.me/thumbnail/20251105/f04fe8a98f8a6.png"
+                        alt=""></div>
+                <div class="hiend_slide_box"><img src="https://cdn.imweb.me/thumbnail/20251105/4a2c9f2ee0eeb.png"
+                        alt=""></div>
+                <div class="hiend_slide_box"><img src="https://cdn.imweb.me/thumbnail/20251105/3a758f7b2f86f.png"
+                        alt=""></div>
+                <div class="hiend_slide_box"><img src="https://cdn.imweb.me/thumbnail/20251105/c8b627b3794d0.png"
+                        alt=""></div>
+                <div class="hiend_slide_box"><img src="https://cdn.imweb.me/thumbnail/20251105/ee8ed312fbc38.png"
+                        alt=""></div>
+                <div class="hiend_slide_box"><img src="https://cdn.imweb.me/thumbnail/20251105/a3f8f300d2b4f.png"
+                        alt=""></div>
+                <div class="hiend_slide_box"><img src="https://cdn.imweb.me/thumbnail/20251105/0888222821562.png"
+                        alt=""></div>
+                <div class="hiend_slide_box"><img src="https://cdn.imweb.me/thumbnail/20251105/d8f70ced26c59.png"
+                        alt=""></div>
+                <div class="hiend_slide_box"><img src="https://cdn.imweb.me/thumbnail/20251105/c5d077f288f79.png"
+                        alt=""></div>
+                <div class="hiend_slide_box"><img src="https://cdn.imweb.me/thumbnail/20251105/d95d0f8451e60.png"
+                        alt=""></div>
+                <div class="hiend_slide_box"><img src="https://cdn.imweb.me/thumbnail/20251105/a609f5497b3b0.png"
+                        alt=""></div>
+                <div class="hiend_slide_box"><img src="https://cdn.imweb.me/thumbnail/20251105/52280607e0526.png"
+                        alt=""></div>
+                <div class="hiend_slide_box"><img src="https://cdn.imweb.me/thumbnail/20251105/2c4c1011cc577.png"
+                        alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        (function () {
+            const wrapper = document.querySelector('.hiend_slide_wrapper');
+            const track = wrapper.querySelector('.hiend_slide_track');
+            const STEP_MS = 3000;          // 3초마다 한 칸
+            const SPEED_MS = 500;          // 이동 애니메이션 시간
+            const BOX_WIDTH = 384;         // 한 칸 폭 (px) — 레이아웃과 동일하게
+
+            let animating = false;
+            let timer;
+
+            function stepOnce() {
+                if (animating) return;
+                animating = true;
+                // 한 칸 왼쪽으로 이동
+                track.style.transition = `transform ${SPEED_MS}ms ease`;
+                track.style.transform = `translateX(-${BOX_WIDTH}px)`;
+            }
+
+            // 이동이 끝나면 첫 아이템을 뒤로 보내고 위치 리셋 (무한 루프 핵심)
+            track.addEventListener('transitionend', () => {
+                track.appendChild(track.firstElementChild);
+                track.style.transition = 'none';
+                track.style.transform = 'translateX(0)';
+                // 리플로우로 transition 즉시 제거 적용
+                void track.offsetWidth;
+                animating = false;
+            });
+
+            function start() { timer = setInterval(stepOnce, STEP_MS); }
+            function stop() { clearInterval(timer); }
+
+            // (옵션) 호버 시 일시정지하고 싶으면 주석 해제
+            // wrapper.addEventListener('mouseenter', stop);
+            // wrapper.addEventListener('mouseleave', start);
+
+            start();
+        })();
+    </script>
+
+</body>
+
+</html>
