@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        .ppa_container {
+            width: 100%;
+            background-color: #f3f3ff;
+            padding: 60px 0;
+        }
+
+        .ppa_wrapper {
+            width: 1280px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin: 0 auto;
+        }
+
+        .ppa_title {
+            font-family: 'GMarketSans';
+            font-size: 48px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .ppa_span1 {
+            color: #2f4dd4;
+        }
+
+        .ppa_span2 {
+            color: #d42f3d;
+        }
+
+        .ppa_desc {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+            text-align: center;
+        }
+
+        .ppa_box {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .ppa_top {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .ppa_leftbox,
+        .ppa_rightbox {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: #ffffff;
+            border-radius: 16px;
+        }
+
+        .ppa_lefttop,
+        .ppa_righttop {
+            width: 100%;
+            padding: 36px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 16px 16px 0 0;
+        }
+
+        .ppa_lefttop {
+            background-color: #2f4dd4;
+        }
+
+        .ppa_righttop {
+            background-color: #720875;
+        }
+
+        .ppa_lefttitle,
+        .ppa_righttitle {
+            font-family: 'Pretendard';
+            font-size: 18px;
+            font-weight: 400;
+            color: #ffffff;
+            margin: 0;
+            text-align: center;
+        }
+
+        .ppa_leftbottom,
+        .ppa_rightbottom {
+            padding: 40px;
+        }
+
+        .ppa_bottom {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .plfb {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .plfb_left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .plfb_subtitle {
+            font-family: 'Pretendard';
+            font-size: 18px;
+            font-weight: 400;
+            color: #767676;
+            margin: 0;
+        }
+
+        .plfb_title {
+            font-family: 'Pretendard';
+            font-size: 28px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+        }
+
+        .plfb_count {
+            font-family: 'Pretendard';
+            font-size: 60px;
+            font-weight: 700;
+            color: #2f4dd4;
+            margin: 0;
+            letter-spacing: -4px;
+        }
+
+        .plfb_right {
+            width: 120px;
+            height: 120px;
+            border-radius: 999px;
+        }
+
+        .plfb_right>img {
+            width: 100%;
+            height: 100%;
+            border-radius: 999px;
+        }
+
+        .plfb_line {
+            width: 100%;
+            height: 1px;
+            background-color: #dddddd;
+            margin: 20px 0;
+        }
+
+        .ppa_under {
+            display: flex;
+            justify-content: space-between;
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 40px;
+        }
+
+        .ppa_under_bunch {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .ppa_under_video {
+            width: 300px;
+            height: 169px;
+            border-radius: 32px;
+            border: 8px solid #111111;
+        }
+
+        .ppa_under_desc {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="ppa_container">
+        <div class="ppa_wrapper">
+            <p class="ppa_title">
+                파트별 <span class="ppa_span1">전문교육</span>
+                <br>
+                풍부한 <span class="ppa_span2">콘텐츠와 경험</span>을 제공합니다.
+            </p>
+            <p class="ppa_desc">
+                기초부터 응용까지, 검증된 노하우를 그대로 전합니다.
+            </p>
+            <div class="ppa_box">
+
+                <div class="ppa_top">
+
+                    <div class="ppa_leftbox">
+                        <div class="ppa_lefttop">
+                            <p class="ppa_lefttitle">
+                                정확한 이론과 학습 심리 이해를 바탕으로,
+                                <br>
+                                체계적이고 완성도 높은 커리큘럼을 설계합니다.
+                            </p>
+                        </div>
+                        <div class="ppa_leftbottom">
+                            <div class="ppa_bottom">
+                                <div class="plfb">
+                                    <div class="plfb_left">
+                                        <p class="plfb_subtitle">
+                                            유학/바이얼링궐 출신
+                                        </p>
+                                        <p class="plfb_title">
+                                            전문 강사진
+                                        </p>
+                                        <p class="plfb_count">
+                                            11명
+                                        </p>
+                                    </div>
+                                    <div class="plfb_right">
+                                        <img src="https://cdn.imweb.me/thumbnail/20251110/f602909235ae1.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="plfb_line"></div>
+                                <div class="plfb">
+                                    <div class="plfb_left">
+                                        <p class="plfb_subtitle">
+                                            교재 및 콘텐츠
+                                        </p>
+                                        <p class="plfb_title">
+                                            파트 별 콘텐츠
+                                        </p>
+                                        <p class="plfb_count">
+                                            400+
+                                        </p>
+                                    </div>
+                                    <div class="plfb_right">
+                                        <img src="https://cdn.imweb.me/thumbnail/20251110/2a87f30cddd08.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ppa_rightbox">
+                        <div class="ppa_righttop">
+                            <p class="ppa_lefttitle">
+                                정확한 이론과 학습 심리 이해를 바탕으로,
+                                <br>
+                                체계적이고 완성도 높은 커리큘럼을 설계합니다.
+                            </p>
+                        </div>
+                        <div class="ppa_rightbottom">
+                            <div class="ppa_bottom">
+                                <div class="plfb">
+                                    <div class="plfb_left">
+                                        <p class="plfb_subtitle">
+                                            애니메이션 자료
+                                        </p>
+                                        <p class="plfb_title">
+                                            교육전문 미디어
+                                        </p>
+                                        <p class="plfb_count">
+                                            300+
+                                        </p>
+                                    </div>
+                                    <div class="plfb_right">
+                                        <img src="https://cdn.imweb.me/thumbnail/20251110/510e35de32170.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="plfb_line"></div>
+                                <div class="plfb">
+                                    <div class="plfb_left">
+                                        <p class="plfb_subtitle">
+                                            빅데이터, 행동패턴
+                                        </p>
+                                        <p class="plfb_title">
+                                            AI학습 커리큘럼
+                                        </p>
+                                        <p class="plfb_count">
+                                            590+
+                                        </p>
+                                    </div>
+                                    <div class="plfb_right">
+                                        <img src="https://cdn.imweb.me/thumbnail/20251110/cd48bceb79f61.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="ppa_under">
+                    <div class="ppa_under_bunch">
+                        <video class="ppa_under_video" src="https://ncryk7.mycafe24.com/hiendvideo1.mp4" autoplay muted
+                            loop playsinline>
+                            브라우저가 video 태그를 지원하지 않습니다.
+                        </video>
+                        <p class="ppa_under_desc">
+                            상황별 시청각 자료로
+                            <br>
+                            뉘앙스 이해도를 높이는 강의
+                        </p>
+                    </div>
+                    <div class="ppa_under_bunch">
+                        <video class="ppa_under_video" src="https://ncryk7.mycafe24.com/hiendvideo2.mp4" autoplay muted
+                            loop playsinline>
+                            브라우저가 video 태그를 지원하지 않습니다.
+                        </video>
+                        <p class="ppa_under_desc">
+                            실생활에서 유용한 루틴을
+                            <br>
+                            직접 사용해보는 교과 강의
+                        </p>
+                    </div>
+                    <div class="ppa_under_bunch">
+                        <video class="ppa_under_video" src="https://ncryk7.mycafe24.com/hiendvideo3.mp4" autoplay muted
+                            loop playsinline>
+                            브라우저가 video 태그를 지원하지 않습니다.
+                        </video>
+                        <p class="ppa_under_desc">
+                            단어 자체의 연상을 돕고
+                            <br>
+                            행동별 습득에 도움을 주는 강의
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
