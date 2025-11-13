@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .substory_container {
+            width: 100%;
+        }
+
+        .substory_wrapper {
+            width: 1280px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin: 0 auto;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        .substory_left {
+            width: 100%;
+            padding: 0 60px 0 0;
+            display: flex;
+            gap: 16px;
+            position: sticky;
+            top: 60px;
+            align-self: flex-start;
+            height: fit-content;
+        }
+
+        .substory_bar_box {
+            width: 4px;
+            height: 360px;
+            background-color: #cacaca;
+            position: relative;
+        }
+
+        .substory_bar {
+            width: 4px;
+            height: 24px;
+            background-color: #005aff;
+        }
+
+        .substory_category_box {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .substory_category {
+            font-family: 'Pretendard';
+            font-size: 16px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+        }
+
+        .substory_category.is-active {
+            font-weight: 700;
+            color: #005aff;
+        }
+
+        .substory_right {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .substory_box {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 100px 0;
+            justify-content: center;
+        }
+
+        .substory_title {
+            font-family: 'Pretendard';
+            font-size: 32px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+        }
+
+        .substory_subtitle {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 600;
+            color: #111111;
+            margin: 0;
+        }
+
+        .substory_thirdtitle {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 600;
+            color: #767676;
+            margin: 0;
+        }
+
+        .substory_line {
+            width: 100%;
+            height: 1px;
+            background-color: #dddddd;
+        }
+
+        .substory_desc {
+            font-family: 'Pretendard';
+            font-size: 18px;
+            font-weight: 400;
+            color: #505050;
+            margin: 0;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="substory_container">
+        <div class="substory_wrapper">
+            <div class="substory_left">
+                <div class="substory_bar_box">
+                    <div class="substory_bar"></div>
+                </div>
+                <div class="substory_category_box">
+                    <p class="substory_category">AI Speak</p>
+                    <p class="substory_category">AI 맞춤수업</p>
+                    <p class="substory_category">오늘의 수업</p>
+                    <p class="substory_category">보카 부스터</p>
+                    <p class="substory_category">스피킹 연습</p>
+                    <p class="substory_category">레벨 구분</p>
+                </div>
+            </div>
+            <div class="substory_right">
+
+                <div class="substory_box">
+                    <p class="substory_title">
+                        AI Speak
+                    </p>
+                    <p class="substory_subtitle">
+                        혼자서 활용하는 기술적인 AI 연습법
+                    </p>
+                    <p class="substory_thirdtitle">
+                        AI를 활용하는 연습방법의 기반은, 스스로 영어에 익숙한 환경에 노출시키기 위함입니다.
+                    </p>
+                    <div class="substory_line"></div>
+                    <div class="substory_desc_box">
+                        <p class="substory_desc">
+                            AI speak.은 빅데이터를 기반으로 수강자의 레벨에 맞게 진단 및 점검하여 맞춤 1:1 학습을 추천,
+                            제공하고 성취도를 파악해 즉각적으로 피드백하는 AI엔진 어플리케이션 입니다.
+                            하이엔드가 speak을 채택한 이유는 영어를 단순하게 이해하고 끝이 아닌,
+                            지속적인 말하기 운동으로써 입과 머리가 익숙해지는 과정을 가장 잘담고있기 때문입니다.
+                            뿐만 아니라 리스닝에서 취약할 수 있는 목소리가 달라지면 인식에 어려운점을 고려해,
+                            매번 다양한 소리로써 영어를 사용할 수 있게 해주는 speak을 공통과제로 채택하였습니다.
+                            다양한 서비스를 선보이는 speak은 학습의 흥미를 이끌어주고 양방향으로 소통이 가능하다는 점,
+                            그리고 선택하여 학습이 가능하다는 장점이 있습니다.
+                            하이엔드는 이 어플리케이션을 200% 활용 할 수 있도록 커리큘럼에 포함시켰습니다.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="substory_box">
+                    <p class="substory_title">
+                        AI 맞춤수업
+                    </p>
+                    <p class="substory_subtitle">
+                        레벨에 따라 단계별로 나누어진 시작지점
+                    </p>
+                    <p class="substory_thirdtitle">
+                        자신에게 맞는 수준의 수업내용을 제공함으로써, 페이스를 정확히 제시합니다.
+                    </p>
+                    <div class="substory_line"></div>
+                    <div class="substory_desc_box">
+                        <p class="substory_desc">
+                            AI 맞춤학습은 수강생의 현재 수준·오답 패턴·학습 속도를 실시간으로 분석해, 필요한 개념만 정확히 짚어 주는 개인별 학습 코스를 만듭니다. 결과적으로 불필요한
+                            반복은
+                            줄이고, 취약 단원은 빠르게 보완해 학습 효율을 높입니다. 또한 대시보드로 진행률·정답률·집중 시간 등을 한눈에 확인해 혼자 공부하는 집에서도 코칭 포인트를 알 수
+                            있습니다. 교사는 이 데이터를 바탕으로 1:1 수업에서 성과를 확인할 수 있고 피드백을 강화합니다. 맞춤솔루션을 선택하고 단계별로 반복학습을 진행하면, 몸으로부터
+                            자연스럽게
+                            받아들여진 내용을 즉각적으로 표현할 수 있게 됩니다. 수강생의 잠재력을 끌어올릴 수 있도록 AI트렌드를 따라갑니다.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="substory_box">
+                    <p class="substory_title">
+                        오늘의 수업
+                    </p>
+                    <p class="substory_subtitle">
+                        리스닝&스피킹, 단어, 표현
+                    </p>
+                    <p class="substory_thirdtitle">
+                        나누어진 여러 파트에서, 같은 표현을 다른 모양으로 접할 수 있습니다.
+                    </p>
+                    <div class="substory_line"></div>
+                    <div class="substory_desc_box">
+                        <p class="substory_desc">
+                            언어는 단순한 암기가 아니라, 맥락 속에서 자연스럽게 체득하는 과정입니다.  ‘리스닝&스피킹’, ‘단어’, ‘표현’으로 구성된 각 파트는 따로 떨어져 있는 학습이
+                            아니라,
+                            서로 연결되어 하나의 완성된 흐름을 만들어냅니다. 듣기에서 익힌 표현이 말하기로 이어지고, 말하기에서 다뤄진 단어가 다시 표현 파트에서 확장되며, 결국 같은 문장과
+                            단어를
+                            다양한 시선으로 반복 학습하게 됩니다.  이러한 순환 학습 구조는 단순한 이해를 넘어 ‘자연스럽게 말할 수 있는 능력’을 길러줍니다. 리스닝&스피킹 파트에서는 실제
+                            회화에
+                            가까운 문장을 들으며 발음, 리듬, 억양을 함께 익힙니다. 단어 파트에서는 같은 문장을 구성하는 핵심 어휘를 집중적으로 학습하고, 표현 파트에서는 그 단어가 문장
+                            속에서
+                            어떤 뉘앙스와 어조로 사용되는지 살펴봅니다. 즉, 한 번 배운 내용이 끝나지 않고, 다른 형태로 다시 등장하며 뇌 속에 깊이 각인되는 구조입니다.
+                            학습자는 같은 표현을 다른 장면에서 반복적으로 만나며 ‘아, 이게 이런 상황에서도 이렇게 쓰이는구나’라는 언어 감각의 확장을 경험합니다. 단어 하나를 외우는 데
+                            그치지
+                            않고, 듣고 말하며 자연스럽게 문장으로 이어지기 때문에 학습의 효율이 높아지고, 실제 대화에서 바로 사용할 수 있습니다. 이 과정은 단어를 외우는 공부가 아닌,
+                            언어를 살아
+                            있는 감각으로 익히는 훈련입니다. 각 파트가 유기적으로 연결되며 반복되는 구조 속에서, 수강생의 영어 표현력은 점점 더 자연스럽고 자신감 있게 성장하게 될 것입니다.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="substory_box">
+                    <p class="substory_title">
+                        VOCA booster
+                    </p>
+                    <p class="substory_subtitle">
+                        다양한 표현의 VOCA 응용
+                    </p>
+                    <p class="substory_thirdtitle">
+                        책으로만 익혔던 딱딱한 표현이 아닌, 실제 local VOCA로 피드백합니다.
+                    </p>
+                    <div class="substory_line"></div>
+                    <div class="substory_desc_box">
+                        <p class="substory_desc">
+                            우리가 영어를 배울 때 자주 놓치는 부분은, 단어의 ‘살아 있는 쓰임새’입니다. 시험을 위한 암기식 단어가 아니라, 실제 원어민들이 일상 속에서 사용하는 자연스럽고
+                            맥락
+                            있는 어휘 감각, 그것이 바로 VOCA Booster의 핵심입니다. 단순히 ‘뜻’을 외우는 것이 아니라, 하나의 단어가 어떤 상황에서 어떤 어조로 사용되는지까지
+                            익힙니다.
+                            예를 들어 “get” 하나에도 수십 가지의 쓰임이 존재합니다. ‘얻다’라는 뜻을 넘어서 ‘이해하다’, ‘도착하다’, ‘설득하다’ 등 맥락에 따라 달라지는 뉘앙스를
+                            실제 회화
+                            속 예문으로 반복 피드백합니다. 이 과정에서 학습자는 같은 단어를 새로운 의미로 재발견하며, 단어 중심이 아닌 표현 중심의 어휘력을 쌓게 됩니다.
+                            VOCA Booster는 각 표현을 고립된 형태로 배우지 않습니다. 리스닝, 스피킹, 문장 패턴, 발음 교정 등 다양한 학습 요소와 결합해 단어가 ‘살아 움직이는
+                            언어’로
+                            자리잡도록 설계되었습니다. 교재식 학습이 아닌 현지(Local) 기반의 피드백 루프를 통해 배운 단어가 실제 회화 속에서 자연스럽게 떠오를 수 있도록 돕습니다.
+                            다양한 문장 구조 속에서 응용해보는 ‘확장 훈련’을 제공합니다. 예를 들어 “take”라는 단어를 단순히 ‘가지다’로 외우는 것이 아니라, “take your
+                            time”,
+                            “take care”, “take a look”처럼 표현의 변화에 따른 의미 전환을 체감하며 익히게 됩니다. 이러한 반복적 응용은 단어를 기억이 아닌 감각으로
+                            체득하게
+                            만드는 핵심 과정입니다.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="substory_box">
+                    <p class="substory_title">
+                        스피킹 연습
+                    </p>
+                    <p class="substory_subtitle">
+                        롤플레이를 통한 여러번의 말하기 연습
+                    </p>
+                    <p class="substory_thirdtitle">
+                        AI가 같은 질문을 수십가지 목소리로 질문하고, 반복 연습할 수 있습니다.
+                    </p>
+                    <div class="substory_line"></div>
+                    <div class="substory_desc_box">
+                        <p class="substory_desc">
+                            언어는 ‘이해’보다 ‘반응’이 먼저 나올 때 진짜 내 것이 됩니다. 롤플레이 기반의 스피킹 연습은 그 과정을 자연스럽게 만들어줍니다. AI가 실제 사람처럼 다양한
+                            목소리와
+                            톤으로 같은 질문을 던지면, 처음엔 낯설게 느껴지던 문장도 몇 번의 반복 후엔 자연스러운 대화로 이어집니다. “처음엔 뭐라고 해야 할지 몰랐는데, 어느새 대답하고
+                            있었다.”
+                            이것이 바로 반복적 롤플레이 훈련의 핵심 경험입니다. 단순한 문장 암기나 쉐도잉이 아닌, 실제 상황에서 마주하는 듯한 긴장감 속에서 입으로 반응하고, 귀로 익히며,
+                            뇌로
+                            연결되는 ‘말하기 근육’을 길러줍니다. AI는 매 회차마다 같은 문장을 미묘하게 다르게 표현합니다. 목소리의 톤, 속도, 억양이 달라지기 때문에 매번 새로운 자극을
+                            받게
+                            됩니다. 이로 인해 학습자는 특정 음성이나 상황에 의존하지 않고, 진짜 회화 감각으로 문장을 이해하고 반응할 수 있게 됩니다.
+                            핵심은, 반복 연습을 통해 자연스럽게 ‘패턴 인식 능력’이 생기는것 입니다. ‘이 문장은 이런 식으로 물어보는구나’, ‘이럴 땐 이렇게 대답하는구나’ 하는 감각적
+                            연결이
+                            쌓이며, 말하기가 점점 덜 어색해지고 결국엔 준비되지 않은 질문에도 자신 있게 반응할 수 있게 됩니다. 실제 대화를 시뮬레이션하며 반사적으로 영어를 말하게 만드는
+                            과정이고,
+                            3~4회차만 반복해도 스스로 놀랄 만큼 자연스러운 발화가 나타나며, 그때의 경험이 뇌에 ‘실제 대화 기억’으로 저장됩니다.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="substory_box">
+                    <p class="substory_title">
+                        Level
+                    </p>
+                    <p class="substory_subtitle">
+                        단계별 레벨 정리
+                    </p>
+                    <p class="substory_thirdtitle">
+                        자신의 수준이 높더라도, 처음부터 시작하시는걸 권유합니다.
+                    </p>
+
+                    <div class="substory_line"></div>
+                    <div class="substory_desc_box">
+                        <p class="substory_desc">
+                            왕초보 : 필수 대화 마스터 (자기소개, 길 묻기, 시간말하기 등)
+                            <br>
+                            초급1 : 조리 있게 말하기 (하루 일과 경험, 미래목표 등)
+                            <br>
+                            초급2 : 일상 대화 마스터 (식당, 쇼핑, 약속잡기 등)
+                            <br>
+                            중급1 : 실생활 문제 해결하기 (선택지 비교, 아픈 증상 말하기 등)
+                            <br>
+                            중급2 : 자신있게 생각 표현하기 (결정 내리기, 조언 건네며 생각 전달 등)
+                            <br>
+                            중급3 : 깊이있는 대화 이어가기 (후회했던 일, 소중한 추억, 나의 가치관 등)
+                            <br>
+                            고급1 : 논리적으로 파고들기 (관점의 분명한 표현, 장단점 비교 등)
+                            <br>
+                            고급2 : 응용 나아가기 (미묘한 뉘앙스 파악, 해결책 제안 등)
+                            <br>
+                            마스터 : 성숙한 소통 마스터 (예의를 지키며 의견 조율, 갈등속에서 차분한 대처 등)
+                            <br>
+                            <br>
+                            토픽별 선택 코스
+                            <br>
+                            <br>
+                            여행 영어1 (공항 통과, 숙소 체크인, 식당주문 등)
+                            <br>
+                            여행 영어2 (식당 컴플레인, 대중교통 이용, 가격 흥정 등)
+                            <br>
+                            워킹 홀리데이 (면접 보기, 고객 응대, 동료와 소통 등)
+                            <br>
+                            비즈니스 영어1 (회의, 발표, 업무협의 핵심표현 등)
+                            <br>
+                            비즈니스 영어2 (동료와 친해지며 협업, 관계 유지 원활 등)
+                            <br>
+                            비즈니스 영어3 (스몰토크, 회의 및 프레젠테이션 등)
+                            <br>
+                            영어 면접 대비 (자기소개, 이력서 요약, 역량 및 행동 기반 질문 STAR기법 등)
+                            <br>
+                            구동사 격파1 (make, take, get 등 자주 쓰이는 구동사)
+                            <br>
+                            구동사 격파2 (make, take, get이 포함된 난이도 높은 구동사)
+                            <br>
+                            엄마아빠 영어 (아이의 눈높이에 맞춰 소통하기)
+                            <br>
+                            대학 캠퍼스 영어1 (강의실 찾기, 교수님과 면담하기, 동아리 가입 등)
+                            <br>
+                            대학 캠퍼스 영어2 (교실 토론, 발표, 팀 프로젝트 등)
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        (function () {
+            const HEADER_OFFSET = 80; // 고정 헤더가 있다면 헤더 높이만큼 보정(없으면 0으로)
+            const stickyTop = 60;     // .substory_left { top: 60px }와 동일하게 맞춰두면 가독성 Good
+
+            const left = document.querySelector('.substory_left');
+            const barBox = left.querySelector('.substory_bar_box');
+            const bar = left.querySelector('.substory_bar');
+            const catBox = left.querySelector('.substory_category_box');
+            const cats = Array.from(left.querySelectorAll('.substory_category'));
+            const boxes = Array.from(document.querySelectorAll('.substory_right .substory_box'));
+
+            // 방어 코드
+            if (!barBox || !bar || cats.length === 0 || boxes.length === 0) return;
+
+            // 카테고리와 섹션 개수가 다르면 공통 부분까지만 매핑
+            const N = Math.min(cats.length, boxes.length);
+
+            // --- 유틸: 문서 기준 Y 좌표 ---
+            const pageY = el => {
+                const r = el.getBoundingClientRect();
+                return window.scrollY + r.top;
+            };
+
+            // --- 레이아웃 측정값 ---
+            let catCenters = [];  // barBox 내부 기준, 각 카테고리 중앙 Y(px) (bar 높이 고려해 translateY로 바로 사용)
+            let secAnchors = [];  // 각 섹션의 도달 기준 Y(px) (문서 기준)
+
+            function measure() {
+                // 1) barBox 높이를 카테고리 칼럼 높이와 동기화 (정렬 정확도 ↑)
+                const catBoxRect = catBox.getBoundingClientRect();
+                barBox.style.height = catBoxRect.height + 'px';
+
+                // 2) 카테고리 중앙 좌표 계산 (barBox 상단을 원점으로)
+                const barBoxTopPage = pageY(barBox);
+                const barH = bar.getBoundingClientRect().height || 24;
+
+                catCenters = cats.slice(0, N).map(cat => {
+                    const r = cat.getBoundingClientRect();
+                    const centerPageY = window.scrollY + r.top + r.height / 2;
+                    // translateY는 bar의 상단 위치이므로, 중앙 정렬 위해 bar 높이의 절반을 빼줌
+                    const translateY = centerPageY - barBoxTopPage - barH / 2;
+                    return translateY;
+                });
+
+                // 3) 섹션 도착 기준(헤더/스티키 보정) 계산
+                secAnchors = boxes.slice(0, N).map(box => {
+                    // 섹션 상단이 뷰포트에서 보일 기준: 고정 헤더 + 왼쪽 스티키 top 보정
+                    return pageY(box) - HEADER_OFFSET - stickyTop;
+                });
+            }
+
+            // 현재 스크롤에서 "가장 근접한" 섹션 인덱스 계산
+            function currentIndex() {
+                const y = window.scrollY;
+                let best = 0, bestDist = Infinity;
+                for (let i = 0; i < N; i++) {
+                    const d = Math.abs(y - secAnchors[i]);
+                    if (d < bestDist) {
+                        best = i;
+                        bestDist = d;
+                    }
+                }
+                return best;
+            }
+
+            // 파란 바 위치/활성 카테고리 업데이트
+            function render(idx) {
+                // 파란 바 이동
+                const y = catCenters[idx] ?? 0;
+                bar.style.transform = `translateY(${y}px)`;
+
+                // 활성 카테고리 표시 (선택)
+                cats.forEach((c, i) => c.classList.toggle('is-active', i === idx));
+            }
+
+            // 스크롤 성능: rAF로 스로틀
+            let ticking = false;
+            function onScroll() {
+                if (ticking) return;
+                ticking = true;
+                requestAnimationFrame(() => {
+                    const idx = currentIndex();
+                    render(idx);
+                    ticking = false;
+                });
+            }
+
+            // 카테고리 클릭 → 해당 섹션으로 스무스 스크롤
+            cats.slice(0, N).forEach((cat, i) => {
+                cat.style.cursor = 'pointer';
+                cat.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // 목표 스크롤 위치: 섹션 상단 - 헤더/스티키 보정
+                    const targetY = secAnchors[i];
+                    window.scrollTo({
+                        top: targetY,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // 초기화 & 리사이즈/폰트로드 대응
+            function init() {
+                measure();
+                // 첫 렌더는 현재 스크롤 위치 기준
+                render(currentIndex());
+            }
+
+            // 폰트 로딩 이후 줄바꿈이 달라져 높이가 바뀔 수 있으니 재측정
+            if (document.fonts && document.fonts.ready) {
+                document.fonts.ready.then(init);
+            } else {
+                init();
+            }
+
+            window.addEventListener('load', init);
+            window.addEventListener('resize', () => {
+                measure();
+                render(currentIndex());
+            });
+            window.addEventListener('scroll', onScroll, { passive: true });
+
+            // 좌측/우측 칼럼 크기 변화를 감지해 정렬 유지
+            const ro = new ResizeObserver(() => {
+                measure();
+                render(currentIndex());
+            });
+            ro.observe(catBox);
+            ro.observe(barBox);
+        })();
+    </script>
+
+</body>
+
+</html>

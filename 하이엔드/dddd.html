@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        .change_container {
+            width: 100%;
+            height: 460px;
+            background-color: #222222;
+        }
+
+        .change_wrapper {
+            width: 1160px;
+            height: 100%;
+            margin: 0 auto;
+        }
+
+        .change_box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .change_topbox {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 140px;
+        }
+
+        .change_tbox {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .change_title {
+            font-family: 'GMarketSans';
+            font-size: 40px;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .change_desc {
+            font-family: 'GMarketSans';
+            font-size: 16px;
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .change_ibox {
+            width: 280px;
+            height: 280px;
+        }
+
+        .change_ibox>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .change_tagbox {
+            display: flex;
+            gap: 20px;
+        }
+
+        .change_tag1,
+        .change_tag2,
+        .change_tag3,
+        .change_tag4 {
+            padding: 16px 36px;
+            border-radius: 32px;
+            font-family: 'GMarketSans';
+            font-size: 16px;
+            font-weight: 400;
+            color: #ffffff;
+            background-color: #111111;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .change_tag1 {
+            border: 1px solid #2e50e2;
+        }
+
+        .change_tag2 {
+            border: 1px solid #e22e5b;
+        }
+
+        .change_tag3 {
+            border: 1px solid #10813f;
+        }
+
+        .change_tag4 {
+            border: 1px solid #a8ad00;
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .change_wrapper {
+                width: 960px;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .change_wrapper {
+                width: 100%;
+                padding: 0 16px;
+            }
+
+            .change_topbox {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 0;
+            }
+
+            .change_tagbox {
+                gap: 16px;
+            }
+
+            .change_tag1,
+            .change_tag2,
+            .change_tag3,
+            .change_tag4 {
+                padding: 12px 24px;
+                border-radius: 32px;
+                font-size: 14px;
+            }
+
+            .change_ibox {
+                width: 240px;
+                height: 240px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .change_container {
+                width: 100%;
+                height: 760px;
+                background-color: #222222;
+            }
+
+            .change_topbox {
+                flex-direction: column;
+            }
+
+            .change_tagbox {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .change_title {
+                font-size: 24px;
+            }
+
+            .change_desc {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="change_container">
+        <div class="change_wrapper">
+            <div class="change_box">
+                <div class="change_topbox">
+                    <div class="change_tbox">
+                        <p class="change_title">
+                            하이엔드 X AI로 완성하는
+                            <br>
+                            완벽한 자기발전 습관!
+                        </p>
+                        <p class="change_desc">
+                            하이엔드는 노력하는 습관을 만들고, 성적을 자연스레 오르게 합니다.
+                        </p>
+                    </div>
+                    <div class="change_ibox">
+                        <img src="https://cdn.imweb.me/thumbnail/20251110/c8bb4e3556166.png" alt="">
+                    </div>
+                </div>
+                <div class="change_tagbox">
+                    <div class="change_tag1">
+                        영어를 영어 그대로
+                    </div>
+                    <div class="change_tag2">
+                        번역없이 생각하기
+                    </div>
+                    <div class="change_tag3">
+                        상황 속 표현 반복
+                    </div>
+                    <div class="change_tag4">
+                        영어식 사고의 전환
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

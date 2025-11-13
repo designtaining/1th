@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
     <style>
-
         .dongle_container {
             width: 100%;
         }
@@ -26,7 +26,7 @@
             width: 220px;
             height: 220px;
             border-radius: 999px;
-            background-color: #111111;
+            background-color: #6b11b1;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -60,8 +60,47 @@
             margin: 0;
         }
 
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .dongle_circle {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .dongle_circle {
+                width: 160px;
+                height: 160px;
+            }
+
+            .dongle_title {
+                font-size: 12px;
+            }
+
+            .dongle_catchphrase {
+                font-size: 16px;
+            }
+
+            .dongle_count {
+                font-size: 40px;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .dongle_box {
+                flex-wrap: wrap;
+                gap: 4px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {}
     </style>
 </head>
+
 <body>
 
     <section class="dongle_container">
@@ -110,7 +149,7 @@
                     <p class="dongle_title">
                         변화를
                         <br>
-                        확실하게 보는
+                        체험하는
                     </p>
                     <p class="dongle_catchphrase">
                         향상 경험률
@@ -122,6 +161,26 @@
             </div>
         </div>
     </section>
-    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const counters = document.querySelectorAll('.dongle_count');
+            const duration = 2000; // 전체 카운트 시간 (ms)
+
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent.replace('%', ''), 10);
+                let current = 0;
+                const stepTime = Math.max(10, duration / target);
+
+                const timer = setInterval(() => {
+                    current++;
+                    counter.textContent = current + '%';
+                    if (current >= target) clearInterval(timer);
+                }, stepTime);
+            });
+        });
+    </script>
+
 </body>
+
 </html>

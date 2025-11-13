@@ -69,7 +69,7 @@
         .hiend_banner_desc {
             font-family: 'GmarketSans';
             font-size: 20px;
-            font-weight: 300;
+            font-weight: 500;
             color: #ffffff;
             margin: 0;
         }
@@ -92,6 +92,104 @@
             width: 100%;
             height: 100%;
         }
+
+        /* ✅ 1728px 이하 */
+        @media screen and (max-width: 1728px) {
+            .hiend_banner_wrapper {
+                width: 1480px;
+            }
+        }
+
+        /* ✅ 1512px 이하 */
+        @media screen and (max-width: 1512px) {
+            .hiend_banner_wrapper {
+                width: 1260px;
+            }
+
+            .hiend_banner_title {
+                font-size: 80px;
+            }
+
+            .hiend_banner_desc {
+                font-size: 20px;
+            }
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .hiend_banner_wrapper {
+                width: 1000px;
+            }
+
+            .hiend_banner_title {
+                font-size: 72px;
+            }
+
+            .hiend_banner_desc {
+                font-size: 20px;
+            }
+
+            .hiend_banner_img {
+                width: 260px;
+                height: 260px;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .hiend_banner_container {
+                height: 820px;
+            }
+
+            .hiend_banner_wrapper {
+                width: 100%;
+                padding: 0 16px;
+            }
+
+            .hiend_banner_box {
+                flex-direction: column-reverse;
+                justify-content: center;
+                gap: 60px;
+            }
+
+            .hiend_banner_title {
+                text-align: center;
+            }
+
+            .hiend_banner_desc {
+                text-align: center;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .hiend_banner_img {
+                width: 240px;
+                height: 240px;
+            }
+            .hiend_banner_title {
+                font-size: 60px;
+            }
+
+            .hiend_banner_desc {
+                font-size: 16px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .hiend_banner_img {
+                width: 200px;
+                height: 200px;
+            }
+            .hiend_banner_title {
+                font-size: 36px;
+            }
+
+            .hiend_banner_desc {
+                font-size: 16px;
+            }
+        }
     </style>
 
 </head>
@@ -108,13 +206,13 @@
                         <span class="banner_span1">올바른 습관 바로잡기</span>
                     </p>
                     <p class="hiend_banner_desc">
-                        우리 아이를 위해, 학부모님들이 먼저 선택한 길
+                        &nbsp;우리 아이를 위해, 학부모님들이 먼저 선택한 길
                         <br>
-                        선택의 이유가 되는 만족, 하이엔드
+                        &nbsp;선택의 이유가 되는 만족, 하이엔드
                     </p>
                 </div>
                 <div class="hiend_banner_img">
-                    <img src="	https://cdn.imweb.me/thumbnail/20251109/fac0cace9777e.png" alt="">
+                    <img src="https://cdn.imweb.me/thumbnail/20251109/fac0cace9777e.png" alt="">
                 </div>
             </div>
         </div>

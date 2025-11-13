@@ -38,6 +38,24 @@
             pointer-events: none;
             display: block;
         }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .hiend_slide_box {
+                width: 308px;
+                height: 160px;
+                flex: 0 0 308px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .hiend_slide_box {
+                width: 180px;
+                height: 94px;
+                flex: 0 0 180px;
+            }
+        }
     </style>
 </head>
 
@@ -85,35 +103,69 @@
         (function () {
             const wrapper = document.querySelector('.hiend_slide_wrapper');
             const track = wrapper.querySelector('.hiend_slide_track');
-            const STEP_MS = 3000;          // 3초마다 한 칸
-            const SPEED_MS = 500;          // 이동 애니메이션 시간
-            const BOX_WIDTH = 384;         // 한 칸 폭 (px) — 레이아웃과 동일하게
 
+            const STEP_MS = 3000;  // 3초마다
+            let SPEED_MS = 500;    // 이동 애니메이션 시간(필요시 뷰포트에 맞춰 조절 가능)
             let animating = false;
             let timer;
 
-            function stepOnce() {
-                if (animating) return;
-                animating = true;
-                // 한 칸 왼쪽으로 이동
-                track.style.transition = `transform ${SPEED_MS}ms ease`;
-                track.style.transform = `translateX(-${BOX_WIDTH}px)`;
+            // 현재 브레이크포인트에서 "한 칸" 픽셀 계산 (마진까지 합산)
+            function getStepPx() {
+                const first = track.querySelector('.hiend_slide_box');
+                if (!first) return 0;
+                const rect = first.getBoundingClientRect();
+                const cs = getComputedStyle(first);
+                const ml = parseFloat(cs.marginLeft) || 0;
+                const mr = parseFloat(cs.marginRight) || 0;
+                return Math.round(rect.width + ml + mr);
             }
 
-            // 이동이 끝나면 첫 아이템을 뒤로 보내고 위치 리셋 (무한 루프 핵심)
+            // (선택) 카드가 작아질수록 속도를 살짝 줄이고 싶다면 아래처럼 비율로 조정 가능
+            function updateSpeed() {
+                const step = getStepPx();
+                // 예: 384px 기준 500ms, 더 작아지면 비례로 살짝 느리게
+                SPEED_MS = Math.max(300, Math.round(500 * (step / 384)));
+            }
+
+            function stepOnce() {
+                if (animating) return;
+                const STEP = getStepPx();
+                if (!STEP) return;
+
+                animating = true;
+                track.style.transition = `transform ${SPEED_MS}ms ease`;
+                track.style.transform = `translateX(-${STEP}px)`;
+            }
+
+            // 이동 끝나면 첫 아이템 뒤로 보내고 리셋
             track.addEventListener('transitionend', () => {
                 track.appendChild(track.firstElementChild);
                 track.style.transition = 'none';
                 track.style.transform = 'translateX(0)';
-                // 리플로우로 transition 즉시 제거 적용
+                // reflow
                 void track.offsetWidth;
                 animating = false;
             });
 
-            function start() { timer = setInterval(stepOnce, STEP_MS); }
-            function stop() { clearInterval(timer); }
+            function start() {
+                stop();
+                updateSpeed();
+                timer = setInterval(stepOnce, STEP_MS);
+            }
+            function stop() { if (timer) clearInterval(timer); }
 
-            // (옵션) 호버 시 일시정지하고 싶으면 주석 해제
+            // 리사이즈/회전 시 스텝과 속도 재계산
+            const ro = new ResizeObserver(() => {
+                updateSpeed();
+            });
+            ro.observe(wrapper);
+
+            window.addEventListener('resize', updateSpeed);
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) stop(); else start();
+            });
+
+            // (옵션) 호버 일시정지
             // wrapper.addEventListener('mouseenter', stop);
             // wrapper.addEventListener('mouseleave', start);
 
