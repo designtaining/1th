@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        .endcard_container {
+            width: 100%;
+            height: 280px;
+        }
+
+        .endcard_wrapper {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .endcard_card {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            padding: 40px;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            border-radius: 32px;
+        }
+
+        .endcard_card:nth-child(1) {
+            background-image: url(https://cdn.imweb.me/thumbnail/20251114/d7c1d5f41a71b.png);
+            background-size: cover;
+        }
+
+        .endcard_card:nth-child(2) {
+            background-image: url(https://cdn.imweb.me/thumbnail/20251114/9ab0ccc78d706.png);
+            background-size: cover;
+        }
+
+        .endcard_card:nth-child(3) {
+            background-image: url(https://cdn.imweb.me/thumbnail/20251114/9e3ef8d2d03c9.png);
+            background-size: cover;
+        }
+
+        .endcard_left {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .endcard_subtitle {
+            font-family: 'GMarketSans';
+            font-size: 24px;
+            font-weight: 500;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .endcard_title {
+            font-family: 'GMarketSans';
+            font-size: 24px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+        }
+
+        .endcard_right {
+            width: 140px;
+            height: 140px;
+        }
+
+        .endcard_right>img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="endcard_container">
+        <div class="endcard_wrapper">
+            <div class="endcard_card">
+                <div class="endcard_left">
+                    <p class="endcard_subtitle">
+                        AI 학습으로
+                    </p>
+                    <p class="endcard_title">
+                        혼자서 공부하는 습관만들기
+                    </p>
+                </div>
+                <div class="endcard_right">
+                    <img src="https://cdn.imweb.me/thumbnail/20251114/ab22b6314055a.png" alt="">
+                </div>
+            </div>
+            <div class="endcard_card">
+                <div class="endcard_left">
+                    <p class="endcard_subtitle">
+                        매주 시행하는
+                    </p>
+                    <p class="endcard_title">
+                        파트 별 학력평가 HIEND
+                    </p>
+                </div>
+                <div class="endcard_right">
+                    <img src="https://cdn.imweb.me/thumbnail/20251114/1a00b2d5ae4c4.png" alt="">
+                </div>
+            </div>
+            <div class="endcard_card">
+                <div class="endcard_left">
+                    <p class="endcard_subtitle">
+                        시험용 영어 배우기 전
+                    </p>
+                    <p class="endcard_title">
+                        진짜 영어식 사고 정립
+                    </p>
+                </div>
+                <div class="endcard_right">
+                    <img src="https://cdn.imweb.me/thumbnail/20251114/fb866c3289d6f.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
