@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        .intro_container {
+            width: 100%;
+            height: 548px;
+            background-color: #FF7B10;
+        }
+
+        .intro_wrapper {
+            width: 1580px;
+            height: 100%;
+            margin: 0 auto;
+        }
+
+        .intro_box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .intro_titlebox {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .intro_title {
+            font-family: 'GMarketSans';
+            font-size: 40px;
+            font-weight: 700;
+            color: #fff799;
+            margin: 0;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .intro_desc {
+            font-family: 'GMarketSans';
+            font-size: 20px;
+            font-weight: 500;
+            color: #ffffff;
+            margin: 0;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .intro_cardbox {
+            display: flex;
+            gap: 10px;
+        }
+
+        .intro_card {
+            width: 280px;
+            height: 280px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .intro_card_top {
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+            box-sizing: border-box;
+        }
+
+        .intro_card_title {
+            font-family: 'GMarketSans';
+            font-size: 20px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .intro_span1 {
+            color: #FF7B10;
+        }
+
+        .intro_card_bottom {
+            width: 100%;
+            height: 100%;
+        }
+
+        .intro_card_bottom>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* ✅ 1728px 이하 */
+        @media screen and (max-width: 1728px) {
+            .intro_wrapper {
+                width: 1380px;
+            }
+        }
+
+        /* ✅ 1512px 이하 */
+        @media screen and (max-width: 1512px) {
+            .intro_wrapper {
+                width: 1180px;
+            }
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .intro_wrapper {
+                width: 980px;
+            }
+
+            .intro_card {
+                width: 220px;
+                height: 220px;
+            }
+
+            .intro_card_top {
+                padding: 12px;
+            }
+
+            .intro_card_title {
+                font-size: 16px;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .intro_container {
+                height: auto;
+                padding: 80px 0;
+            }
+
+            .intro_wrapper {
+                width: 100%;
+                padding: 0 16px;
+            }
+
+            .intro_cardbox {
+                flex-wrap: wrap;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .intro_title {
+                font-size: 32px;
+            }
+
+            .intro_desc {
+                font-size: 16px;
+            }
+
+            .intro_card {
+                width: 188px;
+                height: 188px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .intro_title {
+                font-size: 20px;
+            }
+
+            .intro_desc {
+                font-size: 16px;
+            }
+
+            .intro_card {
+                width: 152px;
+                height: 152px;
+            }
+
+            .intro_card_title {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="intro_container">
+        <div class="intro_wrapper">
+            <div class="intro_box">
+                <div class="intro_titlebox">
+                    <p class="intro_title">
+                        학교영어의 예습복습과 수행평가까지
+                        <br>
+                        완벽한 교과학습
+                    </p>
+                    <p class="intro_desc">
+                        전문 선생님과 함께 교과학습 완성!
+                    </p>
+                </div>
+                <div class="intro_cardbox">
+
+                    <div class="intro_card">
+                        <div class="intro_card_top">
+                            <p class="intro_card_title">
+                                <span class="intro_span1">문법개념</span>을 <span class="intro_span1">실제 영어</span>로
+                                <br>
+                                <span class="intro_span1">확실</span>하게 잡고 갑니다!
+                            </p>
+                        </div>
+                        <div class="intro_card_bottom">
+                            <img src="https://cdn.imweb.me/thumbnail/20251114/49881a1f71b77.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="intro_card">
+                        <div class="intro_card_top">
+                            <p class="intro_card_title">
+                                단어·표현·문장을 연결해
+                                <br>
+                                <span class="intro_span1">실전 회화</span>에 강해집니다!
+                            </p>
+                        </div>
+                        <div class="intro_card_bottom">
+                            <img src="https://cdn.imweb.me/thumbnail/20251114/4ae2f2a7c054e.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="intro_card">
+                        <div class="intro_card_top">
+                            <p class="intro_card_title">
+                                반복되는 <span class="intro_span1">롤플레이</span>로
+                                <br>
+                                <span class="intro_span1">눈에 띄게 향상</span>하는 실력!
+                            </p>
+                        </div>
+                        <div class="intro_card_bottom">
+                            <img src="https://cdn.imweb.me/thumbnail/20251114/5d59caa723a5d.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="intro_card">
+                        <div class="intro_card_top">
+                            <p class="intro_card_title">
+                                <span class="intro_span1">재미있고 체계적인</span> 수업
+                                <br>
+                                <span class="intro_span1">빠르게 흡수</span>하는 커리큘럼!
+                            </p>
+                        </div>
+                        <div class="intro_card_bottom">
+                            <img src="https://cdn.imweb.me/thumbnail/20251114/c609aa4d0753a.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

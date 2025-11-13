@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        .gnb_container {
+            width: 100%;
+            height: 60px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #e5e5ec;
+            box-shadow: 0 4px 12px rgba(17, 17, 17, 0.1);
+            position: fixed !important;
+            top: 0;
+            z-index: 3;
+        }
+
+        .gnb_wrapper {
+            width: 100%;
+            height: 100%;
+            padding: 0 170px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .gnb_left {
+            width: 77px;
+            height: 24px;
+        }
+
+        .gnb_left>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .gnb_middle {
+            display: flex;
+            gap: 40px;
+        }
+
+        .gnb_menu {
+            font-family: 'GMarketSans';
+            font-size: 16px;
+            font-weight: 500;
+            color: #111111 !important;
+            text-decoration: none;
+        }
+
+        .gnb_menu:hover {
+            color: #767676 !important;
+        }
+
+        .gnb_right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .fa-bars {
+            font-size: 24px;
+            cursor: pointer;
+            color: #111111;
+        }
+
+        .fa-bars:hover {
+            color: #767676;
+        }
+
+        .lnb_container {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 61px;
+            background-color: #ffffff;
+            display: none;
+            z-index: 4;
+        }
+
+        .lnb_wrapper {
+            width: 100%;
+            height: 100%;
+            padding: 0 170px;
+            box-sizing: border-box;
+        }
+
+        .lnb_box {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            padding: 80px;
+            box-sizing: border-box;
+            gap: 120px;
+        }
+
+        .lnb_top {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .fa-xmark {
+            font-size: 24px;
+            color: #111111;
+            cursor: pointer;
+        }
+
+        .fa-xmark:hover {
+            color: #767676;
+        }
+
+        .lnb_middle {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .lnb_menu {
+            font-family: 'GMarketSans';
+            font-size: 60px;
+            font-weight: 700;
+            color: #111111 !important;
+            margin: 0;
+            text-decoration: none;
+        }
+
+        .lnb_menu:hover {
+            color: #767676 !important;
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .gnb_wrapper {
+                padding: 0 80px;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .gnb_wrapper {
+                padding: 0 16px;
+            }
+
+            .gnb_middle {
+                display: none;
+            }
+
+            .lnb_wrapper {
+                padding: 0 60px;
+            }
+
+            .lnb_box {
+                padding: 60px;
+                gap: 120px;
+            }
+
+            .lnb_menu {
+                font-size: 48px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .lnb_container {
+                background-color: #111111;
+            }
+
+            .lnb_wrapper {
+                padding: 0 20px;
+            }
+
+            .lnb_box {
+                padding: 40px 20px;
+                gap: 120px;
+            }
+
+            .lnb_menu {
+                font-size: 40px;
+                color: #ffffff !important;
+            }
+            .fa-xmark {
+                color: #ffffff;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="gnb_container">
+        <div class="gnb_wrapper">
+            <a href="main" class="gnb_left">
+                <img src="https://cdn.imweb.me/thumbnail/20251114/67fe40568326a.png" alt="">
+            </a>
+            <div class="gnb_middle">
+                <a href="#" class="gnb_menu">Ai튜터</a>
+                <a href="#" class="gnb_menu">학원소개</a>
+                <a href="#" class="gnb_menu">오시는길</a>
+            </div>
+            <div class="gnb_right">
+                <i class="fa-regular fa-bars"></i>
+            </div>
+        </div>
+    </section>
+
+    <div class="lnb_container">
+        <div class="lnb_wrapper">
+            <div class="lnb_box">
+                <div class="lnb_top">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <div class="lnb_middle">
+                    <a href="#" class="lnb_menu">Ai튜터</a>
+                    <a href="#" class="lnb_menu">학원소개</a>
+                    <a href="#" class="lnb_menu">오시는길</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const lnbContainer = document.querySelector('.lnb_container');
+            const openBtn = document.querySelector('.gnb_right');          // 햄버거 영역 전체
+            const closeBtn = document.querySelector('.lnb_top .fa-xmark'); // X 아이콘
+
+            // 처음에는 확실하게 숨겨두기
+            if (lnbContainer) {
+                lnbContainer.style.display = 'none';
+            }
+
+            // 열기: 햄버거 클릭
+            if (openBtn && lnbContainer) {
+                openBtn.addEventListener('click', function () {
+                    lnbContainer.style.display = 'block';
+                });
+            }
+
+            // 닫기: X 버튼 클릭
+            if (closeBtn && lnbContainer) {
+                closeBtn.addEventListener('click', function () {
+                    lnbContainer.style.display = 'none';
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>
