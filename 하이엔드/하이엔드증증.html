@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        .dori_container {
+            width: 100%;
+            height: 100%;
+            background-color: #2a3295;
+            padding: 40px 0;
+        }
+
+        .dori_wrapper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .dori_box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dori_top,
+        .dori_bottom {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+        }
+
+        .dori_box_inner {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 160px;
+            box-sizing: border-box;
+            gap: 40px;
+        }
+
+        .dori_icon {
+            font-size: 120px;
+            color: #ffffff;
+        }
+
+        .dori_title_box {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .dori_subtitle {
+            font-family: 'GMarketSans';
+            font-size: 20px;
+            font-weight: 500;
+            color: #ffffff;
+            margin: 0;
+            text-align: center;
+        }
+
+        .dori_title {
+            font-family: 'GMarketSans';
+            font-size: 80px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+            text-align: center;
+        }
+
+        .dori_rowline {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 1) 50%,
+                    rgba(255, 255, 255, 0) 100%);
+        }
+
+        .dori_verticalline1 {
+            width: 1px;
+            background: linear-gradient(180deg,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 1) 100%);
+            align-self: stretch;
+        }
+
+        .dori_verticalline2 {
+            width: 1px;
+            background: linear-gradient(0deg,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 1) 100%);
+            align-self: stretch;
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .dori_box_inner {
+                padding: 120px;
+                gap: 40px;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .dori_box {
+                padding: 0 16px;
+            }
+
+            .dori_box_inner {
+                padding: 80px;
+                gap: 40px;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .dori_box_inner {
+                padding: 80px;
+                gap: 20px;
+            }
+
+            .dori_icon {
+                font-size: 80px;
+                color: #ffffff;
+            }
+
+            .dori_subtitle {
+                font-size: 16px;
+            }
+
+            .dori_title {
+                font-size: 60px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .dori_box_inner {
+                padding: 20px;
+                gap: 16px;
+            }
+
+            .dori_icon {
+                font-size: 40px;
+                color: #ffffff;
+            }
+
+            .dori_subtitle {
+                font-size: 14px;
+            }
+
+            .dori_title {
+                font-size: 48px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="dori_container">
+        <div class="dori_wrapper">
+            <div class="dori_box">
+
+                <div class="dori_top">
+                    <div class="dori_box_inner">
+                        <i class="fa-solid fa-people-line dori_icon"></i>
+                        <div class="dori_title_box">
+                            <p class="dori_subtitle">수강생 만족도</p>
+                            <p class="dori_title">100%</p>
+                        </div>
+                    </div>
+
+                    <div class="dori_verticalline1"></div>
+
+                    <div class="dori_box_inner">
+                        <i class="fa-solid fa-people-arrows dori_icon"></i>
+                        <div class="dori_title_box">
+                            <p class="dori_subtitle">지속 참여율</p>
+                            <p class="dori_title">96%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dori_rowline"></div>
+
+                <div class="dori_bottom">
+                    <div class="dori_box_inner">
+                        <i class="fa-sharp fa-solid fa-arrows-to-dot dori_icon"></i>
+                        <div class="dori_title_box">
+                            <p class="dori_subtitle">학습 몰입도</p>
+                            <p class="dori_title">99%</p>
+                        </div>
+                    </div>
+
+                    <div class="dori_verticalline2"></div>
+
+                    <div class="dori_box_inner">
+                        <i class="fa-solid fa-person-arrow-up-from-line dori_icon"></i>
+                        <div class="dori_title_box">
+                            <p class="dori_subtitle">향상 경험률</p>
+                            <p class="dori_title">97%</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

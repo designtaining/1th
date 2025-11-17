@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        .last_container {
+            width: 100%;
+            padding: 60px 0;
+            background-color: #ff7b10;
+        }
+
+        .last_wrapper {
+            width: 1580px;
+            margin: 0 auto;
+        }
+
+        .last_box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 32px;
+            background-color: #ffffff;
+            border: 1px solid #e5e5ec;
+            border-radius: 32px;
+            padding: 40px;
+        }
+
+        .last_title {
+            font-family: 'GMarketSans';
+            font-size: 20px;
+            font-weight: 500;
+            color: #111111;
+            margin: 0;
+        }
+
+        .last_span1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #741b86;
+        }
+
+        .last_span2 {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .last_itembox {
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+        }
+
+        .last_itemleft {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .last_itemright {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .last_item_row {
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+        }
+
+        .last_item {
+            width: 200px;
+            height: 220px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 12px;
+            border: 1px solid #552828;
+        }
+
+        .last_item_top {
+            width: 100%;
+            padding: 16px 0;
+            background-color: #552828;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .last_item_nametag {
+            font-family: 'GMarketSans';
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .last_item_img {
+            width: 100%;
+            height: 100%;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .last_item_img>img {
+            width: 100%;
+            height: 100%;
+            border-radius: 0 0 8px 8px;
+        }
+
+        /* ✅ 1728px 이하 */
+        @media screen and (max-width: 1728px) {
+            .last_wrapper {
+                width: 1380px;
+            }
+        }
+
+        /* ✅ 1512px 이하 */
+        @media screen and (max-width: 1512px) {
+            .last_wrapper {
+                width: 1180px;
+            }
+
+            .last_item {
+                width: 180px;
+                height: 198px;
+            }
+
+            .last_item_top {
+                padding: 12px 0;
+            }
+
+            .last_item_img {
+                border-radius: 0 0 12px 12px;
+            }
+
+            .last_item_img>img {
+                border-radius: 0 0 12px 12px;
+            }
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .last_wrapper {
+                width: 980px;
+            }
+
+            .last_item {
+                width: 146px;
+                height: 161px;
+            }
+
+            .last_item_top {
+                padding: 12px 0;
+            }
+
+            .last_item_img {
+                border-radius: 0 0 12px 12px;
+            }
+
+            .last_item_img>img {
+                border-radius: 0 0 12px 12px;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .last_wrapper {
+                width: 100%;
+                padding: 0 16px;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .last_itembox {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .last_box {
+                gap: 20px;
+                padding: 16px;
+            }
+
+            .last_item {
+                width: 200px;
+                height: 220px;
+            }
+
+            .last_item_top {
+                padding: 12px 0;
+            }
+
+            .last_item_img {
+                border-radius: 0 0 8px 8px;
+            }
+
+            .last_item_img>img {
+                border-radius: 0 0 8px 8px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .last_item {
+                width: 112px;
+                height: 123px;
+            }
+
+            .last_item_top {
+                padding: 6px 0;
+            }
+        }
+
+        /* ✅ 4400px 이하 */
+        @media screen and (max-width: 400px) {
+            .last_item_nametag {
+                font-size: 14px;
+            }
+            .last_item {
+                width: 100px;
+                height: 110px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="last_container">
+        <div class="last_wrapper">
+            <div class="last_box">
+                <p class="last_title">
+                    영어에 대한 흥미와 실력 상승!
+                    <br>
+                    <span class="last_span1">영어학습</span> <span class="last_span2">프로그램</span>
+                </p>
+                <div class="last_itembox">
+                    <div class="last_itemleft">
+                        <div class="last_item_row">
+                            <div class="last_item">
+                                <div class="last_item_top">
+                                    <p class="last_item_nametag">
+                                        학교가기
+                                    </p>
+                                </div>
+                                <div class="last_item_img">
+                                    <img src="https://cdn.imweb.me/thumbnail/20251116/42fabbecc6b77.png" alt="">
+                                </div>
+                            </div>
+                            <div class="last_item">
+                                <div class="last_item_top">
+                                    <p class="last_item_nametag">
+                                        학교준비
+                                    </p>
+                                </div>
+                                <div class="last_item_img">
+                                    <img src="https://cdn.imweb.me/thumbnail/20251116/b5091e75587c0.png" alt="">
+                                </div>
+                            </div>
+                            <div class="last_item">
+                                <div class="last_item_top">
+                                    <p class="last_item_nametag">
+                                        학교등원
+                                    </p>
+                                </div>
+                                <div class="last_item_img">
+                                    <img src="https://cdn.imweb.me/thumbnail/20251116/78c85dea32b21.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="last_item_row">
+                            <div class="last_item">
+                                <div class="last_item_top">
+                                    <p class="last_item_nametag">
+                                        기초문법
+                                    </p>
+                                </div>
+                                <div class="last_item_img">
+                                    <img src="https://cdn.imweb.me/thumbnail/20251116/ae1123d495325.png" alt="">
+                                </div>
+                            </div>
+                            <div class="last_item">
+                                <div class="last_item_top">
+                                    <p class="last_item_nametag">
+                                        토들러
+                                    </p>
+                                </div>
+                                <div class="last_item_img">
+                                    <img src="https://cdn.imweb.me/thumbnail/20251116/6fc67cdadb068.png" alt="">
+                                </div>
+                            </div>
+                            <div class="last_item">
+                                <div class="last_item_top">
+                                    <p class="last_item_nametag">
+                                        문법스타터
+                                    </p>
+                                </div>
+                                <div class="last_item_img">
+                                    <img src="https://cdn.imweb.me/thumbnail/20251116/97ea4a153c4a0.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="last_item_row">
+                            <div class="last_item">
+                                <div class="last_item_top">
+                                    <p class="last_item_nametag">
+                                        중등영어
+                                    </p>
+                                </div>
+                                <div class="last_item_img">
+                                    <img src="https://cdn.imweb.me/thumbnail/20251116/fd195f72e4fa6.png" alt="">
+                                </div>
+                            </div>
+                            <div class="last_item">
+                                <div class="last_item_top">
+                                    <p class="last_item_nametag">
+                                        일상이야기
+                                    </p>
+                                </div>
+                                <div class="last_item_img">
+                                    <img src="https://cdn.imweb.me/thumbnail/20251116/0ced3fbfc7ad6.png" alt="">
+                                </div>
+                            </div>
+                            <div class="last_item">
+                                <div class="last_item_top">
+                                    <p class="last_item_nametag">
+                                        학교일상
+                                    </p>
+                                </div>
+                                <div class="last_item_img">
+                                    <img src="https://cdn.imweb.me/thumbnail/20251116/980a410c7949c.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="last_itemright">
+                        <div class="last_item_row">
+                            <div class="last_item">
+                                <div class="last_item_top">
+                                    <p class="last_item_nametag">
+                                        이야기원서
+                                    </p>
+                                </div>
+                                <div class="last_item_img">
+                                    <img src="https://cdn.imweb.me/thumbnail/20251116/1b5f11310690a.png" alt="">
+                                </div>
+                            </div>
+                            <div class="last_item">
+                                <div class="last_item_top">
+                                    <p class="last_item_nametag">
+                                        북페어
+                                    </p>
+                                </div>
+                                <div class="last_item_img">
+                                    <img src="https://cdn.imweb.me/thumbnail/20251116/9c438f6b1291a.png" alt="">
+                                </div>
+                            </div>
+                            <div class="last_item">
+                                <div class="last_item_top">
+                                    <p class="last_item_nametag">
+                                        과학교과원서
+                                    </p>
+                                </div>
+                                <div class="last_item_img">
+                                    <img src="https://cdn.imweb.me/thumbnail/20251116/031252cbb9867.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="last_item_row">
+                            <div class="last_item">
+                                <div class="last_item_top">
+                                    <p class="last_item_nametag">
+                                        해리포터
+                                    </p>
+                                </div>
+                                <div class="last_item_img">
+                                    <img src="https://cdn.imweb.me/thumbnail/20251116/9be7c632d307d.png" alt="">
+                                </div>
+                            </div>
+                            <div class="last_item">
+                                <div class="last_item_top">
+                                    <p class="last_item_nametag">
+                                        셜록홈즈
+                                    </p>
+                                </div>
+                                <div class="last_item_img">
+                                    <img src="https://cdn.imweb.me/thumbnail/20251116/a10507e287be1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="last_item">
+                                <div class="last_item_top">
+                                    <p class="last_item_nametag">
+                                        수학원서
+                                    </p>
+                                </div>
+                                <div class="last_item_img">
+                                    <img src="https://cdn.imweb.me/thumbnail/20251116/2130d9f093459.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="last_item_row">
+                            <div class="last_item">
+                                <div class="last_item_top">
+                                    <p class="last_item_nametag">
+                                        미식축구
+                                    </p>
+                                </div>
+                                <div class="last_item_img">
+                                    <img src="https://cdn.imweb.me/thumbnail/20251116/7f16d97482aae.png" alt="">
+                                </div>
+                            </div>
+                            <div class="last_item">
+                                <div class="last_item_top">
+                                    <p class="last_item_nametag">
+                                        고급문법
+                                    </p>
+                                </div>
+                                <div class="last_item_img">
+                                    <img src="https://cdn.imweb.me/thumbnail/20251116/834861f29555b.png" alt="">
+                                </div>
+                            </div>
+                            <div class="last_item">
+                                <div class="last_item_top">
+                                    <p class="last_item_nametag">
+                                        표현하기
+                                    </p>
+                                </div>
+                                <div class="last_item_img">
+                                    <img src="https://cdn.imweb.me/thumbnail/20251116/e9f30454b69cc.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
