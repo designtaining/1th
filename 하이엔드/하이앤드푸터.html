@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        .s_bottom_container {
+            width: 100%;
+            padding: 40px 0;
+        }
+
+        .s_bottom_wrapper {
+            width: 1580px;
+            margin: 0 auto;
+        }
+
+        .s_bottom_box {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .s_bottom_left {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .s_bottom_title {
+            font-family: 'GMarketSans';
+            font-size: 16px;
+            font-weight: 500;
+            color: #111111;
+            margin: 0;
+        }
+
+        .s_bottom_logo {
+            font-family: 'GMarketSans';
+            font-size: 40px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+            line-height: 1.0;
+        }
+
+        .s_bottom_right {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .s_bottom_phone {
+            font-family: 'GMarketSans';
+            font-size: 28px;
+            font-weight: 700;
+            color: #111111 !important;
+            margin: 0;
+            text-decoration: none;
+        }
+
+        .s_bottom_rode {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .s_bottom_desc {
+            font-family: 'GMarketSans';
+            font-size: 16px;
+            font-weight: 500;
+            color: #111111;
+            margin: 0;
+            text-align: end;
+        }
+
+        /* ✅ 1728px 이하 */
+        @media screen and (max-width: 1728px) {
+            .s_bottom_wrapper {
+                width: 1380px;
+            }
+        }
+
+        /* ✅ 1512px 이하 */
+        @media screen and (max-width: 1512px) {
+            .s_bottom_wrapper {
+                width: 1180px;
+            }
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .s_bottom_wrapper {
+                width: 980px;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .s_bottom_wrapper {
+                width: 100%;
+                padding: 0 16px;
+            }
+        }
+
+        /* ✅ 666px 이하 */
+        @media screen and (max-width: 666px) {
+            .s_bottom_box {
+                flex-direction: column;
+                gap: 40px;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .s_bottom_title {
+                text-align: center;
+            }
+
+            .s_bottom_logo {
+                font-size: 32px;
+            }
+
+            .s_bottom_rode {
+                display: flex;
+                justify-content: center;
+            }
+
+            .s_bottom_desc {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="s_bottom_container">
+        <div class="s_bottom_wrapper">
+            <div class="s_bottom_box">
+                <div class="s_bottom_left">
+                    <p class="s_bottom_title">
+                        일상이 영어가 되는곳
+                    </p>
+                    <p class="s_bottom_logo">
+                        HI-END 영어회화
+                    </p>
+                </div>
+                <div class="s_bottom_right">
+                    <a href="#" class="s_bottom_phone">
+                        0507-2270-9792
+                    </a>
+                    <div class="s_bottom_rode">
+                        <p class="s_bottom_desc">
+                            평일 : 10:00 - 22:00
+                            <br>
+                            점심시간: 12:00 - 13:00
+                            <br>
+                            토요일: 10:00 - 20:00
+                            <br>
+                            일/공휴일 : 휴무
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
