@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+        .ct_container {
+            width: 100%;
+            padding: 80px 0 0 0;
+            background-color: #1428A0;
+        }
+
+        .ct_wrapper {
+            width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .fa-handshake {
+            font-size: 48px;
+            color: #ffffff;
+        }
+
+        .ct_bbox {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .ct_title {
+            font-family: 'Pretendard';
+            font-size: 40px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+            text-align: center;
+        }
+
+        .ct_desc {
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .ct_span1 {
+            color: #ffff60;
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .ct_wrapper {
+                width: 100%;
+                padding: 0 16px;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .ct_title {
+                font-size: 32px;
+            }
+
+            .ct_desc {
+                font-size: 20px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .ct_title {
+                font-size: 28px;
+            }
+
+            .ct_desc {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="ct_container">
+        <div class="ct_wrapper">
+            <i class="fa-light fa-handshake"></i>
+            <div class="ct_bbox">
+                <p class="ct_title">
+                    글로마케팅은 <span class="ct_span1">자신</span> 있습니다.
+                </p>
+                <p class="ct_desc">
+                    의뢰를 맡기고 그만이 아닌,
+                    <br>
+                    진지한 <span class="ct_span1">사업의 고민</span>을 함께할
+                    <br>
+                    <span class="ct_span1">준비된 원장</span>님을 기다립니다.
+                </p>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

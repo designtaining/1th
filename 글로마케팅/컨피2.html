@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .cew_container {
+            width: 100%;
+            padding: 20px 0 60px;
+        }
+
+        .cew_wrapper {
+            width: 100%;
+        }
+
+        .cew_box {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .cew_card {
+            width: 320px;
+            height: 480px;
+            position: relative;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(17, 17, 17, 0.2);
+        }
+
+        .cew_card:nth-child(1) {
+            background-image: url(https://cdn.imweb.me/thumbnail/20251120/5848a378ac566.png);
+            background-size: cover;
+        }
+
+        .cew_card:nth-child(2) {
+            background-image: url(https://cdn.imweb.me/thumbnail/20251120/4042951851866.png);
+            background-size: cover;
+        }
+
+        .cew_card:nth-child(3) {
+            background-image: url(https://cdn.imweb.me/thumbnail/20251120/9d403a3719d76.png);
+            background-size: cover;
+        }
+
+        .cew_card:nth-child(4) {
+            background-image: url(https://cdn.imweb.me/thumbnail/20251120/360dbf947cbd7.png);
+            background-size: cover;
+        }
+
+        .cew_nametag {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            padding: 24px 0;
+            background-color: #fff6c0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cew_name {
+            font-family: 'Pretendard';
+            font-size: 18px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+        }
+
+        /* ✅ 1512px 이하 */
+        @media screen and (max-width: 1512px) {
+            .cew_box {
+                gap: 20px;
+            }
+
+            .cew_card {
+                width: 280px;
+                height: 420px;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .cew_wrapper {
+                overflow-x: auto;
+                overflow-y: visible;
+                -webkit-overflow-scrolling: touch;
+                box-sizing: border-box;
+            }
+
+            .cew_box {
+                justify-content: flex-start;
+                width: max-content;
+                padding: 0 16px;
+                cursor: grab;
+            }
+
+            .cew_wrapper::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        .cew_wrapper.is-dragging .cew_box {
+            cursor: grabbing;
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .cew_card {
+                width: 240px;
+                height: 360px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="cew_container">
+        <div class="cew_wrapper">
+            <div class="cew_box">
+                <div class="cew_card">
+                    <div class="cew_nametag">
+                        <p class="cew_name">
+                            철저한 분석
+                        </p>
+                    </div>
+                </div>
+
+                <div class="cew_card">
+                    <div class="cew_nametag">
+                        <p class="cew_name">
+                            엄선된 키워드
+                        </p>
+                    </div>
+                </div>
+
+                <div class="cew_card">
+                    <div class="cew_nametag">
+                        <p class="cew_name">
+                            피드백 반영
+                        </p>
+                    </div>
+                </div>
+
+                <div class="cew_card">
+                    <div class="cew_nametag">
+                        <p class="cew_name">
+                            상향 방향조정
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        (() => {
+            const wrapper = document.querySelector('.cew_wrapper');
+            const track = document.querySelector('.cew_box');
+
+            if (!wrapper || !track) return;
+
+            let isDown = false;
+            let startX = 0;
+            let scrollLeft = 0;
+
+            const isDraggable = () => window.innerWidth <= 1024;
+
+            const startDrag = (clientX) => {
+                if (!isDraggable()) return;
+                isDown = true;
+                wrapper.classList.add('is-dragging');
+                startX = clientX;
+                scrollLeft = wrapper.scrollLeft;
+            };
+
+            const moveDrag = (clientX) => {
+                if (!isDown) return;
+                const walk = (clientX - startX) * -1; // 드래그 반대 방향으로 이동
+                wrapper.scrollLeft = scrollLeft + walk;
+            };
+
+            const endDrag = () => {
+                if (!isDown) return;
+                isDown = false;
+                wrapper.classList.remove('is-dragging');
+            };
+
+            // 🖱 마우스 이벤트
+            track.addEventListener('mousedown', (e) => {
+                e.preventDefault();
+                startDrag(e.pageX);
+            });
+
+            window.addEventListener('mousemove', (e) => {
+                moveDrag(e.pageX);
+            });
+
+            window.addEventListener('mouseup', endDrag);
+            window.addEventListener('mouseleave', endDrag);
+
+            // 📱 터치 이벤트
+            track.addEventListener('touchstart', (e) => {
+                const touch = e.touches[0];
+                startDrag(touch.pageX);
+            }, { passive: true });
+
+            window.addEventListener('touchmove', (e) => {
+                if (!isDown) return;
+                const touch = e.touches[0];
+                moveDrag(touch.pageX);
+            }, { passive: true });
+
+            window.addEventListener('touchend', endDrag);
+            window.addEventListener('touchcancel', endDrag);
+        })();
+    </script>
+
+</body>
+
+</html>
