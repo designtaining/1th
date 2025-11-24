@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        .eport_container {
+            width: 100%;
+            height: 800px;
+        }
+
+        .eport_wrapper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .eport_bg {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 40px;
+            z-index: 0;
+        }
+
+        .eport_bg_track {
+            display: flex;
+            white-space: nowrap;
+            width: max-content;
+            gap: 60px;
+        }
+
+        .eport_bg_track p {
+            font-family: 'Pretendard';
+            font-size: 200px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin: 0;
+            color: rgba(17, 17, 17, 0.05);
+        }
+
+        .track1 {
+            animation: marqueeRight 40s linear infinite;
+        }
+
+        .track2 {
+            animation: marqueeLeft 40s linear infinite;
+        }
+
+        @keyframes marqueeRight {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        @keyframes marqueeLeft {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .eport_box {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .eport_title {
+            font-family: 'GMarketSans';
+            font-size: 32px;
+            font-weight: 700;
+            color: #111;
+            text-align: center;
+            margin: 0;
+        }
+
+        .eport_span0 {
+            background: linear-gradient(90deg, #2e50e2 0%, #8a2be2 50%, #e22b68 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .eport_span1 {
+            color: #2e50e2;
+            display: inline-block;
+            animation: eportBounce 2.2s ease-in-out infinite;
+        }
+
+        @keyframes eportBounce {
+            0% {
+                transform: translateY(0);
+            }
+
+            10% {
+                transform: translateY(-4px);
+            }
+
+            20% {
+                transform: translateY(0);
+            }
+
+            30% {
+                transform: translateY(-4px);
+            }
+
+            40% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .eport_span2 {
+            font-size: 60px;
+            background: linear-gradient(90deg, #ff1919 0%, #e22b71 50%, #7f1ac2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .eport_bottom {
+            width: 320px;
+            height: 320px;
+            background-color: #e5e5ec;
+            border-radius: 999px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .eport_button_desc {
+            font-family: 'Pretendard';
+            font-size: 32px;
+            font-weight: 400;
+            text-align: center;
+            color: #111;
+            margin: 0;
+        }
+
+        .eport_button {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            padding: 16px 36px;
+            background-color: #2e50e2;
+            border-radius: 8px;
+            color: #fff !important;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .eport_button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(17, 17, 17, 0.3);
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .eport_title {
+                font-size: 24px;
+            }
+
+            .eport_span2 {
+                font-size: 48px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .eport_title {
+                font-size: 20px;
+            }
+
+            .eport_span2 {
+                font-size: 38px;
+            }
+
+            .eport_button_desc {
+                font-size: 24px;
+            }
+
+            .eport_bottom {
+                width: 280px;
+                height: 280px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="eport_container">
+        <div class="eport_wrapper">
+
+            <div class="eport_bg">
+
+                <div class="eport_bg_track track1">
+                    <p>. &nbsp; . &nbsp; . &nbsp; . &nbsp; .</p>
+                    <p>. &nbsp; . &nbsp; . &nbsp; . &nbsp; .</p>
+                </div>
+
+                <div class="eport_bg_track track2">
+                    <p>MEDICAL KNOWLEDGE. EXPERT MARKETING.</p>
+                    <p>MEDICAL KNOWLEDGE. EXPERT MARKETING.</p>
+                </div>
+
+            </div>
+
+            <div class="eport_box">
+                <div class="eport_top">
+                    <p class="eport_title">
+                        <span class="eport_span0">수의학 전공자</span>가 <span class="eport_span1">직접 분석</span>하는,
+                        <br><span class="eport_span1">질병·진료 지식</span> 기반의,
+                        <br>동물병원을 <span class="eport_span1">가장 잘 이해하는</span>,
+                        <br><span class="eport_span2">전문 블로그 마케팅</span>
+                    </p>
+                </div>
+
+                <div class="eport_bottom">
+                    <p class="eport_button_desc">
+                        수의학 전문<br>포트폴리오
+                    </p>
+                    <a href="#" class="eport_button">바로가기</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const speed = 80;
+
+            document.querySelector(".track1").style.animationDuration = speed + "s";
+            document.querySelector(".track2").style.animationDuration = speed + "s";
+        });
+    </script>
+
+</body>
+
+</html>
