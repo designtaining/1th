@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        .ttt_box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .ttt_title1 {
+            font-family: 'GMarketSans';
+            font-size: 20px;
+            font-weight: 500;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .ttt_span1 {
+            color: #fffc32;
+        }
+
+        .ttt_boxbox {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .ttt_title2 {
+            font-family: 'GMarketSans';
+            font-size: 40px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .ttt_title3 {
+            font-family: 'GMarketSans';
+            font-size: 24px;
+            font-weight: 700;
+            color: #fffc32;
+            margin: 0;
+        }
+
+        .ttt_desc {
+            font-family: 'GMarketSans';
+            font-size: 16px;
+            font-weight: 400;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .ttt_span2 {
+            text-decoration: underline;
+        }
+
+        .ttt_boxboxbox {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .ttt_link1,
+        .ttt_link2 {
+            width: 100%;
+            padding: 20px 0;
+            color: #ffffff !important;
+            font-family: 'Pretendard';
+            font-size: 16px;
+            font-weight: 500;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .ttt_link1 {
+            background-color: #1428A0;
+        }
+
+        .ttt_link1:hover {
+            background-color: #ffffff;
+            color: #1428A0 !important;
+        }
+
+        .ttt_link2 {
+            background-color: #0fc956;
+        }
+
+        .ttt_link2:hover {
+            background-color: #ffffff;
+            color: #0fc956 !important;
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .ttt_title1 {
+                font-size: 18px;
+            }
+
+            .ttt_title2 {
+                font-size: 28px;
+            }
+
+            .ttt_title3 {
+                font-size: 20px;
+            }
+
+            .ttt_desc {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="ttt_box">
+        <p class="ttt_title1">
+            <span class="ttt_span1">[전문칼럼]</span> 내 브랜드만의 맞춤 전략
+        </p>
+        <div class="ttt_boxbox">
+            <p class="ttt_title2">
+                내 프로젝트의 방향잡기
+            </p>
+            <p class="ttt_title3">
+                STRATEGIES WORTH TRYING
+            </p>
+        </div>
+        <p class="ttt_desc">
+            우리 병원의 비전, 가치에 특별함을 더하기 위한 칼럼을 경험해보세요.
+            <br>
+            수의학도가 전하는 동물병원 브랜드와 마케팅의 차별화된 전략.
+            <br>
+            <span class="ttt_span2">지금 바로 시작하세요.</span>
+        </p>
+        <div class="ttt_boxboxbox">
+            <a href="#" class="ttt_link1">
+                수의학 포트폴리오
+            </a>
+            <a href="#" class="ttt_link2">
+                문의신청하기
+            </a>
+        </div>
+    </section>
+
+</body>
+
+</html>
