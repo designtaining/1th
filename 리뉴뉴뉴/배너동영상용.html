@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        .banner_container {
+            margin: -30px 0 0 0;
+            position: relative;
+            width: 100%;
+            height: 945px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .banner_video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .banner_title_box {
+            position: absolute;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .banner_subtitle {
+            font-family: 'GMarketSans';
+            font-size: 16px;
+            font-weight: 500;
+            color: #c5ffae;
+            margin: 0;
+        }
+
+        .banner_title {
+            width: 560px;
+        }
+
+        .banner_title>img {
+            width: 100%;
+        }
+
+        .banner_desc {
+            font-family: 'GMarketSans';
+            font-size: 20px;
+            font-weight: 300;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .banner_span1 {
+            font-weight: 700;
+            background: linear-gradient(90deg, #c3ffb1 0%, #fd6039 30%,  #e065ff 30%, #e5ff00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            background-size: 200% 200%;
+            animation: gradientShine 3.5s ease-in-out infinite;
+        }
+
+        @keyframes gradientShine {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* ✅ 1512px 이하 */
+        @media screen and (max-width: 1512px) {
+            .banner_title {
+                width: 500px;
+            }
+        }
+
+        /* ✅ 600px 이하 */
+        @media screen and (max-width: 600px) {
+            .banner_title {
+                width: 340px;
+            }
+
+            .banner_container {
+                height: 660px;
+            }
+
+            .banner_subtitle {
+                font-size: 12px;
+            }
+
+            .banner_desc {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="banner_container">
+        <video class="banner_video" autoplay muted loop playsinline>
+            <source src="https://ncryk7.mycafe24.com/samsamsam2.mp4" type="video/mp4">
+            브라우저가 영상을 지원하지 않습니다.
+        </video>
+        <div class="banner_title_box">
+            <p class="banner_subtitle">
+                CREATIVE SOLUTION
+            </p>
+            <p class="banner_title">
+                <img src="https://ncryk7.mycafe24.com/logo_white3.png" alt="">
+            </p>
+            <p class="banner_desc">
+                <span class="banner_span1">성장하는 브랜드</span>와 함께하는 <span class="banner_span1">크리에이티브 파트너</span>
+                <br>
+                BRAND VISUALIZING PERFORMANCE
+            </p>
+        </div>
+    </section>
+
+</body>
+
+</html>
