@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+        @font-face {
+            font-family: 'SchoolSafetyOcarina';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2511-1@1.0/HakgyoansimOcarinaR.woff2') format('woff2');
+            font-weight: normal;
+            font-display: swap;
+        }
+
+        .sofa_title {
+            font-family: 'SchoolSafetyOcarina';
+            font-weight: 700;
+            letter-spacing: 4px;
+        }
+
+        .sofa_subtitle {
+            font-family: 'SchoolSafetyOcarina';
+            font-weight: 500;
+        }
+
+        .sofa_desc1 {
+            font-family: 'SchoolSafetyOcarina';
+            font-weight: 700;
+            letter-spacing: 4px;
+        }
+
+        .sofa_desc2 {
+            font-family: 'SchoolSafetyOcarina';
+            font-weight: 400;
+        }
+
+        /* =============== WIDGET SCOPE =============== */
+        #w20251211e058b834b6cf7 .form-group {
+            margin-bottom: 18px;
+        }
+
+        #w20251211e058b834b6cf7 .control-label {
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        /* 내부 박스 flex 적용 */
+        #w20251211e058b834b6cf7 .label-inner {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* 필수/선택 배지 */
+        #w20251211e058b834b6cf7 .type-badge {
+            background-color: #a50000;
+            color: #fff;
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        /* 필수 */
+        #w20251211e058b834b6cf7 label.control-label[data-type="필수"] .type-badge {
+            background-color: #1428A0 !important;
+            color: #fff;
+        }
+
+        /* 선택 */
+        #w20251211e058b834b6cf7 label.control-label[data-type="선택"] .type-badge {
+            background-color: #BDBDBD !important;
+            color: #fff;
+        }
+
+        /* 아이콘 스타일 */
+        #w20251211e058b834b6cf7 .control-label i {
+            font-size: 15px;
+            color: #1428A0;
+        }
+
+        /* 기본 input 디자인 */
+        #w20251211e058b834b6cf7 .form-control {
+            width: 100%;
+            height: 44px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            padding: 0 14px;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+
+        /* field-box를 가로 배치로 전환 */
+        #w20251211e058b834b6cf7 .field-box {
+            display: flex;
+            flex-direction: row;
+            /* row 배치 */
+            gap: 12px;
+            align-items: center;
+
+            background: #F6F8FF;
+            border: 1px solid #D6DDF1;
+            border-radius: 10px;
+            padding: 14px 16px;
+        }
+
+        /* label은 왼쪽 좁은 영역 */
+        #w20251211e058b834b6cf7 .field-box .control-label {
+            width: 18%;
+            /* 원하는 만큼 조절 가능 (예: 20~30%) */
+            margin: 0;
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        /* input / textarea 는 오른쪽 넓은 영역 */
+        #w20251211e058b834b6cf7 .field-box input.form-control,
+        #w20251211e058b834b6cf7 .field-box textarea.form-control {
+            width: 74%;
+            /* label 제외한 나머지 영역 */
+        }
+
+        /* textarea */
+        #w20251211e058b834b6cf7 textarea.form-control {
+            height: auto;
+            min-height: 120px;
+            padding: 12px;
+            margin-top: 6px !important;
+        }
+
+        /* 버튼 */
+        #w20251211e058b834b6cf7 .btn-primary {
+            padding: 12px 32px;
+            background: #146AFF;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="w20251211e058b834b6cf7">
+        <div class="form-widget widget _form-widget">
+            <div class="deadline-opacity">
+
+                <form id="addFormw20251211e058b834b6cf7" method="POST" target="hidden_frame">
+
+                    <!-- Hidden System Inputs -->
+                    <input type="hidden" name="board_code" value="b20251211e36401da3a75a">
+                    <input type="hidden" name="unit_code" value="u2025120268865697ee079">
+                    <input type="hidden" name="widget_code" value="w20251211e058b834b6cf7">
+                    <input type="hidden" name="board_name" value="이름 없는 입력폼#3">
+
+                    <!-- TOKEN -->
+                    <div id="input_form_token_obj">
+                        <input type="hidden" name="write_token" class="_tk_obj">
+                        <input type="hidden" name="write_token_key" class="_tk_key_obj">
+                    </div>
+
+                    <!-- Form Inputs (라벨은 비어 있는 상태임) -->
+                    <div class="form-group"><label class="control-label"></label><input type="text"
+                            class="form-control"></div>
+                    <div class="form-group"><label class="control-label"></label><input type="text"
+                            class="form-control"></div>
+                    <div class="form-group"><label class="control-label"></label><input type="text"
+                            class="form-control"></div>
+                    <div class="form-group"><label class="control-label"></label><input type="text"
+                            class="form-control"></div>
+                    <div class="form-group"><label class="control-label"></label><input type="text"
+                            class="form-control"></div>
+                    <div class="form-group"><label class="control-label"></label><input type="text"
+                            class="form-control"></div>
+
+                    <div class="form-group"><label class="control-label"></label><textarea class="form-control"
+                            rows="3"></textarea></div>
+
+                </form>
+
+                <div class="form text-center">
+                    <a href="javascript:;" class="btn btn-primary _input_form_submit"
+                        onclick="SITE_FORM.confirmInputForm('w20251211e058b834b6cf7','N');">작성</a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 성공 Modal -->
+        <div class="modal modal_site_alert" id="input_form_complete_modal_w20251211e058b834b6cf7">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <p class="text-center">정상적으로 접수되었습니다</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 실패 Modal -->
+        <div class="modal modal_site_alert" id="input_form_error_modal_w20251211e058b834b6cf7">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <p class="text-center"></p>
+                    <a href="javascript:" class="btn right" onclick="SITE_FORM.hideModal();">확인</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        $(function () {
+
+            const widget = $("#w20251211e058b834b6cf7");
+
+            /* ============================================================
+               0) label + input/textarea 를 하나의 field-box 로 자동 래핑
+               (HTML 수정 불가 → JS가 구조 재정렬)
+            ============================================================ */
+            widget.find(".form-group").each(function () {
+                // 중복 방지
+                if ($(this).find(".field-box").length === 0) {
+                    $(this).wrapInner('<div class="field-box"></div>');
+                }
+            });
+
+
+            /* ============================================================
+               1) 각 항목마다 필수/선택, placeholder, 아이콘 지정
+               ⚠️ form-group 순서 기준으로 매칭됨
+            ============================================================ */
+            const fields = [
+                { type: "필수", placeholder: "회사명을 입력해주세요", icon: `<i class="fa-solid fa-building"></i>` },
+                { type: "필수", placeholder: "담당자명을 입력해주세요", icon: `<i class="fa-solid fa-user"></i>` },
+                { type: "필수", placeholder: "연락처를 입력해주세요", icon: `<i class="fa-solid fa-phone"></i>` },
+                { type: "선택", placeholder: "이메일을 입력해주세요", icon: `<i class="fa-solid fa-envelope"></i>` },
+                { type: "선택", placeholder: "제목을 입력해주세요", icon: `<i class="fa-solid fa-pen"></i>` },
+                { type: "선택", placeholder: "추가 메모를 입력해주세요", icon: `<i class="fa-solid fa-note-sticky"></i>` },
+                { type: "선택", placeholder: "문의 내용을 입력해주세요", icon: `<i class="fa-solid fa-comment"></i>` }
+            ];
+
+
+            /* ============================================================
+               2) label을 완전히 새로 구성
+               (원래 label의 텍스트는 숨겨도 됨 → 우리는 type-badge + icon만 사용)
+            ============================================================ */
+            widget.find(".form-group").each(function (i) {
+
+                const cfg = fields[i];
+                if (!cfg) return;
+
+                const $label = $(this).find(".control-label");
+                const $field = $(this).find("input, textarea").first();
+
+                // label HTML 재구성
+                $label.html(`
+            <span class="type-badge">${cfg.type}</span>
+            ${cfg.icon}
+        `);
+
+                // placeholder 적용
+                if ($field.length > 0) {
+                    $field.attr("placeholder", cfg.placeholder);
+                }
+            });
+
+
+            /* ============================================================
+               3) 자동완성 제거
+            ============================================================ */
+            widget.find("input, textarea").attr("autocomplete", "new-password");
+
+
+            /* ============================================================
+               4) 엔터키로 폼 전송되는것 방지
+            ============================================================ */
+            widget.find("._input_form_submit").keydown(function (e) {
+                if (e.keyCode === 13) e.preventDefault();
+            });
+
+
+            /* ============================================================
+               5) TOKEN 갱신 (아임웹 필수)
+            ============================================================ */
+            TOKEN.makeToken(86400, "form", function (token, token_key) {
+                widget.find("._tk_obj").val(token);
+                widget.find("._tk_key_obj").val(token_key);
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>
