@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .panda_container {
+            width: 100%;
+            padding: 0 0;
+            overflow: hidden;
+        }
+
+        .panda_wrapper {
+            display: flex;
+            gap: 20px;
+            width: max-content;
+            flex-wrap: nowrap;
+            will-change: transform;
+        }
+
+        .panda_box {
+            width: 800px;
+            height: 600px;
+            flex-shrink: 0;
+            display: block;
+        }
+
+        .panda_box>img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="panda_container">
+        <div class="panda_wrapper">
+            <a href="#" class="panda_box">
+                <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+            </a>
+            <a href="#" class="panda_box">
+                <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+            </a>
+            <a href="#" class="panda_box">
+                <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+            </a>
+            <a href="#" class="panda_box">
+                <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+            </a>
+            <a href="#" class="panda_box">
+                <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+            </a>
+            <a href="#" class="panda_box">
+                <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+            </a>
+            <a href="#" class="panda_box">
+                <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+            </a>
+            <a href="#" class="panda_box">
+                <img src="https://ncryk7.mycafe24.com/tiger2.jpg" alt="">
+            </a>
+        </div>
+    </section>
+
+    <script>
+        (function () {
+            const wrapper = document.querySelector('.panda_wrapper');
+            const container = document.querySelector('.panda_container');
+
+            if (!wrapper || !container) return;
+
+            const MOVE_DURATION = 24000; // 전체이동시간 24초입니다
+            const PAUSE_DURATION = 4000; // 끝나고 4초간 멈춤입니다
+
+            let startTime = null;
+            let rafId = null;
+
+            function getMaxTranslate() {
+                return wrapper.scrollWidth - container.clientWidth;
+            }
+
+            function animate(time) {
+                if (!startTime) startTime = time;
+                const elapsed = time - startTime;
+                const progress = Math.min(elapsed / MOVE_DURATION, 1);
+
+                const maxTranslate = getMaxTranslate();
+                const currentX = -maxTranslate * progress;
+
+                wrapper.style.transform = `translateX(${currentX}px)`;
+
+                if (progress < 1) {
+                    rafId = requestAnimationFrame(animate);
+                } else {
+                    setTimeout(() => {
+                        wrapper.style.transform = `translateX(0px)`;
+                        startTime = null;
+                        rafId = requestAnimationFrame(animate);
+                    }, PAUSE_DURATION);
+                }
+            }
+
+            rafId = requestAnimationFrame(animate);
+
+        })();
+    </script>
+
+</body>
+
+</html>
