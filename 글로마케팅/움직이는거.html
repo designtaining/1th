@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        .keyword_container {
+            width: 100%;
+            height: 820px;
+            padding: 120px 0;
+            background-image: url(https://cdn.imweb.me/thumbnail/20260106/ec58ca40d21d1.png);
+            background-size: cover;
+        }
+
+        .keyword_wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+            gap: 40px;
+            overflow: hidden;
+        }
+
+        .keyword_title_box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .keyword_title {
+            font-family: 'GMarketSans';
+            font-size: 48px;
+            font-weight: 700;
+            color: #1428a0;
+            margin: 0;
+        }
+
+        .keyword_desc {
+            font-family: 'GMarketSans';
+            font-size: 24px;
+            font-weight: 500;
+            color: #1428a0;
+            margin: 0;
+        }
+
+        .keyword_sb_box {
+            width: 720px;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            border: 1px solid #e5e5ec;
+            border-radius: 999px;
+            box-shadow: 0 4px 12px rgba(17, 17, 17, 0.1);
+        }
+
+        .keyword_sb_left {
+            padding: 0 40px;
+        }
+
+        .keyword_sb_text {
+            font-family: 'GMarketSans';
+            font-size: 24px;
+            font-weight: 500;
+            color: #111111;
+            margin: 0;
+        }
+
+        .keyword_sb_right {
+            width: 100px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1428A0;
+            border-radius: 0 999px 999px 0;
+        }
+
+        .keyword_sb_right>i {
+            font-size: 24px;
+            color: #ffffff;
+        }
+
+        .keyword_box {
+            width: 100%;
+            display: flex;
+            will-change: transform;
+            transform: translateX(0);
+            transition: transform 0.7s ease;
+        }
+
+        .keyword_img_box {
+            width: 370px;
+            height: 505px;
+            flex: 0 0 auto;
+        }
+
+        .keyword_img_box>img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="keyword_container">
+        <div class="keyword_wrapper">
+
+            <div class="keyword_title_box">
+                <p class="keyword_title">
+                    HIGH RANKING
+                </p>
+                <p class="keyword_desc">
+                    상위노출 성과를 확인하세요!
+                </p>
+            </div>
+
+            <div class="keyword_sb_box">
+                <div class="keyword_sb_left">
+                    <p class="keyword_sb_text">
+                        선정된 키워드
+                    </p>
+                </div>
+                <div class="keyword_sb_right">
+                    <i class="fa-regular fa-magnifying-glass"></i>
+                </div>
+            </div>
+
+            <div class="keyword_box">
+                <div class="keyword_img_box">
+                    <img src="https://cdn.imweb.me/thumbnail/20260106/7d67c1f85dcea.png" alt="">
+                </div>
+                <div class="keyword_img_box">
+                    <img src="https://cdn.imweb.me/thumbnail/20260106/c00112cbff11f.png" alt="">
+                </div>
+                <div class="keyword_img_box">
+                    <img src="https://cdn.imweb.me/thumbnail/20260106/7d9056e2a393d.png" alt="">
+                </div>
+                <div class="keyword_img_box">
+                    <img src="https://cdn.imweb.me/thumbnail/20260106/500b10dafe4a2.png" alt="">
+                </div>
+                <div class="keyword_img_box">
+                    <img src="https://cdn.imweb.me/thumbnail/20260106/627bffa8bff14.png" alt="">
+                </div>
+                <div class="keyword_img_box">
+                    <img src="https://cdn.imweb.me/thumbnail/20260106/70223a579ddeb.png" alt="">
+                </div>
+                <div class="keyword_img_box">
+                    <img src="https://cdn.imweb.me/thumbnail/20260106/acfe283d0842b.png" alt="">
+                </div>
+                <div class="keyword_img_box">
+                    <img src="https://cdn.imweb.me/thumbnail/20260106/ba619334df29f.png" alt="">
+                </div>
+                <div class="keyword_img_box">
+                    <img src="https://cdn.imweb.me/thumbnail/20260106/005bcb62da283.png" alt="">
+                </div>
+                <div class="keyword_img_box">
+                    <img src="https://cdn.imweb.me/thumbnail/20260106/99533c6654442.png" alt="">
+                </div>
+                <div class="keyword_img_box">
+                    <img src="https://cdn.imweb.me/thumbnail/20260106/06e2f7e504226.png" alt="">
+                </div>
+                <div class="keyword_img_box">
+                    <img src="https://cdn.imweb.me/thumbnail/20260106/fced6ed45de5a.png" alt="">
+                </div>
+                <div class="keyword_img_box">
+                    <img src="https://cdn.imweb.me/thumbnail/20260106/ab9f5dd1d6de0.png" alt="">
+                </div>
+                <div class="keyword_img_box">
+                    <img src="https://cdn.imweb.me/thumbnail/20260106/7d38c0414ce79.png" alt="">
+                </div>
+                <div class="keyword_img_box">
+                    <img src="https://cdn.imweb.me/thumbnail/20260106/073fb907a15aa.png" alt="">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const box = document.querySelector('.keyword_box');
+            const originalItems = Array.from(document.querySelectorAll('.keyword_img_box'));
+            if (!box || originalItems.length === 0) return;
+
+            const itemWidth = originalItems[0].offsetWidth;
+            const total = originalItems.length;
+
+            const visibleCount = Math.ceil(window.innerWidth / itemWidth) + 1;
+
+            const headClones = originalItems.slice(-visibleCount).map(n => n.cloneNode(true));
+            const tailClones = originalItems.slice(0, visibleCount).map(n => n.cloneNode(true));
+
+            headClones.reverse().forEach(clone => box.insertBefore(clone, box.firstChild));
+            tailClones.forEach(clone => box.appendChild(clone));
+
+            let rawIndex = 0;
+            let currentX = -(visibleCount + rawIndex) * itemWidth;
+
+            box.style.transition = 'none';
+            box.style.transform = `translateX(${currentX}px)`;
+
+            box.style.cursor = 'grab';
+            box.style.userSelect = 'none';
+            box.style.touchAction = 'none';
+            box.querySelectorAll('img').forEach(img => {
+                img.draggable = false;
+                img.style.pointerEvents = 'none';
+            });
+
+            const applyX = (duration = 0) => {
+                box.style.transition = duration === 0 ? 'none' : `transform ${duration}ms ease`;
+                box.style.transform = `translateX(${currentX}px)`;
+            };
+
+            const setToRawIndex = (nextRaw, duration = 700) => {
+                rawIndex = nextRaw;
+                currentX = -(visibleCount + rawIndex) * itemWidth;
+                applyX(duration);
+            };
+
+            // 자동 슬라이드 (2초마다 1장)
+            let isDragging = false;
+            const AUTO_INTERVAL = 2000;
+
+            setInterval(() => {
+                if (isDragging) return;
+
+                setToRawIndex(rawIndex + 1, 700);
+
+                if (rawIndex + 1 === total) {
+                    setTimeout(() => {
+                        rawIndex = 0;
+                        currentX = -(visibleCount + rawIndex) * itemWidth;
+                        applyX(0);
+                    }, 700);
+                }
+            }, AUTO_INTERVAL);
+
+            let startX = 0;
+            let startTranslate = 0;
+
+            const onDown = (e) => {
+                isDragging = true;
+                box.setPointerCapture(e.pointerId);
+
+                startX = e.clientX;
+                startTranslate = currentX;
+
+                box.style.transition = 'none';
+                box.style.cursor = 'grabbing';
+            };
+
+            const onMove = (e) => {
+                if (!isDragging) return;
+
+                const dx = e.clientX - startX;
+                currentX = startTranslate + dx;
+
+                const minX = -(visibleCount + total) * itemWidth;
+                const maxX = -(visibleCount) * itemWidth;
+
+                while (currentX <= minX) currentX += total * itemWidth;
+                while (currentX >= (maxX + itemWidth)) currentX -= total * itemWidth;
+
+                applyX(0);
+            };
+
+            const onUp = (e) => {
+                if (!isDragging) return;
+
+                isDragging = false;
+                box.releasePointerCapture(e.pointerId);
+                box.style.cursor = 'grab';
+
+                const raw = Math.round(((-currentX) / itemWidth) - visibleCount);
+                const normalized = ((raw % total) + total) % total;
+
+                rawIndex = normalized;
+                currentX = -(visibleCount + rawIndex) * itemWidth;
+                applyX(500);
+
+                setTimeout(() => applyX(0), 520);
+            };
+
+            box.addEventListener('pointerdown', onDown);
+            window.addEventListener('pointermove', onMove);
+            window.addEventListener('pointerup', onUp);
+
+            const typingEl = document.querySelector('.keyword_sb_text');
+            if (typingEl) {
+                const fullText = '선정된 키워드';
+
+                const TYPE_TOTAL = 1800;     // 타이핑 총 시간(ms)
+                const HOLD_AFTER = 4000;     // 완성 후 대기(ms)
+                const ERASE_TOTAL = 900;     // 지우기 총 시간(ms)
+                const CURSOR_INTERVAL = 500; // 커서 깜빡임(ms)
+
+                let typed = 0;
+                let timer = null;
+
+                typingEl.textContent = '';
+                const cursor = document.createElement('span');
+                cursor.textContent = '|';
+                cursor.style.marginLeft = '2px';
+                cursor.style.color = '#b7b7b7';
+                typingEl.appendChild(cursor);
+
+                setInterval(() => {
+                    cursor.style.visibility = (cursor.style.visibility === 'hidden') ? 'visible' : 'hidden';
+                }, CURSOR_INTERVAL);
+
+                const render = () => {
+
+                    if (!typingEl.firstChild || typingEl.firstChild === cursor) {
+                        typingEl.insertBefore(document.createTextNode(''), cursor);
+                    }
+                    typingEl.firstChild.nodeValue = fullText.slice(0, typed);
+                };
+
+                const startTyping = () => {
+                    typed = 0;
+                    render();
+
+                    const step = Math.max(40, Math.floor(TYPE_TOTAL / fullText.length));
+                    clearInterval(timer);
+                    timer = setInterval(() => {
+                        typed++;
+                        if (typed >= fullText.length) {
+                            typed = fullText.length;
+                            render();
+                            clearInterval(timer);
+                            setTimeout(startErasing, HOLD_AFTER);
+                            return;
+                        }
+                        render();
+                    }, step);
+                };
+
+                const startErasing = () => {
+                    const step = Math.max(35, Math.floor(ERASE_TOTAL / fullText.length));
+                    clearInterval(timer);
+                    timer = setInterval(() => {
+                        typed--;
+                        if (typed <= 0) {
+                            typed = 0;
+                            render();
+                            clearInterval(timer);
+                            startTyping();
+                            return;
+                        }
+                        render();
+                    }, step);
+                };
+
+                startTyping();
+            }
+        });
+    </script>
+
+</body>
+
+</html>

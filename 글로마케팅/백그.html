@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        .movin_container {
+            width: 100%;
+            height: 945px;
+            background-color: #1428a0;
+        }
+
+        .movin_wrapper {
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+        }
+
+        .movin_top_box {
+            width: 1280px;
+            display: flex;
+            justify-content: flex-end;
+            margin: 0 auto;
+        }
+
+        .movin_top_title_box {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .movin_top_title {
+            font-family: 'GMarketSans';
+            font-size: 40px;
+            font-weight: 700;
+            color: #ffff36;
+            margin: 0;
+        }
+
+        .movin_top_desc {
+            font-family: 'GMarketSans';
+            font-size: 20px;
+            font-weight: 500;
+            color: #ffff36;
+            margin: 0;
+        }
+
+        .movin_middle_box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            overflow: hidden;
+        }
+
+        .movin_middle1 {
+            font-family: 'GMarketSans';
+            font-size: 100px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 110%;
+            margin: 0;
+        }
+
+        .movin_middle2 {
+            font-family: 'GMarketSans';
+            font-size: 100px;
+            font-weight: 700;
+            line-height: 110%;
+            margin: 0;
+            color: transparent;
+            -webkit-text-stroke: 2px rgba(255, 255, 255, 0.7);
+        }
+
+        .movin_middle1,
+        .movin_middle2 {
+            white-space: nowrap;
+        }
+
+        .movin_middle1::selection,
+        .movin_middle2::selection,
+        .movin_middle1 *::selection,
+        .movin_middle2 *::selection {
+            background: transparent;
+            color: #ffffff;
+        }
+
+        .movin_middle_box>p {
+            position: relative;
+            display: block;
+            overflow: hidden;
+        }
+
+        .movin_middle_box>p .marquee-track {
+            display: inline-flex;
+            align-items: center;
+            gap: 0;
+            white-space: nowrap;
+            will-change: transform;
+            transform: translate3d(0, 0, 0);
+        }
+
+        .movin_middle_box>p .marquee-seg {
+            display: inline-block;
+            white-space: nowrap;
+            padding-right: 60px;
+        }
+
+        .movin_bottom_box {
+            width: 1280px;
+            display: flex;
+            justify-content: flex-start;
+            margin: 0 auto;
+        }
+
+        .movin_link {
+            text-decoration: none;
+            font-family: 'GMarketSans';
+            font-size: 18px;
+            font-weight: 500;
+            color: #ffffff;
+            margin: 0;
+            padding: 16px 32px;
+            border-radius: 999px;
+            border: 1px solid #ffffff;
+            background-color: rgba(255, 54, 57, 0.6);
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        .movin_link:hover {
+            color: #ff3639;
+            background-color: #ffffff;
+            border: 1px solid #ffffff;
+        }
+
+        .movin_2floor {
+            position: absolute;
+            width: 1280px;
+            height: 572px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 1;
+        }
+
+        .movin_2f_top {
+            width: 100%;
+            height: 64%;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .movin_2f_box {
+            width: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #bbcee1;
+            border-radius: 20px;
+        }
+
+        .movin_2f_title_box {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .movin_2f_profile {
+            width: 32px;
+            height: 32px;
+            border-radius: 999px;
+        }
+
+        .movin_2f_profile>img {
+            width: 100%;
+            height: 100%;
+            border-radius: 999px;
+        }
+
+        .movin_2f_title {
+            font-family: 'GMarketSans';
+            font-size: 26px;
+            font-weight: 500;
+            color: #111111;
+            margin: 0;
+        }
+
+        .movin_2f_text_box {
+            background-color: #ffffff;
+            padding: 24px;
+            box-sizing: border-box;
+            border-radius: 20px;
+        }
+
+        .movin_2f_text {
+            font-family: 'GMarketSans';
+            font-size: 18px;
+            font-weight: 500;
+            color: #111111;
+            margin: 0;
+        }
+
+        .movin_2f_text_mb {
+            font-family: 'GMarketSans';
+            font-size: 18px;
+            font-weight: 500;
+            color: #111111;
+            margin: 0;
+            display: none;
+        }
+
+        .movin_2f_bottom {
+            width: 100%;
+            height: 64%;
+            display: flex;
+            justify-content: flex-end;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="movin_container">
+        <div class="movin_wrapper">
+
+            <div class="movin_2floor">
+                <div class="movin_2f_top">
+                    <div class="movin_2f_box">
+                        <div class="movin_2f_title_box">
+                            <div class="movin_2f_profile">
+                                <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+                            </div>
+                            <p class="movin_2f_title">
+                                수의학 전공
+                            </p>
+                        </div>
+                        <div class="movin_2f_text_box">
+                            <p class="movin_2f_text">
+                                수의학을 전공하였기에,
+                                <br>
+                                최적화된 전문성을 보유하고 있습니다.
+                                <br>
+                                동물병원 질병과 진료과정에 대한 이해를 바탕으로,
+                                <br>
+                                반려동물 보호자들이 실제로 궁금해하는 키워드를 선별합니다.
+                            </p>
+                            <p class="movin_2f_text_mb">
+                                수의학을 전공하였기에 최적화된 전문성을 보유하고 있습니다. 동물병원 질병과 진료과정에 대한 이해를 바탕으로, 반려동물 보호자들이 실제로 궁금해하는 키워드를
+                                선별합니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="movin_2f_bottom">
+                    <div class="movin_2f_box">
+                        <div class="movin_2f_title_box">
+                            <div class="movin_2f_profile">
+                                <img src="https://ncryk7.mycafe24.com/tiger1.jpg" alt="">
+                            </div>
+                            <p class="movin_2f_title">
+                                블로그마케팅 운영
+                            </p>
+                        </div>
+                        <div class="movin_2f_text_box">
+                            <p class="movin_2f_text">
+                                블로그마케팅 대행사를 운영하고 있으며,
+                                <br>
+                                구매로 이끌기 위한 전략만
+                                <br>
+                                40,000시간 이상 연구하였습니다.
+                                <br>
+                                단순히 상위노출에서 그치지 않고,
+                                <br>
+                                보호자의 신뢰를 얻을 수 있는 컨텐츠를 제작합니다.
+                            </p>
+                            <p class="movin_2f_text_mb">
+                                블로그마케팅 대행사를 운영하고 있으며, 구매로 이끌기 위한 전략만 40,000시간 이상 연구하였습니다. 단순히 상위노출에서 그치지 않고, 보호자의 신뢰를 얻을
+                                수 있는 컨텐츠를 제작합니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movin_top_box">
+                <div class="movin_top_title_box">
+                    <p class="movin_top_title">
+                        VETERINARY
+                    </p>
+                    <p class="movin_top_desc">
+                        우리는 특별한 전문성이 있습니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="movin_middle_box">
+                <p class="movin_middle1">
+                    WE FULLY UNDERSTAND THE EXPERTISE REQUIRED TO RUN A VETERINARY HOSPITAL.
+                </p>
+                <p class="movin_middle2">
+                    THE EXPERTISE REQUIRED TO RUN A VETERINARY HOSPITAL. WE FULLY UNDERSTAND
+                </p>
+                <p class="movin_middle1">
+                    WE FULLY UNDERSTAND THE EXPERTISE REQUIRED TO RUN A VETERINARY HOSPITAL.
+                </p>
+            </div>
+
+            <div class="movin_bottom_box">
+                <a href="#" class="movin_link">
+                    포트폴리오 보기
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const lines = document.querySelectorAll('.movin_middle_box > p');
+
+            const SPEED_PX_PER_SEC = 60; // 속도(픽셀/초)
+
+            const setupLine = (p) => {
+                const text = (p.textContent || '').trim();
+                if (!text) return;
+
+                const dir = p.classList.contains('movin_middle2') ? 1 : -1;
+
+                p.textContent = '';
+
+                const track = document.createElement('span');
+                track.className = 'marquee-track';
+
+                const seg1 = document.createElement('span');
+                seg1.className = 'marquee-seg';
+                seg1.textContent = text;
+
+                const seg2 = document.createElement('span');
+                seg2.className = 'marquee-seg';
+                seg2.textContent = text;
+
+                track.appendChild(seg1);
+                track.appendChild(seg2);
+                p.appendChild(track);
+
+                const segWidth = seg1.getBoundingClientRect().width;
+
+                let x = 0;
+                let last = performance.now();
+
+                const tick = (now) => {
+                    const dt = (now - last) / 1000;
+                    last = now;
+
+                    x += dir * SPEED_PX_PER_SEC * dt;
+
+                    if (dir === -1) {
+                        if (x <= -segWidth) x += segWidth;
+                    } else {
+                        if (x >= 0) x -= segWidth;
+                    }
+
+                    track.style.transform = `translate3d(${x}px, 0, 0)`;
+                    requestAnimationFrame(tick);
+                };
+
+                requestAnimationFrame(tick);
+            };
+
+            lines.forEach(setupLine);
+        });
+    </script>
+
+</body>
+
+</html>
