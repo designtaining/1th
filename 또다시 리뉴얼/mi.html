@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+        .mi_item {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mi_item_top {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .mi_item_link {
+            font-family: 'Pretendard';
+            font-weight: 400;
+            font-size: 18px;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 18px 32px;
+            border-radius: 999px;
+            border: 1px solid #0140b7;
+            background-color: #0140b7;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: visible;
+        }
+
+        .mi_item_link::after {
+            content: "";
+            position: absolute;
+            inset: 0px;
+            /* 링이 버튼 밖으로 조금 나가게 */
+            border-radius: 999px;
+            pointer-events: none;
+            z-index: -1;
+
+            /* "border-only" 핵심: background 없음 + box-shadow로 링 5겹 */
+            border: 1px solid rgba(1, 64, 183, 0.80);
+            box-shadow:
+                0 0 0 0 rgba(1, 64, 183, 0.70),
+                0 0 0 0 rgba(1, 64, 183, 0.55),
+                0 0 0 0 rgba(1, 64, 183, 0.40),
+                0 0 0 0 rgba(1, 64, 183, 0.28),
+                0 0 0 0 rgba(1, 64, 183, 0.20);
+
+            animation: mi_ripple_5 1.9s infinite;
+        }
+
+        @keyframes mi_ripple_5 {
+
+            /* 타다다다닥: 초반에 5발을 빠르게 쏘고, 뒤는 쉬는 구간 */
+            0% {
+                opacity: 1;
+                transform: scale(1);
+                box-shadow:
+                    0 0 0 0 rgba(1, 64, 183, 0.4),
+                    0 0 0 0 rgba(1, 64, 183, 0.3),
+                    0 0 0 0 rgba(1, 64, 183, 0.2),
+                    0 0 0 0 rgba(1, 64, 183, 0.1),
+                    0 0 0 0 rgba(1, 64, 183, 0.05);
+            }
+
+            /* 5발 + 페이드아웃 */
+            90% {
+                box-shadow:
+                    0 0 0 52px rgba(1, 64, 183, 0.04),
+                    0 0 0 40px rgba(1, 64, 183, 0.03),
+                    0 0 0 30px rgba(1, 64, 183, 0.02),
+                    0 0 0 20px rgba(1, 64, 183, 0.01),
+                    0 0 0 12px rgba(1, 64, 183, 0.007);
+                opacity: .9;
+            }
+
+            /* 쉬는 구간(리듬감) */
+            100% {
+                box-shadow:
+                    0 0 0 72px rgba(1, 64, 183, 0),
+                    0 0 0 58px rgba(1, 64, 183, 0),
+                    0 0 0 44px rgba(1, 64, 183, 0),
+                    0 0 0 30px rgba(1, 64, 183, 0),
+                    0 0 0 18px rgba(1, 64, 183, 0);
+                opacity: 0;
+                transform: scale(1.02);
+            }
+        }
+
+        .mi_button {
+            font-size: 16px;
+        }
+
+        .mi_item_link:hover {
+            background-color: transparent;
+            color: #0140b7;
+        }
+
+        .mi_item_bottom {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .mi_item_box {
+            width: 100%;
+            height: 580px;
+            border-radius: 0 120px 0 120px;
+        }
+
+        .mi_item_box>img {
+            width: 100%;
+            height: 100%;
+            border-radius: 0 120px 0 120px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <section class="mi_item">
+        <div class="mi_item_top">
+            <a href="Story" class="mi_item_link">
+                브랜드스토리 <i class="fa-regular fa-plus mi_button"></i>
+            </a>
+        </div>
+        <div class="mi_item_bottom">
+            <a href="" class="mi_item_box">
+                <div class="mi_item_shadow"></div>
+                <img src="https://ncryk7.mycafe24.com/miimg1.png" alt="">
+            </a>
+            <a href="" class="mi_item_box">
+                <div class="mi_item_shadow"></div>
+                <img src="https://ncryk7.mycafe24.com/miimg2.png" alt="">
+            </a>
+            <a href="" class="mi_item_box">
+                <div class="mi_item_shadow"></div>
+                <img src="https://ncryk7.mycafe24.com/miimg3.png" alt="">
+            </a>
+        </div>
+    </section>
+
+</body>
+
+</html>
