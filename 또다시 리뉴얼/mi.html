@@ -13,6 +13,7 @@
             width: 100%;
             display: flex;
             flex-direction: column;
+            gap: 40px;
         }
 
         .mi_item_top {
@@ -25,7 +26,7 @@
             font-family: 'Pretendard';
             font-weight: 400;
             font-size: 18px;
-            color: #ffffff;
+            color: #ffffff !important;
             text-decoration: none;
             padding: 18px 32px;
             border-radius: 999px;
@@ -101,7 +102,7 @@
 
         .mi_item_link:hover {
             background-color: transparent;
-            color: #0140b7;
+            color: #0140b7 !important;
         }
 
         .mi_item_bottom {
@@ -114,12 +115,82 @@
             width: 100%;
             height: 580px;
             border-radius: 0 120px 0 120px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
         .mi_item_box>img {
             width: 100%;
             height: 100%;
             border-radius: 0 120px 0 120px;
+            transition: all 0.3s ease;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .mi_item_box:hover>img {
+            transform: scale(1.04);
+        }
+
+        .mi_item_box:hover .mi_item_shadow {
+            background-color: rgba(17, 17, 17, 0.9);
+        }
+
+        .mi_item_box:hover .mi_shadow_title {
+            color: #ffffff;
+        }
+
+        .mi_item_box:hover .mi_sha_arrow {
+            animation: arrowNudge 2s ease infinite;
+        }
+
+        @keyframes arrowNudge {
+            0% {
+                transform: rotate(-90deg) translateY(0);
+            }
+
+            20% {
+                transform: rotate(-90deg) translateY(4px);
+            }
+
+            40% {
+                transform: rotate(-90deg) translateY(0);
+            }
+
+            60% {
+                transform: rotate(-90deg) translateY(4px);
+            }
+
+            100% {
+                transform: rotate(-90deg) translateY(0);
+            }
+        }
+
+        .mi_item_shadow {
+            position: absolute;
+            z-index: 2;
+            background-color: transparent;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .mi_shadow_title {
+            font-family: 'Pretendard';
+            font-weight: 800;
+            font-size: 48px;
+            color: transparent;
+            margin: 0;
+            transition: all 0.3s ease;
+        }
+
+        .mi_sha_arrow {
+            transform: rotate(-90deg);
+            font-size: 32px;
         }
     </style>
 
@@ -135,15 +206,30 @@
         </div>
         <div class="mi_item_bottom">
             <a href="" class="mi_item_box">
-                <div class="mi_item_shadow"></div>
+                <div class="mi_item_shadow">
+                    <p class="mi_shadow_title">
+                        포트폴리오 보기
+                        <i class="fa-sharp fa-solid fa-angle-down mi_sha_arrow"></i>
+                    </p>
+                </div>
                 <img src="https://ncryk7.mycafe24.com/miimg1.png" alt="">
             </a>
             <a href="" class="mi_item_box">
-                <div class="mi_item_shadow"></div>
+                <div class="mi_item_shadow">
+                    <p class="mi_shadow_title">
+                        컨셉가이드북
+                        <i class="fa-sharp fa-solid fa-angle-down mi_sha_arrow"></i>
+                    </p>
+                </div>
                 <img src="https://ncryk7.mycafe24.com/miimg2.png" alt="">
             </a>
             <a href="" class="mi_item_box">
-                <div class="mi_item_shadow"></div>
+                <div class="mi_item_shadow">
+                    <p class="mi_shadow_title">
+                        가격안내
+                        <i class="fa-sharp fa-solid fa-angle-down mi_sha_arrow"></i>
+                    </p>
+                </div>
                 <img src="https://ncryk7.mycafe24.com/miimg3.png" alt="">
             </a>
         </div>
