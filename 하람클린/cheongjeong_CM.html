@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-1Thin.woff2') format('woff2');
+            font-weight: 100;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-2ExtraLight.woff2') format('woff2');
+            font-weight: 200;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-3Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-4Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-5Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-6SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-7Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-8ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-9Black.woff2') format('woff2');
+            font-weight: 900;
+            font-display: swap;
+        }
+
+        .cm_container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cm_title {
+            font-family: 'A2z';
+            font-size: 36px;
+            font-weight: 600;
+            color: #111111;
+        }
+
+        .cm_boxwrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .cm_box {
+            border-radius: 12px;
+            border: 2px solid #111111;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .cm_box_title1 {
+            font-family: 'A2z';
+            font-size: 20px;
+            font-weight: 600;
+            color: #111111;
+        }
+
+        .cm_box_desc1 {
+            font-family: 'A2z';
+            font-size: 14px;
+            font-weight: 400;
+            color: #111111;
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .cm_title {
+                font-size: 32px;
+            }
+
+            .cm_box_title1 {
+                font-size: 18px;
+            }
+
+            .cm_box_desc1 {
+                font-size: 12px;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .cm_title {
+                font-size: 28px;
+            }
+
+            .cm_box_title1 {
+                font-size: 16px;
+            }
+
+            .cm_box_desc1 {
+                font-size: 12px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .cm_title {
+                font-size: 24px;
+            }
+
+            .cm_box_title1 {
+                font-size: 16px;
+            }
+
+            .cm_box_desc1 {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="cm_container">
+        <div class="cm_title">
+            컬비 분진 케어 & 미코플러스 바닥케어
+        </div>
+        <div class="cm_boxwrapper">
+            <div class="cm_box">
+                <div class="cm_box_title">
+                    <p class="cm_box_title1">컬비 분진 케어란?</p>
+                </div>
+                <div class="cm_box_desc">
+                    <p class="cm_box_desc1">
+                        11등급 HEPA 필터와 강력한 흡입력(두드림 방식)을 활용해 매트리스, 벽지, 커튼 등에 박힌 미세분진, 집먼지진드기, 새집 공사 먼지를 제거하는 프리미엄 홈케어
+                        서비스입니다.
+                        입니다. 일반 청소기로 해결되지 않는 벽면 미세먼지와 섬유가루까지 흡착하여 새집증후군 예방 및 실내 공기 질 개선에 매우 효과적입니다.
+                    </p>
+                </div>
+            </div>
+            <div class="cm_box">
+                <div class="cm_box_title">
+                    <p class="cm_box_title1">미코플러스 바닥케어란?</p>
+                </div>
+                <div class="cm_box_desc">
+                    <p class="cm_box_desc1">
+                        미코플러스(MICO PLUS)는 17인치 사이즈의 보행식 습식 바닥 청소기입니다. 가정집, 아파트, 빌라, 다세대 주택 등 다양한 주거 공간에서 다양한 거주환경에서 바닥의
+                        찌든
+                        때나
+                        기름때를 제거하는 데 주로 사용됩니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
