@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-1Thin.woff2') format('woff2');
+            font-weight: 100;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-2ExtraLight.woff2') format('woff2');
+            font-weight: 200;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-3Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-4Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-5Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-6SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-7Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-8ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-9Black.woff2') format('woff2');
+            font-weight: 900;
+            font-display: swap;
+        }
+
+        .last_container {
+            width: 100%;
+            height: 100%;
+            padding: 60px 0;
+            background-color: #fffeeb;
+        }
+
+        .last_wrapper {
+            width: 1000px;
+            height: 100%;
+            margin: 0 auto;
+        }
+
+        .last_box {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .last_top {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .last_tel,
+        .last_kakao,
+        .last_insta {
+            width: 100%;
+            height: 100px;
+            border: 1px solid #f7f7f7;
+            border-radius: 12px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 12px 40px;
+            box-sizing: border-box;
+            text-decoration: none;
+            transition: all 0.35s ease;
+            transform: translateY(0);
+        }
+
+        .last_tel:hover,
+        .last_kakao:hover,
+        .last_insta:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .last_bt {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .last_bt_m {
+            font-family: 'A2z';
+            font-size: 16px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+        }
+
+        .last_tel {
+            background-color: #e3edff;
+        }
+
+        .ic_phone {
+            font-size: 22px;
+            color: #2067ff;
+        }
+
+        .last_kakao {
+            background-color: #fbe408;
+        }
+
+        .ic_kakao {
+            font-size: 22px;
+            color: #412525;
+        }
+
+        .last_insta {
+            background: linear-gradient(90deg,
+                    #f58529 0%,
+                    #dd2a7b 50%,
+                    #8134af 100%);
+        }
+
+        .ic_insta {
+            font-size: 22px;
+            color: #ffffff;
+        }
+
+        /* top 끝 */
+
+        .last_middle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            height: 360px;
+        }
+
+        .last_ring {
+            position: absolute;
+            z-index: 1;
+            width: 320px;
+            height: 320px;
+            animation: ringRotate 32s linear infinite;
+        }
+
+        @keyframes ringRotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .last_ring>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .last_logo {
+            position: absolute;
+            z-index: 2;
+            width: 220px;
+        }
+
+        .last_logo>img {
+            width: 100%;
+        }
+
+        .last_bottom {
+            display: flex;
+            justify-content: center;
+        }
+
+        .last_message {
+            font-family: 'A2z';
+            font-size: 12px;
+            font-weight: 400;
+            color: #767676;
+            margin: 0;
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .last_wrapper {
+                width: 100%;
+                height: 100%;
+                margin: 0 auto;
+                padding: 0 16px;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .last_top {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .last_middle {
+                height: 320px;
+            }
+
+            .last_ring {
+                width: 260px;
+                height: 260px;
+            }
+
+            .last_logo {
+                width: 180px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+
+            .last_tel,
+            .last_kakao,
+            .last_insta {
+                height: 80px;
+                padding: 12px 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="last_container">
+        <div class="last_wrapper">
+            <div class="last_box">
+                <div class="last_top">
+                    <a href="tel:01000000000" class="last_tel">
+
+                        <div class="last_bt">
+                            <p class="last_bt_m">
+                                0507-1111-1111
+                            </p>
+                            <i class="fa-solid fa-phone ic_phone"></i>
+                        </div>
+                    </a>
+                    <a href="https://카카오채널주소" target="_blank" rel="noopener noreferrer" class="last_kakao">
+                        <div class="last_bt">
+                            <p class="last_bt_m">
+                                카카오채널
+                            </p>
+                            <i class="fa-brands fa-kakao-talk ic_kakao"></i>
+                        </div>
+                    </a>
+                    <a href="https://instagram.com/계정아이디" target="_blank" rel="noopener noreferrer" class="last_insta">
+                        <div class="last_bt">
+                            <p class="last_bt_m">
+                                인스타그램
+                            </p>
+                            <i class="fa-brands fa-instagram ic_insta"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="last_middle">
+                    <div class="last_ring">
+                        <img src="https://ncryk7.mycafe24.com/cheongjeong_footer_ring.png" alt="">
+                    </div>
+                    <div class="last_logo">
+                        <img src="https://ncryk7.mycafe24.com/cheongjeong_footer_logo.png" alt="">
+                    </div>
+                </div>
+                <div class="last_bottom">
+                    <p class="last_message">
+                        청정클린텍은 고객님의 만족을 위해 늘 노력하겠습니다.
+                        궁금하신 점은 언제든 편하게 문의해 주세요.
+                        항상 최선을 다하는 청정클린텍이 되겠습니다. 감사합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
