@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');
+            font-weight: 100;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');
+            font-weight: 200;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+            font-weight: 900;
+            font-display: swap;
+        }
+
+        .cj_fourth_container {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .cj_fourth_wrapper {
+            width: 100%;
+            height: 100%;
+            padding: 0 160px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cj_fourth_box {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .cj_fourth_top {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .cj_fourth_title {
+            font-family: 'Paperozi';
+            font-size: 48px;
+            font-weight: 300;
+            color: #111111;
+            margin: 0;
+        }
+
+        .cj_fourth_title2 {
+            font-family: 'Paperozi';
+            font-size: 48px;
+            font-weight: 300;
+            color: #111111;
+            margin: 0;
+            display: none;
+        }
+
+        .cj_fourth_bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .cj_fourth_catchphrase {
+            font-family: 'Paperozi';
+            font-size: 26px;
+            font-weight: 300;
+            color: #111111;
+            letter-spacing: 1.5px;
+            margin: 0;
+        }
+
+        .cj_fourth_line {
+            width: 100%;
+            height: 1px;
+            background-color: #cccccc;
+        }
+
+        .cj_fourth_desc {
+            font-family: 'Paperozi';
+            font-size: 16px;
+            font-weight: 300;
+            color: #111111;
+            letter-spacing: 1.5px;
+            margin: 0;
+        }
+
+        .cj_fourth_advtbox {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            justify-content: center;
+            width: 600px;
+        }
+
+        .cj_advt_top {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .cj_advt_bt {
+            appearance: none;
+            -webkit-appearance: none;
+            background: #ffffff;
+            padding: 12px 24px;
+            border: 1px solid #e5e5ec;
+            box-shadow: 0 4px 12px rgba(17, 17, 17, 0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .cj_advt_bt.active {
+            background: #111111;
+            border-color: #111111;
+        }
+
+        .cj_advt_bt.active .cj_advt_tag {
+            color: #ffffff;
+        }
+
+        .cj_advt_tag {
+            font-family: 'Paperozi';
+            font-size: 16px;
+            font-weight: 300;
+            color: #111111;
+            letter-spacing: 0;
+            margin: 0;
+        }
+
+        .cj_advt_bottom {
+            width: 100%;
+            height: 460px;
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .cj_advt_video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            opacity: 0;
+            transition: opacity 0.45s ease;
+        }
+
+        .cj_advt_video.is-active {
+            opacity: 1;
+        }
+
+        /* ✅ 1512px 이하 */
+        @media screen and (max-width: 1512px) {
+            .cj_fourth_title {
+                display: none;
+            }
+
+            .cj_fourth_title2 {
+                display: flex;
+            }
+
+            .cj_fourth_advtbox {
+                gap: 16px;
+                width: 560px;
+            }
+
+            .cj_advt_bt {
+                padding: 8px 16px;
+                box-shadow: 0 4px 12px rgba(17, 17, 17, 0.05);
+            }
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .cj_fourth_title2 {
+                font-size: 40px;
+            }
+
+            .cj_fourth_catchphrase {
+                font-size: 20px;
+            }
+
+            .cj_fourth_line {
+                width: 100%;
+                height: 1px;
+                background-color: #cccccc;
+            }
+
+            .cj_fourth_desc {
+                font-size: 14px;
+            }
+
+            .cj_fourth_advtbox {
+                gap: 16px;
+                width: 520px;
+            }
+
+            .cj_advt_bt {
+                padding: 8px 16px;
+                box-shadow: 0 4px 12px rgba(17, 17, 17, 0.05);
+            }
+        }
+
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .cj_fourth_wrapper {
+                padding: 0 12px;
+                flex-direction: column;
+            }
+
+            .cj_fourth_box {
+                gap: 60px;
+            }
+
+            .cj_fourth_top {
+                gap: 8px;
+            }
+
+            .cj_fourth_title {
+                font-size: 40px;
+                display: flex;
+            }
+
+            .cj_fourth_title2 {
+                display: none;
+            }
+
+            .cj_fourth_bottom {
+                gap: 16px;
+            }
+
+            .cj_fourth_catchphrase {
+                font-size: 20px;
+                letter-spacing: 2px;
+            }
+
+            .cj_fourth_desc {
+                font-size: 14px;
+                letter-spacing: 1.5px;
+            }
+
+            .cj_fourth_advtbox {
+                gap: 16px;
+                width: 100%;
+            }
+
+            .cj_advt_top {
+                justify-content: flex-start;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .cj_advt_tag {
+                font-size: 14px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .cj_fourth_title {
+                font-size: 24px;
+            }
+
+            .cj_fourth_bottom {
+                gap: 16px;
+            }
+
+            .cj_fourth_catchphrase {
+                letter-spacing: 0;
+            }
+
+            .cj_fourth_desc {
+                font-size: 12px;
+                letter-spacing: 0;
+            }
+
+            .cj_advt_top {
+                display: flex;
+                justify-content: space-between;
+                gap: 4px;
+            }
+
+            .cj_advt_bt {
+                padding: 12px 8px;
+                box-shadow: 0 4px 12px rgba(17, 17, 17, 0.05);
+            }
+
+            .cj_advt_tag {
+                font-size: 12px;
+            }
+        }
+
+        /* ✅ 374px 이하 */
+        @media screen and (max-width: 374px) {
+            .cj_advt_bt {
+                padding: 8px 4px;
+                box-shadow: 0 4px 12px rgba(17, 17, 17, 0.05);
+            }
+
+            .cj_advt_tag {
+                font-size: 12px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <section class="cj_fourth_container">
+
+        <div class="cj_fourth_wrapper">
+
+            <div class="cj_fourth_box">
+                <div class="cj_fourth_top">
+                    <p class="cj_fourth_title">
+                        현장 방문 전,
+                        <br>
+                        청소 진행과정을 미리 만나보세요.
+                    </p>
+                    <p class="cj_fourth_title2">
+                        현장 방문 전,
+                        <br>
+                        청소 진행과정을
+                        <br>
+                        미리 만나보세요.
+                    </p>
+                </div>
+                <div class="cj_fourth_bottom">
+                    <p class="cj_fourth_catchphrase">
+                        가려진 공간까지 꼼꼼히 분리/탈거
+                    </p>
+                    <div class="cj_fourth_line"></div>
+                    <p class="cj_fourth_desc">
+                        외부에서 확인하기 어려운 내부 공간까지,
+                        <br>
+                        세밀하게 체크하고 미리 준비합니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cj_fourth_advtbox">
+                <div class="cj_advt_top">
+
+                    <button type="button" class="cj_advt_bt active"
+                        data-video="https://ncryk7.mycafe24.com/summer1.mp4">
+                        <span class="cj_advt_tag">#탈거 작업</span>
+                    </button>
+
+                    <button type="button" class="cj_advt_bt" data-video="https://ncryk7.mycafe24.com/summer2.mp4">
+                        <span class="cj_advt_tag">#스팀 청소</span>
+                    </button>
+
+                    <button type="button" class="cj_advt_bt" data-video="https://ncryk7.mycafe24.com/undersea.mp4">
+                        <span class="cj_advt_tag">#천연 세제 사용</span>
+                    </button>
+
+                    <button type="button" class="cj_advt_bt" data-video="https://ncryk7.mycafe24.com/undersea1.mp4">
+                        <span class="cj_advt_tag">#매뉴얼 체크</span>
+                    </button>
+
+                </div>
+                <div class="cj_advt_bottom">
+                    <video class="cj_advt_video cj_video_a is-active" autoplay muted loop playsinline preload="auto">
+                        <source src="https://ncryk7.mycafe24.com/summer1.mp4" type="video/mp4">
+                    </video>
+
+                    <video class="cj_advt_video cj_video_b" autoplay muted loop playsinline preload="auto"></video>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script>
+        (function () {
+            const box = document.querySelector('.cj_fourth_advtbox');
+            if (!box) return;
+
+            const buttons = box.querySelectorAll('.cj_advt_bt');
+            const videos = box.querySelectorAll('.cj_advt_video');
+
+            let activeIndex = 0;
+
+            buttons.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    const nextSrc = btn.dataset.video;
+                    if (!nextSrc) return;
+
+                    const currentVideo = videos[activeIndex];
+                    const nextVideo = videos[1 - activeIndex];
+
+                    if (currentVideo.currentSrc.includes(nextSrc)) return;
+
+                    buttons.forEach(item => item.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    nextVideo.src = nextSrc;
+                    nextVideo.load();
+                    nextVideo.muted = true;
+
+                    nextVideo.oncanplay = function () {
+                        nextVideo.play().catch(() => { });
+
+                        nextVideo.classList.add('is-active');
+                        currentVideo.classList.remove('is-active');
+
+                        activeIndex = 1 - activeIndex;
+                        nextVideo.oncanplay = null;
+                    };
+                });
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

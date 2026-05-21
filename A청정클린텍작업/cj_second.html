@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');
+            font-weight: 100;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');
+            font-weight: 200;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+            font-weight: 900;
+            font-display: swap;
+        }
+
+        .cj_second_container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .cj_second_wrapper {
+            width: 100%;
+            height: 100%;
+            padding: 0 160px;
+            box-sizing: border-box;
+        }
+
+        .cj_second_box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .cj_second_top {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .cj_second_subtitle {
+            font-family: 'Paperozi';
+            font-size: 18px;
+            font-weight: 300;
+            color: #111111;
+            letter-spacing: 1.5px;
+            margin: 0;
+        }
+
+        .cj_second_title {
+            font-family: 'Paperozi';
+            font-size: 48px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+        }
+
+        .cj_second_title_mb {
+            font-family: 'Paperozi';
+            font-size: 40px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+            display: none;
+        }
+
+        .cj_second_bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .cj_second_catchphrase {
+            font-family: 'Paperozi';
+            font-size: 26px;
+            font-weight: 300;
+            color: #111111;
+            letter-spacing: 1.5px;
+            margin: 0;
+        }
+
+        .cj_second_desc {
+            font-family: 'Paperozi';
+            font-size: 16px;
+            font-weight: 300;
+            color: #111111;
+            letter-spacing: 1.5px;
+            margin: 0;
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .cj_second_wrapper {
+                padding: 0 12px;
+            }
+
+            .cj_second_box {
+                gap: 60px;
+            }
+
+            .cj_second_top {
+                gap: 8px;
+            }
+
+            .cj_second_subtitle {
+                font-size: 16px;
+                letter-spacing: 2px;
+            }
+
+            .cj_second_title {
+                font-size: 40px;
+            }
+
+            .cj_second_bottom {
+                gap: 16px;
+            }
+
+            .cj_second_catchphrase {
+                font-size: 20px;
+                letter-spacing: 2px;
+            }
+
+            .cj_second_desc {
+                font-size: 14px;
+                letter-spacing: 1.5px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .cj_second_title {
+                display: none;
+            }
+
+            .cj_second_title_mb {
+                display: flex;
+            }
+
+            .cj_second_subtitle {
+                letter-spacing: 0;
+            }
+
+            .cj_second_title {
+                font-size: 40px;
+            }
+
+            .cj_second_bottom {
+                gap: 16px;
+            }
+
+            .cj_second_catchphrase {
+                letter-spacing: 0;
+            }
+
+            .cj_second_desc {
+                font-size: 12px;
+                letter-spacing: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="cj_second_container">
+        <div class="cj_second_wrapper">
+            <div class="cj_second_box">
+                <div class="cj_second_top">
+                    <p class="cj_second_subtitle">고객을 위한 체계적인 청소 솔루션</p>
+                    <p class="cj_second_title">TRAINED EXPERT TEAM</p>
+                    <p class="cj_second_title_mb">TRAINED<br>EXPERT TEAM</p>
+                </div>
+                <div class="cj_second_bottom">
+                    <p class="cj_second_catchphrase">
+                        우리는 144시간의 전문교육을 수료한,
+                        <br>
+                        전문 직영팀장만을 현장으로 파견합니다.
+                    </p>
+                    <p class="cj_second_desc">
+                        또한 고객님의 파손 걱정을 덜어드리고자,
+                        <br>
+                        매뉴얼을 체계적으로 구축하여 모든 현장 과정에 적용하였습니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

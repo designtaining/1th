@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');
+            font-weight: 100;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');
+            font-weight: 200;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+            font-weight: 900;
+            font-display: swap;
+        }
+
+        .cj_fifth_container {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .cj_fifth_wrapper {
+            width: 100%;
+            height: 100%;
+            padding: 0 160px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cj_fifth_box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .cj_fifth_top {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .cj_fifth_subtitle {
+            font-family: 'Paperozi';
+            font-size: 18px;
+            font-weight: 300;
+            color: #111111;
+            letter-spacing: 1.5px;
+            margin: 0;
+        }
+
+        .cj_fifth_title {
+            font-family: 'Paperozi';
+            font-size: 48px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+        }
+
+        .cj_fifth_bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .cj_fifth_catchphrase {
+            font-family: 'Paperozi';
+            font-size: 26px;
+            font-weight: 300;
+            color: #111111;
+            letter-spacing: 1.5px;
+            margin: 0;
+        }
+
+        .cj_fifth_bt {
+            text-decoration: none;
+            border: 1px solid #111111;
+            width: 280px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Paperozi';
+            font-size: 16px;
+            font-weight: 300;
+            color: #111111 !important;
+            letter-spacing: 1.5px;
+            margin: 0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: visible;
+        }
+
+        .cj_fifth_bt:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .cj_fifth_bt::after {
+            content: '';
+            position: absolute;
+            top: 180%;
+            right: -240px;
+            transform: translateY(-50%) rotate(12deg);
+
+            width: 240px;
+            height: 240px;
+
+            background-image: url('https://ncryk7.mycafe24.com/cjclean_sticker1.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            animation: cjStickerFloat 4s ease-in-out infinite;
+
+            pointer-events: none;
+        }
+
+        /* 오뚜기 느낌 */
+        @keyframes cjStickerFloat {
+            0% {
+                transform: translateY(-50%) rotate(-20deg);
+            }
+
+            25% {
+                transform: translateY(-50%) rotate(12deg);
+            }
+
+            50% {
+                transform: translateY(-50%) rotate(-8deg);
+            }
+
+            75% {
+                transform: translateY(-50%) rotate(16deg);
+            }
+
+            100% {
+                transform: translateY(-50%) rotate(-20deg);
+            }
+        }
+
+        .cj_fifth_double {
+            display: flex;
+            gap: 20px;
+        }
+
+        .cj_fifth_double_left {
+            width: 360px;
+            height: 360px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            border: 1px solid #ffffff;
+            border-radius: 12px;
+        }
+
+        .cj_fifth_double_right {
+            width: 360px;
+            height: 360px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            border: 2px solid #ffffff;
+            border-radius: 12px;
+        }
+
+        .cj_fifth_km_line {
+            width: 100%;
+            height: 1px;
+            background-color: #ffffff;
+            margin: 0;
+        }
+
+        .cj_fifth_km_title {
+            font-family: 'Paperozi';
+            font-size: 24px;
+            font-weight: 300;
+            color: #111111;
+            letter-spacing: 1.5px;
+            margin: 0;
+        }
+
+        .cj_fifth_km_desc {
+            font-family: 'Paperozi';
+            font-size: 16px;
+            font-weight: 300;
+            color: #111111;
+            letter-spacing: 1.5px;
+            margin: 0;
+        }
+
+        .km_span1 {
+            color: #ffff60;
+        }
+
+        /* ✅ 1728px 이하 */
+        @media screen and (max-width: 1728px) {
+            .cj_fifth_double_left {
+                width: 280px;
+                height: 360px;
+                padding: 20px;
+                gap: 12px;
+            }
+
+            .cj_fifth_double_right {
+                width: 280px;
+                height: 360px;
+                padding: 20px;
+                gap: 12px;
+            }
+        }
+
+        /* ✅ 1512px 이하 */
+        @media screen and (max-width: 1512px) {
+            .cj_fifth_subtitle {
+                font-size: 16px;
+                letter-spacing: 1.5px;
+            }
+
+            .cj_fifth_title {
+                font-size: 40px;
+            }
+
+            .cj_fifth_catchphrase {
+                font-size: 20px;
+                letter-spacing: 1.5px;
+            }
+
+            .cj_fifth_bt {
+                width: 280px;
+                height: 60px;
+                font-size: 16px;
+            }
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .cj_fifth_double_left {
+                width: 200px;
+                height: 360px;
+                padding: 20px;
+                gap: 12px;
+            }
+
+            .cj_fifth_double_right {
+                width: 200px;
+                height: 360px;
+                padding: 20px;
+                gap: 12px;
+            }
+
+            .cj_fifth_km_title {
+                font-size: 20px;
+                letter-spacing: 1.5px;
+            }
+        }
+
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .cj_fifth_wrapper {
+                padding: 0 12px;
+            }
+
+            .cj_fifth_box {
+                gap: 60px;
+            }
+
+            .cj_fifth_top {
+                gap: 8px;
+            }
+
+            .cj_fifth_subtitle {
+                font-size: 16px;
+                letter-spacing: 2px;
+            }
+
+            .cj_fifth_title {
+                font-size: 40px;
+            }
+
+            .cj_fifth_bottom {
+                gap: 16px;
+            }
+
+            .cj_fifth_catchphrase {
+                font-size: 20px;
+                letter-spacing: 2px;
+            }
+
+            .cj_fifth_bt {
+                width: 200px;
+                height: 48px;
+                font-size: 14px;
+                letter-spacing: 1.5px;
+            }
+
+            .cj_fifth_wrapper {
+                padding: 0 12px;
+                flex-direction: column;
+            }
+
+            .cj_fifth_double {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .cj_fifth_double_left {
+                width: 100%;
+                height: 100%;
+                padding: 20px;
+                gap: 12px;
+            }
+
+            .cj_fifth_double_right {
+                width: 100%;
+                height: 100%;
+                padding: 20px;
+                gap: 12px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+
+            .cj_fifth_box {
+                gap: 20px;
+            }
+
+            .cj_fifth_title {
+                font-size: 24px;
+            }
+
+            .cj_fifth_subtitle {
+                letter-spacing: 0;
+            }
+
+            .cj_fifth_catchphrase {
+                font-size: 16px;
+            }
+
+            .cj_fifth_bottom {
+                gap: 16px;
+            }
+
+            .cj_fifth_catchphrase {
+                letter-spacing: 0;
+            }
+
+            .cj_fifth_bt {
+                width: 180px;
+                height: 40px;
+                font-size: 12px;
+                letter-spacing: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="cj_fifth_container">
+        <div class="cj_fifth_wrapper">
+
+            <div class="cj_fifth_box">
+                <div class="cj_fifth_top">
+                    <p class="cj_fifth_subtitle">강력하게, 더욱 더 정밀하게</p>
+                    <p class="cj_fifth_title">KIRBY & MICO PLUS</p>
+                </div>
+                <div class="cj_fifth_bottom">
+                    <p class="cj_fifth_catchphrase">
+                        피부와 호흡기가 예민한 분들도 안심할 수 있도록,
+                        <br>
+                        숨어있는 먼지와 오염을 완벽하게 제거합니다.
+                    </p>
+                    <a href="" class="cj_fifth_bt">
+                        <span class="cj_fifth_shine"></span>
+                        컬비 & 미코플러스 자세히보기
+                    </a>
+                </div>
+            </div>
+
+            <div class="cj_fifth_double">
+                <div class="cj_fifth_double_left">
+                    <p class="cj_fifth_km_title">
+                        컬비 분진 케어
+                    </p>
+                    <p class="cj_fifth_km_line"></p>
+                    <p class="cj_fifth_km_desc">
+                        11등급 HEPA 필터와 강력한 흡입력(두드림 방식)을 활용해 매트리스, 벽지, 커튼 등에 박힌 미세분진, 집먼지진드기, 새집 공사 먼지를 제거하는 프리미엄 홈케어
+                        서비스입니다. <span class="km_span1">일반 청소기로 해결되지 않는 벽면 미세먼지와 섬유가루까지 흡착하여 새집증후군 예방 및 실내 공기 질 개선에 매우
+                            효과적</span>입니다.
+                    </p>
+                </div>
+                <div class="cj_fifth_double_right">
+                    <p class="cj_fifth_km_title">
+                        미코플러스 바닥케어
+                    </p>
+                    <p class="cj_fifth_km_line"></p>
+                    <p class="cj_fifth_km_desc">
+                        미코플러스(MICO PLUS)는 17인치 사이즈의 보행식 습식 바닥 청소기입니다. 가정집, 아파트, 빌라, 다세대 주택 등 <span class="km_span1">다양한
+                            주거 공간에서 다양한 거주환경에서 바닥의
+                            찌든
+                            때나
+                            기름때를 제거</span>하는 데 주로 사용됩니다.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

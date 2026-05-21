@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');
+            font-weight: 100;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');
+            font-weight: 200;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+            font-weight: 900;
+            font-display: swap;
+        }
+
+        .cj_info_container {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .cj_info_wrapper {
+            width: 100%;
+            height: 100%;
+            padding: 0 160px;
+            box-sizing: border-box;
+        }
+
+        .cj_info_box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+        }
+
+        .cj_info_category {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .cj_category {
+            text-decoration: none;
+            color: #111111 !important;
+            font-family: 'Paperozi';
+            font-weight: 400;
+            font-size: 20px;
+            margin: 0;
+            padding: 12px 32px;
+            border: 1px solid #bdbdbd;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .cj_category:hover {
+            background-color: #e1e7ff;
+            border: 1px solid #e1e7ff;
+        }
+
+        .cj_info_card {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .cj_info_card_title {
+            font-family: 'Paperozi';
+            font-weight: 400;
+            font-size: 40px;
+            color: #111111;
+            margin: 0;
+        }
+
+        .cj_info_line {
+            width: 100%;
+            height: 1px;
+            background-color: #cccccc;
+        }
+
+        .cj_card_ti {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cj_info_card_tagbox {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .cj_info_card_tag {
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .cj_info_tag {
+            text-decoration: none;
+            color: #111111 !important;
+            font-family: 'Paperozi';
+            font-weight: 400;
+            font-size: 16px;
+            margin: 0;
+            padding: 8px 12px;
+            border: 1px solid #bdbdbd;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .cj_info_tag:hover {
+            background-color: #e1e7ff;
+            border: 1px solid #e1e7ff;
+        }
+
+        .cj_info_desc {
+            font-family: 'Paperozi';
+            font-weight: 400;
+            font-size: 24px;
+            color: #111111;
+            margin: 0;
+        }
+
+        .cj_category.active,
+        .cj_info_tag.active {
+            background-color: #2e50e2;
+            border: 1px solid #2e50e2;
+            color: #ffffff !important;
+        }
+
+        .cj_info_card_img {
+            width: 720px;
+            height: 540px;
+        }
+
+        .cj_info_card_img>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* ✅ 1440px 이하 */
+        @media screen and (max-width: 1440px) {
+            .cj_info_card_img {
+                width: 560px;
+                height: 420px;
+            }
+
+            .cj_info_tag {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .cj_info_card_img {
+                width: 480px;
+                height: 360px;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .cj_info_wrapper {
+                padding: 0 12px;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .cj_category {
+                text-decoration: none;
+                color: #111111 !important;
+                font-family: 'Paperozi';
+                font-weight: 400;
+                font-size: 16px;
+                margin: 0;
+                padding: 8px 20px;
+                border: 1px solid #bdbdbd;
+                border-radius: 8px;
+                transition: all 0.3s ease;
+            }
+
+            .cj_card_ti {
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 40px;
+            }
+
+            .cj_info_card_title {
+                font-size: 32px;
+            }
+
+            .cj_info_desc {
+                font-size: 20px;
+            }
+        }
+
+        /* ✅ 524px 이하 */
+        @media screen and (max-width: 524px) {
+            .cj_info_card_img {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 4 / 3;
+                overflow: hidden;
+            }
+
+            .cj_info_card_img>img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .cj_info_card_title {
+                font-size: 24px;
+            }
+
+            .cj_info_desc {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="cj_info_container">
+
+        <div class="cj_info_wrapper">
+            <div class="cj_info_box">
+
+                <div class="cj_info_category">
+                    <a href="" class="cj_category">현관</a>
+                    <a href="" class="cj_category">거실</a>
+                    <a href="" class="cj_category">주방</a>
+                    <a href="" class="cj_category">방</a>
+                    <a href="" class="cj_category">베란다</a>
+                    <a href="" class="cj_category">욕실</a>
+                </div>
+
+                <div class="cj_info_card">
+                    <p class="cj_info_card_title">현관 서비스 범위</p>
+                    <div class="cj_info_line"></div>
+
+                    <div class="cj_card_ti">
+
+                        <div class="cj_info_card_tagbox">
+                            <div class="cj_info_card_tag">
+                                <a href="" class="cj_info_tag">&#35;신발장</a>
+                                <a href="" class="cj_info_tag">&#35;수납장바닥</a>
+                                <a href="" class="cj_info_tag">&#35;벽면, 바닥</a>
+                                <a href="" class="cj_info_tag">&#35;천장, 조명</a>
+                                <a href="" class="cj_info_tag">&#35;몰딩</a>
+                            </div>
+                            <div class="cj_info_desc">
+                                내부 먼지 및 생활 오염 케어
+                            </div>
+                        </div>
+
+                        <div class="cj_info_card_img">
+                            <img src="https://ncryk7.mycafe24.com/asicon6.png" alt="">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const data = {
+                entrance: {
+                    title: '현관 서비스 범위',
+                    tags: [
+                        { name: '&#35;신발장', desc: '신발장 내부 먼지 및 생활 오염 케어', img: 'https://ncryk7.mycafe24.com/asicon1.png' },
+                        { name: '&#35;수납장바닥', desc: '틈새 먼지와 이물질까지 케어', img: 'https://ncryk7.mycafe24.com/asicon2.png' },
+                        { name: '&#35;벽면, 바닥', desc: '벽면과 바닥에 남아있는 생활 얼룩 및 오염 케어', img: 'https://ncryk7.mycafe24.com/asicon3.png' },
+                        { name: '&#35;천장, 조명', desc: '천장과 조명 주변에 먼지 케어', img: 'https://ncryk7.mycafe24.com/asicon4.png' },
+                        { name: '&#35;몰딩', desc: '구석에 쌓인 먼지와 오염 케어', img: 'https://ncryk7.mycafe24.com/asicon5.png' }
+                    ]
+                },
+                living: {
+                    title: '거실 서비스 범위',
+                    tags: [
+                        { name: '&#35;창문, 창틀', desc: '창문과 창틀에 쌓인 먼지 및 오염 케어', img: 'https://ncryk7.mycafe24.com/asicon6.png' },
+                        { name: '&#35;바닥청소', desc: '바닥 전체의 생활 먼지와 얼룩 케어', img: 'https://ncryk7.mycafe24.com/asicon7.png' },
+                        { name: '&#35;가구틈새', desc: '가구 틈새 사이 숨어있는 먼지와 이물질까지 케어', img: 'https://ncryk7.mycafe24.com/asicon8.png' },
+                        { name: '&#35;에어컨', desc: '에어컨 외부 먼지 및 주변 오염 케어', img: 'https://ncryk7.mycafe24.com/asicon8.png' },
+                        { name: '&#35;조명, 천장', desc: '조명과 천장 주변까지 꼼꼼하게 케어', img: 'https://ncryk7.mycafe24.com/asicon8.png' }
+                    ]
+                },
+                kitchen: {
+                    title: '주방 서비스 범위',
+                    tags: [
+                        { name: '&#35;싱크대', desc: '싱크대 내부 및 배수구 주변 오염 케어', img: 'https://ncryk7.mycafe24.com/asicon1.png' },
+                        { name: '&#35;레인지후드', desc: '레인지후드에 쌓인 기름때와 먼지 케어', img: 'https://ncryk7.mycafe24.com/asicon2.png' },
+                        { name: '&#35;가스레인지', desc: '가스레인지 주변의 생활 오염 및 기름 자국 케어', img: 'https://ncryk7.mycafe24.com/asicon3.png' },
+                        { name: '&#35;수납장내부', desc: '수납장 내부 먼지와 이물질까지 케어', img: 'https://ncryk7.mycafe24.com/asicon3.png' },
+                        { name: '&#35;타일벽면', desc: '타일 벽면에 남아있는 생활 먼지와 오염 케어', img: 'https://ncryk7.mycafe24.com/asicon3.png' }
+                    ]
+                },
+                room: {
+                    title: '방 서비스 범위',
+                    tags: [
+                        { name: '&#35;옷장내부', desc: '옷장 내부 먼지와 생활 오염 케어', img: 'https://ncryk7.mycafe24.com/asicon4.png' },
+                        { name: '&#35;침대밑', desc: '침대 밑 숨어있는 먼지와 이물질까지 케어', img: 'https://ncryk7.mycafe24.com/asicon5.png' },
+                        { name: '&#35;창문틀', desc: '창문틀 틈새에 쌓인 먼지와 오염 케어', img: 'https://ncryk7.mycafe24.com/asicon5.png' },
+                        { name: '&#35;바닥', desc: '바닥 전체를 꼼꼼하게 케어', img: 'https://ncryk7.mycafe24.com/asicon5.png' },
+                        { name: '&#35;벽면', desc: '벽면에 남아있는 생활 먼지와 오염 케어', img: 'https://ncryk7.mycafe24.com/asicon5.png' }
+                    ]
+                },
+                veranda: {
+                    title: '베란다 서비스 범위',
+                    tags: [
+                        { name: '&#35;샷시, 창문', desc: '샷시와 창문 틈새에 쌓인 먼지 및 오염 케어', img: 'https://ncryk7.mycafe24.com/asicon6.png' },
+                        { name: '&#35;세탁기공간', desc: '세탁기 공간 주변의 생활 먼지와 습기 오염 케어', img: 'https://ncryk7.mycafe24.com/asicon7.png' },
+                        { name: '&#35;바닥타일', desc: '바닥 타일의 묵은 때와 생활 얼룩 케어', img: 'https://ncryk7.mycafe24.com/asicon7.png' },
+                        { name: '&#35;배수구', desc: '배수구 주변 오염 및 이물질 케어', img: 'https://ncryk7.mycafe24.com/asicon7.png' },
+                        { name: '&#35;수납공간', desc: '수납공간 내부 먼지와 잔여 오염 케어', img: 'https://ncryk7.mycafe24.com/asicon7.png' }
+                    ]
+                },
+                bath: {
+                    title: '욕실 서비스 범위',
+                    tags: [
+                        { name: '&#35;변기', desc: '변기 내부 및 주변 오염 위생적 케어', img: 'https://ncryk7.mycafe24.com/asicon8.png' },
+                        { name: '&#35;세면대', desc: '세면대의 물때와 생활 오염 케어', img: 'https://ncryk7.mycafe24.com/asicon1.png' },
+                        { name: '&#35;욕조, 샤워부스', desc: '욕조 및 샤워부스에 남은 물때와 오염 케어', img: 'https://ncryk7.mycafe24.com/asicon2.png' },
+                        { name: '&#35;타일, 줄눈', desc: '타일과 줄눈 사이 묵은 때까지 케어', img: 'https://ncryk7.mycafe24.com/asicon2.png' },
+                        { name: '&#35;배수구', desc: '배수구 주변 이물질과 오염 부분 위생적 케어', img: 'https://ncryk7.mycafe24.com/asicon2.png' },
+                        { name: '&#35;거울', desc: '거울 표면의 얼룩과 물자국 케어', img: 'https://ncryk7.mycafe24.com/asicon2.png' }
+                    ]
+                }
+            };
+
+            const categoryKeys = ['entrance', 'living', 'kitchen', 'room', 'veranda', 'bath'];
+
+            const categories = document.querySelectorAll('.cj_category');
+            const title = document.querySelector('.cj_info_card_title');
+            const tagBox = document.querySelector('.cj_info_card_tag');
+            const desc = document.querySelector('.cj_info_desc');
+            const img = document.querySelector('.cj_info_card_img img');
+
+            function renderCard(key) {
+                const item = data[key];
+
+                title.textContent = item.title;
+                tagBox.innerHTML = '';
+
+                item.tags.forEach(function (tag, index) {
+                    const tagBtn = document.createElement('a');
+                    tagBtn.href = '';
+                    tagBtn.className = 'cj_info_tag';
+                    tagBtn.innerHTML = tag.name;
+
+                    if (index === 0) {
+                        tagBtn.classList.add('active');
+                        desc.textContent = tag.desc;
+                        img.src = tag.img;
+                    }
+
+                    tagBtn.addEventListener('click', function (e) {
+                        e.preventDefault();
+
+                        tagBox.querySelectorAll('.cj_info_tag').forEach(function (el) {
+                            el.classList.remove('active');
+                        });
+
+                        tagBtn.classList.add('active');
+                        desc.textContent = tag.desc;
+                        img.src = tag.img;
+                    });
+
+                    tagBox.appendChild(tagBtn);
+                });
+            }
+
+            categories.forEach(function (category, index) {
+                category.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    categories.forEach(function (el) {
+                        el.classList.remove('active');
+                    });
+
+                    category.classList.add('active');
+                    renderCard(categoryKeys[index]);
+                });
+            });
+
+            categories[0].classList.add('active');
+            renderCard('entrance');
+        });
+    </script>
+
+</body>
+
+</html>

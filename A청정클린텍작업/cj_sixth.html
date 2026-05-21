@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');
+            font-weight: 100;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');
+            font-weight: 200;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+            font-weight: 900;
+            font-display: swap;
+        }
+
+        .cj_sixth_container {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .cj_sixth_wrapper {
+            padding: 0 160px;
+        }
+
+        .cj_sixth_box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+        }
+
+        .cj_sixth_top {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cj_sixth_title_left {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .cj_sixth_subtitle {
+            font-family: 'Paperozi';
+            font-size: 18px;
+            font-weight: 300;
+            color: #111111;
+            letter-spacing: 1.5px;
+            margin: 0;
+        }
+
+        .cj_sixth_title {
+            font-family: 'Paperozi';
+            font-size: 48px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+        }
+
+        .cj_sixth_bt {
+            text-decoration: none;
+            border: 1px solid #111111;
+            width: 220px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Paperozi';
+            font-size: 16px;
+            font-weight: 300;
+            color: #111111 !important;
+            letter-spacing: 1.5px;
+            margin: 0;
+            transition: all 0.3s ease;
+        }
+
+        .cj_sixth_bt:hover {
+            background-color: rgba(17, 17, 17, 0.05);
+        }
+
+        .cj_sixth_bottom {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .cj_category {
+            width: 502px;
+            height: 290px;
+            border-radius: 0 120px 0 120px;
+            overflow: hidden;
+            position: relative;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            box-sizing: border-box;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cj_category:hover .cj_category_shadow {
+            background-color: transparent;
+        }
+
+        .cj_category:hover .cj_category_title {
+            background-color: rgba(17, 17, 17, 0.85);
+        }
+
+        .cj_category:nth-child(1) {
+            background-image: url('https://cdn.imweb.me/thumbnail/20260515/475375f8a48c2.png');
+        }
+
+        .cj_category:nth-child(2) {
+            background-image: url('https://cdn.imweb.me/thumbnail/20260515/6da4029e8e3ed.png');
+        }
+
+        .cj_category:nth-child(3) {
+            background-image: url('https://cdn.imweb.me/thumbnail/20260515/d512349f4214c.png');
+        }
+
+        .cj_category:nth-child(4) {
+            background-image: url('https://cdn.imweb.me/thumbnail/20260515/f20583e13849d.png');
+        }
+
+        .cj_category:nth-child(5) {
+            background-image: url('https://cdn.imweb.me/thumbnail/20260515/92c27f6b3e787.png');
+        }
+
+        .cj_category:nth-child(6) {
+            background-image: url('https://cdn.imweb.me/thumbnail/20260515/e5f4d57d7ef11.png');
+        }
+
+        .cj_category_shadow {
+            width: 100%;
+            height: 100%;
+            border-radius: 0 120px 0 120px;
+            position: absolute;
+            background-color: rgba(17, 17, 17, 1);
+            z-index: 1;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .cj_category_title {
+            position: absolute;
+            z-index: 2;
+            padding: 40px;
+            box-sizing: border-box;
+            font-family: 'Paperozi';
+            font-size: 28px;
+            font-weight: 300;
+            color: #ffffff;
+            letter-spacing: 1.5px;
+            margin: 0;
+            transition: all 0.3s ease;
+        }
+
+        /* ✅ 1880px 이하 */
+        @media screen and (max-width: 1880px) {
+            .cj_category {
+                width: 500px;
+                height: 288px;
+            }
+        }
+
+        /* ✅ 1728px 이하 */
+        @media screen and (max-width: 1728px) {
+            .cj_category {
+                width: 448px;
+                height: 258px;
+            }
+        }
+
+        /* ✅ 1512px 이하 */
+        @media screen and (max-width: 1512px) {
+            .cj_category {
+                width: 372px;
+                height: 215px;
+                border-radius: 0 80px 0 80px;
+            }
+
+            .cj_category_shadow {
+                border-radius: 0 80px 0 80px;
+            }
+
+            .cj_category_title {
+                padding: 28px;
+                font-size: 24px;
+            }
+        }
+
+        /* ✅ 1440px 이하 */
+        @media screen and (max-width: 1440px) {
+            .cj_category {
+                width: 352px;
+                height: 203px;
+                border-radius: 0 80px 0 80px;
+            }
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .cj_category {
+                width: 300px;
+                height: 173px;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .cj_sixth_wrapper {
+                padding: 0 12px;
+            }
+
+            .cj_sixth_subtitle {
+                font-size: 16px;
+                letter-spacing: 1.5px;
+            }
+
+            .cj_sixth_title {
+                font-size: 40px;
+            }
+
+            .cj_category {
+                width: 312px;
+                height: 180px;
+            }
+
+            .cj_category_title {
+                padding: 20px;
+                font-size: 20px;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .cj_sixth_bottom {
+                gap: 12px;
+                justify-content: space-between;
+            }
+
+            .cj_category {
+                width: 48%;
+                aspect-ratio: 1 / 1.2;
+                height: auto;
+                border-radius: 0 48px 0 48px;
+            }
+
+            .cj_category_shadow {
+                border-radius: 0 48px 0 48px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+
+            .cj_sixth_box {
+                gap: 40px;
+            }
+
+            .cj_sixth_top {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .cj_sixth_title {
+                font-size: 24px;
+            }
+
+            .cj_sixth_bt {
+                width: 180px;
+                height: 40px;
+                font-size: 12px;
+                letter-spacing: 1.0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <section class="cj_sixth_container">
+        <div class="cj_sixth_wrapper">
+            <div class="cj_sixth_box">
+
+                <div class="cj_sixth_top">
+                    <div class="cj_sixth_title_left">
+                        <p class="cj_sixth_subtitle">
+                            필요한 서비스를 확인하세요.
+                        </p>
+                        <p class="cj_sixth_title">
+                            OUR SOLUTION
+                        </p>
+                    </div>
+                    <div class="cj_sixth_title_right">
+                        <a href="" class="cj_sixth_bt">
+                            지금 바로 상담신청
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cj_sixth_bottom">
+                    <a href="" class="cj_category">
+                        <div class="cj_category_shadow"></div>
+                        <p class="cj_category_title">
+                            입주/거주 청소
+                        </p>
+                    </a>
+                    <a href="" class="cj_category">
+                        <div class="cj_category_shadow"></div>
+                        <p class="cj_category_title">
+                            에어컨 분해 청소
+                        </p>
+                    </a>
+                    <a href="" class="cj_category">
+                        <div class="cj_category_shadow"></div>
+                        <p class="cj_category_title">
+                            이사 청소
+                        </p>
+                    </a>
+                    <a href="" class="cj_category">
+                        <div class="cj_category_shadow"></div>
+                        <p class="cj_category_title">
+                            인테리어 청소
+                        </p>
+                    </a>
+                    <a href="" class="cj_category">
+                        <div class="cj_category_shadow"></div>
+                        <p class="cj_category_title">
+                            오피스/상가 청소
+                        </p>
+                    </a>
+                    <a href="" class="cj_category">
+                        <div class="cj_category_shadow"></div>
+                        <p class="cj_category_title">
+                            특수 청소
+                        </p>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
