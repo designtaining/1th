@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');
+            font-weight: 100;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');
+            font-weight: 200;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+            font-weight: 900;
+            font-display: swap;
+        }
+
+        .cj_banner_container {
+            margin: -30px 0 0 0;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+
+        .cj_banner_video {
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cj_banner_video2 {
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+
+        .cj_banner_shadow {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 2;
+            background: linear-gradient(to right,
+                    rgba(17, 17, 17, 0.95) 0%,
+                    rgba(17, 17, 17, 0) 100%);
+        }
+
+        .cj_banner_wrapper {
+            position: absolute;
+            z-index: 3;
+            width: 100%;
+            height: 100%;
+            padding: 0 160px;
+            box-sizing: border-box;
+        }
+
+        .cj_banner_box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .cjbanner_top {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .cjbanner_subtitle {
+            font-family: 'Paperozi';
+            font-size: 18px;
+            font-weight: 300;
+            color: #ffffff;
+            letter-spacing: 1.5px;
+            margin: 0;
+            text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .cjbanner_title {
+            font-family: 'Paperozi';
+            font-size: 48px;
+            font-weight: 400;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .cjbanner_title_mb {
+            font-family: 'Paperozi';
+            font-size: 40px;
+            font-weight: 400;
+            color: #ffffff;
+            margin: 0;
+            display: none;
+        }
+
+        .cj_banner_bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .cj_banner_catchphrase {
+            font-family: 'Paperozi';
+            font-size: 26px;
+            font-weight: 300;
+            color: #ffffff;
+            letter-spacing: 1.5px;
+            margin: 0;
+        }
+
+        .cj_banner_bt {
+            text-decoration: none;
+            border: 1px solid #ffffff;
+            width: 240px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Paperozi';
+            font-size: 16px;
+            font-weight: 300;
+            color: #ffffff !important;
+            letter-spacing: 1.5px;
+            margin: 0;
+            transition: all 0.3s ease;
+        }
+
+        .cj_banner_bt:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .cj_banner_wrapper {
+                padding: 0 12px;
+            }
+
+            .cj_banner_box {
+                gap: 60px;
+            }
+
+            .cjbanner_top {
+                gap: 8px;
+            }
+
+            .cjbanner_subtitle {
+                font-size: 16px;
+                letter-spacing: 2px;
+            }
+
+            .cjbanner_title {
+                font-size: 40px;
+            }
+
+            .cj_banner_bottom {
+                gap: 16px;
+            }
+
+            .cj_banner_catchphrase {
+                font-size: 20px;
+                letter-spacing: 2px;
+            }
+
+            .cj_banner_bt {
+                width: 200px;
+                height: 48px;
+                font-size: 14px;
+                letter-spacing: 1.5px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .cj_banner_video {
+                display: none;
+            }
+
+            .cj_banner_video2 {
+                display: flex;
+            }
+
+            .cj_banner_shadow {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                z-index: 2;
+                background: rgba(17, 17, 17, 0.8);
+            }
+
+            .cjbanner_title {
+                display: none;
+            }
+
+            .cjbanner_title_mb {
+                display: flex;
+            }
+
+            .cjbanner_subtitle {
+                letter-spacing: 0;
+            }
+
+            .cjbanner_title {
+                font-size: 40px;
+            }
+
+            .cj_banner_bottom {
+                gap: 16px;
+            }
+
+            .cj_banner_catchphrase {
+                letter-spacing: 0;
+            }
+
+            .cj_banner_bt {
+                width: 180px;
+                height: 40px;
+                font-size: 12px;
+                letter-spacing: 1.0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="cj_banner_container">
+        <video class="cj_banner_video" autoplay muted loop playsinline>
+            <source src="https://ncryk7.mycafe24.com/cjcleanmainv3.mp4" type="video/mp4">
+        </video>
+        <video class="cj_banner_video2" autoplay muted loop playsinline>
+            <source src="https://ncryk7.mycafe24.com/cjcleanmainv2.mp4" type="video/mp4">
+        </video>
+        <div class="cj_banner_shadow"></div>
+        <div class="cj_banner_wrapper">
+            <div class="cj_banner_box">
+                <div class="cjbanner_top">
+                    <p class="cjbanner_subtitle">공간은 산뜻하게, 일상을 쾌적하게</p>
+                    <p class="cjbanner_title">FOR YOUR BETTER LIFE</p>
+                    <p class="cjbanner_title_mb">FOR YOUR<br>BETTER LIFE</p>
+                </div>
+                <div class="cj_banner_bottom">
+                    <p class="cj_banner_catchphrase">
+                        고객님의 새로운 시작에,
+                        <br>
+                        깨끗함을 더하겠습니다.
+                    </p>
+                    <a href="" class="cj_banner_bt">
+                        청정클린텍 솔루션보기
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
