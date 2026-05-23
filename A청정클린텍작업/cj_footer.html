@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+            font-weight: 100;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+            font-weight: 200;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+            font-weight: 900;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        .cj_footer_container {
+            border-top: 1px solid #e5e5ec;
+            width: 100%;
+            height: 100%;
+        }
+
+        .cj_footer_wrapper {
+            width: 100%;
+            height: 100%;
+            padding: 80px 160px;
+            box-sizing: border-box;
+        }
+
+        .cj_footer_box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 120px;
+        }
+
+        .cj_footer_top {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .cj_footer_catchphrase {
+            font-family: 'GMarketSans';
+            font-size: 24px;
+            font-weight: 500;
+            color: #111111;
+            margin: 0;
+        }
+
+        .cj_footer_phone {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            gap: 12px;
+        }
+
+        .cjphone_box {
+            width: 40px;
+            height: 40px;
+            background-color: #00a0e9;
+            border-radius: 999px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cj_phone {
+            font-family: 'GMarketSans';
+            font-size: 40px;
+            font-weight: 700;
+            margin: 0;
+            background: linear-gradient(110deg,
+                    #111111 0%,
+                    #111111 15%,
+                    #5f8cff 25%,
+                    #a46fff 35%,
+                    #5f8cff 40%,
+                    #111111 50%,
+                    #111111 100%);
+
+            background-size: 200% auto;
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            animation: cjPhoneLight 8s linear infinite;
+        }
+
+        @keyframes cjPhoneLight {
+            0% {
+                background-position: 200% center;
+            }
+
+            100% {
+                background-position: -200% center;
+            }
+        }
+
+        .fa-cjphoneicon {
+            font-size: 20px;
+            color: #ffffff;
+        }
+
+        .cj_footer_bottom {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .cj_footer_bl {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .cj_bl_top {
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+        }
+
+        .cj_ft1 {
+            font-family: 'Pretendard';
+            font-size: 16px;
+            font-weight: 500;
+            color: #767676 !important;
+            text-decoration: none;
+        }
+
+        .cj_bl_line {
+            width: 100%;
+            height: 1px;
+            background-color: #e5e5ec;
+        }
+
+        .cj_bl_middle {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .cj_ft2 {
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+            margin-right: 60px;
+        }
+
+        .cj_ft2_title {
+            font-family: 'Pretendard';
+            font-size: 14px;
+            font-weight: 500;
+            color: #686868;
+            margin: 0;
+            line-height: 1.6;
+            white-space: nowrap;
+        }
+
+        .cj_ft2_desc {
+            font-family: 'Pretendard';
+            font-size: 14px;
+            font-weight: 400;
+            color: #acacac;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .cj_bl_bottom {
+            display: flex;
+        }
+
+        .cj_ft3 {
+            font-family: 'Pretendard';
+            font-size: 18px;
+            font-weight: 400;
+            color: #acacac;
+        }
+
+        .cj_footer_br {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+
+        .cj_br_box {
+            width: 200px;
+            height: 62px;
+        }
+
+        .cj_br_box>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 아래로 모달 */
+
+        .cj_modal_overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            background: rgba(0, 0, 0, 0.55);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .cj_modal_overlay.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .cj_modal_box {
+            width: min(720px, calc(100% - 40px));
+            max-height: 80vh;
+            overflow-y: auto;
+
+            background: #ffffff;
+            padding: 48px;
+            box-sizing: border-box;
+            position: relative;
+
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .cj_modal_overlay.active .cj_modal_box {
+            transform: translateY(0);
+        }
+
+        .cj_modal_close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+
+            border: none;
+            background: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .cj_modal_close i {
+            font-size: 22px;
+            color: #111111;
+        }
+
+        .cj_modal_title {
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0 0 28px;
+        }
+
+        .cj_modal_content {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .cj_modal_content p {
+            font-family: 'Pretendard';
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 1.8;
+            color: #505050;
+            margin: 0;
+        }
+
+        body.cj_modal_lock {
+            overflow: hidden;
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+
+            .cj_ft2 {
+                gap: 12px;
+                margin-right: 20px;
+            }
+
+            .cj_ft2_title {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
+            .cj_ft2_desc {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .cj_footer_wrapper {
+                padding: 80px 12px;
+            }
+
+            .cj_footer_box {
+                gap: 80px;
+            }
+
+            .cj_footer_bottom {
+                flex-direction: column;
+                gap: 80px;
+            }
+
+            .cj_footer_br {
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .cj_footer_catchphrase {
+                font-size: 20px;
+            }
+
+            .cj_footer_phone {
+                gap: 8px;
+            }
+
+            .cjphone_box {
+                width: 36px;
+                height: 36px;
+            }
+
+            .cj_phone {
+                font-size: 36px;
+            }
+
+            .fa-cjphoneicon {
+                font-size: 16px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .cj_footer_top {
+                gap: 8px;
+            }
+
+            .cj_footer_catchphrase {
+                font-size: 14px;
+            }
+
+            .cj_footer_box {
+                gap: 60px;
+            }
+
+            .cj_footer_bl {
+                gap: 6px;
+            }
+
+            .cj_ft1 {
+                font-size: 12px;
+            }
+
+            .cj_ft2 {
+                gap: 12px;
+                margin-right: 20px;
+            }
+
+            .cj_ft2_title {
+                font-size: 12px;
+                line-height: 1.6;
+            }
+
+            .cj_ft2_desc {
+                font-size: 12px;
+                line-height: 1.6;
+            }
+
+            .cj_ft3 {
+                font-size: 13px;
+            }
+
+            .cj_footer_bottom {
+                gap: 60px;
+            }
+
+            .cj_br_box {
+                width: 160px;
+                height: 50px;
+            }
+
+            .cj_modal_box {
+                padding: 32px;
+            }
+
+            .cj_modal_title {
+                font-size: 20px;
+                margin: 0 0 28px;
+            }
+
+            .cj_modal_content p {
+                font-size: 12px;
+                line-height: 1.6;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="cj_footer_container">
+
+        <div class="cj_footer_wrapper">
+
+            <div class="cj_footer_box">
+                <div class="cj_footer_top">
+                    <p class="cj_footer_catchphrase">
+                        믿을 수 있는 청소, 지금 바로 시작하세요.
+                    </p>
+                    <a href="tel:15552751" class="cj_footer_phone">
+                        <div class="cjphone_box">
+                            <i class="fa-solid fa-phone fa-cjphoneicon"></i>
+                        </div>
+                        <p class="cj_phone">
+                            1555-2751
+                        </p>
+                    </a>
+                </div>
+                <div class="cj_footer_bottom">
+                    <div class="cj_footer_bl">
+                        <div class="cj_bl_top">
+                            <a href="javascript:void(0)" class="cj_ft1 cj_modal_open" data-modal="privacy">
+                                개인정보처리방침
+                            </a>
+
+                            <a href="javascript:void(0)" class="cj_ft1 cj_modal_open" data-modal="email">
+                                이메일무단수집거부
+                            </a>
+                        </div>
+                        <div class="cj_bl_line"></div>
+                        <div class="cj_bl_middle">
+                            <div class="cj_ft2">
+                                <p class="cj_ft2_title">주소</p>
+                                <p class="cj_ft2_desc">인천광역시 남동구 선수촌공원로 23번길11 702-12호(구월동, 네이쳐프라자)</p>
+                            </div>
+                            <div class="cj_ft2">
+                                <p class="cj_ft2_title">사업자등록번호</p>
+                                <p class="cj_ft2_desc">657-10-02991</p>
+                            </div>
+                            <div class="cj_ft2">
+                                <p class="cj_ft2_title">전화번호</p>
+                                <p class="cj_ft2_desc">1555-2751</p>
+                            </div>
+                            <div class="cj_ft2">
+                                <p class="cj_ft2_title">Email</p>
+                                <p class="cj_ft2_desc">wearecjlife@naver.com</p>
+                            </div>
+                        </div>
+                        <div class="cj_bl_bottom">
+                            <p class="cj_ft3">
+                                Copyright © 청정클린텍 All Right Reserved.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="cj_footer_br">
+                        <div class="cj_br_box">
+                            <img src="https://cdn.imweb.me/thumbnail/20260523/00249b66e20c9.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="cj_modal_overlay" data-modal-box="privacy">
+        <div class="cj_modal_box">
+            <button class="cj_modal_close" type="button">
+                <i class="fa-regular fa-xmark"></i>
+            </button>
+
+            <p class="cj_modal_title">개인정보처리방침</p>
+
+            <div class="cj_modal_content">
+                <p>
+                    '청정클린텍'는 (이하 '회사'는) 고객님의 개인정보를 중요시하며, "정보통신망 이용촉진 및 정보보호"에 관한 법률을 준수하고 있습니다.
+                    <br>
+                    회사는 개인정보처리방침을 통하여 고객님께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며, 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다.
+                    <br>
+                    회사는 개인정보처리방침을 개정하는 경우 웹사이트 공지사항(또는 개별공지)을 통하여 공지할 것입니다.
+                    <br><br>
+                    본 방침은 : 2025 년 11 월 5 일 부터 시행됩니다.
+                    <br><br>
+                    [1. 수집하는 개인정보 항목]
+                    <br>
+                    회사는 상담 등을 위해 아래와 같은 개인정보를 수집하고 있습니다.
+                    <br>
+                    온라인 문의 - 수집항목 : 이름, 연락처, 이메일, 문의내용 등
+                    <br><br>
+                    [2. 개인정보의 수집 및 이용목적]
+                    <br>
+                    회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.
+                    <br>
+                    서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 문의/답변
+                    <br><br>
+                    [3. 개인정보의 보유 및 이용기간]
+                    <br>
+                    원칙적으로, 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다. 단, 관계법령의 규정에 의하여 보존할 필요가 있는 경우 회사는 아래와 같이 관계법령에서
+                    정한
+                    일정한 기간 동안 회원정보를 보관합니다.
+                    <br>
+                    <br>
+                    [보존 항목 및 결제기록 보존 근거]
+                    <br>
+                    - 계약 또는 청약철회 등에 관한 기록 보존 기간 : 3년
+                    <br>
+                    - 계약 또는 청약철회 등에 관한 기록 : 5년 (전자상거래등에서의 소비자보호에 관한 법률)
+                    <br>
+                    - 대금결제 및 재화 등의 공급에 관한 기록 : 5년 (전자상거래등에서의 소비자보호에 관한 법률)
+                    <br>
+                    - 소비자의 불만 또는 분쟁처리에 관한 기록 : 3년 (전자상거래등에서의 소비자보호에 관한 법률)
+                    <br><br>
+                    [4. 개인정보의 파기절차 및 방법]
+                    <br>
+                    회사는 원칙적으로 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체없이 파기합니다. 파기절차 및 방법은 다음과 같습니다.
+                    <br>
+                    · 파기절차 : 회원님이 회원가입 등을 위해 입력하신 정보는 목적이 달성된 후 별도의 DB로 옮겨져(종이의 경우 별도의 서류함) 내부 방침 및 기타 관련 법령에 의한 정보보호
+                    사유에
+                    따라(보유 및
+                    이용기간 참조) 일정 기간 저장된 후 파기되어집니다.
+                    별도 DB로 옮겨진 개인정보는 법률에 의한 경우가 아니고서는 보유되어지는 이외의 다른 목적으로 이용되지 않습니다.
+                    <br>
+                    · 파기방법 : 전자적 파일형태로 저장된 개인정보는 기록을 재생할 수 없는 기술적 방법을 사용하여 삭제합니다.
+                    <br><br>
+                    [5. 개인정보 제공]
+                    <br>
+                    회사는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만, 아래의 경우에는 예외로 합니다.
+                    이용자들이 사전에 동의한 경우 법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우
+                    <br><br>
+                    [6. 호스팅 및 유지보수]
+                    <br>
+                    회사는 서비스 이행을 위해 아래와 같이 외부 전문업체에 위탁하여 운영하고 있습니다.
+                    <br>
+                    - 위탁 대상자 : (주)쓰리애니아이앤시
+                    <br>
+                    - 위탁업무 내용 : 웹사이트 및 시스템 관리(호스팅 / 유지보수)
+                    <br><br>
+                    [7. 이용자 및 법정대리인의 권리와 그 행사방법]
+                    <br>
+                    이용자는 언제든지 등록되어 있는 자신의 개인정보를 조회하거나 수정할 수 있으며 가입해지를 요청할 수도 있습니다.
+                    <br>
+                    이용자들의 개인정보 조회, 수정을 위해서는 '개인정보변경'(또는 '회원정보수정' 등)을 가입해지(동의철회)를 위해서는 "회원탈퇴"를 클릭하여 본인 확인 절차를 거치신 후 직접
+                    열람, 정정
+                    또는 탈퇴가 가능합니다.
+                    <br>
+                    혹은 개인정보관리책임자에게 서면, 전화 또는 이메일로 연락하시면 지체없이 조치하겠습니다.
+                    <br>
+                    귀하가 개인정보의 오류에 대한 정정을 요청하신 경우에는 정정을 완료하기 전까지 당해 개인정보를 이용 또는 제공하지 않습니다.
+                    <br>
+                    또한 잘못된 개인정보를 제3자에게 이미 제공한 경우에는 정정 처리결과를 제3자에게 지체없이 통지하여 정정이 이루어지도록 하겠습니다.
+                    <br>
+                    회사는 이용자의 요청에 의해 해지 또는 삭제된 개인정보는 "회사가 수집하는 개인정보의 보유 및 이용기간"에 명시된 바에 따라 처리하고 그 외의 용도로 열람 또는 이용할 수 없도록
+                    처리하고
+                    있습니다.
+                    <br>
+                    만 14세 미만 아동의 경우, 법정대리인이 아동의 개인정보를 조회하거나 수정할 권리, 수집 및 동의를 철회할 권리를 가집니다.
+                    <br><br>
+                    [8. 개인정보 자동수집 장치의 설치, 운영 및 그 거부에 관한 사항]
+                    <br>
+                    회사는 귀하의 정보를 수시로 저장하고 찾아내는 '쿠키(cookie)' 등을 운용합니다.
+                    <br>
+                    쿠키란 웹사이트를 운영하는데 이용되는 서버가 귀하의 브라우저에 보내는 아주 작은 텍스트 파일로서 귀하의 컴퓨터 하드디스크에 저장됩니다.
+                    <br>
+                    회사는 다음과 같은 목적을 위해 쿠키를 사용합니다.
+                    <br><br>
+                    · 쿠키 등 사용 목적
+                    <br>
+                    회원과 비회원의 접속 빈도나 방문 시간 등을 분석, 이용자의 취향과 관심분야를 파악 및 자취 추적, 각종 이벤트 참여 정도 및 방문 회수 파악 등을 통한 타겟 마케팅 및 개인 맞춤
+                    서비스
+                    제공 귀하는 쿠키 설치에 대한 선택권을 가지고 있습니다.
+                    <br>
+                    따라서, 귀하는 웹브라우저에서 옵션을 설정함으로써 모든 쿠키를 허용하거나, 쿠키가 저장될 때마다 확인을 거치거나, 아니면 모든 쿠키의 저장을 거부할 수도 있습니다.
+                    <br><br>
+                    · 쿠키 설정 거부 방법
+                    <br>
+                    쿠키 설정을 거부하는 방법으로는 회원님이 사용하시는 웹 브라우저의 옵션을 선택함으로써 모든 쿠키를 허용하거나 쿠키를 저장할 때마다 확인을 거치거나, 모든 쿠키의 저장을 거부할 수
+                    있습니다.
+                    <br><br>
+                    · 설정방법
+                    예(인터넷 익스플로어의 경우) : 웹 브라우저 상단의 도구 > 인터넷 옵션 > 개인정보
+                    단, 귀하께서 쿠키 설치를 거부하였을 경우 서비스 제공에 어려움이 있을 수 있습니다.
+                    <br>
+                    [9. 개인정보에 관한 민원서비스]
+                    <br>
+                    회사는 고객의 개인정보를 보호하고 개인정보와 관련한 불만을 처리하기 위하여 아래와 같이 관련 부서 및 개인정보관리책임자를 지정하고 있습니다.
+                    <br><br>
+                    고객서비스 담당 부서
+                    <br>
+                    부서명 : 청정클린텍
+                    <br>
+                    전화번호 : 1555-2751
+                    <br>
+                    이메일 : wearecjlife@naver.com
+                    <br>
+                    개인정보관리 책임자
+                    <br>
+                    성명 : 이종관
+                    <br>
+                    전화번호 : 1555-2751
+                    <br>
+                    이메일 : wearecjlife@naver.com
+                    <br>
+                    기타 개인정보 침해에 대한 신고나 상담이 필요한 경우에 아래 기관에 문의 가능합니다.
+                    <br>
+                    - 개인정보침해신고센터 (privacy.kisa.or.kr / 국번없이 118)
+                    <br>
+                    - 대검찰청 사이버수사과 (www.spo.go.kr / 국번없이 1301)
+                    <br>
+                    - 경찰청 사이버수사국 (police.go.kr / 국번없이 182)
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cj_modal_overlay" data-modal-box="email">
+        <div class="cj_modal_box">
+            <button class="cj_modal_close" type="button">
+                <i class="fa-regular fa-xmark"></i>
+            </button>
+
+            <p class="cj_modal_title">이메일무단수집거부</p>
+
+            <div class="cj_modal_content">
+                <p>
+                    본 웹사이트에 게시된 이메일 주소가 전자우편 수집 프로그램이나 그 밖의 기술적 장치를 이용하여 무단으로 수집되는 것을 거부하며 이를 위반시 정보통신망법에 의해 형사처벌됨을
+                    유념하시기 바랍니다.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const cjModalOpenButtons = document.querySelectorAll('.cj_modal_open');
+        const cjModalOverlays = document.querySelectorAll('.cj_modal_overlay');
+        const cjModalCloseButtons = document.querySelectorAll('.cj_modal_close');
+
+        cjModalOpenButtons.forEach((button) => {
+            button.addEventListener('click', function () {
+                const modalName = this.dataset.modal;
+                const targetModal = document.querySelector(`[data-modal-box="${modalName}"]`);
+
+                if (targetModal) {
+                    targetModal.classList.add('active');
+                    document.body.classList.add('cj_modal_lock');
+                }
+            });
+        });
+
+        cjModalCloseButtons.forEach((button) => {
+            button.addEventListener('click', function () {
+                const modal = this.closest('.cj_modal_overlay');
+                modal.classList.remove('active');
+                document.body.classList.remove('cj_modal_lock');
+            });
+        });
+
+        cjModalOverlays.forEach((overlay) => {
+            overlay.addEventListener('click', function (e) {
+                if (e.target === overlay) {
+                    overlay.classList.remove('active');
+                    document.body.classList.remove('cj_modal_lock');
+                }
+            });
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                cjModalOverlays.forEach((overlay) => {
+                    overlay.classList.remove('active');
+                });
+                document.body.classList.remove('cj_modal_lock');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
