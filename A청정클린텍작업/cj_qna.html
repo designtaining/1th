@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+            font-weight: 100;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+            font-weight: 200;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+            font-weight: 900;
+            font-display: swap;
+        }
+
+        .faq_container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .faq_wrapper {
+            width: 100%;
+            height: 100%;
+            padding: 0 160px;
+            box-sizing: border-box;
+        }
+
+        .faq_box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        .faq_title {
+            font-family: 'Pretendard';
+            font-size: 40px;
+            font-weight: 600;
+            color: #111111;
+        }
+
+        .faq_category_box {
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+        }
+
+        .faq_category {
+            border: none;
+            background: none;
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 600;
+            color: #111111;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .faq_category.active .faq_category_n {
+            color: #1031c5;
+        }
+
+        .faq_item {
+            border-bottom: 0px solid #e5e5ec;
+        }
+
+        .faq_answer_box {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .faq_answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.35s ease;
+        }
+
+        .faq_blank_box {
+            width: 100%;
+            border-bottom: 1px solid #e5e5ec;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            cursor: pointer;
+        }
+
+        .faq_blank {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 500;
+            color: #111111;
+            line-height: 1.6;
+        }
+
+        .faq_span1 {
+            font-weight: 700;
+            color: #1031c5;
+        }
+
+        .faq_answer p {
+            font-family: 'Pretendard';
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.6;
+            color: #505050;
+            margin: 0;
+        }
+
+        .faq_item.active .faq_answer {
+            max-height: 200px;
+            padding: 20px 40px;
+            background-color: #f9f9f9;
+        }
+
+        .faq_item.active .fa-faqp {
+            transform: rotate(405deg);
+        }
+
+        .fa-faqp {
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .faq_link {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 20px;
+            color: #2e50e2;
+            text-decoration: none;
+            font-family: 'Pretendard';
+            font-size: 16px;
+            font-weight: 500;
+            transition: all .3s ease;
+        }
+
+        .faq_link:hover {
+            transform: translateY(-2px);
+        }
+
+        .faq_link_arrow {
+            font-size: 14px;
+            transition: all .3s ease;
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .faq_item.active .faq_answer {
+                max-height: 300px;
+                padding: 20px 40px;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .faq_wrapper {
+                padding: 0 12px;
+            }
+
+            .faq_item.active .faq_answer {
+                max-height: 300px;
+                padding: 40px 40px;
+            }
+
+            .faq_title {
+                font-size: 32px;
+            }
+
+            .faq_category {
+                font-size: 18px;
+            }
+
+            .faq_blank {
+                font-size: 18px;
+            }
+
+            .faq_answer p {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+
+            .fa-faqp {
+                font-size: 18px;
+            }
+
+            .faq_link {
+                margin-top: 20px;
+                font-size: 14px;
+            }
+
+            .faq_link_arrow {
+                font-size: 12px;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .faq_box {
+                gap: 40px;
+            }
+
+            .faq_category_box {
+                gap: 20px;
+            }
+        }
+
+        /* ✅ 468px 이하 */
+        @media screen and (max-width: 468px) {
+            .faq_item.active .faq_answer {
+                max-height: 300px;
+                padding: 20px 20px;
+            }
+
+            .faq_box {
+                gap: 24px;
+            }
+
+            .faq_category_box {
+                gap: 16px;
+            }
+
+            .faq_title {
+                font-size: 28px;
+            }
+
+            .faq_category {
+                font-size: 16px;
+            }
+
+            .faq_blank_box {
+                padding: 8px 0;
+            }
+
+            .faq_blank {
+                font-size: 14px;
+                margin: 8px 0;
+            }
+
+            .faq_answer p {
+                font-size: 14px;
+                line-height: 1.5;
+            }
+
+            .fa-faqp {
+                font-size: 14px;
+            }
+
+            .faq_link {
+                margin-top: 20px;
+                font-size: 14px;
+            }
+
+            .faq_link_arrow {
+                font-size: 12px;
+            }
+        }
+
+        /* ✅ 410px 이하 */
+        @media screen and (max-width: 410px) {
+
+            .faq_title {
+                font-size: 24px;
+            }
+
+            .faq_category_box {
+                gap: 12px;
+            }
+
+            .faq_category {
+                font-size: 14px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="faq_container">
+        <div class="faq_wrapper">
+
+            <div class="faq_box">
+                <div class="faq_title">
+                    자주 묻는 질문
+                </div>
+                <div class="faq_category_box">
+                    <button class="faq_category">
+                        <p class="faq_category_n">
+                            장비 및 약품
+                        </p>
+                    </button>
+                    <button class="faq_category">
+                        <p class="faq_category_n">
+                            인원 및 시간
+                        </p>
+                    </button>
+                    <button class="faq_category">
+                        <p class="faq_category_n">
+                            청소 범위
+                        </p>
+                    </button>
+                    <button class="faq_category">
+                        <p class="faq_category_n">
+                            예약 및 사후 관리
+                        </p>
+                    </button>
+                </div>
+
+                <div class="faq_answer_box">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        const faqData = {
+
+            "장비 및 약품": [
+                {
+                    q: "청소 용품은 어떤 걸 사용하시나요?",
+                    a: "청정클린텍은 전문 장비를 이용한 프리미엄 시공을 선사합니다. 컬비(Kirby)청소기, 고압 스팀기, 연무기, 전문 방역기 등 현장 상황에 맞는 최적의 장비를 투입하여, 공간의 특성과 목적에 맞춘 체계적인 방식으로 시공을 진행합니다. 보이지 않는 틈 사이 먼지부터 생활 속 세균, 각종 오염 물질까지 세심하게 케어하며, 눈으로 확인되는 깨끗함을 넘어 더욱 쾌적한 실내 환경을 만드는 데 집중합니다. 고객님의 공간이 더욱 편안하고 안심할 수 있는 환경이 될 수 있도록, 장비 하나부터 작업 과정까지 세심하게 고려하여 프리미엄 시공을 제공합니다.",
+                    link: "/km",
+                    button: "컬비 & 미코플러스 자세히 보기"
+                },
+                {
+                    q: "세제나 약품은 독하지 않나요?",
+                    a: "고객님의 안전과 건강을 최우선으로 생각하여, 한국 환경부 인증을 받고 세계적으로 인정받는 독일 친환경 세제 '요하네스 키엘(Johannes Kiehl)' 제품을 주력으로 사용하고 있습니다. 사용되는 세제와 관리 제품은 안정성을 고려하여 선택되었습니다. 안심하고 입주하셔도 좋습니다."
+                },
+                {
+                    q: "새집 증후군 케어나 소독/방역도 해주시나요?",
+                    a: "네, 해당 서비스는 유료로 판매하고 있습니다. 정식 허가를 받은 방역 전문 기술을 보유하고 있으며, 전문 연무기와 전용 약품을 통해 새집증후군 원인 물질(포름알데히드 등)을 중화하고 실내 전체 살균 소독을 진행해드립니다. 청소 시공 완료 후 피톤치드연무 서비스는 무료로 제공되며 상담시에 문의하실 수 있습니다."
+                }
+            ],
+
+            "인원 및 시간": [
+                {
+                    q: "인원 투입은 어떻게 되나요?",
+                    a: "저희는 하청을 주지 않습니다. 전문 교육을 수료한 자사 소속 팀장님과 오랫동안 합을 맞춰온 정예 팀원분들이 직접 현장에 투입되어 책임감있는 서비스를 제공합니다."
+                },
+                {
+                    q: "청소 소요 시간은 얼마나 걸리나요?",
+                    a: "평균적으로 3~4시간이 소요됩니다. 현장의 오염도나 특성, 추가 시공 여부에 따라 6시간 이상이 소요되는 경우도 있습니다. 보다 꼼꼼한 작업을 위해 현장 상태를 확인하고, 필요시 고객님과 충분한 소통을 통해 결정된 사항은 차후 안내를 통해 확인하실 수 있습니다."
+                },
+                {
+                    q: "청소하는 동안 외출해도 되나요?",
+                    a: "네. 저희는 작업 전/후 사진을 전송해 드립니다. 청소 마감 1시간 혹은 30분 전에 미리 연락을 드려 고객님께서 직접 오셔서 검수하실 수 있도록 안내드립니다."
+                },
+                {
+                    q: "이사 당일(오전 퇴거, 오후 입주)청소도 가능한가요?",
+                    a: "당일 이사 청소도 가능합니다. 다만 시간이 매우 한정적이므로 시공에 평소보다 인원이 추가될 수 있습니다. 해당 내용은 반드시 사전상담을 부탁드리며 상담간에 자세한 안내를 받아보실 수 있습니다."
+                },
+            ],
+
+            "청소 범위": [
+                {
+                    q: "청소 범위는 어디까지인가요?",
+                    a: "외부 유리창(외창)과 현관문을 제외한 집안 내부 전체가 기본 범위입니다. 천장, 벽면, 바닥은 물론, 현관, 베란다, 화장실, 주방, 창틀, 방충망 먼지 제거까지 모두 포함됩니다. (방충망이 노후·부식되어 약해진 상태일 경우, 작업 중 파손될 위험이 있으며 손상 부분은 책임 범위에서 제외될 수 있습니다)",
+                    link: "/coverage",
+                    button: "청소범위 안내 자세히 보기"
+                },
+                {
+                    q: "서랍장이 커버도 탈거하여 청소하나요?",
+                    a: "네, '탈거 청소'를 기본 원칙으로 합니다. 분리가 가능한 수납장 서랍, 주방 걸레받이, 전등 커버, 환풍기, 배수구 트랩 등은 모두 탈거하여 보이지 않는 안쪽 숨은 먼지와 분진까지 깨끗하게 제거합니다."
+                },
+                {
+                    q: "빌트인 가전(에어컨, 세탁기, 냉장고 등) 내부도 청소해 주시나요?",
+                    a: "빌트인 가전의 겉면은 기본 청소 범위에 포함되어 닦아드립니다. 다만, 기기를 완전 분해하여 내부 필터와 부품까지 세척하는 홈케어 서비스는 별도의 추가비용이 발생합니다."
+                },
+                {
+                    q: "외부 유리창(외창) 청소는 어떻게 되나요?",
+                    a: "안전상의 이유로 외부와 맞닿은 외창 뒷면은 범위에서 제외됩니다. 고객님께서 외창 청소를 원하시는 경우, 전문 장비를 이용한 외창 청소를 추가 서비스로 신청하실 수 있습니다."
+                },
+                {
+                    q: "추가 비용은 어떤 경우에 발생하나요?",
+                    a: "사전 안내된 평수와 실제 평수가 다르거나, 다량의 곰팡이/시트지/뽁뽁이 제거, 비둘기 분변 제거, 니코틴 오염, 다량의 폐기물 처리, 기타 범위적 오염, 소요시간이 지체되는 오염 등이 있을 경우 현장 확인 후 고객님께 미리 안내드리며 추가 요금이 발생할 수 있습니다."
+                },
+                {
+                    q: "이전 세입자가 버리고 간 쓰레기도 치워주시나요?",
+                    a: "일정량 이상인 경우 폐기물 처리 비용 발생, 또는 대형 폐기물(가구, 가전 등)은 지자체 폐기물 스티커를 직접 발급받아 주셔야 처리가 가능합니다. 양이나 정도에 따라 추가금액이 발생할 수 있으며, 간단한 생활 쓰레기는 정리 후 지정된 배출 장소에 버려드립니다."
+                },
+                {
+                    q: "곰팡이나 찌든 때도 100% 지워지나요?",
+                    a: "전용 약품과 고압 스팀기를 이용해 최대한 제거해드립니다. 하지만 실리콘 안쪽으로 깊게 뿌리내린 곰팡이, 혹은 자재 자체의 변색/부식이 있을 경우 100% 복원이 어려울 수 있습니다."
+                }
+            ],
+
+            "예약 및 사후 관리": [
+                {
+                    q: "A/S 기간은 어떻게 되나요?",
+                    a: "청소 후 7일간 무상 A/S를 진행해 드리고 있습니다. 검수 당시 미처 발견하지 못한 미흡한 부분이 있다면 언제든 편하게 연락 부탁드립니다."
+                },
+                {
+                    q: "청소 중 집안에 파손이나 스크래치가 생기면 어떻게 하나요?",
+                    a: "자재에 알맞은 도구와 부드러운 타월을 사용하여 스크래치나 손상을 미연에 방지합니다. 그럼에도 불구하고 저희의 과실로 인해 파손이 발생할 경우, 100% 책임지고 배상 및 보상처리를 진행해 드립니다."
+                },
+                {
+                    q: "예약은 어떻게 진행되나요?",
+                    a: "일정 상담 후 소정의 예약금을 입금해 주시면, 예약이 확정됩니다. 잔금은 청소가 모두 끝나고 현장에서 고객님이 직접 결과를 확인(검수)하신 뒤 결제해 주시면 됩니다. 현장 방문 불가시 정확한 사진을 공유해드립니다."
+                },
+                {
+                    q: "현금영수증이나 카드결제도 가능한가요?",
+                    a: "네, 당연히 가능합니다. 카드결제, 현금영수증, 세금계산서 발행 모두 가능하며 부가세(VAT) 10%가 별도로 부과됩니다."
+                },
+                {
+                    q: "예약 취소나 일정 변경 시 위약금이 있나요?",
+                    a: "원활한 스케줄 관리를 위해 시공일 기준 3일 전 취소 시 예약금 환불이 불가하며, 7일전~14일 이내에 취소시 예약금 50%, 당일 취소 시 총 견적 금액의 10% 위약금이 발생할 수 있습니다. (일정 변경은 미리 연락 주시면 최대한 조율해드립니다.)"
+                },
+                {
+                    q: "다른 업체보다 견적이 조금 높은 것 같은데 이유가 있나요?",
+                    a: "저희는 저가 수주로 하루에 여러 집을 대충 치우고 빠지는 일명 '찍기'작업을 하지 않습니다. 프리미엄 장비와 독일산 친환경 세제, 정식 방역 시스템, 그리고 검증된 자사 전문 인력을 투입하여 시공하며 내 집처럼 완벽하게 케어하기 위해 합리적인 비용을 제공하고 있습니다."
+                }
+            ]
+
+        };
+
+        const categoryButtons = document.querySelectorAll('.faq_category');
+        const answerBox = document.querySelector('.faq_answer_box');
+
+        function renderFaq(categoryName) {
+
+            const list = faqData[categoryName];
+
+            answerBox.innerHTML = list.map((item, index) => `
+
+<div class="faq_item">
+
+<div class="faq_blank_box">
+
+<p class="faq_blank">
+<span class="faq_span1">Q${index + 1}.</span>
+${item.q}
+</p>
+
+<i class="fa-regular fa-plus fa-faqp"></i>
+
+</div>
+
+<div class="faq_answer">
+
+<p>${item.a}</p>
+
+${item.link ? `
+<a href="${item.link}" class="faq_link">
+    ${item.button || "자세히 보기"}
+    <i class="fa-light fa-angle-right faq_link_arrow"></i>
+</a>
+`: ''}
+
+</div>
+
+</div>
+
+`).join('');
+
+            const faqItems = document.querySelectorAll('.faq_item');
+
+            faqItems.forEach(item => {
+
+                const question = item.querySelector('.faq_blank_box');
+
+                question.addEventListener('click', () => {
+
+                    item.classList.toggle('active');
+
+                });
+
+            });
+
+        }
+
+        categoryButtons.forEach(button => {
+
+            button.addEventListener('click', () => {
+
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+
+                button.classList.add('active');
+
+                renderFaq(
+                    button.innerText.trim()
+                );
+
+            });
+
+        });
+
+        categoryButtons[0].classList.add('active');
+        renderFaq(categoryButtons[0].innerText.trim());
+
+    </script>
+
+</body>
+
+</html>
