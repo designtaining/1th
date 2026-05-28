@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+            font-weight: 100;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+            font-weight: 200;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+            font-weight: 900;
+            font-display: swap;
+        }
+
+        .goin_container {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .goin_wrapper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .goin_box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+            justify-content: center;
+        }
+
+        .questionaire {
+            position: fixed;
+            left: 50%;
+            bottom: 40px;
+            transform: translateX(-50%);
+
+            z-index: 8;
+
+            padding: 14px 60px;
+
+            background: linear-gradient(90deg,
+                    #6f3cff 0%,
+                    #4b5dff 45%,
+                    #2f8cff 100%);
+
+            background-size: 400% 400%;
+            color: #ffffff !important;
+            text-decoration: none;
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 500;
+            border-radius: 999px;
+            border: 4px solid rgba(255, 255, 255, 0.95);
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            justify-content: center;
+            box-shadow:
+                0 10px 24px rgba(0, 0, 0, 0.18),
+                0 4px 10px rgba(46, 80, 226, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+
+            transition: all 0.3s ease;
+        }
+
+        .questionaire:hover {
+            animation: gradientMove 2s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            25% {
+                background-position: 50% 100%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            75% {
+                background-position: 50% 0%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .goin1 {
+            transform: rotate(-135deg);
+        }
+
+        .goin_subqn {
+            position: fixed;
+            right: 40px;
+            bottom: 40px;
+            z-index: 9;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 12px;
+        }
+
+        .goin_phone,
+        .goin_kakao {
+            width: 60px;
+            height: 60px;
+
+            border-radius: 999px;
+            border: 4px solid rgba(255, 255, 255, 0.95);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-decoration: none;
+
+            box-shadow:
+                0 10px 24px rgba(0, 0, 0, 0.18),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+
+            transition: all 0.3s ease;
+        }
+
+        /* 전화 */
+        .goin_phone {
+            background: linear-gradient(135deg,
+                    #1428a0 0%,
+                    #2e50e2 100%);
+        }
+
+        /* 카카오 */
+        .goin_kakao {
+            background-color: #ffe812;
+        }
+
+        .goin2,
+        .goin3 {
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .goin2 {
+            color: #ffffff;
+        }
+
+        .goin3 {
+            color: #412323;
+        }
+
+        /* 전화 */
+        .goin_phone {
+            background: linear-gradient(270deg,
+                    #1428a0,
+                    #2e50e2,
+                    #4f73ff,
+                    #1428a0);
+
+            background-size: 400% 400%;
+        }
+
+        .goin_phone:hover {
+            animation: phoneFlow 2.5s ease infinite;
+        }
+
+        @keyframes phoneFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* 카카오 */
+        .goin_kakao {
+            background: linear-gradient(270deg,
+                    #ffe812,
+                    #ffcf33,
+                    #ffb300,
+                    #ffe812);
+
+            background-size: 400% 400%;
+        }
+
+        .goin_kakao:hover {
+            animation: kakaoFlow 2s ease infinite;
+        }
+
+        @keyframes kakaoFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+
+            .questionaire {
+                left: 20px;
+                transform: none;
+                bottom: 20px;
+                padding: 14px 60px;
+                font-size: 20px;
+                gap: 8px;
+            }
+
+            .goin_subqn {
+                right: 20px;
+                bottom: 20px;
+                z-index: 9;
+                gap: 8px;
+            }
+
+            .goin_phone,
+            .goin_kakao {
+                width: 60px;
+                height: 60px;
+                text-decoration: none;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .questionaire {
+                left: 16px;
+                transform: none;
+                bottom: 16px;
+                padding: 12px 48px;
+                font-size: 18px;
+                gap: 6px;
+            }
+
+            .goin_subqn {
+                right: 16px;
+                bottom: 16px;
+                gap: 12px;
+            }
+
+            .goin_phone,
+            .goin_kakao {
+                width: 60px;
+                height: 60px;
+                text-decoration: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="goin_container">
+
+        <div class="goin_wrapper">
+
+            <div class="goin_box">
+
+                <div class="goin_questionaire">
+                    <a href="/contact" class="questionaire">
+                        상담신청 하기
+                        <i class="fa-regular fa-arrow-down goin1"></i>
+                    </a>
+                </div>
+                <div class="goin_subqn">
+                    <a href="tel:15552751" class="goin_phone">
+                        <i class="fa-solid fa-phone goin2"></i>
+                    </a>
+                    <a href="https://pf.kakao.com/_xjBGtn" target="_blank" class="goin_kakao">
+                        <i class="fa-brands fa-kakao-talk goin3"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
