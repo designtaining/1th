@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');
+            font-weight: 100;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');
+            font-weight: 200;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+            font-weight: 900;
+            font-display: swap;
+        }
+
+        .cj_rr_container {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .cj_rr_wrapper {
+            width: max-content;
+            height: 100%;
+        }
+
+        .cj_rr_box {
+            width: max-content;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            will-change: transform;
+            cursor: grab;
+            user-select: none;
+        }
+
+        .cj_rr_box.is-dragging {
+            cursor: grabbing;
+        }
+
+        .cj_rr_card {
+            width: 400px;
+            height: 570px;
+            background-color: #ffffff;
+            border: 1px solid #f1f1f1;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(17, 17, 17, 0.09);
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            flex-shrink: 0;
+        }
+
+        .cj_rr_top {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .cj_rr_name_box {
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+        }
+
+        .cj_rr_profile {
+            width: 40px;
+            height: 40px;
+            border-radius: 999px;
+        }
+
+        .cj_rr_profile>img {
+            width: 100%;
+            height: 100%;
+            border-radius: 999px;
+        }
+
+        .cj_rr_nametag {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .cj_rr_name {
+            font-family: 'Paperozi';
+            font-size: 16px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+        }
+
+        .cj_rr_info {
+            font-family: 'Paperozi';
+            font-size: 14px;
+            font-weight: 400;
+            color: #767676;
+            margin: 0;
+        }
+
+        .cj_rr_bt_box {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cj_rr_follow_box {
+            padding: 0 12px;
+            height: 26px;
+            background-color: #d5ddff;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cj_rr_follow {
+            font-family: 'Paperozi';
+            font-size: 12px;
+            font-weight: 400;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .cj_rr_middle {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .cj_rr_stars {
+            font-size: 16px;
+            color: #ffff18;
+            -webkit-text-stroke: 1px #b8b8b8;
+            margin: 0;
+        }
+
+        .cj_rr_date {
+            font-family: 'Paperozi';
+            font-size: 12px;
+            font-weight: 400;
+            color: #505050;
+            margin: 0;
+        }
+
+        .cj_rr_part {
+            width: 60px;
+            height: 26px;
+            background-color: #2e50e2;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Paperozi';
+            font-size: 12px;
+            font-weight: 500;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .cj_rr_bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .cj_rr_desc {
+            font-family: 'Paperozi';
+            font-size: 16px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .cj_rr_img {
+            width: 100%;
+            height: auto;
+        }
+
+        .cj_rr_img>img {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .cj_rr_card {
+                width: 380px;
+                height: 520px;
+                gap: 16px;
+            }
+
+            .cj_rr_profile {
+                width: 36px;
+                height: 36px;
+            }
+
+            .cj_rr_name {
+                font-size: 14px;
+            }
+
+            .cj_rr_info {
+                font-size: 12px;
+            }
+
+            .cj_rr_bt_box {
+                gap: 6px;
+            }
+
+            .cj_rr_follow_box {
+                padding: 0 12px;
+                height: 24px;
+            }
+
+            .cj_rr_follow {
+                font-size: 12px;
+            }
+
+            .cj_rr_middle {
+                gap: 8px;
+            }
+
+            .cj_rr_stars {
+                font-size: 14px;
+            }
+
+            .cj_rr_date {
+                font-size: 12px;
+            }
+
+            .cj_rr_part {
+                width: 60px;
+                height: 24px;
+                font-size: 12px;
+            }
+
+            .cj_rr_bottom {
+                gap: 16px;
+            }
+
+            .cj_rr_desc {
+                font-size: 14px;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .cj_rr_card {
+                width: 340px;
+                height: 486px;
+                gap: 16px;
+            }
+
+            .cj_rr_desc {
+                font-size: 13px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .cj_rr_card {
+                width: 300px;
+                height: 448px;
+                gap: 16px;
+            }
+
+            .cj_rr_profile {
+                width: 32px;
+                height: 32px;
+            }
+
+            .cj_rr_name {
+                font-size: 12px;
+            }
+
+            .cj_rr_info {
+                font-size: 10px;
+            }
+
+            .cj_rr_bt_box {
+                gap: 4px;
+            }
+
+            .cj_rr_follow_box {
+                padding: 0 8px;
+                height: 20px;
+            }
+
+            .cj_rr_follow {
+                font-size: 10px;
+            }
+
+            .cj_rr_desc {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="cj_rr_container">
+
+        <div class="cj_rr_wrapper">
+
+            <div class="cj_rr_box">
+
+                <div class="cj_rr_card">
+
+                    <div class="cj_rr_top">
+                        <div class="cj_rr_name_box">
+                            <div class="cj_rr_profile">
+                                <img src="https://cdn.imweb.me/thumbnail/20260527/995a602dc41ed.png" alt="">
+                            </div>
+                            <div class="cj_rr_nametag">
+                                <p class="cj_rr_name">김*완</p>
+                                <p class="cj_rr_info">후기4 · 평균별점 5.0 · 팔로워 0</p>
+                            </div>
+                        </div>
+                        <div class="cj_rr_bt_box">
+                            <div class="cj_rr_follow_box">
+                                <p class="cj_rr_follow">팔로우</p>
+                            </div>
+                            <i class="fa-light fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+
+                    <div class="cj_rr_middle">
+                        <p class="cj_rr_stars">★★★★★</p>
+                        <p class="cj_rr_date">2026.05.28</p>
+                        <p class="cj_rr_part">입주청소</p>
+                    </div>
+
+                    <div class="cj_rr_bottom">
+                        <p class="cj_rr_desc">안녕하세요 위드포시의 포시맘이예요 33주차 만삭에 가까운 시기에 이사를 준비하면서 가장 고민됐던 건 입주 청소였습니다. 한 달 뒤면
+                            신생아가 집에 들어올 예....</p>
+                        <div class="cj_rr_img">
+                            <img src="https://cdn.imweb.me/thumbnail/20260527/d746f453b263f.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="cj_rr_card">
+
+                    <div class="cj_rr_top">
+                        <div class="cj_rr_name_box">
+                            <div class="cj_rr_profile">
+                                <img src="https://cdn.imweb.me/thumbnail/20260527/995a602dc41ed.png" alt="">
+                            </div>
+                            <div class="cj_rr_nametag">
+                                <p class="cj_rr_name">김*완</p>
+                                <p class="cj_rr_info">후기4 · 평균별점 5.0 · 팔로워 0</p>
+                            </div>
+                        </div>
+                        <div class="cj_rr_bt_box">
+                            <div class="cj_rr_follow_box">
+                                <p class="cj_rr_follow">팔로우</p>
+                            </div>
+                            <i class="fa-light fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+
+                    <div class="cj_rr_middle">
+                        <p class="cj_rr_stars">★★★★★</p>
+                        <p class="cj_rr_date">2026.05.28</p>
+                        <p class="cj_rr_part">입주청소</p>
+                    </div>
+
+                    <div class="cj_rr_bottom">
+                        <p class="cj_rr_desc">안녕하세요 위드포시의 포시맘이예요 33주차 만삭에 가까운 시기에 이사를 준비하면서 가장 고민됐던 건 입주 청소였습니다. 한 달 뒤면
+                            신생아가 집에 들어올 예....</p>
+                        <div class="cj_rr_img">
+                            <img src="https://cdn.imweb.me/thumbnail/20260527/d746f453b263f.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="cj_rr_card">
+
+                    <div class="cj_rr_top">
+                        <div class="cj_rr_name_box">
+                            <div class="cj_rr_profile">
+                                <img src="https://cdn.imweb.me/thumbnail/20260527/995a602dc41ed.png" alt="">
+                            </div>
+                            <div class="cj_rr_nametag">
+                                <p class="cj_rr_name">김*완</p>
+                                <p class="cj_rr_info">후기4 · 평균별점 5.0 · 팔로워 0</p>
+                            </div>
+                        </div>
+                        <div class="cj_rr_bt_box">
+                            <div class="cj_rr_follow_box">
+                                <p class="cj_rr_follow">팔로우</p>
+                            </div>
+                            <i class="fa-light fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+
+                    <div class="cj_rr_middle">
+                        <p class="cj_rr_stars">★★★★★</p>
+                        <p class="cj_rr_date">2026.05.28</p>
+                        <p class="cj_rr_part">입주청소</p>
+                    </div>
+
+                    <div class="cj_rr_bottom">
+                        <p class="cj_rr_desc">안녕하세요 위드포시의 포시맘이예요 33주차 만삭에 가까운 시기에 이사를 준비하면서 가장 고민됐던 건 입주 청소였습니다. 한 달 뒤면
+                            신생아가 집에 들어올 예....</p>
+                        <div class="cj_rr_img">
+                            <img src="https://cdn.imweb.me/thumbnail/20260527/d746f453b263f.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="cj_rr_card">
+
+                    <div class="cj_rr_top">
+                        <div class="cj_rr_name_box">
+                            <div class="cj_rr_profile">
+                                <img src="https://cdn.imweb.me/thumbnail/20260527/995a602dc41ed.png" alt="">
+                            </div>
+                            <div class="cj_rr_nametag">
+                                <p class="cj_rr_name">김*완</p>
+                                <p class="cj_rr_info">후기4 · 평균별점 5.0 · 팔로워 0</p>
+                            </div>
+                        </div>
+                        <div class="cj_rr_bt_box">
+                            <div class="cj_rr_follow_box">
+                                <p class="cj_rr_follow">팔로우</p>
+                            </div>
+                            <i class="fa-light fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+
+                    <div class="cj_rr_middle">
+                        <p class="cj_rr_stars">★★★★★</p>
+                        <p class="cj_rr_date">2026.05.28</p>
+                        <p class="cj_rr_part">입주청소</p>
+                    </div>
+
+                    <div class="cj_rr_bottom">
+                        <p class="cj_rr_desc">안녕하세요 위드포시의 포시맘이예요 33주차 만삭에 가까운 시기에 이사를 준비하면서 가장 고민됐던 건 입주 청소였습니다. 한 달 뒤면
+                            신생아가 집에 들어올 예....</p>
+                        <div class="cj_rr_img">
+                            <img src="https://cdn.imweb.me/thumbnail/20260527/d746f453b263f.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="cj_rr_card">
+
+                    <div class="cj_rr_top">
+                        <div class="cj_rr_name_box">
+                            <div class="cj_rr_profile">
+                                <img src="https://cdn.imweb.me/thumbnail/20260527/995a602dc41ed.png" alt="">
+                            </div>
+                            <div class="cj_rr_nametag">
+                                <p class="cj_rr_name">김*완</p>
+                                <p class="cj_rr_info">후기4 · 평균별점 5.0 · 팔로워 0</p>
+                            </div>
+                        </div>
+                        <div class="cj_rr_bt_box">
+                            <div class="cj_rr_follow_box">
+                                <p class="cj_rr_follow">팔로우</p>
+                            </div>
+                            <i class="fa-light fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+
+                    <div class="cj_rr_middle">
+                        <p class="cj_rr_stars">★★★★★</p>
+                        <p class="cj_rr_date">2026.05.28</p>
+                        <p class="cj_rr_part">입주청소</p>
+                    </div>
+
+                    <div class="cj_rr_bottom">
+                        <p class="cj_rr_desc">안녕하세요 위드포시의 포시맘이예요 33주차 만삭에 가까운 시기에 이사를 준비하면서 가장 고민됐던 건 입주 청소였습니다. 한 달 뒤면
+                            신생아가 집에 들어올 예....</p>
+                        <div class="cj_rr_img">
+                            <img src="https://cdn.imweb.me/thumbnail/20260527/d746f453b263f.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="cj_rr_card">
+
+                    <div class="cj_rr_top">
+                        <div class="cj_rr_name_box">
+                            <div class="cj_rr_profile">
+                                <img src="https://cdn.imweb.me/thumbnail/20260527/995a602dc41ed.png" alt="">
+                            </div>
+                            <div class="cj_rr_nametag">
+                                <p class="cj_rr_name">김*완</p>
+                                <p class="cj_rr_info">후기4 · 평균별점 5.0 · 팔로워 0</p>
+                            </div>
+                        </div>
+                        <div class="cj_rr_bt_box">
+                            <div class="cj_rr_follow_box">
+                                <p class="cj_rr_follow">팔로우</p>
+                            </div>
+                            <i class="fa-light fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+
+                    <div class="cj_rr_middle">
+                        <p class="cj_rr_stars">★★★★★</p>
+                        <p class="cj_rr_date">2026.05.28</p>
+                        <p class="cj_rr_part">입주청소</p>
+                    </div>
+
+                    <div class="cj_rr_bottom">
+                        <p class="cj_rr_desc">안녕하세요 위드포시의 포시맘이예요 33주차 만삭에 가까운 시기에 이사를 준비하면서 가장 고민됐던 건 입주 청소였습니다. 한 달 뒤면
+                            신생아가 집에 들어올 예....</p>
+                        <div class="cj_rr_img">
+                            <img src="https://cdn.imweb.me/thumbnail/20260527/d746f453b263f.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="cj_rr_card">
+
+                    <div class="cj_rr_top">
+                        <div class="cj_rr_name_box">
+                            <div class="cj_rr_profile">
+                                <img src="https://cdn.imweb.me/thumbnail/20260527/995a602dc41ed.png" alt="">
+                            </div>
+                            <div class="cj_rr_nametag">
+                                <p class="cj_rr_name">김*완</p>
+                                <p class="cj_rr_info">후기4 · 평균별점 5.0 · 팔로워 0</p>
+                            </div>
+                        </div>
+                        <div class="cj_rr_bt_box">
+                            <div class="cj_rr_follow_box">
+                                <p class="cj_rr_follow">팔로우</p>
+                            </div>
+                            <i class="fa-light fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+
+                    <div class="cj_rr_middle">
+                        <p class="cj_rr_stars">★★★★★</p>
+                        <p class="cj_rr_date">2026.05.28</p>
+                        <p class="cj_rr_part">입주청소</p>
+                    </div>
+
+                    <div class="cj_rr_bottom">
+                        <p class="cj_rr_desc">안녕하세요 위드포시의 포시맘이예요 33주차 만삭에 가까운 시기에 이사를 준비하면서 가장 고민됐던 건 입주 청소였습니다. 한 달 뒤면
+                            신생아가 집에 들어올 예....</p>
+                        <div class="cj_rr_img">
+                            <img src="https://cdn.imweb.me/thumbnail/20260527/d746f453b263f.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="cj_rr_card">
+
+                    <div class="cj_rr_top">
+                        <div class="cj_rr_name_box">
+                            <div class="cj_rr_profile">
+                                <img src="https://cdn.imweb.me/thumbnail/20260527/995a602dc41ed.png" alt="">
+                            </div>
+                            <div class="cj_rr_nametag">
+                                <p class="cj_rr_name">김*완</p>
+                                <p class="cj_rr_info">후기4 · 평균별점 5.0 · 팔로워 0</p>
+                            </div>
+                        </div>
+                        <div class="cj_rr_bt_box">
+                            <div class="cj_rr_follow_box">
+                                <p class="cj_rr_follow">팔로우</p>
+                            </div>
+                            <i class="fa-light fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+
+                    <div class="cj_rr_middle">
+                        <p class="cj_rr_stars">★★★★★</p>
+                        <p class="cj_rr_date">2026.05.28</p>
+                        <p class="cj_rr_part">입주청소</p>
+                    </div>
+
+                    <div class="cj_rr_bottom">
+                        <p class="cj_rr_desc">안녕하세요 위드포시의 포시맘이예요 33주차 만삭에 가까운 시기에 이사를 준비하면서 가장 고민됐던 건 입주 청소였습니다. 한 달 뒤면
+                            신생아가 집에 들어올 예....</p>
+                        <div class="cj_rr_img">
+                            <img src="https://cdn.imweb.me/thumbnail/20260527/d746f453b263f.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="cj_rr_card">
+
+                    <div class="cj_rr_top">
+                        <div class="cj_rr_name_box">
+                            <div class="cj_rr_profile">
+                                <img src="https://cdn.imweb.me/thumbnail/20260527/995a602dc41ed.png" alt="">
+                            </div>
+                            <div class="cj_rr_nametag">
+                                <p class="cj_rr_name">김*완</p>
+                                <p class="cj_rr_info">후기4 · 평균별점 5.0 · 팔로워 0</p>
+                            </div>
+                        </div>
+                        <div class="cj_rr_bt_box">
+                            <div class="cj_rr_follow_box">
+                                <p class="cj_rr_follow">팔로우</p>
+                            </div>
+                            <i class="fa-light fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+
+                    <div class="cj_rr_middle">
+                        <p class="cj_rr_stars">★★★★★</p>
+                        <p class="cj_rr_date">2026.05.28</p>
+                        <p class="cj_rr_part">입주청소</p>
+                    </div>
+
+                    <div class="cj_rr_bottom">
+                        <p class="cj_rr_desc">안녕하세요 위드포시의 포시맘이예요 33주차 만삭에 가까운 시기에 이사를 준비하면서 가장 고민됐던 건 입주 청소였습니다. 한 달 뒤면
+                            신생아가 집에 들어올 예....</p>
+                        <div class="cj_rr_img">
+                            <img src="https://cdn.imweb.me/thumbnail/20260527/d746f453b263f.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="cj_rr_card">
+
+                    <div class="cj_rr_top">
+                        <div class="cj_rr_name_box">
+                            <div class="cj_rr_profile">
+                                <img src="https://cdn.imweb.me/thumbnail/20260527/995a602dc41ed.png" alt="">
+                            </div>
+                            <div class="cj_rr_nametag">
+                                <p class="cj_rr_name">김*완</p>
+                                <p class="cj_rr_info">후기4 · 평균별점 5.0 · 팔로워 0</p>
+                            </div>
+                        </div>
+                        <div class="cj_rr_bt_box">
+                            <div class="cj_rr_follow_box">
+                                <p class="cj_rr_follow">팔로우</p>
+                            </div>
+                            <i class="fa-light fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+
+                    <div class="cj_rr_middle">
+                        <p class="cj_rr_stars">★★★★★</p>
+                        <p class="cj_rr_date">2026.05.28</p>
+                        <p class="cj_rr_part">입주청소</p>
+                    </div>
+
+                    <div class="cj_rr_bottom">
+                        <p class="cj_rr_desc">안녕하세요 위드포시의 포시맘이예요 33주차 만삭에 가까운 시기에 이사를 준비하면서 가장 고민됐던 건 입주 청소였습니다. 한 달 뒤면
+                            신생아가 집에 들어올 예....</p>
+                        <div class="cj_rr_img">
+                            <img src="https://cdn.imweb.me/thumbnail/20260527/d746f453b263f.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="cj_rr_card">
+
+                    <div class="cj_rr_top">
+                        <div class="cj_rr_name_box">
+                            <div class="cj_rr_profile">
+                                <img src="https://cdn.imweb.me/thumbnail/20260527/995a602dc41ed.png" alt="">
+                            </div>
+                            <div class="cj_rr_nametag">
+                                <p class="cj_rr_name">김*완</p>
+                                <p class="cj_rr_info">후기4 · 평균별점 5.0 · 팔로워 0</p>
+                            </div>
+                        </div>
+                        <div class="cj_rr_bt_box">
+                            <div class="cj_rr_follow_box">
+                                <p class="cj_rr_follow">팔로우</p>
+                            </div>
+                            <i class="fa-light fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+
+                    <div class="cj_rr_middle">
+                        <p class="cj_rr_stars">★★★★★</p>
+                        <p class="cj_rr_date">2026.05.28</p>
+                        <p class="cj_rr_part">입주청소</p>
+                    </div>
+
+                    <div class="cj_rr_bottom">
+                        <p class="cj_rr_desc">안녕하세요 위드포시의 포시맘이예요 33주차 만삭에 가까운 시기에 이사를 준비하면서 가장 고민됐던 건 입주 청소였습니다. 한 달 뒤면
+                            신생아가 집에 들어올 예....</p>
+                        <div class="cj_rr_img">
+                            <img src="https://cdn.imweb.me/thumbnail/20260527/d746f453b263f.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="cj_rr_card">
+
+                    <div class="cj_rr_top">
+                        <div class="cj_rr_name_box">
+                            <div class="cj_rr_profile">
+                                <img src="https://cdn.imweb.me/thumbnail/20260527/995a602dc41ed.png" alt="">
+                            </div>
+                            <div class="cj_rr_nametag">
+                                <p class="cj_rr_name">김*완</p>
+                                <p class="cj_rr_info">후기4 · 평균별점 5.0 · 팔로워 0</p>
+                            </div>
+                        </div>
+                        <div class="cj_rr_bt_box">
+                            <div class="cj_rr_follow_box">
+                                <p class="cj_rr_follow">팔로우</p>
+                            </div>
+                            <i class="fa-light fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+
+                    <div class="cj_rr_middle">
+                        <p class="cj_rr_stars">★★★★★</p>
+                        <p class="cj_rr_date">2026.05.28</p>
+                        <p class="cj_rr_part">입주청소</p>
+                    </div>
+
+                    <div class="cj_rr_bottom">
+                        <p class="cj_rr_desc">안녕하세요 위드포시의 포시맘이예요 33주차 만삭에 가까운 시기에 이사를 준비하면서 가장 고민됐던 건 입주 청소였습니다. 한 달 뒤면
+                            신생아가 집에 들어올 예....</p>
+                        <div class="cj_rr_img">
+                            <img src="https://cdn.imweb.me/thumbnail/20260527/d746f453b263f.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="cj_rr_card">
+
+                    <div class="cj_rr_top">
+                        <div class="cj_rr_name_box">
+                            <div class="cj_rr_profile">
+                                <img src="https://cdn.imweb.me/thumbnail/20260527/995a602dc41ed.png" alt="">
+                            </div>
+                            <div class="cj_rr_nametag">
+                                <p class="cj_rr_name">김*완</p>
+                                <p class="cj_rr_info">후기4 · 평균별점 5.0 · 팔로워 0</p>
+                            </div>
+                        </div>
+                        <div class="cj_rr_bt_box">
+                            <div class="cj_rr_follow_box">
+                                <p class="cj_rr_follow">팔로우</p>
+                            </div>
+                            <i class="fa-light fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+
+                    <div class="cj_rr_middle">
+                        <p class="cj_rr_stars">★★★★★</p>
+                        <p class="cj_rr_date">2026.05.28</p>
+                        <p class="cj_rr_part">입주청소</p>
+                    </div>
+
+                    <div class="cj_rr_bottom">
+                        <p class="cj_rr_desc">안녕하세요 위드포시의 포시맘이예요 33주차 만삭에 가까운 시기에 이사를 준비하면서 가장 고민됐던 건 입주 청소였습니다. 한 달 뒤면
+                            신생아가 집에 들어올 예....</p>
+                        <div class="cj_rr_img">
+                            <img src="https://cdn.imweb.me/thumbnail/20260527/d746f453b263f.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="cj_rr_card">
+
+                    <div class="cj_rr_top">
+                        <div class="cj_rr_name_box">
+                            <div class="cj_rr_profile">
+                                <img src="https://cdn.imweb.me/thumbnail/20260527/995a602dc41ed.png" alt="">
+                            </div>
+                            <div class="cj_rr_nametag">
+                                <p class="cj_rr_name">김*완</p>
+                                <p class="cj_rr_info">후기4 · 평균별점 5.0 · 팔로워 0</p>
+                            </div>
+                        </div>
+                        <div class="cj_rr_bt_box">
+                            <div class="cj_rr_follow_box">
+                                <p class="cj_rr_follow">팔로우</p>
+                            </div>
+                            <i class="fa-light fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+
+                    <div class="cj_rr_middle">
+                        <p class="cj_rr_stars">★★★★★</p>
+                        <p class="cj_rr_date">2026.05.28</p>
+                        <p class="cj_rr_part">입주청소</p>
+                    </div>
+
+                    <div class="cj_rr_bottom">
+                        <p class="cj_rr_desc">안녕하세요 위드포시의 포시맘이예요 33주차 만삭에 가까운 시기에 이사를 준비하면서 가장 고민됐던 건 입주 청소였습니다. 한 달 뒤면
+                            신생아가 집에 들어올 예....</p>
+                        <div class="cj_rr_img">
+                            <img src="https://cdn.imweb.me/thumbnail/20260527/d746f453b263f.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="cj_rr_card">
+
+                    <div class="cj_rr_top">
+                        <div class="cj_rr_name_box">
+                            <div class="cj_rr_profile">
+                                <img src="https://cdn.imweb.me/thumbnail/20260527/995a602dc41ed.png" alt="">
+                            </div>
+                            <div class="cj_rr_nametag">
+                                <p class="cj_rr_name">김*완</p>
+                                <p class="cj_rr_info">후기4 · 평균별점 5.0 · 팔로워 0</p>
+                            </div>
+                        </div>
+                        <div class="cj_rr_bt_box">
+                            <div class="cj_rr_follow_box">
+                                <p class="cj_rr_follow">팔로우</p>
+                            </div>
+                            <i class="fa-light fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+
+                    <div class="cj_rr_middle">
+                        <p class="cj_rr_stars">★★★★★</p>
+                        <p class="cj_rr_date">2026.05.28</p>
+                        <p class="cj_rr_part">입주청소</p>
+                    </div>
+
+                    <div class="cj_rr_bottom">
+                        <p class="cj_rr_desc">안녕하세요 위드포시의 포시맘이예요 33주차 만삭에 가까운 시기에 이사를 준비하면서 가장 고민됐던 건 입주 청소였습니다. 한 달 뒤면
+                            신생아가 집에 들어올 예....</p>
+                        <div class="cj_rr_img">
+                            <img src="https://cdn.imweb.me/thumbnail/20260527/d746f453b263f.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script>
+        (function () {
+            const track = document.querySelector('.cj_rr_box');
+            if (!track) return;
+
+            const originalCards = Array.from(track.children);
+
+            originalCards.forEach(function (card) {
+                const clone = card.cloneNode(true);
+                clone.setAttribute('aria-hidden', 'true');
+                track.appendChild(clone);
+            });
+
+            let x = 0;
+            let speed = 0.6;
+            let singleWidth = 0;
+
+            let isDragging = false;
+            let startX = 0;
+            let startTranslate = 0;
+            let lastX = 0;
+            let velocity = 0;
+
+            function getSingleWidth() {
+                singleWidth = 0;
+                originalCards.forEach(function (card) {
+                    singleWidth += card.offsetWidth;
+                });
+
+                const gap = parseFloat(getComputedStyle(track).gap) || 0;
+                singleWidth += gap * originalCards.length;
+            }
+
+            function normalize() {
+                if (x <= -singleWidth) {
+                    x += singleWidth;
+                }
+
+                if (x >= 0) {
+                    x -= singleWidth;
+                }
+            }
+
+            function animate() {
+                if (!isDragging) {
+                    x -= speed;
+
+                    if (Math.abs(velocity) > 0.05) {
+                        x += velocity;
+                        velocity *= 0.94;
+                    }
+                }
+
+                normalize();
+                track.style.transform = 'translate3d(' + x + 'px, 0, 0)';
+                requestAnimationFrame(animate);
+            }
+
+            function pointerDown(e) {
+                isDragging = true;
+                track.classList.add('is-dragging');
+
+                startX = e.clientX || e.touches[0].clientX;
+                lastX = startX;
+                startTranslate = x;
+                velocity = 0;
+            }
+
+            function pointerMove(e) {
+                if (!isDragging) return;
+
+                const currentX = e.clientX || e.touches[0].clientX;
+                const diff = currentX - startX;
+
+                velocity = currentX - lastX;
+                lastX = currentX;
+
+                x = startTranslate + diff;
+                normalize();
+
+                track.style.transform = 'translate3d(' + x + 'px, 0, 0)';
+            }
+
+            function pointerUp() {
+                isDragging = false;
+                track.classList.remove('is-dragging');
+            }
+
+            getSingleWidth();
+            window.addEventListener('resize', getSingleWidth);
+
+            track.addEventListener('mousedown', pointerDown);
+            window.addEventListener('mousemove', pointerMove);
+            window.addEventListener('mouseup', pointerUp);
+
+            track.addEventListener('touchstart', pointerDown, { passive: true });
+            window.addEventListener('touchmove', pointerMove, { passive: true });
+            window.addEventListener('touchend', pointerUp);
+
+            animate();
+        })();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');
+            font-weight: 100;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');
+            font-weight: 200;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+            font-weight: 900;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GMarketSans';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        .cj_ispr_container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .cj_ispr_wrapper {
+            width: 100%;
+            height: 100%;
+            padding: 0 160px;
+            box-sizing: border-box;
+        }
+
+        .cj_ispr_box {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ispr_title_box {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .ispr_title_left,
+        .ispr_title_right {
+            width: 80px;
+            height: 145px;
+        }
+
+        .ispr_title_left>img,
+        .ispr_title_right>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .ispr_title_cube {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .ispr_title {
+            font-family: 'Paperozi';
+            font-size: 40px;
+            font-weight: 600;
+            color: #111111;
+            margin: 0 60px;
+            text-align: center;
+        }
+
+        .ispr_title_mb {
+            font-family: 'Paperozi';
+            font-size: 24px;
+            font-weight: 600;
+            color: #111111;
+            margin: 0 20px;
+            text-align: center;
+            display: none;
+        }
+
+        .ispr_subtitle {
+            font-family: 'Paperozi';
+            font-size: 20px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+        }
+
+        .ispr_span1 {
+            background: linear-gradient(90deg,
+                    #1428A0 0%,
+                    #2e50e2 55%,
+                    #7DBBFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .ispr_middle {
+            width: 480px;
+            margin: 0 auto;
+        }
+
+        .ispr_middle>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 여기부터 밑 */
+
+        .ispr_bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .ispr_card {
+            width: 100%;
+            height: 320px;
+            border: 1px solid #f1f1f1;
+            border-radius: 12px;
+            padding: 20px;
+            box-sizing: border-box;
+            box-shadow: 0 4px 12px rgba(17, 17, 17, 0.15);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .ispr_card_left {
+            height: 100%;
+        }
+
+        .ispr_card_left>img {
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+        }
+
+        .ispr_card_right {
+            width: 40%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 60px;
+        }
+
+        .ispr_card_title_box {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .ispr_card_number {
+            font-family: 'GMarketSans';
+            font-size: 60px;
+            font-weight: 700;
+            margin: 0;
+
+            background: linear-gradient(90deg,
+                    rgba(20, 40, 160, 0.3) 0%,
+                    rgba(46, 80, 226, 0.3) 55%,
+                    rgba(125, 187, 255, 0.3) 100%);
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .ispr_card_title {
+            font-family: 'Paperozi';
+            font-size: 32px;
+            font-weight: 500;
+            color: #111111;
+            margin: 0;
+        }
+
+        .ispr_card_desc {
+            font-family: 'Paperozi';
+            font-size: 20px;
+            font-weight: 400;
+            color: #767676;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .ispr_card_right {
+                width: 50%;
+                gap: 60px;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .cj_ispr_wrapper {
+                padding: 0 12px;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+
+            .ispr_title_left,
+            .ispr_title_right {
+                width: 60px;
+                height: 109px;
+            }
+
+            .ispr_title_cube {
+                gap: 8px;
+            }
+
+            .ispr_title {
+                font-size: 28px;
+                margin: 0 40px;
+            }
+
+            .ispr_subtitle {
+                font-size: 18px;
+            }
+
+            .ispr_middle {
+                width: 420px;
+                margin: 0 auto;
+            }
+
+            .ispr_card {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+                padding: 12px;
+                flex-direction: column-reverse;
+                gap: 20px;
+            }
+
+            .ispr_card_right {
+                width: 100%;
+                gap: 24px;
+            }
+
+            .ispr_card_left>img {
+                border-radius: 8px;
+            }
+
+            .ispr_card_number {
+                font-size: 48px;
+            }
+
+            .ispr_card_title {
+                font-size: 28px;
+            }
+
+            .ispr_card_desc {
+                font-size: 16px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .ispr_title {
+                display: none;
+            }
+
+            .ispr_title_mb {
+                display: block;
+                line-height: 1.4;
+                font-size: 20px;
+            }
+
+            .ispr_subtitle {
+                font-size: 14px;
+            }
+
+            .ispr_title_left,
+            .ispr_title_right {
+                width: 40px;
+                height: 73px;
+            }
+
+            .ispr_middle {
+                width: 300px;
+                margin: 32px auto 0;
+            }
+
+            .ispr_bottom {
+                gap: 12px;
+            }
+
+            .ispr_card_right {
+                gap: 16px;
+            }
+
+            .ispr_card_number {
+                font-size: 32px;
+            }
+
+            .ispr_card_title {
+                font-size: 20px;
+            }
+
+            .ispr_card_desc {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="cj_ispr_container">
+        <div class="cj_ispr_wrapper">
+            <div class="cj_ispr_box">
+                <div class="ispr_top">
+                    <div class="ispr_title_box">
+                        <div class="ispr_title_left">
+                            <img src="https://cdn.imweb.me/thumbnail/20260528/db5768a45f907.png" alt="">
+                        </div>
+                        <div class="ispr_title_cube">
+                            <p class="ispr_title">
+                                <span class="ispr_span1">안심할 수 있는</span> 청정클린텍 선택의 이유
+                            </p>
+                            <p class="ispr_title_mb">
+                                <span class="ispr_span1">안심할 수 있는</span><br> 청정클린텍 선택의 이유
+                            </p>
+                            <p class="ispr_subtitle">
+                                생활 공간을 위한 우리가족의 기준
+                            </p>
+                        </div>
+                        <div class="ispr_title_right">
+                            <img src="https://cdn.imweb.me/thumbnail/20260528/cbc233f253822.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="ispr_middle">
+                    <img src="https://cdn.imweb.me/thumbnail/20260528/5fc9c91e861a3.png" alt="">
+                </div>
+                <div class="ispr_bottom">
+
+                    <div class="ispr_card">
+                        <div class="ispr_card_left">
+                            <img src="https://cdn.imweb.me/thumbnail/20260527/5a8fc7f99299b.png" alt="">
+                        </div>
+                        <div class="ispr_card_right">
+                            <div class="ispr_card_title_box">
+                                <p class="ispr_card_number">01</p>
+                                <p class="ispr_card_title">
+                                    깨끗함 : 살균과 위생
+                                </p>
+                            </div>
+                            <p class="ispr_card_desc">
+                                청정클린텍은 바닥을 전문 장비로 기계 세척하여, 손으로 닦는 것과는 비교 할 수 없는 안전하고 깨끗함을 제공합니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="ispr_card">
+                        <div class="ispr_card_left">
+                            <img src="https://cdn.imweb.me/thumbnail/20260527/5a8fc7f99299b.png" alt="">
+                        </div>
+                        <div class="ispr_card_right">
+                            <div class="ispr_card_title_box">
+                                <p class="ispr_card_number">02</p>
+                                <p class="ispr_card_title">
+                                    안정성 : 프리미엄 천연세제
+                                </p>
+                            </div>
+                            <p class="ispr_card_desc">
+                                환경과 인체에 안전한 프리미엄 천연세제를 전 과정에서 사용하여 고품질의 청소 서비스를 완성합니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="ispr_card">
+                        <div class="ispr_card_left">
+                            <img src="https://cdn.imweb.me/thumbnail/20260527/5a8fc7f99299b.png" alt="">
+                        </div>
+                        <div class="ispr_card_right">
+                            <div class="ispr_card_title_box">
+                                <p class="ispr_card_number">03</p>
+                                <p class="ispr_card_title">
+                                    소비자권리 : 7일간 A/S 제공
+                                </p>
+                            </div>
+                            <p class="ispr_card_desc">
+                                '고객만족'을 위해 미흡한 부분이 확인된 경우 담당 클린매니저 응대 후 즉각조치 서비스를 제공합니다.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
