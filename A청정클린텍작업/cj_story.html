@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Uloopet:wght@100..400&display=swap"
+        rel="stylesheet">
+
+    <style>
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');
+            font-weight: 100;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');
+            font-weight: 200;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+            font-weight: 900;
+            font-display: swap;
+        }
+
+        .cj_story_first {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .cj_story_wrapper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cj_story_video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
+        .cj_story_box1,
+        .cj_story_box2 {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .cj_story_box1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .cj_story_box2 {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 10;
+            opacity: 0;
+            transform: none;
+        }
+
+        .cj_story_img {
+            width: 600px;
+            height: 600px;
+            position: absolute;
+            z-index: 4;
+            opacity: 0;
+        }
+
+        .cj_story_img>img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .cj_story_textbox {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 220px;
+            padding: 0 520px;
+            box-sizing: border-box;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .cj_story_text_top {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .cj_story_text_bottom {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .cj_story_text1 {
+            font-family: "Playwrite DK Uloopet", cursive;
+            font-size: 80px;
+            font-weight: 400;
+            color: #ffffff;
+            opacity: 0;
+        }
+
+        .cj_story_text2 {
+            font-family: "Playwrite DK Uloopet", cursive;
+            font-size: 80px;
+            font-weight: 400;
+            color: #ffffff;
+            opacity: 0;
+        }
+
+        .cj_story_text_middle {
+            position: absolute;
+            z-index: 3;
+            width: max-content;
+            max-width: none;
+            left: 0;
+            overflow: visible;
+        }
+
+        .cj_story_text3 {
+            font-family: 'Paperozi';
+            font-size: 60px;
+            font-weight: 400;
+            color: #ffffff;
+            white-space: nowrap;
+        }
+
+        .cj_story_cp {
+            font-family: 'Paperozi';
+            font-size: 80px;
+            font-weight: 700;
+            color: #ffffff;
+            opacity: 0;
+        }
+
+        /* ✅ 1728px 이하 */
+        @media screen and (max-width: 1728px) {
+            .cj_story_textbox {
+                gap: 220px;
+                padding: 0 420px;
+            }
+        }
+
+        /* ✅ 1512px 이하 */
+        @media screen and (max-width: 1512px) {
+            .cj_story_textbox {
+                gap: 220px;
+                padding: 0 320px;
+            }
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .cj_story_textbox {
+                gap: 220px;
+                padding: 0 240px;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .cj_story_textbox {
+                gap: 220px;
+                padding: 0 80px;
+            }
+
+            .cj_story_text1 {
+                font-size: 64px;
+            }
+
+            .cj_story_text2 {
+                font-size: 64px;
+            }
+
+            .cj_story_text3 {
+                font-size: 40px;
+            }
+
+            .cj_story_cp {
+                font-size: 60px;
+            }
+
+            .cj_story_img {
+                width: 520px;
+                height: 520px;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .cj_story_textbox {
+                gap: 160px;
+                padding: 0 80px;
+            }
+
+            .cj_story_text1 {
+                font-size: 56px;
+            }
+
+            .cj_story_text2 {
+                font-size: 56px;
+            }
+
+            .cj_story_text3 {
+                font-size: 40px;
+            }
+
+            .cj_story_cp {
+                font-size: 48px;
+            }
+
+            .cj_story_img {
+                width: 520px;
+                height: 520px;
+            }
+        }
+
+        /* ✅ 560px 이하 */
+        @media screen and (max-width: 560px) {
+            .cj_story_textbox {
+                gap: 120px;
+                padding: 0 20px;
+            }
+
+            .cj_story_text1 {
+                font-size: 56px;
+            }
+
+            .cj_story_text2 {
+                font-size: 56px;
+            }
+
+            .cj_story_text3 {
+                font-size: 32px;
+            }
+
+            .cj_story_cp {
+                font-size: 36px;
+            }
+
+            .cj_story_img {
+                width: 360px;
+                height: 360px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .cj_story_textbox {
+                gap: 80px;
+                padding: 0 20px;
+            }
+
+            .cj_story_text1 {
+                font-size: 40px;
+            }
+
+            .cj_story_text2 {
+                font-size: 40px;
+            }
+
+            .cj_story_text3 {
+                font-size: 32px;
+            }
+
+            .cj_story_cp {
+                font-size: 32px;
+            }
+
+            .cj_story_img {
+                width: 320px;
+                height: 320px;
+            }
+        }
+
+        /* ✅ 375px 이하 */
+        @media screen and (max-width: 375px) {
+            .cj_story_textbox {
+                gap: 80px;
+                padding: 0 20px;
+            }
+
+            .cj_story_text1 {
+                font-size: 32px;
+            }
+
+            .cj_story_text2 {
+                font-size: 32px;
+            }
+
+            .cj_story_text3 {
+                font-size: 24px;
+            }
+
+            .cj_story_cp {
+                font-size: 28px;
+            }
+
+            .cj_story_img {
+                width: 260px;
+                height: 260px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="cj_story_first">
+
+        <div class="cj_story_wrapper">
+
+            <video class="cj_story_video" autoplay muted loop playsinline>
+                <source src="https://ncryk7.mycafe24.com/cjstory_bgv.mp4" type="video/mp4">
+            </video>
+
+            <div class="cj_story_box1">
+                <div class="cj_story_img">
+                    <img src="https://cdn.imweb.me/thumbnail/20260604/6798419844d97.png" alt="">
+                </div>
+                <div class="cj_story_textbox">
+                    <div class="cj_story_text_top">
+                        <p class="cj_story_text1">
+                            Better Place
+                        </p>
+                    </div>
+                    <div class="cj_story_text_bottom">
+                        <p class="cj_story_text2">
+                            Better Life
+                        </p>
+                    </div>
+                </div>
+                <div class="cj_story_text_middle">
+                    <p class="cj_story_text3">라이프스타일 케어 · 전문 방역 · 건물위생관리 · 공기질 케어 · 왁스 코팅</p>
+                </div>
+            </div>
+
+            <div class="cj_story_box2">
+                <p class="cj_story_cp">
+                    윤택한 삶, 공간의 가치
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            gsap.registerPlugin(ScrollTrigger);
+
+            gsap.set(".cj_story_img", {
+                opacity: 0,
+                scale: 0.96
+            });
+
+            gsap.set(".cj_story_text1", {
+                opacity: 0,
+                x: 300
+            });
+
+            gsap.set(".cj_story_text2", {
+                opacity: 0,
+                x: -300
+            });
+
+            gsap.set(".cj_story_text_middle", {
+                x: window.innerWidth
+            });
+
+            gsap.set(".cj_story_box1", {
+                y: 0
+            });
+
+            gsap.set(".cj_story_box2", {
+                opacity: 0
+            });
+
+            gsap.set(".cj_story_cp", {
+                opacity: 0,
+                y: 40
+            });
+
+            /* 섹션 진입 시 이미지 페이드인 */
+            gsap.to(".cj_story_img", {
+                opacity: 1,
+                scale: 1,
+                duration: 1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: ".cj_story_first",
+                    start: "top 80%",
+                    once: true
+                }
+            });
+
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".cj_story_first",
+                    start: "top top",
+                    end: "+=4500",
+                    scrub: 1,
+                    pin: true,
+                    anticipatePin: 1,
+                    markers: false
+                }
+            });
+
+            tl
+
+                /* Better Place */
+                .to(".cj_story_text1", {
+                    opacity: 1,
+                    x: 0,
+                    duration: 1.2,
+                    ease: "power3.out"
+                })
+
+                /* Better Life (조금 여유 있게 등장) */
+                .to(".cj_story_text2", {
+                    opacity: 1,
+                    x: 0,
+                    duration: 1.2,
+                    ease: "power3.out"
+                }, "+=0.7")
+
+                /* 긴 텍스트 */
+                .to(".cj_story_text_middle", {
+                    x: "-150vw",
+                    duration: 6,
+                    ease: "none"
+                }, "+=0.5")
+
+                /* box1 위로 이동 */
+                .to(".cj_story_box1", {
+                    y: "-100%",
+                    duration: 1.5,
+                    ease: "power2.inOut"
+                })
+
+                /* box2 등장 */
+                .to(".cj_story_box2", {
+                    opacity: 1,
+                    duration: 0.8,
+                    ease: "power2.out"
+                }, "-=0.8")
+
+                /* cp 등장 */
+                .to(".cj_story_cp", {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: "power2.out"
+                }, "<0.2");
+
+        });
+    </script>
+
+</body>
+
+</html>
