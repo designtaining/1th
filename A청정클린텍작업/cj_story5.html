@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+            font-weight: 100;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+            font-weight: 200;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+            font-weight: 900;
+            font-display: swap;
+        }
+
+        .cj_5story_container {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .cj_5story_wrapper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cj_5story_shadow {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(17, 17, 17, 0.3);
+            position: absolute;
+            z-index: 2;
+        }
+
+        .cj5_video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            z-index: 1;
+        }
+
+        .cj_5story_cp5 {
+            position: absolute;
+            z-index: 3;
+            font-family: 'Pretendard';
+            font-size: 80px;
+            font-weight: 900;
+            color: #ffffff;
+            opacity: 0;
+            transform: translateY(0px);
+            transition: all 2.4s ease;
+        }
+
+        .cj_5story_cp5.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="cj_5story_container">
+
+        <div class="cj_5story_wrapper">
+            <div class="cj_5story_shadow"></div>
+            <video class="cj5_video" autoplay muted loop playsinline>
+                <source src="https://ncryk7.mycafe24.com/cj_space1.mp4" type="video/mp4">
+            </video>
+            <p class="cj_5story_cp5">
+                공간의 가치를 더 가치있게
+            </p>
+
+        </div>
+
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const target = document.querySelector(".cj_5story_cp5");
+
+            const observer = new IntersectionObserver((entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        target.classList.add("show");
+
+                        observer.unobserve(target); // 한번만 실행
+                    }
+
+                });
+
+            }, {
+                threshold: 0.4
+            });
+
+            observer.observe(target);
+
+        });
+    </script>
+
+</body>
+
+</html>

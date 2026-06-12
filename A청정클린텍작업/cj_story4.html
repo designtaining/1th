@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <style>
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');
+            font-weight: 100;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');
+            font-weight: 200;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+            font-weight: 900;
+            font-display: swap;
+        }
+
+        .cj_5story_container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .cj_5story_wrapper {
+            width: 100%;
+            height: 100%;
+            padding: 0 160px;
+            box-sizing: border-box;
+        }
+
+        .cj_5story_box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .cj_5story_left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cj_5_titlebox {
+            background-color: #2e50e2;
+            width: 400px;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cj_5_title {
+            font-family: 'Paperozi';
+            font-size: 24px;
+            font-weight: 500;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .cj_5_stairbox {
+            background-color: none;
+            width: 400px;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #e5e5ec;
+            box-sizing: border-box;
+        }
+
+        .cj_5_stair {
+            font-family: 'Paperozi';
+            font-size: 16px;
+            font-weight: 400;
+            color: #111111;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .stair_span1 {
+            font-size: 28px;
+            font-weight: 600;
+            color: #2e50e2;
+        }
+
+        .cj_5_stairbox_special {
+            background-color: #f7f9ff;
+            width: 400px;
+            height: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 0 solid #e5e5ec;
+            box-sizing: border-box;
+        }
+
+        .cj_5_stairbox_special .cj_5_stair {
+            opacity: 0;
+            transform: translateX(40px);
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .cj_5story_wrapper {
+                padding: 0 12px;
+            }
+
+            .cj_5story_box {
+                gap: 20px;
+            }
+
+            .cj_5story_left,
+            .cj_5story_right {
+                flex: 1;
+                min-width: 0;
+            }
+
+            .cj_5_titlebox {
+                width: 100%;
+                height: 120px;
+            }
+
+            .cj_5_title {
+                font-size: 24px;
+            }
+
+            .cj_5_stairbox {
+                width: 100%;
+                height: 120px;
+            }
+
+            .cj_5_stair {
+                font-size: 16px;
+            }
+
+            .cj_5_stairbox_special {
+                width: 100%;
+                height: 0;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .cj_5story_box {
+                gap: 16px;
+            }
+
+            .cj_5_titlebox {
+                height: 100px;
+            }
+
+            .cj_5_title {
+                font-size: 20px;
+            }
+
+            .cj_5_stairbox {
+                height: 100px;
+            }
+
+            .cj_5_stair {
+                font-size: 14px;
+            }
+
+            .cj_5_stairbox_special {
+                height: 0;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .cj_5story_box {
+                gap: 12px;
+            }
+
+            .cj_5_titlebox {
+                height: 60px;
+            }
+
+            .cj_5_title {
+                font-size: 16px;
+            }
+
+            .cj_5_stairbox {
+                height: 60px;
+            }
+
+            .cj_5_stair {
+                font-size: 12px;
+            }
+
+            .cj_5_stairbox_special {
+                height: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="cj_5story_container">
+
+        <div class="cj_5story_wrapper">
+
+            <div class="cj_5story_box">
+
+                <div class="cj_5story_left">
+
+                    <div class="cj_5_titlebox">
+                        <p class="cj_5_title">일반 청소</p>
+                    </div>
+
+                    <div class="cj_5_stairbox">
+                        <p class="cj_5_stair">1. 오염 체크</p>
+                    </div>
+                    <div class="cj_5_stairbox">
+                        <p class="cj_5_stair">2. 먼지 제거</p>
+                    </div>
+                    <div class="cj_5_stairbox">
+                        <p class="cj_5_stair">3. 표면 청소</p>
+                    </div>
+                    <div class="cj_5_stairbox">
+                        <p class="cj_5_stair">4. 틈새 청소</p>
+                    </div>
+                    <div class="cj_5_stairbox">
+                        <p class="cj_5_stair">5. 마무리 정리</p>
+                    </div>
+                    <div class="cj_5_stairbox">
+                        <p class="cj_5_stair">6. 청소 완료</p>
+                    </div>
+
+                </div>
+                <div class="cj_5story_right">
+
+                    <div class="cj_5_titlebox">
+                        <p class="cj_5_title">컬비 &amp; 미코 청소</p>
+                    </div>
+
+                    <div class="cj_5_stairbox">
+                        <p class="cj_5_stair">1. 오염 및 공간 체크</p>
+                    </div>
+                    <div class="cj_5_stairbox">
+                        <p class="cj_5_stair">2. 먼지 제거</p>
+                    </div>
+                    <div class="cj_5_stairbox_special">
+                        <p class="cj_5_stair"><span class="stair_span1">+</span><br>컬비 분진 케어<br>(나쁜 먼지 99.9% 제거)</p>
+                    </div>
+                    <div class="cj_5_stairbox">
+                        <p class="cj_5_stair">3. 표면 살균 청소</p>
+                    </div>
+                    <div class="cj_5_stairbox">
+                        <p class="cj_5_stair">4. 틈새 스팀 청소</p>
+                    </div>
+                    <div class="cj_5_stairbox_special">
+                        <p class="cj_5_stair"><span class="stair_span1">+</span><br>미코플러스 바닥 케어<br>(특성에 맞는 바닥재 청소)</p>
+                    </div>
+                    <div class="cj_5_stairbox">
+                        <p class="cj_5_stair">5. 수작업 마무리</p>
+                    </div>
+                    <div class="cj_5_stairbox">
+                        <p class="cj_5_stair">6. 청소 완료</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const cj5Section = document.querySelector(".cj_5story_container");
+            if (!cj5Section) return;
+
+            const specials = gsap.utils.toArray(
+                cj5Section.querySelectorAll(".cj_5_stairbox_special")
+            );
+
+            const specialTexts = specials.map(item => item.querySelector(".cj_5_stair"));
+
+            const getOpenHeight = () => {
+                if (window.innerWidth <= 440) return 60;
+                if (window.innerWidth <= 768) return 100;
+                return 120;
+            };
+
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: cj5Section,
+                    start: "top 70%",
+                    once: true
+                }
+            });
+
+            specials.forEach((box, index) => {
+                tl.to(box, {
+                    height: getOpenHeight(),
+                    borderWidth: 1,
+                    duration: 1.4,
+                    ease: "power3.out"
+                })
+                    .to(specialTexts[index], {
+                        opacity: 1,
+                        x: 0,
+                        duration: 1.2,
+                        ease: "power3.out"
+                    }, "-=0.45");
+            });
+        });
+    </script>
+
+</body>
+
+</html>

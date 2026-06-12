@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<head>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+
+    <style>
+        .lawyerprofile_container {
+            width: 100%;
+            padding: 100px 0;
+        }
+
+        .lawyerprofile_wrapper {
+            width: 1280px;
+            margin: 0 auto;
+        }
+
+        .lawyerprofile_box {
+            width: 100%;
+            display: flex;
+            gap: 60px;
+        }
+
+        .lawyerprofile_left {
+            width: 610px;
+            height: 862px;
+            position: sticky;
+            top: 0;
+        }
+
+        .lawyerprofile_left>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .lawyerprofile_right {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .lawyerprofile_title_box {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .lawyerprofile_title1 {
+            font-family: 'Pretendard';
+            font-size: 28px;
+            font-weight: 600;
+            color: #111111;
+            margin: 0;
+        }
+
+        .lawyerprofile_title2 {
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 300;
+            color: #767676;
+            margin: 0;
+        }
+
+        .lawyerprofile_name_box {
+            display: flex;
+            gap: 12px;
+            align-items: flex-end;
+        }
+
+        .lawyerprofile_title3 {
+            font-family: 'Pretendard';
+            font-size: 60px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+        }
+
+        .lawyerprofile_title4 {
+            font-family: 'Pretendard';
+            font-size: 24px;
+            font-weight: 400;
+            color: #111111;
+            margin: 0;
+            line-height: 1.8;
+        }
+
+        .lawyerprofile_line {
+            width: 100%;
+            height: 1px;
+            background-color: rgba(17, 17, 17, 0.1);
+        }
+
+        .lawyerprofile_catchphrase {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 200px;
+        }
+
+        .lawyerprofile_catchphrase>i {
+            font-size: 80px;
+            margin: 0;
+            color: rgba(17, 17, 17, 0.2);
+        }
+
+        .catchphrase {
+            font-family: 'Nanum Myeongjo', serif;
+            font-size: 40px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+            line-height: 1.8;
+            letter-spacing: -1px;
+        }
+
+        .lawyerprofile_proof {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            border-left: 1px solid rgba(17, 17, 17, 0.1);
+        }
+
+        .lawyerprofile_proof_title {
+            font-family: 'Pretendard';
+            font-size: 20px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+            border-left: 4px solid #2e50e2;
+            padding: 0 16px;
+        }
+
+        .lawyerprofile_proof_desc {
+            display: flex;
+            flex-direction: column;
+            padding: 0 16px;
+        }
+
+        .lawyerprofile_desc {
+            font-family: 'Pretendard';
+            font-size: 16px;
+            font-weight: 300;
+            color: #505050;
+            margin: 0;
+            line-height: 2.4;
+        }
+
+        /* ✅ 1512px 이하 */
+        @media screen and (max-width: 1512px) {
+            .lawyerprofile_wrapper {
+                width: 1160px;
+            }
+
+            .lawyerprofile_left {
+                width: 520px;
+                height: 735px;
+            }
+
+            .lawyerprofile_catchphrase>i {
+                font-size: 60px;
+            }
+
+            .catchphrase {
+                font-size: 32px;
+            }
+        }
+
+        /* ✅ 1280px 이하 */
+        @media screen and (max-width: 1280px) {
+            .lawyerprofile_wrapper {
+                width: 960px;
+            }
+
+            .lawyerprofile_left {
+                width: 420px;
+                height: 594px;
+            }
+
+            .lawyerprofile_catchphrase>i {
+                font-size: 60px;
+            }
+
+            .catchphrase {
+                font-size: 32px;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+            .lawyerprofile_wrapper {
+                width: 100%;
+                padding: 0 16px;
+            }
+
+            .catchphrase {
+                font-size: 24px;
+            }
+
+            .lawyerprofile_left {
+                width: 360px;
+                height: 509px;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .lawyerprofile_left {
+                position: static;
+                top: auto;
+                width: 736px;
+                height: 1040px;
+            }
+
+            .lawyerprofile_box {
+                flex-direction: column;
+            }
+
+            .lawyerprofile_box {
+                gap: 24px;
+            }
+
+            .lawyerprofile_right {
+                gap: 24px;
+            }
+
+            .lawyerprofile_catchphrase {
+                margin-bottom: 80px;
+            }
+
+            .catchphrase {
+                font-size: 20px;
+            }
+        }
+
+        /* ✅ 440px 이하 */
+        @media screen and (max-width: 440px) {
+            .lawyerprofile_left {
+                width: 408px;
+                height: 577px;
+            }
+
+            .lawyerprofile_desc {
+                line-height: 1.8;
+            }
+
+            .lawyerprofile_title1 {
+                font-size: 24px;
+            }
+
+            .lawyerprofile_title2 {
+                font-size: 16px;
+            }
+
+            .lawyerprofile_title3 {
+                font-size: 40px;
+            }
+        }
+
+        /* ✅ 375px 이하 */
+        @media screen and (max-width: 375px) {
+            .lawyerprofile_left {
+                width: 328px;
+                height: 464px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <section class="lawyerprofile_container">
+        <div class="lawyerprofile_wrapper">
+            <div class="lawyerprofile_box">
+                <div class="lawyerprofile_left">
+                    <img src="https://cdn.imweb.me/thumbnail/20260612/aa61916981a10.png" alt="">
+                </div>
+                <div class="lawyerprofile_right">
+
+                    <div class="lawyerprofile_title_box">
+                        <p class="lawyerprofile_title1">
+                            [2025 고객만족 브랜드 대상]
+                        </p>
+                        <p class="lawyerprofile_title2">
+                            2025. 12. 26.
+                        </p>
+                        <div class="lawyerprofile_name_box">
+                            <p class="lawyerprofile_title3">
+                                청정클린텍
+                            </p>
+                            <p class="lawyerprofile_title4">
+                                -
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="lawyerprofile_line"></div>
+
+                    <div class="lawyerprofile_catchphrase">
+                        <i class="fa-solid fa-quote-left"></i>
+                        <p class="catchphrase">
+                            저희들의 노력이 인정을 받아
+                            <br>
+                            과분한 상을 받게 되었습니다.
+                            <br>
+                            <br>
+                            청정클린텍의 모든 직영팀장들이,
+                            <br>
+                            동일한 품질의 서비스를 제공하도록
+                            <br>
+                            다음과 같은 기준을 준수함을
+                            <br>
+                            안내드립니다.
+                        </p>
+                    </div>
+
+                    <div class="lawyerprofile_proof">
+                        <p class="lawyerprofile_proof_title">
+                            수상
+                        </p>
+                        <div class="lawyerprofile_proof_desc">
+                            <p class="lawyerprofile_desc">
+                                -2025 고객만족 브랜드 대상
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="lawyerprofile_proof">
+                        <p class="lawyerprofile_proof_title">
+                            약력 및 자격
+                        </p>
+                        <div class="lawyerprofile_proof_desc">
+                            <p class="lawyerprofile_desc">
+                                -방역관리사 1급
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -방역교육 이수증 (260T-0003)
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -건물위생관리사 1급
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -청소전문가 1급
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -건물위생관리 면허업
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="lawyerprofile_proof">
+                        <p class="lawyerprofile_proof_title">
+                            주요 작업
+                        </p>
+                        <div class="lawyerprofile_proof_desc">
+                            <p class="lawyerprofile_desc">
+                                -신축 아파트 입주 전 분진 및 공사 잔여물 제거
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -구축 아파트 이사 전·후 생활 오염 제거
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -단독주택 및 전원주택 실내·외부 청소
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -복층 구조 주거공간 고소부위 청소
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -대형 통창 및 샷시 구조 정밀 청소(외창 제외)
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -붙박이장·팬트리 등 수납공간 내부 청소
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -반려동물 생활 공간 털·냄새 집중 관리
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -장기간 공실 세대 입주 전 청소
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -새집증후군 예방을 위한 실내 환경 케어
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -천식·비염 가정을 위한 분진 집중 제거
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -원룸 및 오피스텔 입주·퇴실 청소
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -상가 및 사무실 바닥·유리 집중 관리
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -에어컨 완전분해 내부 세척
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -매트리스·소파·커튼 분진 케어
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -베란다 및 다용도실 오염 제거
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -화장실 물때·석회·곰팡이 제거
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -주방 기름때 및 후드 내부 청소
+                            </p>
+                            <p class="lawyerprofile_desc">
+                                -고압 스팀을 활용한 살균 케어
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

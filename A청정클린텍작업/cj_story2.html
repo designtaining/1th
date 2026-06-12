@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <style>
+        .cj_2story_container {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .cj_2story_wrapper {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+
+        .cj_2story_box {
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            inset: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .cj_2story_box:first-child {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .cj_2story_cp {
+            font-family: 'Paperozi';
+            font-size: 80px;
+            font-weight: 700;
+            color: #111111;
+            text-align: center;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        @media screen and (max-width: 1280px) {
+            .cj_2story_cp {
+                font-size: 60px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+
+            .cj_2story_container,
+            .cj_2story_wrapper,
+            .cj_2story_box {
+                height: calc(100dvh + 120px);
+            }
+
+            .cj_2story_cp {
+                font-size: 40px;
+            }
+        }
+
+        @media screen and (max-width: 560px) {
+            .cj_2story_cp {
+                font-size: 32px;
+            }
+        }
+
+        @media screen and (max-width: 440px) {
+            .cj_2story_cp {
+                font-size: 28px;
+            }
+        }
+
+        @media screen and (max-width: 375px) {
+            .cj_2story_cp {
+                font-size: 24px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <section class="cj_2story_container">
+        <div class="cj_2story_wrapper">
+
+            <div class="cj_2story_box">
+                <p class="cj_2story_cp">❝우리는 청년기업 입니다.❞</p>
+            </div>
+
+            <div class="cj_2story_box">
+                <p class="cj_2story_cp">경험이 부족할까 걱정되시나요?</p>
+            </div>
+
+            <div class="cj_2story_box">
+                <p class="cj_2story_cp">
+                    대표자 스스로는 어린시절,<br>
+                    천식을 겪으며 성장했습니다.
+                </p>
+            </div>
+
+            <div class="cj_2story_box">
+                <p class="cj_2story_cp">지긋지긋한 먼지의 불편함</p>
+            </div>
+
+            <div class="cj_2story_box">
+                <p class="cj_2story_cp">
+                    20년을 고민한 노하우,<br>
+                    고객님들께 공유합니다.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const cj2Section = document.querySelector(".cj_2story_container");
+
+            if (!cj2Section) return;
+
+            const cj2Boxes = gsap.utils.toArray(
+                cj2Section.querySelectorAll(".cj_2story_box")
+            );
+
+            if (!cj2Boxes.length) return;
+
+            gsap.set(cj2Boxes, {
+                autoAlpha: 0
+            });
+
+            gsap.set(cj2Boxes[0], {
+                autoAlpha: 1
+            });
+
+            const cj2Timeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: cj2Section,
+                    start: "top top",
+                    end: "+=4500",
+                    scrub: true,
+                    pin: true,
+                    anticipatePin: 1,
+                    markers: false
+                }
+            });
+
+            cj2Timeline
+                .to(cj2Boxes[0], {
+                    autoAlpha: 1,
+                    duration: 1.2
+                })
+                .to(cj2Boxes[0], {
+                    autoAlpha: 0,
+                    duration: 0.8,
+                    ease: "power2.in"
+                })
+                .to({}, {
+                    duration: 0.25
+                });
+
+            cj2Boxes.slice(1).forEach((box, index) => {
+                const isLast = index === cj2Boxes.length - 2;
+
+                cj2Timeline.to(box, {
+                    autoAlpha: 1,
+                    duration: 0.8,
+                    ease: "power2.out"
+                });
+
+                if (isLast) {
+                    cj2Timeline.to(box, {
+                        autoAlpha: 1,
+                        duration: 2
+                    });
+                } else {
+                    cj2Timeline
+                        .to(box, {
+                            autoAlpha: 1,
+                            duration: 1.2
+                        })
+                        .to(box, {
+                            autoAlpha: 0,
+                            duration: 0.8,
+                            ease: "power2.in"
+                        })
+                        .to({}, {
+                            duration: 0.25
+                        });
+                }
+            });
+
+            ScrollTrigger.refresh();
+        });
+    </script>
+
+</body>
+
+</html>
