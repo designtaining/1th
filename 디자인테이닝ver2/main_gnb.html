@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-1Thin.woff2') format('woff2');
+            font-weight: 100;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-2ExtraLight.woff2') format('woff2');
+            font-weight: 200;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-3Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-4Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-5Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-6SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-7Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-8ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-9Black.woff2') format('woff2');
+            font-weight: 900;
+            font-display: swap;
+        }
+
+        .main_gnb_container {
+            width: 100%;
+            height: 60px;
+            background: none;
+            position: fixed !important;
+            top: 0;
+            padding: 0 40px;
+            box-sizing: border-box;
+            z-index: 10;
+        }
+
+        .main_gnb_wrapper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .main_gnb_box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .main_gnb_left {
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .mgl_hamburger {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .mgl_hbg {
+            font-size: 20px;
+        }
+
+        .mgl_experience {
+            background: none;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .mgl_experience_text {
+            font-family: 'A2z';
+            font-size: 16px;
+            font-weight: 200;
+            color: #111111;
+        }
+
+        .mgl_arrowdown {}
+
+        .main_gnb_right {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-decoration: none;
+            color: #111111 !important;
+            gap: 16px;
+            border: 1px solid #111111;
+            border-radius: 12px;
+            padding: 8px 24px;
+            height: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .main_gnb_right:hover {
+            background-color: #e5e5ec;
+        }
+
+        .mgr_text {
+            font-family: 'A2z';
+            font-size: 16px;
+            font-weight: 300;
+            color: #111111;
+            margin: 0;
+        }
+
+        .mgr_pencil {
+            font-size: 12px;
+        }
+
+        /* gnb 끝 */
+
+        .main_lnb_container {
+            width: 100%;
+            height: 100%;
+            position: fixed !important;
+            top: 60px;
+            padding: 40px 40px;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            z-index: 11;
+        }
+
+        .main_lnb_wrapper {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .main_lnb_box {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .main_lnb_title_box {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .main_lnb_title_box>img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .mltb_title {
+            font-family: 'A2z';
+            font-size: 20px;
+            font-weight: 300;
+            color: #111111;
+            margin: 0;
+        }
+
+        .main_lnb_menubox {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .ml_ex {
+            font-family: 'A2z';
+            font-size: 18px;
+            font-weight: 300;
+            color: #777777;
+            margin: 16px 0;
+        }
+
+        .main_lnb_menu {
+            text-decoration: none;
+            color: #111111 !important;
+            padding: 0 24px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(17, 17, 17, 0);
+            border-radius: 12px;
+            font-family: 'A2z';
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        .main_lnb_menu:hover {
+            background-color: rgba(17, 17, 17, 0.1);
+        }
+
+        .main_lnb_close {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        .ml_close {
+            font-size: 28px;
+        }
+
+        .naver1 {
+            color: #03C75A;
+            margin: 0 8px 0 0;
+        }
+
+        .insta1 {
+            background: linear-gradient(to bottom right, #7817ED, #FB2BB2, #F7C610);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            margin: 0 8px 0 0;
+        }
+
+        .kakao1 {
+            color: #391b1b;
+            background-color: #FAE100;
+            margin: 0 8px 0 0;
+        }
+
+        /* lnb 끝 */
+
+        .ep_container {
+            position: fixed !important;
+            top: 60px;
+            left: 100px;
+            z-index: 12;
+            background-color: #ffffff;
+            border-radius: 24px;
+            box-shadow: 4px 4px 12px rgba(17, 17, 17, 0.15);
+            padding: 32px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: start;
+        }
+
+        .ep_box {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .ep_menu {
+            text-decoration: none;
+            font-family: 'A2z';
+            font-size: 16px;
+            font-weight: 300;
+            color: #111111 !important;
+            transition: all 0.3s ease;
+        }
+
+        .ep_menu:hover {
+            color: #2e50e2 !important;
+        }
+
+        .ep_line {
+            width: 100%;
+            height: 1px;
+            background-color: #949494;
+        }
+
+        .ep_go_menu {
+            text-decoration: none;
+            font-family: 'A2z';
+            font-size: 16px;
+            font-weight: 300;
+            color: #ffffff !important;
+
+            background: linear-gradient(120deg,
+                    #2e50e2 0%,
+                    #2e50e2 20%,
+                    #2e50e2 45%,
+                    #7c4dff 70%,
+                    #2e50e2 100%);
+            background-size: 300% 300%;
+            background-position: 0% 50%;
+
+            padding: 12px 24px;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ep_go_menu:hover {
+            animation: blueWave 1.2s ease-in-out infinite;
+        }
+
+        @keyframes blueWave {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* LNB */
+        .main_lnb_container {
+            transform: translateX(-100%);
+            transition: transform 0.5s ease;
+        }
+
+        .main_lnb_container.active {
+            transform: translateX(0);
+        }
+
+        /* Experience */
+        .ep_container {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-15px);
+            transition: all 0.4s ease;
+        }
+
+        .ep_container.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <section class="main_gnb_container">
+        <div class="main_gnb_wrapper">
+            <div class="main_gnb_box">
+                <div class="main_gnb_left">
+                    <button class="mgl_hamburger">
+                        <i class="fa-light fa-bars mgl_hbg"></i>
+                    </button>
+                    <button class="mgl_experience">
+                        <p class="mgl_experience_text">
+                            홈페이지 제작 체험하기
+                        </p>
+                        <i class="fa-light fa-angle-down mgl_arrowdown"></i>
+                    </button>
+                </div>
+                <a href="" class="main_gnb_right">
+                    <p class="mgr_text">
+                        제작신청
+                    </p>
+                    <i class="fa-light fa-pencil-line mgr_pencil"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="main_lnb_container">
+        <div class="main_lnb_wrapper">
+            <div class="main_lnb_box">
+                <div class="main_lnb_title_box">
+                    <img src="https://ncryk7.mycafe24.com/DT_logo1.png" alt="">
+                    <p class="mltb_title">디자인테이닝 2025.</p>
+                </div>
+                <div class="main_lnb_menubox">
+                    <p class="ml_ex">
+                        About Us
+                    </p>
+                    <a href="" class="main_lnb_menu">
+                        스토리
+                    </a>
+                    <a href="" class="main_lnb_menu">
+                        칼럼 &amp; 뉴스
+                    </a>
+                    <a href="" class="main_lnb_menu">
+                        포트폴리오
+                    </a>
+                </div>
+                <div class="main_lnb_menubox">
+                    <p class="ml_ex">
+                        How it Works
+                    </p>
+                    <a href="" class="main_lnb_menu">
+                        가격안내
+                    </a>
+                    <a href="" class="main_lnb_menu">
+                        제작과정
+                    </a>
+                </div>
+                <div class="main_lnb_menubox">
+                    <p class="ml_ex">
+                        Discover
+                    </p>
+                    <a href="" class="main_lnb_menu">
+                        고객후기
+                    </a>
+                    <a href="" class="main_lnb_menu">
+                        자주묻는질문
+                    </a>
+                </div>
+                <div class="main_lnb_menubox">
+                    <p class="ml_ex">
+                        Channels
+                    </p>
+                    <a href="" class="main_lnb_menu">
+                        <i class="fa-sharp fa-regular fa-blog naver1"></i>네이버블로그
+                    </a>
+                    <a href="" class="main_lnb_menu">
+                        <i class="fa-brands fa-instagram insta1"></i>인스타그램
+                    </a>
+                    <a href="" class="main_lnb_menu">
+                        <i class="fa-brands fa-kakao-talk kakao1"></i>카카오채널
+                    </a>
+                </div>
+
+            </div>
+            <button class="main_lnb_close">
+                <i class="fa-regular fa-xmark ml_close"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="ep_container">
+        <div class="ep_box">
+            <a href="" class="ep_menu">제작가이드 보기</a>
+            <a href="" class="ep_menu">브랜드컬러 &amp; 폰트 정하기</a>
+            <div class="ep_line"></div>
+            <a href="" class="ep_go_menu">제작 체험하기</a>
+        </div>
+    </div>
+
+    <script>
+        const hamburger = document.querySelector(".mgl_hamburger");
+        const lnb = document.querySelector(".main_lnb_container");
+        const closeBtn = document.querySelector(".main_lnb_close");
+
+        const experienceBtn = document.querySelector(".mgl_experience");
+        const ep = document.querySelector(".ep_container");
+
+        // 햄버거 열기
+        hamburger.addEventListener("click", () => {
+            lnb.classList.add("active");
+        });
+
+        // 닫기
+        closeBtn.addEventListener("click", () => {
+            lnb.classList.remove("active");
+        });
+
+        // Experience 토글
+        experienceBtn.addEventListener("click", () => {
+            ep.classList.toggle("active");
+        });
+    </script>
+
+</body>
+
+</html>

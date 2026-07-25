@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-1Thin.woff2') format('woff2');
+            font-weight: 100;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-2ExtraLight.woff2') format('woff2');
+            font-weight: 200;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-3Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-4Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-5Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-6SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-7Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-8ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-9Black.woff2') format('woff2');
+            font-weight: 900;
+            font-display: swap;
+        }
+
+        .lesgo_container {
+            width: 95%;
+            height: 240px;
+            background-color: #ffffff;
+            border-radius: 24px;
+            box-shadow: 4px 4px 12px rgba(17, 17, 17, 0.1);
+            margin: 0 auto;
+            display: flex;
+            padding: 40px;
+            box-sizing: border-box;
+            gap: 40px;
+            position: fixed !important;
+            z-index: 10000;
+            left: 50%;
+            bottom: 20px;
+            transform: translateX(-50%);
+        }
+
+        .lesgo_box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-decoration: none;
+            color: #111111 !important;
+            gap: 20px;
+            padding: 20px;
+            border-radius: 12px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        .lesgo_box:hover {
+            background-color: #f0f0f0;
+        }
+
+        .lesgo_left {
+            width: 100px;
+            height: 100px;
+            flex-shrink: 0;
+        }
+
+        .lesgo_left>img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 12px;
+        }
+
+        .lesgo_right {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .lesgo_title {
+            font-family: 'A2z';
+            font-size: 16px;
+            font-weight: 300;
+            margin: 0;
+        }
+
+        .lesgo_desc {
+            font-family: 'A2z';
+            font-size: 14px;
+            font-weight: 300;
+            color: #777777 !important;
+            margin: 0;
+        }
+
+        /* ✅ 1366px 이하 */
+        @media screen and (max-width: 1366px) {
+            .lesgo_container {
+                width: 95%;
+                height: 240px;
+                border-radius: 24px;
+                padding: 32px;
+                gap: 32px;
+            }
+
+            .lesgo_box {
+                gap: 20px;
+                padding: 20px;
+                border-radius: 12px;
+            }
+
+            .lesgo_left {
+                width: 88px;
+                height: 88px;
+                flex-shrink: 0;
+            }
+
+            .lesgo_left>img {
+                border-radius: 12px;
+            }
+
+            .lesgo_right {
+                gap: 20px;
+            }
+
+            .lesgo_title {
+                font-size: 14px;
+            }
+
+            .lesgo_desc {
+                font-size: 13px;
+            }
+        }
+
+        /* ✅ 1200px 이하 */
+        @media screen and (max-width: 1200px) {
+            .lesgo_container {
+                width: 95%;
+                height: 220px;
+                border-radius: 20px;
+                padding: 20px;
+                gap: 20px;
+            }
+
+            .lesgo_box {
+                gap: 20px;
+                padding: 12px;
+                border-radius: 12px;
+            }
+
+            .lesgo_left {
+                width: 88px;
+                height: 88px;
+                flex-shrink: 0;
+            }
+
+            .lesgo_left>img {
+                border-radius: 12px;
+            }
+
+            .lesgo_right {
+                gap: 20px;
+            }
+
+            .lesgo_title {
+                font-size: 13px;
+            }
+
+            .lesgo_desc {
+                font-size: 12px;
+            }
+        }
+
+        /* ✅ 1024px 이하 */
+        @media screen and (max-width: 1024px) {
+
+            .lesgo_container {
+                width: 95%;
+                height: 332px;
+                border-radius: 20px;
+                padding: 20px;
+                gap: 20px;
+                flex-direction: column;
+            }
+
+            .lesgo_box {
+                gap: 20px;
+                padding: 12px;
+                border-radius: 12px;
+                justify-content: flex-start;
+            }
+
+            .lesgo_left {
+                width: 60px;
+                height: 60px;
+                flex-shrink: 0;
+            }
+
+            .lesgo_left>img {
+                border-radius: 12px;
+            }
+
+            .lesgo_right {
+                gap: 12px;
+            }
+
+            .lesgo_title {
+                font-size: 14px;
+            }
+
+            .lesgo_desc {
+                font-size: 12px;
+            }
+        }
+
+        /* ✅ 768px 이하 */
+        @media screen and (max-width: 768px) {
+            .lesgo_container {
+                width: 95%;
+                height: 332px;
+                border-radius: 20px;
+                padding: 20px;
+                gap: 20px;
+                flex-direction: column;
+            }
+
+            .lesgo_box {
+                gap: 16px;
+                padding: 12px;
+                border-radius: 12px;
+                justify-content: flex-start;
+            }
+
+            .lesgo_left {
+                width: 52px;
+                height: 52px;
+                flex-shrink: 0;
+            }
+
+            .lesgo_left>img {
+                border-radius: 12px;
+            }
+
+            .lesgo_right {
+                gap: 12px;
+            }
+
+            .lesgo_title {
+                font-size: 14px;
+            }
+
+            .lesgo_desc {
+                font-size: 12px;
+            }
+        }
+
+        /* ✅ 462px 이하 */
+        @media screen and (max-width: 462px) {
+            .lesgo_container {
+                width: 95%;
+                height: 320px;
+                border-radius: 20px;
+                padding: 12px;
+                gap: 24px;
+                flex-direction: column;
+            }
+
+            .lesgo_box {
+                gap: 12px;
+                padding: 8px;
+            }
+
+            .lesgo_left {
+                width: 52px;
+                height: 52px;
+                flex-shrink: 0;
+            }
+
+            .lesgo_left>img {
+                border-radius: 12px;
+            }
+
+            .lesgo_right {
+                gap: 8px;
+            }
+
+            .lesgo_title {
+                font-size: 13px;
+            }
+
+            .lesgo_desc {
+                font-size: 12px;
+            }
+        }
+
+        /* ✅ 380px 이하 */
+        @media screen and (max-width: 380px) {
+            .lesgo_container {
+                width: 95%;
+                height: 332px;
+                border-radius: 20px;
+                padding: 12px;
+                gap: 24px;
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <section class="lesgo_container">
+
+        <a href="" class="lesgo_box">
+            <div class="lesgo_left">
+                <img src="https://ncryk7.mycafe24.com/DT_desc1.png" alt="">
+            </div>
+            <div class="lesgo_right">
+                <p class="lesgo_title">
+                    제작가이드 보기
+                </p>
+                <p class="lesgo_desc">
+                    제작 과정을 미리 이해하고 필요한 준비사항을 확인해 보세요. 더욱 빠르고 효율적인 홈페이지 제작이 가능합니다.
+                </p>
+            </div>
+        </a>
+
+        <a href="" class="lesgo_box">
+            <div class="lesgo_left">
+                <img src="https://ncryk7.mycafe24.com/DT_desc2.png" alt="">
+            </div>
+            <div class="lesgo_right">
+                <p class="lesgo_title">
+                    제작 체험하고 홈페이지 만들기
+                </p>
+                <p class="lesgo_desc">
+                    복잡한 과정은 줄이고 선택은 더 쉽게. 단계별로 필요한 요소를 직접 선택하며, 홈페이지의 구성을 직접 완성할 수 있습니다.
+                </p>
+            </div>
+        </a>
+
+        <a href="" class="lesgo_box">
+            <div class="lesgo_left">
+                <img src="https://ncryk7.mycafe24.com/DT_desc3.png" alt="">
+            </div>
+            <div class="lesgo_right">
+                <p class="lesgo_title">
+                    맞춤 제작 의뢰하기
+                </p>
+                <p class="lesgo_desc">
+                    고객님의 비즈니스와 브랜드를 이해하는 것부터 시작합니다. 목적에 맞는 전략과 디자인으로 홈페이지를 제작해 드립니다.
+                </p>
+            </div>
+        </a>
+
+    </section>
+
+</body>
+
+</html>
