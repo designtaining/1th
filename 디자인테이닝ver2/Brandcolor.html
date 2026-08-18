@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-1Thin.woff2') format('woff2');
+            font-weight: 100;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-2ExtraLight.woff2') format('woff2');
+            font-weight: 200;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-3Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-4Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-5Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-6SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-7Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-8ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-9Black.woff2') format('woff2');
+            font-weight: 900;
+            font-display: swap;
+        }
+
+        .bc_container {
+            width: 100%;
+            height: auto;
+        }
+
+        .bc_wrapper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .bc_box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 120px;
+            border: 1px solid #e5e5ec;
+            border-radius: 8px;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        .bc_title_box {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .bc_title1 {
+            font-family: 'A2z';
+            font-weight: 400;
+            font-size: 32px;
+            color: #111111;
+            margin: 0;
+        }
+
+        .bc_desc2 {
+            font-family: 'A2z';
+            font-weight: 300;
+            font-size: 20px;
+            color: #505050;
+            margin: 0;
+        }
+
+        .bc_category {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .bc_color {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            border: 1px solid #c2c2c2;
+            box-sizing: border-box;
+        }
+
+        /* 01 딥 레드 */
+        .bc_color:nth-child(1) {
+            background-color: #b80015;
+        }
+
+        /* 02 레드 */
+        .bc_color:nth-child(2) {
+            background-color: #f7100c;
+        }
+
+        /* 03 라이트 레드 */
+        .bc_color:nth-child(3) {
+            background-color: #ff5252;
+        }
+
+        /* 04 코랄 */
+        .bc_color:nth-child(4) {
+            background-color: #FF7F6E;
+        }
+
+        /* 05 오렌지 */
+        .bc_color:nth-child(5) {
+            background-color: #ff8a15;
+        }
+
+        /* 06 라이트 오렌지 */
+        .bc_color:nth-child(6) {
+            background-color: #FFB66E;
+        }
+
+        /* 07 골드 */
+        .bc_color:nth-child(7) {
+            background-color: #C9A227;
+        }
+
+        /* 08 옐로우 */
+        .bc_color:nth-child(8) {
+            background-color: #F4D03F;
+        }
+
+        /* 09 라이트 옐로우 */
+        .bc_color:nth-child(9) {
+            background-color: #FFF080;
+        }
+
+        /* 10 라이트 그린 */
+        .bc_color:nth-child(10) {
+            background-color: #80D69D;
+        }
+
+        /* 11 그린 */
+        .bc_color:nth-child(11) {
+            background-color: #2E9E5B;
+        }
+
+        /* 12 딥 그린 */
+        .bc_color:nth-child(12) {
+            background-color: #174D2D;
+        }
+
+        /* 13 파스텔 민트 */
+        .bc_color:nth-child(13) {
+            background-color: #A9DDD0;
+        }
+
+        /* 14 스카이 블루 */
+        .bc_color:nth-child(14) {
+            background-color: #82C7EB;
+        }
+
+        /* 15 라이트 블루 */
+        .bc_color:nth-child(15) {
+            background-color: #82B7FF;
+        }
+
+        /* 16 블루 */
+        .bc_color:nth-child(16) {
+            background-color: #3478F6;
+        }
+
+        /* 17 딥 블루 */
+        .bc_color:nth-child(17) {
+            background-color: #174A9C;
+        }
+
+        /* 18 네이비 */
+        .bc_color:nth-child(18) {
+            background-color: #253B80;
+        }
+
+        /* 19 딥 네이비 */
+        .bc_color:nth-child(19) {
+            background-color: #14224D;
+        }
+
+        /* 20 퍼플 */
+        .bc_color:nth-child(20) {
+            background-color: #7B3FB2;
+        }
+
+        /* 21 라이트 퍼플 */
+        .bc_color:nth-child(21) {
+            background-color: #B58ADB;
+        }
+
+        /* 22 파스텔 핑크 */
+        .bc_color:nth-child(22) {
+            background-color: #F2B6C6;
+        }
+
+        /* 23 브라운 */
+        .bc_color:nth-child(23) {
+            background-color: #795548;
+        }
+
+        /* 24 라이트 브라운 */
+        .bc_color:nth-child(24) {
+            background-color: #C49A85;
+        }
+
+        /* 25 골드 베이지 / 아이보리 연결 */
+        .bc_color:nth-child(25) {
+            background-color: #D9C9A3;
+        }
+
+        /* 26 아이보리 */
+        .bc_color:nth-child(26) {
+            background-color: #F4F0E6;
+        }
+
+        /* 27 실버 */
+        .bc_color:nth-child(27) {
+            background-color: #B8BDC6;
+        }
+
+        /* 28 라이트 그레이 */
+        .bc_color:nth-child(28) {
+            background-color: #E5E5EC;
+        }
+
+        /* 29 화이트 */
+        .bc_color:nth-child(29) {
+            background-color: #FFFFFF;
+        }
+
+        .bc_colorcard {
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+        }
+
+        .colorcard_left {
+            width: 80px;
+            height: 80px;
+            background-color: #ff0000;
+            border-radius: 999px;
+            transition: background-color 0.4s ease;
+        }
+
+        .colorcard_pros {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .colorcard_title {
+            font-family: 'A2z';
+            font-weight: 300;
+            font-size: 16px;
+            color: #111111;
+            margin: 0;
+        }
+
+        .colorcard_desc {
+            font-family: 'A2z';
+            font-weight: 300;
+            font-size: 18px;
+            color: #505050;
+            margin: 0;
+        }
+
+        .colorcard_desc2 {
+            font-family: 'A2z';
+            font-weight: 300;
+            font-size: 16px;
+            color: #767676;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="bc_container">
+
+        <div class="bc_wrapper">
+
+            <div class="bc_box">
+
+                <div class="bc_title_box">
+                    <p class="bc_title1">브랜드 컬러란?</p>
+                    <p class="bc_desc2">브랜드의 첫인상과 정체성을 결정하는 대표 색상입니다.</p>
+                </div>
+
+                <div class="bc_category">
+                    <div class="bc_color"></div>
+                    <div class="bc_color"></div>
+                    <div class="bc_color"></div>
+                    <div class="bc_color"></div>
+                    <div class="bc_color"></div>
+                    <div class="bc_color"></div>
+                    <div class="bc_color"></div>
+                    <div class="bc_color"></div>
+                    <div class="bc_color"></div>
+                    <div class="bc_color"></div>
+                    <div class="bc_color"></div>
+                    <div class="bc_color"></div>
+                    <div class="bc_color"></div>
+                    <div class="bc_color"></div>
+                    <div class="bc_color"></div>
+                    <div class="bc_color"></div>
+                    <div class="bc_color"></div>
+                    <div class="bc_color"></div>
+                    <div class="bc_color"></div>
+                    <div class="bc_color"></div>
+                    <div class="bc_color"></div>
+                    <div class="bc_color"></div>
+                    <div class="bc_color"></div>
+                    <div class="bc_color"></div>
+                    <div class="bc_color"></div>
+                    <div class="bc_color"></div>
+                    <div class="bc_color"></div>
+                    <div class="bc_color"></div>
+                    <div class="bc_color"></div>
+                </div>
+
+                <div class="bc_colorcard">
+                    <div class="colorcard_left"></div>
+                    <div class="colorcard_right">
+                        <div class="colorcard_pros">
+                            <p class="colorcard_title">와인 (Wine)</p>
+                            <p class="colorcard_desc">성숙함, 우아함</p>
+                            <p class="colorcard_desc2">강렬한 감정을 숨기고 깊이를 더해줍니다. 성숙한 느낌을 주며 고급스러운 분위기를 형성하는 데 도움을 줍니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script>
+        const bcColors = document.querySelectorAll('.bc_color');
+
+        const colorcardLeft = document.querySelector('.colorcard_left');
+        const colorcardTitle = document.querySelector('.colorcard_title');
+        const colorcardDesc = document.querySelector('.colorcard_desc');
+        const colorcardDesc2 = document.querySelector('.colorcard_desc2');
+
+
+        const colorData = [
+            {
+                title: '와인 (Wine)',
+                desc: '성숙함, 우아함',
+                desc2: '강렬한 감정을 숨기고 깊이를 더해줍니다. 성숙한 느낌을 주며 고급스러운 분위기를 형성하는 데 도움을 줍니다.'
+            },
+            {
+                title: '빨강 (Red)',
+                desc: '열정, 강렬함',
+                desc2: '강하고 적극적인 이미지를 줄 수 있습니다. 육체적으로 힘든 하루를 보내야 할때 필요한 에너지를 느끼게 해줍니다.'
+            },
+            {
+                title: '옅은 빨강 (Light Red)',
+                desc: '따뜻함, 생기',
+                desc2: '빨강의 활기찬 느낌을 유지하면서 자극적인 인상을 부드럽게 보여줍니다. 생기 있는 느낌을 주며 시작하는 분위기를 형성하는 데 도움을 줍니다.'
+            },
+            {
+                title: '코랄 (Coral)',
+                desc: '생기, 감성',
+                desc2: '생기 있는 느낌을 자연스럽게 전달합니다. 활력을 더하면서도 감성적인 느낌을 주는 파스텔컬러 입니다.'
+            },
+            {
+                title: '주황 (Orange)',
+                desc: '장난기, 즐거움',
+                desc2: '재미있고 활동적인 에너지를 전달합니다. 즐겁고 장난스러운 감정을 불러일으키며 신나는 분위기를 형성하는 데 도움을 줍니다.'
+            },
+            {
+                title: '옅은 주황 (Light Orange)',
+                desc: '활력, 경쾌함',
+                desc2: '오렌지의 활기찬 느낌을 한층 부드럽게 전달합니다. 편안한 느낌을 주면서 밝고 경쾌한 분위기를 형성하는 데 도움을 줍니다.'
+            },
+            {
+                title: '골드 (Gold)',
+                desc: '고급스러움, 가치',
+                desc2: '풍요롭고 가치 있는 느낌을 강하게 전달합니다. 시선을 집중시키면서 품격이 느껴지는 분위기를 형성하는 데 도움을 줍니다.'
+            },
+            {
+                title: '노랑 (Yellow)',
+                desc: '낙관, 긍정',
+                desc2: '밝고 긍정적인 감정을 불러일으키는 색상입니다. 시선을 순간적으로 끌어당기는 효과가 있으며 긍정을 형성하는 데 도움을 줍니다.'
+            },
+            {
+                title: '옅은 노랑 (Light Yellow)',
+                desc: '긍정, 밝음',
+                desc2: '노랑의 밝고 긍정적인 느낌을 더욱 부드럽게 전달합니다. 노랑의 시각적인 부담을 줄이고 희망적인 분위기를 형성하는 데 도움을 줍니다.'
+            },
+            {
+                title: '옅은 초록 (Light Green)',
+                desc: '신선함, 상쾌함',
+                desc2: '심신을 상쾌하게 하는 느낌을 전달합니다. 산뜻함을 더해 상쾌하며 안정적인 분위기를 형성하는 데 도움을 줍니다.'
+            },
+            {
+                title: '초록 (Green)',
+                desc: '조화, 안정',
+                desc2: '조화와 평화, 안도의 느낌을 전달합니다. 초록은 자연과 가까워지는 느낌을 제공하며 안정과 안전을 대표하는 컬러 입니다.'
+            },
+            {
+                title: '짙은 초록 (Deep Green)',
+                desc: '차분함, 휴식',
+                desc2: '휴식에 가까운 편안함을 전달합니다. 아주 차분하고 무게감을 더해 집중하기 좋은 분위기를 형성하는 데 도움을 줍니다.'
+            },
+            {
+                title: '파스텔 민트 (Pastel Mint)',
+                desc: '청량함, 편안함',
+                desc2: '초록의 안정성과 자연스러움을 함께 전달합니다. 청량함을 더해 상쾌한 느낌을 주며 신비로운 느낌을 주는 대표적인 파스텔컬러 입니다'
+            },
+            {
+                title: '스카이 블루 (Sky Blue)',
+                desc: '자유로움, 고요함',
+                desc2: '긴장을 완화하는 느낌을 전달합니다. 차분하고 고요한 분위기를 조성하고 스트레스 해소와 긴장을 완화 시키는데에 도움을 줍니다.'
+            },
+            {
+                title: '라이트 블루 (Light Blue)',
+                desc: '자유로움, 청량함',
+                desc2: '맑고 시원한 느낌으로 긴장감을 해소해줍니다. 스트레스 해소에 도움을 주며 은은한 신뢰감을 느낄 수 있는 블루톤의 종류입니다.'
+            },
+            {
+                title: '블루 (Blue)',
+                desc: '신뢰, 전문성',
+                desc2: '신뢰와 전문성을 대표하는 색상으로 기업과 서비스 브랜드에 폭넓게 활용됩니다. '
+            },
+            {
+                title: '딥 블루 (Deep Blue)',
+                desc: '전문성, 안정감',
+                desc2: '강한 무게감을 전달해 탄탄한 이미지를 만들어주며, 전문성을 느낄 수 있게 해주는 대표적인 컬러입니다.'
+            },
+            {
+                title: '네이비 (Navy)',
+                desc: '깊이, 권위',
+                desc2: '차분하고 절제된 분위기를 만들어주며, 전문성을 강조하는 대표적인 컬러입니다.'
+            },
+            {
+                title: '딥 네이비 (Deep Navy)',
+                desc: '권위, 고급스러움',
+                desc2: '중후한 무게감으로 매우 안정적인 느낌을 줍니다. 묵직한 느낌을 전달하며 연륜이 있는 남성성을 대표합니다.'
+            },
+            {
+                title: '퍼플 (Purple)',
+                desc: '창의성, 신비로움',
+                desc2: '독특한 느낌으로 상상력과 감성을 자극합니다. 익숙한 분위기에서 벗어나 새로운 생각과 창의적인 느낌을 내는데에 도움을 줍니다.'
+            },
+            {
+                title: '라이트 퍼플 (Light Purple)',
+                desc: '감성, 창의성',
+                desc2: '보라의 신비로운 느낌을 한층 부드럽게 전달합니다. 감성적이고 신비로운 느낌을 주는 대표적인 파스텔컬러 입니다.'
+            },
+            {
+                title: '파스텔 핑크 (Pastel Pink)',
+                desc: '공감, 모성애',
+                desc2: '공감을 대표하는 컬러입니다. 다정한 느낌으로 비추어지는 효과가 있으며 지켜주는 마음을 전달하는 파스텔컬러 입니다.'
+            },
+            {
+                title: '갈색 (Brown)',
+                desc: '믿음직함, 안정감',
+                desc2: '따뜻하고 포근하며 대지처럼 믿음직한 느낌을 전달합니다. 안정감과 안전함이 함께 필요한 상황에서 자주 사용됩니다.'
+            },
+            {
+                title: '옅은 갈색 (Light Brown)',
+                desc: '편안함, 자연스러움',
+                desc2: '아이들에게 인기가 많지 않은 브라운컬러를 가벼운 느낌으로 전달합니다. 기존 브라운컬러에 융통성을 더 하며 믿음직스러운 느낌을 유지합니다.'
+            },
+            {
+                title: '골드 베이지 (Gold Beige)',
+                desc: '고급스러움, 차분함',
+                desc2: '고급스러움과 안정적인 느낌을 함께 전달합니다. 과한 자극 없이 차분함과 은은한 화려함을 함께 느끼는 데 도움을 줍니다.'
+            },
+            {
+                title: '아이보리 (Ivory)',
+                desc: '여백, 자연스러움',
+                desc2: '극단적으로 편안한 느낌을 전달합니다. 긴장감을 덜어주면서 포근한 분위기를 형성하는 데 도움을 줍니다.'
+            },
+            {
+                title: '실버 (Silver)',
+                desc: '현대적, 기술적',
+                desc2: '깔끔하고 미래지향적인 분위기를 전달합니다. 기술적이거나 복잡한 느낌을 강조하는 데 도움을 줍니다.'
+            },
+            {
+                title: '라이트 그레이 (Light Gray)',
+                desc: '중립적, 모던함',
+                desc2: '다른 색상을 방해하지 않으면서 화면을 정돈해줍니다. 깔끔하며 가장 인기가 많은 컬러중 하나입니다.'
+            },
+            {
+                title: '화이트 (White)',
+                desc: '깨끗함, 순수함, 여백, 미니멀함',
+                desc2: '넓은 여백과 깨끗한 인상을 만들어 브랜드의 콘텐츠와 다른 색상을 더욱 선명하게 보여줍니다.'
+            }
+        ];
+
+
+        bcColors.forEach((color, index) => {
+
+            color.addEventListener('click', function () {
+
+                /* 현재 CSS에 적용된 실제 색상을 가져옴 */
+                const selectedColor =
+                    window.getComputedStyle(this).backgroundColor;
+
+
+                /* 컬러 카드 색상 변경 */
+                colorcardLeft.style.backgroundColor = selectedColor;
+
+
+                /* 텍스트 변경 */
+                if (colorData[index]) {
+                    colorcardTitle.textContent = colorData[index].title;
+                    colorcardDesc.textContent = colorData[index].desc;
+                    colorcardDesc2.textContent = colorData[index].desc2;
+                }
+
+
+                /* 선택 상태 초기화 */
+                bcColors.forEach(item => {
+                    item.classList.remove('active');
+                });
+
+
+                /* 현재 컬러 선택 */
+                this.classList.add('active');
+
+            });
+
+        });
+
+
+        /* =========================
+           첫 번째 컬러 기본 선택
+        ========================= */
+
+        if (bcColors.length > 0 && colorData.length > 0) {
+
+            bcColors[0].classList.add('active');
+
+            const firstColor =
+                window.getComputedStyle(bcColors[0]).backgroundColor;
+
+            colorcardLeft.style.backgroundColor = firstColor;
+
+            colorcardTitle.textContent = colorData[0].title;
+            colorcardDesc.textContent = colorData[0].desc;
+            colorcardDesc2.textContent = colorData[0].desc2;
+        }
+    </script>
+
+</body>
+
+</html>

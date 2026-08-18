@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-1Thin.woff2') format('woff2');
+            font-weight: 100;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-2ExtraLight.woff2') format('woff2');
+            font-weight: 200;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-3Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-4Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-5Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-6SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-7Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-8ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-9Black.woff2') format('woff2');
+            font-weight: 900;
+            font-display: swap;
+        }
+
+        .notifi_container {
+            width: 100%;
+            height: auto;
+            padding: 200px 0;
+            box-sizing: border-box;
+            background: linear-gradient(to bottom,
+                transparent 0%,
+                transparent 40%,
+                rgba(255, 174, 0, 0.1) 80%,
+                rgba(255, 174, 0, 0.4) 100%,
+                #1E5EF6 100%);
+        }
+
+        .notifi_wrapper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .notifi_box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .notifi_1 {
+            font-family: 'A2z';
+            font-size: 14px;
+            font-weight: 300;
+            color: #767676;
+            margin: 0;
+        }
+
+        .notifi_1>a {
+            text-decoration: none;
+            color: #2e50e2 !important;
+        }
+
+        .notifi_1>a:hover {
+            text-decoration: underline;
+        }
+
+        .notifi_2 {
+            font-family: 'A2z';
+            font-size: 16px;
+            font-weight: 300;
+            color: #111111;
+            margin: 0;
+            text-align: center;
+        }
+
+        .notifi_2>a {
+            text-decoration: none;
+            color: #2e50e2 !important;
+        }
+
+        .notifi_2>a:hover {
+            text-decoration: underline;
+        }
+
+        .notifi_3box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .notifi_3box>img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .notifi_3 {
+            font-family: 'A2z';
+            font-size: 16px;
+            font-weight: 300;
+            color: #111111;
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <section class="notifi_container">
+
+        <div class="notifi_wrapper">
+
+            <div class="notifi_box">
+
+                <p class="notifi_1">
+                    디자인테이닝에서 제공하는 개인정보취급방침 <a href="">자세히 보기</a>
+                </p>
+
+                <p class="notifi_2">
+                    서비스 이용에 필요한 도움을 받아보세요.
+                    <br>
+                    <a href="">카카오 채널</a> 또는 <a href="">0506-679-1705</a>번으로 문의하세요.
+                </p>
+
+                <div class="notifi_3box">
+                    <img src="https://ncryk7.mycafe24.com/DT_logo2.png" alt="">
+                    <p class="notifi_3">
+                        AM 09:00 - PM 18:00
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/9bc17173c2.js" crossorigin="anonymous"></script>
+
+    <style>
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-1Thin.woff2') format('woff2');
+            font-weight: 100;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-2ExtraLight.woff2') format('woff2');
+            font-weight: 200;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-3Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-4Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-5Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-6SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-7Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-8ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A2z';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-9Black.woff2') format('woff2');
+            font-weight: 900;
+            font-display: swap;
+        }
+
+        .lesgo_container {
+            position: fixed !important;
+            left: 0;
+            bottom: 60px;
+            width: 100%;
+            z-index: 10000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            pointer-events: none;
+        }
+
+        .lesgo_wrapper {
+            pointer-events: auto;
+        }
+
+        .lesgo_box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+            padding: 16px 56px;
+            background-color: #ffffff;
+            border-radius: 999px;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .lesgo_text {
+            margin: 0;
+            font-family: 'A2z', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            color: #111111;
+            line-height: 1.4;
+        }
+
+        .lesgo_box i {
+            font-size: 16px;
+            color: #111111;
+            transform: rotate(-90deg);
+            transition: all 0.3s ease;
+        }
+
+        .lesgo_box:hover i {
+            transform: translateX(4px);
+        }
+
+        .lesgo_box:hover i {
+            animation: lesgoArrow 0.8s ease-in-out infinite;
+        }
+
+        @keyframes lesgoArrow {
+            0% {
+                transform: translateX(0) rotate(-90deg);
+            }
+
+            50% {
+                transform: translateX(4px) rotate(-90deg);
+            }
+
+            100% {
+                transform: translateX(0) rotate(-90deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .lesgo_container {
+                padding: 0 16px;
+                box-sizing: border-box;
+                bottom: 24px;
+            }
+
+            .lesgo_wrapper {
+                width: 100%;
+            }
+
+            .lesgo_box {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <section class="lesgo_container">
+
+        <div class="lesgo_wrapper">
+
+            <a href="" class="lesgo_box">
+
+                <p class="lesgo_text">제작체험 바로가기</p>
+                <i class="fa-light fa-angle-down"></i>
+
+            </a>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>
